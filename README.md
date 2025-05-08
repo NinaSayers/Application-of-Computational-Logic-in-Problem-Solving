@@ -1,2 +1,2 @@
-# Aplicaci-n-de-la-L-gica-Computacional-en-la-Resoluci-n-de-Problemas
+# Application of Computational Logic in Problem Solving
 Tesis de Licenciatura en Ciencia de la Computación
