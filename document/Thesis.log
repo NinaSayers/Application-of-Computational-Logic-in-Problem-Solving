@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  9 MAY 2025 12:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  9 MAY 2025 18:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1528,7 +1528,11 @@ LaTeX Info: Redefining \% on input line 1.
 
 [8
 
-] (Thesis.lol)
+] (Thesis.lol
+LaTeX Info: Redefining \sptext on input line 1.
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
 \tf@lol=\write9
 \openout9 = `Thesis.lol'.
 
@@ -1539,7 +1543,7 @@ LaTeX Info: Redefining \% on input line 1.
 ]
 \openout2 = `MainMatter/Introduction.aux'.
 
- (MainMatter/Introduction.tex)
+ (MainMatter/Introduction.tex
 
 [1
 
@@ -1548,13 +1552,23 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 ]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+7.
+ (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+
+[2{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+)
+
+[3]
 \openout2 = `MainMatter/Background.aux'.
 
  (MainMatter/Background.tex
 Cap\'{\i }tulo 1.
 )
 
-[2
+[4
 
 
 
@@ -1566,7 +1580,7 @@ Cap\'{\i }tulo 1.
 Cap\'{\i }tulo 2.
 )
 
-[3
+[5
 
 
 
@@ -1578,7 +1592,7 @@ Cap\'{\i }tulo 2.
 Cap\'{\i }tulo 3.
 )
 
-[4
+[6
 
 
 
@@ -1588,7 +1602,7 @@ Cap\'{\i }tulo 3.
 
  (BackMatter/Conclusions.tex)
 
-[5
+[7
 
 
 
@@ -1599,7 +1613,7 @@ Cap\'{\i }tulo 3.
 
  (BackMatter/Recomendations.tex)
 
-[6
+[8
 
 
 
@@ -1642,21 +1656,21 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36753 strings out of 469941
- 698246 string characters out of 5469431
- 1656743 words of memory out of 5000000
- 62918 multiletter control sequences out of 15000+600000
- 655802 words of font info for 51 fonts, out of 8000000 for 9000
+ 36795 strings out of 469941
+ 701365 string characters out of 5469431
+ 1662868 words of memory out of 5000000
+ 62952 multiletter control sequences out of 15000+600000
+ 659207 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,11n,121p,697b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,11n,121p,936b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
 b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb
 ><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb>
 <C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/uncb8a.p
 fb>
-Output written on Thesis.pdf (15 pages, 208328 bytes).
+Output written on Thesis.pdf (17 pages, 223069 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
+ 158 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

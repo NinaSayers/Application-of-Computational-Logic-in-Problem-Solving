@@ -1,2 +1,44 @@
 \chapter*{Introducción}\label{chapter:introduction}
 \addcontentsline{toc}{chapter}{Introducción}
+%Contexto histórico/social
+El desarrollo de la lógica computacional como disciplina se enmarca en la revolución tecnológica del siglo XX, impulsada por la necesidad de resolver problemas complejos en ámbitos como la inteligencia artificial, la verificación de hardware y software, y la optimización industrial. La creciente demanda de sistemas automatizados capaces de procesar restricciones y tomar decisiones eficientes llevó a la comunidad científica a explorar métodos formales para modelar y resolver problemas combinatorios. En este escenario, la teoría de la complejidad computacional emergió como un pilar fundamental, especialmente tras la identificación de la clase NP-Completo por Cook en 1971, que transformó la comprensión de los límites de la computación.
+
+%Antecedentes del problema científico
+Los problemas con restricciones —aquellos que requieren satisfacer un conjunto de condiciones lógicas— han sido centrales en áreas como la planificación, la criptografía y el diseño de circuitos. El problema de satisfacibilidad booleana (SAT), demostrado por Cook como el primer problema NP-Completo, se convirtió en la piedra angular para estudiar la viabilidad de soluciones eficientes. Aunque los primeros algoritmos para SAT, como el método de Davis-Putnam (DP) y su evolución o Davis-Putnam-Logemann-Loveland (DPLL), sentaron las bases de los resolvedores (solvers), su eficiencia se veía limitada por la explosión combinatoria en instancias complejas. La presencia de cláusulas unitarias, la selección subóptima de variables y el retroceso (backtrack) cronológico exponían claras debilidades, especialmente en problemas con miles de variables.
+
+%Breve presentación de la problemática
+A pesar de los avances, los SAT resolvedores (solvers) clásicos enfrentaban un desafío crítico: escalar sin sacrificar completitud. Esto motivó la búsqueda de mejoras heurísticas y estratégicas, como el aprendizaje de cláusulas y el retroceso (backtrack) no cronológico, que culminaron en el surgimiento del paradigma Conflict-Driven Clause Learning (CDCL). CDCL no solo optimizó la exploración del espacio de soluciones, sino que introdujo mecanismos para evitar repeticiones de conflictos, marcando un hito en la resolución práctica de problemas NP-Completos. Sin embargo, la eficacia de estos algoritmos depende en gran medida de estrategias de selección de variables, como VSIDS (Variable State Independent Decaying Sum) y DLIS (Dynamic Largest Individual Sum), cuyas ventajas comparativas siguen siendo objeto de debate.
+
+%Actualidad
+Hoy, los SAT resolvedores (solvers) basados en CDCL dominan aplicaciones críticas, desde la verificación formal de chips hasta la síntesis de programas. No obstante, su rendimiento varía significativamente según el tipo de problema (p. ej., aleatorios vs. estructurados) y las heurísticas empleadas. Mientras VSIDS prioriza variables recientemente involucradas en conflictos —útil en problemas con alta estructura local—, DLIS enfatiza la frecuencia de aparición de literales, mostrando ventajas en dominios con distribución uniforme de restricciones. Esta dualidad plantea preguntas clave: ¿bajo qué métricas (tiempo de ejecución, memoria, escalabilidad) una estrategia supera a la otra? ¿Cómo influye la naturaleza del problema en su eficiencia?
+
+%Novedad científica
+Esta tesis aporta una comparación sistemática entre VSIDS y DLIS dentro de entornos CDCL, evaluando su desempeño en problemas heterogéneos (industriales, aleatorios y académicos). A diferencia de estudios previos, se integran métricas adaptativas que consideran no solo el tiempo de resolución, sino también el impacto de las cláusulas aprendidas y la distribución de conflictos. Además, se propone un marco teórico para clasificar problemas según su afinidad heurística, contribuyendo a la selección informada de algoritmos en aplicaciones reales.
+
+%Importancia teórica y práctica
+Teóricamente, este trabajo profundiza en la relación entre estructura de problemas y heurísticas, enriqueciendo la comprensión de CDCL. Prácticamente, ofrece directrices para ingenieros y desarrolladores de resolvedores (solvers), optimizando recursos en áreas como la verificación de software o la logística, donde minutos de mejora equivalen a ahorros millonarios.
+
+\textbf{Diseño teórico}
+\begin{itemize}
+    \item \textbf{Problema científico:} Ineficiencia de los SAT resolvedores (solvers) ante problemas con distintas estructuras, asociada a la selección subóptima de variables.
+    \item \textbf{Objeto de estudio:} Algoritmos CDCL con estrategias VSIDS y DLIS.
+    \item \textbf{Objetivos:}
+    \begin{itemize}
+        \item Analizar el impacto de VSIDS y DLIS en el rendimiento de CDCL.
+        \item Establecer correlaciones entre tipos de problemas y heurísticas eficaces.
+    \end{itemize}
+    \item \textbf{Campo de acción:} Lógica computacional aplicada a la rersolución de problemas con restricciones.
+    \item \textbf{Hipótesis:} El rendimiento de VSIDS y DLIS varía significativamente según la densidad de restricciones, la presencia de patrones locales y el balance entre cláusulas aprendidas y originales.
+\end{itemize}
+
+%Estructuración del trabajo
+El documento se organiza en cinco capítulos:
+\begin{itemize}
+    \item \textbf{Fundamentos de SAT y NP-Completitud:} Revisión teórica de problemas con restricciones y complejidad.
+    \item \textbf{Evolución de los SAT resolvedores (solvers):} Desde DP/DPLL hasta CDCL.
+    \item \textbf{Heurísticas en CDCL:} VSIDS vs. DLIS, ventajas y limitaciones.
+    \item \textbf{Metodología experimental:} Diseño de pruebas, métricas y casos de estudio.
+    \item \textbf{Resultados y conclusiones:} Análisis comparativo y recomendaciones prácticas.
+\end{itemize}
+
+Esta investigación busca no solo esclarecer el debate entre VSIDS y DLIS, sino también sentar bases para el diseño de heurísticas adaptativas, impulsando la próxima generación de resolvedores (solvers).
