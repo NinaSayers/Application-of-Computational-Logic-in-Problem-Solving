@@ -4,7 +4,6 @@ Created on Tue Apr  8 21:24:48 2025
 
 @author: lucia
 """
-#from formulas import formula1, formula2, formula3, formula4
 import formulas as f
 
 class SATSolver:
