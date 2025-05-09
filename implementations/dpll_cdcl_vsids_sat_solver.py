@@ -5,7 +5,7 @@ Created on Tue Apr  8 21:24:48 2025
 @author: lucia
 """
 
-import copy
+import formulas as f
 
 class SATSolver:
     def __init__(self, formula):
@@ -235,3 +235,34 @@ class SATSolver:
                 self.levels[var] = self.decision_level
                 self.reasons[var] = None  # Decision assignments have no reason clause.
                 self.decision_stack.append((var, True, self.decision_level))
+
+if __name__ == "__main__":
+
+    solver1 = SATSolver(f.formula1)
+    solution1 = solver1.solve()
+    if solution1 is None:
+        print("Formula 1 is UNSAT")
+    else:
+        print("Formula 1 is SAT with assignment:", solution1)
+   
+    
+    solver2 = SATSolver(f.formula2)
+    solution2 = solver2.solve()
+    if solution2 is None:
+        print("Formula 2 is UNSAT")
+    else:
+        print("Formula 2 is SAT with assignment:", solution2)
+
+    solver3 = SATSolver(f.formula3)
+    solution3 = solver3.solve()
+    if solution3 is None:
+        print("Formula 3 is UNSAT")
+    else:
+        print("Formula 3 is SAT with assignment:", solution3)
+
+    solver4 = SATSolver(f.formula4)
+    solution4 = solver4.solve()
+    if solution4 is None:
+        print("Formula 4 is UNSAT")
+    else:
+        print("Formula 4 is SAT with assignment:", solution4)

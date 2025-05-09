@@ -4,8 +4,8 @@ Created on Tue Apr  8 21:24:48 2025
 
 @author: lucia
 """
-
-import copy
+#from formulas import formula1, formula2, formula3, formula4
+import formulas as f
 
 class SATSolver:
     def __init__(self, formula):
@@ -233,90 +233,30 @@ class SATSolver:
                 self.decision_stack.append((var, True, self.decision_level))
 
 if __name__ == "__main__":
-    # Example 1: An unsatisfiable formula.
-    # This formula represents:
-    #    (x1 ∨ x2) ∧ (¬x1 ∨ x2) ∧ (¬x2)
-    # It forces x2 to be False (from (¬x2)) but then (x1 ∨ x2) forces x1 to be True,
-    # while (¬x1 ∨ x2) forces x1 to be False. There is no satisfying assignment.
-    formula1 = [
-        [1, 2],
-        [-1, 2],
-        [-2]
-    ]
-    
-    solver1 = SATSolver(formula1)
+
+    solver1 = SATSolver(f.formula1)
     solution1 = solver1.solve()
     if solution1 is None:
         print("Formula 1 is UNSAT")
     else:
         print("Formula 1 is SAT with assignment:", solution1)
+   
     
-    # Example 2: A satisfiable formula.
-    # This formula represents:
-    #    (x1 ∨ x2) ∧ (¬x1 ∨ x2) ∧ (¬x2 ∨ x3)
-    # One possible solution is x1 = True, x2 = False, x3 = True.
-    formula2 = [
-        [1, 2],
-        [-1, 2],
-        [-2, 3]
-    ]
-    
-    solver2 = SATSolver(formula2)
+    solver2 = SATSolver(f.formula2)
     solution2 = solver2.solve()
     if solution2 is None:
         print("Formula 2 is UNSAT")
     else:
         print("Formula 2 is SAT with assignment:", solution2)
 
-    formula3 = [
-        [1, -2],
-        [1, -3],
-        [1, -8],
-        [1, -7],
-        [-4, 3],
-        [-5, -6],
-        [-2, -3, -4],
-        [-4, 6, 9],
-        [-3, -7, 8],
-        [1, 8],
-        [1, 7],
-        [4, 5, -1],
-        [4, -6, -1],
-        [-6, -4, -1],
-        [6, -7, -1],
-        [-7, 6, -1],
-        [7, 6, -1]
-    ]
-
-    solver3 = SATSolver(formula3)
+    solver3 = SATSolver(f.formula3)
     solution3 = solver3.solve()
     if solution3 is None:
         print("Formula 3 is UNSAT")
     else:
         print("Formula 3 is SAT with assignment:", solution3)
 
-    formula4 = [
-        [-11, 6, -12],
-        [-11, 13, 16],
-        [12, -16, -2],
-        [-2, -4, 20, -10],
-        [10, -8, 1],
-        [10, 3],
-        [-3, 26],
-        [10, -5],
-        [-1, -3, 5, 17, 18],
-        [-3, -19, -18],
-        [21, -6],
-        [21, -17],
-        [-22, -13],
-        [13, 8],
-        [-4, 19],
-        [20, 23],
-        [-20, 24],
-        [25]
-    ]
-
-    solver4 = SATSolver(formula4)
+    solver4 = SATSolver(f.formula4)
     solution4 = solver4.solve()
     if solution4 is None:
         print("Formula 4 is UNSAT")
