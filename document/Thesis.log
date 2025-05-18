@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  11 MAY 2025 23:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  17 MAY 2025 23:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1332,12 +1332,12 @@ Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
 \@nomenclaturefile=\write5
 \openout5 = `Thesis.nlo'.
 
-Package nomencl Info: Writing nomenclature file Thesis.nlo on input line 59.
+Package nomencl Info: Writing nomenclature file Thesis.nlo on input line 66.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 78
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 85
 .
 
 (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
@@ -1356,27 +1356,27 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 (BackMatter/Recomendations.aux) (BackMatter/Bibliography.aux))
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Info: Redefining \. on input line 78.
-LaTeX Info: Redefining \% on input line 78.
-Package tocbasic Info: usage of `tocbibind' detected on input line 78.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
+Package tocbasic Info: usage of `tocbibind' detected on input line 85.
 
 (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -1432,9 +1432,9 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' not found.
 
 No file Thesis.bbl.
-Package biblatex Info: Reference section=0 on input line 78.
-Package biblatex Info: Reference segment=0 on input line 78.
-Package hyperref Info: Link coloring ON on input line 78.
+Package biblatex Info: Reference section=0 on input line 85.
+Package biblatex Info: Reference segment=0 on input line 85.
+Package hyperref Info: Link coloring ON on input line 85.
 (Thesis.out) (Thesis.out)
 \@outlinefile=\write6
 \openout6 = `Thesis.out'.
@@ -1444,11 +1444,11 @@ Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count520
-Package tocbasic Info: setting babel extension for `lol' on input line 78.
-<Graphics/uhlogo.pdf, id=30, 375.98297pt x 481.67456pt>
+Package tocbasic Info: setting babel extension for `lol' on input line 85.
+<Graphics/uhlogo.pdf, id=58, 375.98297pt x 481.67456pt>
 File: Graphics/uhlogo.pdf Graphic file (type pdf)
 <use Graphics/uhlogo.pdf>
-Package pdftex.def Info: Graphics/uhlogo.pdf  used on input line 81.
+Package pdftex.def Info: Graphics/uhlogo.pdf  used on input line 88.
 (pdftex.def)             Requested size: 49.79231pt x 63.7885pt.
 
 
@@ -1505,6 +1505,54 @@ o.pdf>]
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
+.
+
+(C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
+.
+
+(C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+4.
+
+(C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+4.
+
+(C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 4
+.
+
+(C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+
+Overfull \hbox (27.90802pt too wide) in paragraph at lines 7--7
+ [][] []\T1/lmr/m/n/12 Desde Davis-Putnam (DP) has-ta Davis-Putnam-Logemann-Lov
+eland 
+ []
+
 )
 \tf@toc=\write7
 \openout7 = `Thesis.toc'.
@@ -1552,61 +1600,21 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-7.
- (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+
+[2{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C
+:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
+1.
+
+(C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
+))
 
-[2{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-)
-
-[3]
+[3{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 \openout2 = `MainMatter/Background.aux'.
 
- (MainMatter/Background.tex
+(MainMatter/Background.tex
 Cap\'{\i }tulo 1.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-2.
-(C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-2.
-
-(C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-12.
-
-(C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-12.
-
-(C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 12.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 12.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 12.
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-2.
-
-(C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
 
 
 [4
@@ -1614,42 +1622,40 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
 
 
-{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/
-Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/
-Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}
+]
+Overfull \hbox (5.00114pt too wide) in paragraph at lines 21--22
+\T1/lmr/m/n/12 pro-ce-di-mien-to de Davis-Putnam (DP) y el pro-ce-di-mien-to de
+ Davis-Putnam-Logemann-
+ []
 
-LaTeX Info: Redefining \. on input line 52.
-LaTeX Info: Redefining \% on input line 52.
-Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported  on input line 52.
+
+
 [5]
+Overfull \hbox (37.2365pt too wide) in paragraph at lines 23--23
+[]\T1/lmr/bx/n/14.4 Desde Davis-Putnam (DP) has-ta Davis-Putnam-Logemann-
+ []
 
-LaTeX Info: Redefining \. on input line 52.
-LaTeX Info: Redefining \% on input line 52.
+
+
 [6]
 
-LaTeX Info: Redefining \. on input line 52.
-LaTeX Info: Redefining \% on input line 52.
 [7]
 
-LaTeX Info: Redefining \. on input line 82.
-LaTeX Info: Redefining \% on input line 82.
 [8]
 
-LaTeX Info: Redefining \. on input line 82.
-LaTeX Info: Redefining \% on input line 82.
 [9]
+Overfull \hbox (3.02832pt too wide) in paragraph at lines 96--97
+[]\T1/lmr/m/n/12 Históricamente, exis-tían heu-rís-ti-cas co-mo DLIS (\T1/lmr/m
+/it/12 Dy-na-mic Lar-gest In-di-vi-dual Sum\T1/lmr/m/n/12 ),
+ []
 
-LaTeX Info: Redefining \. on input line 82.
-LaTeX Info: Redefining \% on input line 82.
+
+
 [10]
 
-LaTeX Info: Redefining \. on input line 82.
-LaTeX Info: Redefining \% on input line 82.
 [11])
 
-LaTeX Info: Redefining \. on input line 92.
-LaTeX Info: Redefining \% on input line 92.
 [12]
 \openout2 = `MainMatter/Proposal.aux'.
 
@@ -1722,7 +1728,7 @@ L3 programming layer <2025-04-14>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: AEDAD39332491104428F100267B46943;806.
+(rerunfilecheck)             Checksum: BB04FFF5424CD4D52A84287484F9FC85;2678.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                Thesis
@@ -1733,25 +1739,26 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36973 strings out of 469941
- 704625 string characters out of 5469431
- 1691876 words of memory out of 5000000
- 63085 multiletter control sequences out of 15000+600000
- 689525 words of font info for 80 fonts, out of 8000000 for 9000
+ 36970 strings out of 469941
+ 704563 string characters out of 5469431
+ 1662936 words of memory out of 5000000
+ 63067 multiletter control sequences out of 15000+600000
+ 691714 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,12n,121p,1270b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,12n,121p,935b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
-b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pf
-b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb
-><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb>
-<C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><
-C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:
-/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><C:
-/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:
-/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/uncb8a.pfb>
-Output written on Thesis.pdf (25 pages, 322056 bytes).
+b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.p
+fb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.p
+fb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pf
+b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb
+><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb>
+<C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb>
+<C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
+<C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/uncb8a.p
+fb>
+Output written on Thesis.pdf (25 pages, 319442 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 276 PDF objects out of 1000 (max. 8388607)
+ 60 named destinations out of 1000 (max. 500000)
+ 122 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,3 +1,12 @@
 \begin{conclusions}
-    Conclusiones
+El dilema en CDCL
+CDCL mitiga parcialmente este problema mediante el aprendizaje de cláusulas, pero no elimina la dependencia de la selección inicial de variables. Por ejemplo:
+
+Si VSIDS elige variables periféricas en un problema con núcleos críticos (ej: PHP), el solver gastará recursos en regiones irrelevantes.
+
+Si DLIS prioriza literales frecuentes en problemas con restricciones jerárquicas (ej: scheduling), perderá la capacidad de explotar correlaciones locales.
+
+Esta interdependencia entre heurísticas y estructura del problema explica por qué, a pesar de los avances en CDCL, no existe una estrategia universalmente óptima. La selección de variables sigue siendo un cuello de botella teórico y práctico, especialmente al escalar a miles de variables con relaciones complejas.
+
+La introducción de CDCL marcó un avance al reemplazar el retroceso (backtrack) cronológico con uno dirigido por conflictos, pero su éxito está ligado a la sinergia entre aprendizaje y selección de variables. Mientras las cláusulas aprendidas reducen el espacio de búsqueda, las heurísticas de selección determinan cómo se navega en él. Un desbalance entre estos componentes condena al solver a un rendimiento subóptimo, perpetuando la necesidad de estudios comparativos como el propuesto en esta tesis. 
 \end{conclusions}
