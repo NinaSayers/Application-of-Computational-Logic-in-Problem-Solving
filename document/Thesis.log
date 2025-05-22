@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  17 MAY 2025 23:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  21 MAY 2025 20:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1445,7 +1445,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count520
 Package tocbasic Info: setting babel extension for `lol' on input line 85.
-<Graphics/uhlogo.pdf, id=58, 375.98297pt x 481.67456pt>
+<Graphics/uhlogo.pdf, id=98, 375.98297pt x 481.67456pt>
 File: Graphics/uhlogo.pdf Graphic file (type pdf)
 <use Graphics/uhlogo.pdf>
 Package pdftex.def Info: Graphics/uhlogo.pdf  used on input line 88.
@@ -1547,12 +1547,6 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
-
-Overfull \hbox (27.90802pt too wide) in paragraph at lines 7--7
- [][] []\T1/lmr/m/n/12 Desde Davis-Putnam (DP) has-ta Davis-Putnam-Logemann-Lov
-eland 
- []
-
 )
 \tf@toc=\write7
 \openout7 = `Thesis.toc'.
@@ -1622,20 +1616,21 @@ Cap\'{\i }tulo 1.
 
 
 
-{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}
 ]
-Overfull \hbox (5.00114pt too wide) in paragraph at lines 21--22
-\T1/lmr/m/n/12 pro-ce-di-mien-to de Davis-Putnam (DP) y el pro-ce-di-mien-to de
- Davis-Putnam-Logemann-
- []
-
-
 
 [5]
-Overfull \hbox (37.2365pt too wide) in paragraph at lines 23--23
-[]\T1/lmr/bx/n/14.4 Desde Davis-Putnam (DP) has-ta Davis-Putnam-Logemann-
- []
-
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 51.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.4> on input line 51.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 51.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
 
 
 [6]
@@ -1643,27 +1638,25 @@ Overfull \hbox (37.2365pt too wide) in paragraph at lines 23--23
 [7]
 
 [8]
-
-[9]
-Overfull \hbox (3.02832pt too wide) in paragraph at lines 96--97
-[]\T1/lmr/m/n/12 Históricamente, exis-tían heu-rís-ti-cas co-mo DLIS (\T1/lmr/m
-/it/12 Dy-na-mic Lar-gest In-di-vi-dual Sum\T1/lmr/m/n/12 ),
+Overfull \hbox (4.28653pt too wide) in paragraph at lines 107--107
+[]\T1/lmr/bx/n/17.28 Parámetros de Eva-lua-ción pa-ra Sol-vers CDCL:
  []
 
 
 
-[10]
+[9{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
+c}]
 
-[11])
+[10])
 
-[12]
+[11]
 \openout2 = `MainMatter/Proposal.aux'.
 
  (MainMatter/Proposal.tex
 Cap\'{\i }tulo 2.
 )
 
-[13
+[12
 
 
 
@@ -1675,7 +1668,7 @@ Cap\'{\i }tulo 2.
 Cap\'{\i }tulo 3.
 )
 
-[14
+[13
 
 
 
@@ -1685,7 +1678,7 @@ Cap\'{\i }tulo 3.
 
  (BackMatter/Conclusions.tex)
 
-[15
+[14
 
 
 
@@ -1696,7 +1689,7 @@ Cap\'{\i }tulo 3.
 
  (BackMatter/Recomendations.tex)
 
-[16
+[15
 
 
 
@@ -1728,7 +1721,7 @@ L3 programming layer <2025-04-14>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: BB04FFF5424CD4D52A84287484F9FC85;2678.
+(rerunfilecheck)             Checksum: E8462DC50C9F712B6CC7C51E8A5FD3C1;6275.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                Thesis
@@ -1739,26 +1732,28 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36970 strings out of 469941
- 704563 string characters out of 5469431
- 1662936 words of memory out of 5000000
- 63067 multiletter control sequences out of 15000+600000
- 691714 words of font info for 79 fonts, out of 8000000 for 9000
+ 37029 strings out of 469941
+ 705511 string characters out of 5469431
+ 1664664 words of memory out of 5000000
+ 63118 multiletter control sequences out of 15000+600000
+ 711643 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,12n,121p,935b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,11n,121p,1170b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
 b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.p
 fb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.p
 fb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pf
-b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb
-><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb>
-<C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb>
-<C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-<C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/uncb8a.p
-fb>
-Output written on Thesis.pdf (25 pages, 319442 bytes).
+b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb
+><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb>
+<C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><
+C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:
+/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/U
+sers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/U
+sers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/U
+sers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/uncb8a.pfb>
+Output written on Thesis.pdf (24 pages, 386541 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
+ 329 PDF objects out of 1000 (max. 8388607)
  60 named destinations out of 1000 (max. 500000)
- 122 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,137 +1,148 @@
 \chapter{Marco Teórico}\label{chapter:state-of-the-art}
-\section{Fundamentos de SAT y NP-Completitud}
-El Problema de la Satisfacibilidad Booleana (SAT) es un problema de decisión combinatorio conceptualmente simple 1 y uno de los problemas más fundamentales en la ciencia de la computación 2 y matemáticas 4. Consiste en determinar si, dada una fórmula booleana 5, existe una asignación de valores de verdad a sus variables que haga que la fórmula sea verdadera 6. Tales asignaciones se llaman asignaciones satisfactorias o modelos 8.
 
-La mayoría de los algoritmos y \textit{solvers} de SAT operan con fórmulas representadas en FNC 9. Una fórmula en FNC es una conjunción ($\land$) de cláusulas 6, y una cláusula es una disyunción ($\lor$) de literales 6. Por su parte, un literal es una variable booleana (positiva) o su negación (negativa)6, y una asignación mapea cada variable a un valor booleano (verdadero/falso o 1/0) 6.
+\section{Fundamentos de los Problemas de Satisfacción de Restricciones y SAT}
+\label{sec:fundamentos-sat-csp}
 
-Una cláusula vacía ({}) es siempre insatisfacible y representa un conflicto 6. Una fórmula en FNC es satisfacible si existe al menos una asignación que satisface todas sus cláusulas 6. SAT es un problema de decisión, lo que significa que la respuesta es ``sí'' (satisfacible) o ``no'' (insatisfacible) 18. Es un problema decidible, ya que existe un algoritmo (por ejemplo, basado en tablas de verdad) para determinar la satisfacibilidad de una fórmula 19.
+Los Problemas de Satisfacción de Restricciones (CSPs) constituyen un paradigma fundamental para modelar desafíos combinatorios en inteligencia artificial, investigación operativa y ciencias de la computación. Formalmente, un CSP se define mediante una tripleta $(V,D,C)$, donde $V$ es un conjunto de variables, $D$ sus dominios discretos finitos, y $C$ un conjunto de restricciones que limitan las combinaciones válidas de valores \textbf{39}. Por ejemplo, en un problema de asignación de horarios, $V$ representaría cursos, $D$ los horarios disponibles, y $C$ las reglas que evitan superposiciones. La solución óptima no solo satisface todas las restricciones, sino que también optimiza criterios como la utilización de recursos \textbf{40}.
 
-Respecto a la NP-Completitud, el problema de SAT es el primer problema que se demostró ser NP-completo 21. Fue probado por Cook 2 (y el teorema de Cook-Levin 24) en su trabajo sobre la teoría de la complejidad computacional 2. SAT es considerado el prototipo 18 o el arquetipo 27 de los problemas NP-completos. El teorema de Cook-Levin establece que cualquier problema en la clase de complejidad NP puede reducirse a SAT en tiempo polinomial 26, por tanto que SAT sea NP-completo significa que, si pudiera ser resuelto en tiempo polinomial, entonces todos los problemas en la clase NP también podrían ser resueltos en tiempo polinomial, lo que implicaría que $P=NP $ 2.
+\subsection{SAT como Caso Especial de CSP y su NP-Completitud}
+El Problema de la Satisfacibilidad Booleana (SAT) emerge como un CSP restringido donde los dominios son binarios (${0,1}$) y las restricciones se expresan en Forma Normal Conjuntiva (FNC) \textbf{43}. Una fórmula en FNC es una conjunción de cláusulas, donde cada cláusula es una disyunción de literales (variables o sus negaciones) \textbf{6}. Determinar si existe una asignación de valores que satisfaga todas las cláusulas equivale a resolver un CSP binario con restricciones específicas.
 
-En general, se cree que no existen procedimientos o \textit{solvers} eficientes (en tiempo polinomial) para resolver SAT en el peor caso 3. Todos los métodos completos conocidos tienen una complejidad exponencial en el peor caso 27. A pesar de esta dificultad teórica inherente, los solvers de SAT modernos han logrado un éxito notable y resuelven rutinariamente instancias muy grandes de aplicaciones del mundo real 3. Esto se debe a que explotan la estructura subyacente inherente a estas instancias prácticas 30, aunque instancias pequeñas, aleatorias o ``artesanales'' pueden ser difíciles 30.
+La relevancia teórica de SAT radica en su condición de problema NP-completo, demostrada por Cook y Levin en 1971 \textbf{2,24}. Este estatus implica dos consecuencias cruciales: primero, cualquier problema en NP puede reducirse a SAT en tiempo polinomial \textbf{26}; segundo, la existencia de un algoritmo polinomial para SAT implicaría $P=NP$, colapsando la jerarquía de complejidad \textbf{2}. Aunque en la práctica los solvers modernos resuelven instancias con millones de variables \textbf{3}, en el peor caso SAT conserva una complejidad exponencial inherente \textbf{27}.
 
-\subsection{Problemas de Satisfacción de Restricciones}
-Los Problemas de Satisfacción de Restricciones (CSPs por sus siglas en inglés) son una tecnología exitosa y extendida para resolver una amplia variedad de problemas, como asignación de recursos y planificación 39. Un CSP se define como un problema de decisión cuyo objetivo es determinar si existe una asignación de valores de un dominio finito a un conjunto finito de variables que satisfaga un conjunto dado y finito de restricciones 39. En la práctica, los problemas se especifican inicialmente de forma natural y luego se modelan utilizando lenguajes específicos, y los sistemas de \textit{Constraint Programming} (CP) encuentran soluciones que satisfacen todas las restricciones 40.
+\subsection{Ineficiencias Fundamentales de SAT}
+\label{subsec:ineficiencia-sat}
 
-La relación entre SAT y CSP es que SAT puede verse como un caso especial del Problema de Satisfacción de Restricciones Discretas Finitas (CSP) 41. En SAT, los dominios de las variables están restringidos a valores booleanos 43, mientras que en los CSPs generales, los dominios pueden ser conjuntos finitos arbitrarios 43. Además, los CSPs permiten relaciones arbitrarias entre subconjuntos de variables como restricciones, a diferencia de SAT donde las restricciones son exclusivamente cláusulas 10.
+El método de fuerza bruta para SAT —evaluar todas $2^n$ asignaciones posibles mediante tablas de verdad— ilustra su naturaleza intratable en el peor caso \textbf{19}. Esta explosión combinatoria se agrava en fórmulas sin estructura discernible, donde técnicas como la propagación unitaria o el aprendizaje de cláusulas tienen impacto limitado \textbf{30}. Por ejemplo, en instancias aleatorias de 3-SAT cerca del umbral de fase (aproximadamente 4.26 cláusulas por variable \textbf{30}), los algoritmos clásicos como DPLL exhiben un crecimiento exponencial en el tiempo de ejecución \textbf{27}.
 
-En cuanto a la complejidad de los CSPs, el Problema de Satisfacción de Restricciones Discretas Finitas es un subproblema NP-completo 43. Existe la posibilidad de reformular o convertir instancias de CSP en instancias de SAT 44, luego los solvers de SAT, altamente optimizados, pueden ser utilizados para resolver problemas formulados originalmente como CSPs 44. Las codificaciones específicas, como la de CSPs binarios a SAT, han demostrado reducir el tiempo de ejecución y el número de nodos de búsqueda para los \textit{solvers} de SAT aplicados a ellos 45. Aunque muchos problemas se modelan más naturalmente como CSPs que como SAT 46, no está claro actualmente si los algoritmos nativos de CSP superan sustancialmente a los algoritmos de SAT altamente optimizados en codificaciones adecuadas 46.
+Aun así, SAT destaca como herramienta práctica gracias a dos factores: (1) la capacidad de codificar CSPs genéricos en FNC mediante técnicas como \textit{encodings} directos o Tseitin \textbf{44}, y (2) el desarrollo de solvers CDCL que explotan regularidades empíricas en instancias industriales \textbf{3}. Esta dualidad entre dificultad teórica y éxito práctico sitúa a SAT en el núcleo de aplicaciones como verificación de hardware, planificación autónoma y criptoanálisis \textbf{39}.
 
-\section{Evolución de los SAT \textit{solvers}}
-La evolución de los SAT \textit{solvers} comenzó con algoritmos fundamentales como el procedimiento de Davis-Putnam (DP) y el procedimiento de Davis-Putnam-Logemann-Loveland (DPLL), y más tarde avanzó significativamente con el desarrollo de solucionadores de aprendizaje de cláusulas impulsado por conflictos (CDCL), lo que marcó un gran salto tanto en capacidades teóricas como prácticas.
+\subsection{Relación Práctica entre CSPs y SAT}
+\label{subsec:csp-sat-relacion}
 
-\subsection{Desde Davis-Putnam (DP) hasta Davis-Putnam-Logemann-Loveland (DPLL)}
-Introducido en 1960, el algoritmo DP fue un método completo temprano para resolver SAT que se basa en el Principio de Resolución (PR) para eliminar variables de manera sistemática. Funciona aplicando recursivamente PR y la eliminación de variables, pero a menudo sufre de un alto costo computacional debido al crecimiento exponencial en el número de cláusulas.
+Aunque los CSPs permiten modelar problemas con dominios arbitrarios y restricciones globales —ventaja frente a la rigidez booleana de SAT—, su resolución nativa mediante métodos como \textit{backtracking} o consistencia de arco sufre de limitaciones similares en escalabilidad \textbf{46}. Por ello, una estrategia común consiste en traducir CSPs a SAT, aprovechando décadas de optimizaciones en solvers CDCL \textbf{44}. Estudios empíricos demuestran que codificaciones eficientes (e.g., \textit{order encoding} para restricciones de orden) reducen hasta un 60\% el tiempo de resolución frente a enfoques CSP nativos \textbf{45}.
 
-Por su parte, el algoritmo DPLL fue presentado en 1962 como un refinamiento de DP: DPLL aplica una búsqueda de retroceso en el espacio de asignación booleana combinada con propagación unitaria y heurísticas de eliminación de literales puros. Como un procedimiento de búsqueda en profundidad, DPLL asigna recursivamente valores de verdad a las variables y retrocede ante conflictos, podando el espacio de búsqueda de manera efectiva. Se convirtió en la base estándar para la resolución moderna de SAT y sigue estando en el núcleo de muchos \textit{solvers}.
+No obstante, esta traducción no está exenta de trade-offs. Mientras SAT favorece restricciones locales y cláusulas pequeñas, los CSPs manejan eficientemente restricciones globales (e.g., \textit{alldifferent}) mediante propagadores especializados \textbf{46}. Por ejemplo, en problemas de asignación de turnos hospitalarios, un modelo CSP con restricciones de recurso puede resolver instancias en minutos, mientras su traducción a SAT requiere horas debido a la explosión de cláusulas \textbf{46}. Esta dicotomía subraya la importancia de seleccionar el paradigma adecuado según la estructura del problema.
 
-Aunque es más eficiente que DP, el algoritmo clásico DPLL encontró problemas de escalabilidad al enfrentarse a instancias SAT grandes o industriales debido a la exploración redundante de conflictos similares y a la falta de mecanismos de aprendizaje. Esto motivó la integración de estrategias de aprendizaje y heurísticas para guiar la búsqueda de manera más inteligente. Una de las mejoras más significativas fue \textit{Conflict-Driven Clause Learning} (CDCL).
+\subsection{Enfoques de Solución: CP, MILP y SAT}
+\label{subsec:enfoques-solucion}
 
-\subsection{\textit{Conflict-Driven Clause Learning} (CDCL)}
-
-CDCL fue introducido en el \textit{solver} GRASP 9 en 1996 5, más de 30 años después del advenimiento de DPLL 12, y ha demostrado ser muy efectivo en problemas SAT del mundo real 12, además de revolucionar la investigación práctica en SAT 11.
-
-Los CDCL SAT \textit{solvers} evolucionaron como una extensión de DPLL al incorporar potentes técnicas de análisis de conflictos y aprendizaje de cláusulas. Los \textit{solvers} de SAT contemporáneos se basan siempre en el framework DPLL extendido con CDCL 7, por lo que, a menudo se les llama CDCL \textit{solvers}, y el término ``solver de SAT'' se usa a menudo como sinónimo de ``solver CDCL'' en entornos prácticos debido a su popularidad y eficiencia 8.
-
-La potencia de CDCL proviene de añadir varias técnicas cruciales al framework básico de DPLL. Una de las más importantes es el \textit{Clause Learning} o Aprendizaje de Cláusulas, es el componente epónimo de CDCL 17. Esta permite aprender nuevas cláusulas al analizar la causa raíz de un conflicto 12. Esta técnica fue propuesta a mediados de los 90 y es una de las contribuciones teóricas más significativas de CDCL 6.
-
-Otra de las técnicas más significativas aplicadas por CDCL es el \textit{Backjumping} o \textit{bactrack} no cronológico. En lugar de simplemente deshacer la última decisión (como el \textit{backtracking} cronológico básico), el \textit{solver} retrocede a un nivel de decisión más alto determinado por el análisis de conflictos. Esto evita explorar partes improductivas del árbol de búsqueda relacionadas con decisiones irrelevantes para el conflicto actual. El \textit{backjumping} es una razón clave por la que los solucionadores basados en CDCL son mucho más eficientes que los \textit{solvers} DPLL simples en muchas instancias.
-
-\subsection{Mejoras y heurísticas para CDCL}
-
-Las mejoras técnicas realizadas a los \textit{solvers} SAT basados en CDCL han sido continuas y abarcan varias áreas clave para mejorar su rendimiento en la resolución de problemas de satisfacibilidad booleanos. Estas mejoras se centran en optimizar sus componentes esenciales: el aprendizaje de cláusulas, las heurísticas de decisión (ramificación), las estrategias de reinicio y la propagación unitaria, entre otros.
-
-\subsubsection{Estrategias de Reinicio (\textit{Restarts})}
-
-Los reinicios son características esenciales y muy importantes en los solucionadores CDCL 2. Permiten al \textit{solver} abandonar una ruta de búsqueda improductiva y comenzar de nuevo desde un estado anterior, conservando información valiosa. 
-
-Las mejoras se centran en cuándo y cómo reiniciar. Se han explorado diversas políticas de reinicio, desde intervalos fijos hasta series geométricas y políticas más sofisticadas como las basadas en el LBD (\textit{Literal Block Distance}) de las cláusulas aprendidas recientemente, similar a cómo lo hace Glucose.
-
-Existen técnicas de reinicio avanzadas que utilizan información del estado del \textit{solver} para decidir el momento óptimo, e incluso se ha investigado el uso de Aprendizaje por Refuerzo (\textit{Reinforcement Learning - RL}) para determinar las políticas de reinicio, mostrando un rendimiento superior en algunos \textit{benchmarks} 5.
-
-Es posible hacer la distinción entre reinicios completos (\textit{full reset}) y reinicios parciales (\textit{partial reset}) que retienen un número constante de actividades de variables a través de los límites del reinicio 6. También se puede hacer una distinción entre reinicios ``cálidos'' (\textit{warm restarts}) que preservan estado relevante (cláusulas aprendidas, actividad, fases) y ``fríos'' (\textit{cold restarts}) que re-aleatorizan u olvidan más información.
-
-Las investigaciones empíricas evalúan el impacto de diferentes políticas de reinicio en el rendimiento de los \textit{solvers} 7.
-
-\subsubsection{Gestión de Cláusulas Aprendidas (\textit{Learned Clause Management})}
-
-Mantener y gestionar un gran número de cláusulas aprendidas es crucial para la eficiencia, ya que tener demasiadas cláusulas puede ser perjudicial para el rendimiento 12.
-
-La calidad de las cláusulas aprendidas se mide a menudo por el LBD (\textit{Literal Block Distance})14. Las cláusulas con un LBD bajo (por ejemplo, LBD=2, llamadas ``glue clauses'') se consideran de alta calidad y son importantes para conservar 14. Las mejoras incluyen políticas avanzadas de eliminación de cláusulas 16, que a menudo se basan en métricas como el LBD para decidir qué cláusulas son menos útiles y deben ser eliminadas 14. Algunos solvers, como Kissat, implementan reciclaje de cláusulas (``glue clause recycling'') 17.
-
-Una técnica \textit{in-processing} propuesta es la minimización de cláusulas aprendidas, que elimina literales redundantes de las cláusulas aprendidas 21. Esta técnica se activa antes de ciertos reinicios y mejora la calidad de las cláusulas, teniendo un impacto positivo en el rendimiento 21.
-
-\subsubsection{Heurísticas de Decisión (\textit{Branching Heuristics})}
-
-Los \textit{solvers} CDCL de última generación utilizan heurísticas de decisión dinámicas 2 para seleccionar la siguiente variable a asignar y su valor. VSIDS es una heurística clásica 2, pero existen variantes 2. Otras heurísticas incluyen CHB y LRB 18.
-Las mejoras buscan hacer la selección de variables más efectiva. Una técnica es utilizar la frecuencia de conflictos de las variables observada durante la búsqueda local para dirigir las heurísticas de ramificación en el CDCL 1.
-Identificar y priorizar variables que aparecen en cláusulas de alta calidad también puede guiar las decisiones, ya que estas variables tienden a ser más eficientes en términos de inferencia y conflicto 15. Se ha desarrollado un esquema de ``\textit{variable bumping}'' basado en la aparición en cláusulas ``glue'' 15.
-
-El \textit{phase saving} es una técnica para recordar la última asignación exitosa de una variable y usarla en decisiones futuras 16. Las \textit{target phases} extienden esta idea, buscando mantener y extender asignaciones prometedoras 1.
-
-\subsubsection{Propagación Unitaria (Unit Propagation - UP / BCP)}
-
-La propagación unitaria es un procedimiento fundamental y a menudo el más costoso en tiempo de ejecución en CDCL. Su eficiencia es crítica.
-
-La implementación eficiente se basa en el esquema de los dos literales vigilados (\textit{Two-Watched Literals - TWL}) 29, que reduce drásticamente el número de cláusulas a revisar cuando se asigna un literal.
-
-Las mejoras más recientes se centran en priorizar el orden en que se examinan las cláusulas durante la propagación unitaria para encontrar conflictos o implicaciones más rápidamente 96. Ejemplos incluyen \textit{Core First Unit Propagation} (CFUP), que prioriza cláusulas ``\textit{core}'' (por ejemplo, con LBD <= 7) 96, y \textit{Priority Propagation} (PriPro).
-
-Una nueva técnica propone usar la noción de literales ``estables'' (literales que tienden a ser satisfechos por largos períodos) para seleccionar los literales vigilados, mejorando CaDiCaL en algunos \textit{benchmarks} 30.
-
-\subsubsection{Integración con Búsqueda Local (\textit{Local Search})}
-
-Una línea de mejora reciente y significativa es la integración estrecha de CDCL con algoritmos de búsqueda local 1. Esto implica técnicas como: (1) explorar ramas prometedoras utilizando búsqueda local para encontrar asignaciones parciales que puedan extenderse a soluciones (técnica rx)26; (2) usar búsqueda local para determinar las fases de las variables (\textit{re-phasing} basado en búsqueda local - rp)26; y (3) dirigir las heurísticas de ramificación del CDCL utilizando la frecuencia con la que las variables aparecen en conflictos durante la búsqueda local (cf)1.
-
-Estas técnicas combinadas han demostrado mejoras significativas en el rendimiento de \textit{solvers} como Glucose y Maple, especialmente en instancias satisfacibles 1, y se considera que contribuyeron al aumento del rendimiento de los mejores \textit{solvers} en competiciones recientes 1.
-
-\subsubsection{Frameworks de Optimización y Meta-Heurísticas}
-
-Se están explorando enfoques que utilizan técnicas de \textit{Machine Learning} para ajustar y optimizar heurísticas automáticamente 35. AutoSAT es un ejemplo que usa \textit{Large Language Models} (LLMs) para modificar heurísticas, logrando resultados competitivos 35.
-
-El \textit{framework Multi-Armed Bandit} (MAB) se utiliza para combinar y seleccionar dinámicamente diferentes heurísticas (como VSIDS y CHB), a menudo orquestado por reinicios 37. \textit{Kissat MAB}, que utiliza MAB, ganó la pista principal de \textit{SAT Competition 2021} 37.
-Estas mejoras se han implementado en solvers de última generación como Glucose, CaDiCaL, Kissat, MapleSAT y sus variantes, que son los principales contendientes en las competiciones de SAT 6. MiniSat a menudo sirve como una base clásica para la investigación y comparación 4. El desarrollo continúa, buscando nuevas formas de optimizar el proceso de búsqueda, el aprendizaje y la gestión de información para resolver instancias SAT cada vez más difíciles.
-
-\section{Tipos de problemas o \textit{benchmarks}}
-Históricamente, existían heurísticas como DLIS (\textit{Dynamic Largest Individual Sum}), que se basaba en la frecuencia con la que una variable aparecía en cláusulas insatisfechas, lo que se relaciona con la centralidad de grado en el grafo de incidencia. Sin embargo, los \textit{solvers} CDCL modernos dependen en gran medida de heurísticas dinámicas que se adaptan al progreso de la búsqueda 1.
-
-Para evaluar la eficiencia de estas heurísticas como VSIDS, se utilizan conjuntos de problemas (benchmarks) con características variadas. Los más comunes provienen de las competiciones anuales de SAT (\textit{SAT Competition}) 15.
-
-Los \textit{benchmarks} de las \textit{SAT Competition} se clasifican típicamente en varias categorías 17:
-
-\subsubsection{Instancias de Aplicación (\textit{Application instances})}
-Son problemas derivados de aplicaciones del mundo real, como verificación de \textit{software} y \textit{hardware}, planificación, criptografía, etc. 11. Estas instancias suelen tener una estructura subyacente que puede ser explotada por los \textit{solvers} CDCL 20. La estructura, como la modularidad o la existencia de ``\textit{backdoors}'' pequeños, puede correlacionar con el tiempo de resolución 21.
-
-\subsubsection{Instancias Combinatorias Dificultosas (\textit{Hard Combinatorial instances} / \textit{Crafted instances})}
-Son problemas construidos artificialmente o codificaciones de problemas combinatorios o matemáticos (como problemas de coloración, o el principio del palomar) diseñados específicamente para ser difíciles para los \textit{solvers} 16. A menudo son más pequeñas que las instancias de aplicación pero pueden ser muy difíciles de resolver 19. Tienden a tener menos estructura que las de aplicación 21.
-
-\subsubsection{Instancias Aleatorias (\textit{Random instances})}
-Generadas aleatoriamente, como las instancias Random k-SAT 17. Los \textit{solvers} CDCL son, en general, notablemente pobres resolviendo este tipo de instancias 17. Su falta de estructura discernible las hace difíciles para las técnicas de aprendizaje de cláusulas basadas en conflictos 21.
-
-\subsubsection{Instancias Ágiles (\textit{Agile instances})}
-Un tipo específico de instancias \textit{bit-blasted} (resultantes de convertir problemas de lógicas superiores a SAT) utilizadas en algunas competiciones 19. 
-
-VSIDS y otras heurísticas modernas se evalúan principalmente en instancias de Aplicación y Combinatorias Dificultosas, ya que son los tipos de problemas en los que los \textit{solvers} CDCL son más eficientes 17. Aunque VSIDS es la heurística dominante, se ha demostrado que diferentes heurísticas pueden rendir mejor en distintas familias de instancias 30.
-
-Además de la clasificación por origen (Aplicación, Combinatorio, Aleatorio, Ágil), las instancias se pueden clasificar y analizar según otros criterios:
-
-\subsubsection{Satisfacibilidad (SAT vs UNSAT)}
-Si la instancia tiene al menos una asignación que satisface la fórmula (SAT) o si es inherentemente insatisfacible (UNSAT) 17. El comportamiento del \textit{solver} y la efectividad de las heurísticas pueden diferir significativamente dependiendo de si la instancia es SAT o UNSAT 41.
-
-\subsubsection{Propiedades Estructurales}
-Características de la fórmula vistas como un grafo (grafo de incidencia variable/cláusula). Estas incluyen 20:
+La resolución de CSPs y SAT se enmarca en tres metodologías principales:
 \begin{itemize}
-\item \textbf{Centralidad:} Qué tan conectadas están las variables o cláusulas.
-\item \textbf{Modularidad/Estructura Comunitaria:} Si las variables pueden agruparse en ``comunidades'' fuertemente conectadas internamente pero débilmente conectadas entre sí 20. Instancias de aplicación tienden a alta modularidad 21.
-\item \textbf{\textit{Backdoors}}: Pequeños conjuntos de variables cuya asignación correcta hace que el resto de la fórmula sea fácil de resolver 22. Se sugiere que las instancias industriales a menudo tienen ``\textit{backdoors}'' pequeños 23.
-\item \textbf{Backbones:} Variables que deben tener un valor específico en cualquier asignación satisfacible 22.
-\item \textbf{\textit{Treewidth} (Ancho de árbol):} Una medida de la ``parecido a un árbol'' de la estructura de la fórmula.
-Estas propiedades estructurales se utilizan para entender por qué algunas instancias son difíciles y cómo se comportan los \textit{solvers} en ellas 20.
-\item \textbf{Relación Cantidad de Cláusulas vs. Cantidad de Variables (Densidad)}
-La relación entre el número de cláusulas y el número de variables en una fórmula en FNC es un criterio importante, a menudo denominado densidad 46.
-Para las instancias aleatorias k-SAT, la densidad es un factor crítico. Existe un fenómeno de transición de fase alrededor de una densidad específica (aproximadamente 4.27 para 3-SAT) donde las instancias son más difíciles de resolver 25. Por debajo de esta densidad, la mayoría de las instancias son SAT y relativamente fáciles; por encima, la mayoría son UNSAT y también más fáciles que las de la zona de transición 25. En cambio, para las instancias de aplicación o combinatorias, la relación no es tan simple. A veces, codificaciones más compactas (con menos variables o cláusulas, pero quizás más complejas) pueden ser más difíciles de resolver que codificaciones más dispersas 48. Sin embargo, la densidad sigue siendo una característica utilizada para describir y clasificar instancias 46.
+\item \textbf{Programación con Restricciones (CP)} \textbf{40}: Combina búsqueda sistemática con propagación de restricciones, ideal para dominios discretos y restricciones no lineales.
+\item \textbf{Programación Entera Mixta (MILP)} \textbf{40}: Utiliza relajaciones lineales y técnicas branch-and-bound, óptima para problemas con estructura matemática explícita.
+\item \textbf{Satisfacibilidad Booleana (SAT)} \textbf{44}: Emplea algoritmos CDCL con aprendizaje de cláusulas, eficaz para problemas binarios o altamente restringidos.
 \end{itemize}
 
+Cada enfoque tiene un nicho de aplicabilidad. Por ejemplo, CP domina en scheduling con restricciones complejas, MILP en optimización logística lineal, y SAT en verificación formal donde la traducibilidad a FNC es natural \textbf{39,40}. La elección depende críticamente de la capacidad para explotar la estructura subyacente del problema —factor que explica el éxito paradójico de SAT pese a su complejidad teórica \textbf{3}.
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.85\textwidth]{sat-csp-comparison.pdf}
+%\caption{Comparación de tiempos de resolución entre modelos CSP nativos y codificaciones SAT para instancias del problema N-Reinas (Fuente: Elaboración propia basada en benchmarks de \textbf{45}).}
+%\label{fig:sat-csp-comp}
+%\end{figure}
+
+Esta sección sienta las bases para analizar en detalle la evolución de los SAT solvers (Sección \ref{sec:evolucion-sat-solvers}), donde se explorará cómo técnicas como CDCL superaron las ineficiencias teóricas mediante innovaciones algorítmicas pragmáticas.
+
+\section{Evolución de los SAT \textit{solvers}: Principio de Resolución, DP, DPLL y CDCL}
+\label{sec:evolucion-sat-solvers}
+
+La historia de los SAT \textit{solvers} representa un hito en la ciencia computacional, transformando un problema teóricamente intratable en una herramienta práctica de amplio uso industrial. Esta evolución se sustenta en tres pilares algorítmicos: el Principio de Resolución, los métodos Davis-Putnam (DP) y Davis-Putnam-Logemann-Loveland (DPLL), y la revolución moderna impulsada por los solucionadores de aprendizaje de cláusulas dirigido por conflictos (CDCL). Este recorrido no solo refleja avances técnicos, sino una comprensión profunda de cómo combinar teoría y pragmatismo para superar las barreras de complejidad inherentes al problema de la satisfacibilidad booleana (SAT)\footnote{Problema NP-completo que busca determinar si existe una asignación de verdad que satisfaga una fórmula lógica dada.}.
+
+\subsection{Principio de Resolución: Fundamento Teórico}
+El Principio de Resolución (PR), propuesto inicialmente en el contexto de la lógica proposicional, constituye la base teórica de muchos algoritmos SAT. Este principio permite derivar nuevas cláusulas a partir de un par de cláusulas existentes que contengan literales complementarios, reduciendo progresivamente la fórmula hasta detectar una contradicción o verificar su satisfacibilidad. Aunque teóricamente completo para fórmulas en Forma Normal Conjuntiva (FNC), su aplicación directa resulta impráctica debido al crecimiento explosivo en el número de cláusulas generadas \textbf{12}. No obstante, su valor conceptual sentó las bases para métodos más refinados.
+
+\subsection{Algoritmo Davis-Putnam (DP): Primer Intento Práctico}
+Introducido en 1960 \textbf{5}, el algoritmo DP fue el primer esfuerzo sistemático para operacionalizar el PR en un marco computacional. Su estrategia se centraba en la eliminación iterativa de variables mediante dos reglas: (1) \textit{eliminación de literales puros} (asignar valores a variables que aparecen con un único signo en todas las cláusulas) y (2) \textit{resolución dirigida} para eliminar variables seleccionadas. Aunque evitaba el espacio exponencial de las tablas de verdad, su dependencia de la resolución lo hacía vulnerable a explosiones combinatorias en el número de cláusulas intermedias \textbf{12}. Este defecto limitó su aplicabilidad a instancias pequeñas, pero demostró que la combinación de inferencia lógica y manipulación algebraica podía abordar SAT de manera estructurada.
+
+\subsection{Algoritmo DPLL: Búsqueda Inteligente con Retroceso}
+En 1962, Davis, Putnam, Logemann y Loveland refinaron DP mediante un giro paradigmático: reemplazaron la resolución explícita por una \textit{búsqueda con retroceso} en el espacio de asignaciones, dando origen al algoritmo DPLL \textbf{12}. Este método integra tres componentes clave:
+\begin{itemize}
+\item \textbf{Propagación Unitaria}: Asignación forzada de literales en cláusulas unitarias, reduciendo la fórmula antes de tomar decisiones.
+\item \textbf{Eliminación de Literales Puros}: Optimización heredada de DP para simplificar la fórmula.
+\item \textbf{Bifurcación con Retroceso}: Elección heurística de valores para variables no determinadas, seguida de retroceso ante conflictos.
+\end{itemize}
+
+Al operar como un recorrido en profundidad del árbol de decisiones, DPLL evita el costo de memoria de DP y se convirtió en el núcleo de los SAT \textit{solvers} clásicos \textbf{7}. Sin embargo, su eficiencia se veía mermada en problemas industriales debido a la exploración redundante de subespacios conflictivos y la ausencia de mecanismos para capitalizar información de conflictos pasados \textbf{8}. Estas limitaciones motivaron la búsqueda de estrategias que trascendieran el paradigma de fuerza bruta.
+
+\subsection{CDCL: La Revolución de los \textit{Solvers} Modernos}
+\label{subsec:cdcl}
+
+El algoritmo CDCL emergió como solución a las limitaciones estructurales de DPLL en instancias industriales. Dos innovaciones fueron fundamentales: el \textit{aprendizaje de cláusulas} y el \textit{retroceso no cronológico} \textbf{12}. El primero transforma los conflictos en conocimiento estructural mediante el análisis de implicaciones, generando cláusulas que encapsulan inconsistencias para podar futuras ramas de búsqueda \textbf{17}. El segundo permite saltar a niveles de decisión estratégicos, evitando la exploración redundante de subárboles irrelevantes \textbf{6}. Juntos, estos mecanismos resolvieron tres problemas críticos de DPLL: la explosión combinatoria por conflictos repetidos, la falta de adaptación heurística durante la búsqueda y la ineficiencia del retroceso cronológico \textbf{5,7,8}.
+
+\subsubsection{Mejoras Clave en CDCL: Heurísticas y Estrategias}
+\label{subsubsec:mejoras-cdcl}
+
+Si bien CDCL superó teóricamente a DPLL, su eficacia práctica requirió mejoras adicionales. Entre ellas destacan las heurísticas de selección de variables, estrategias de reinicio adaptativo y optimizaciones en la propagación unitaria.
+
+Las \textit{heurísticas de selección de variables} representan un equilibrio entre complejidad teórica y pragmatismo. DLIS (\textit{Dynamic Largest Individual Sum}), uno de los primeros enfoques dinámicos \textbf{17}, prioriza variables frecuentes en cláusulas insatisfechas mediante conteos estáticos \textbf{18}. Aunque intuitivo, su costo computacional lineal ($O(n)$) y su incapacidad para adaptarse a la dinámica de búsqueda lo limitaron en instancias industriales \textbf{22}. VSIDS (\textit{Variable State Independent Decaying Sum}), en contraste, introdujo un modelo basado en actividades dinámicas con decaimiento exponencial \textbf{27}. Al incrementar puntuaciones de variables en conflictos recientes y aplicar factores de olvido periódicos \textbf{28}, VSIDS logró un balance empírico entre adaptación y costo computacional ($O(1)$ mediante colas de prioridad) \textbf{30}. Sin embargo, ambas heurísticas son aproximaciones: DLIS por su simplicidad estática, VSIDS por depender de correlaciones no garantizadas entre conflictos y tiempo de resolución \textbf{10,35}.
+
+Las \textit{estrategias de reinicio adaptativo} surgieron para contrarrestar el estancamiento en regiones locales del espacio de búsqueda, un efecto colateral de heurísticas como VSIDS \textbf{44}. Técnicas como los reinicios LBD-driven en Glucose \textbf{14} vinculan la frecuencia de reinicios al Literal Block Distance promedio de cláusulas aprendidas, indicador indirecto de estancamiento. Métodos más sofisticados, como MAB (\textit{Multi-Armed Bandit}) en Kissat \textbf{37}, emplean aprendizaje en línea para seleccionar políticas de reinicio óptimas según el contexto de búsqueda. Estas estrategias reducen hasta un 70\% el tiempo de resolución en instancias modulares al reorientar la exploración sin perder cláusulas aprendidas críticas \textbf{21}.
+
+En la \textit{propagación unitaria}, optimizaciones como el esquema de Dos Literales Vigilados (TWL) \textbf{29} minimizaron el costo de detectar cláusulas unitarias, evitando inspeccionar el 90\% de las cláusulas en cada asignación \textbf{12}. Técnicas posteriores como CFUP (\textit{Core First Unit Propagation}) \textbf{96} priorizaron cláusulas con LBD $\leq$ 7, basándose en la observación empírica de que el 80\% de los conflictos ocurren en estas estructuras. Si bien CFUP carece de fundamentación teórica, su efectividad práctica lo consolidó como estándar en solvers como CaDiCaL \textbf{30}.
+
+\subsubsection{Otras Contribuciones Relevantes}
+\label{subsubsec:otras-mejoras}
+
+El ecosistema de mejoras en CDCL incluye avances complementarios. La gestión de cláusulas aprendidas mediante métricas como LBD permitió eliminar cláusulas redundantes y reciclar aquellas con alto valor predictivo (\textit{glue clauses}) \textbf{14-17}. La integración con búsqueda local, mediante técnicas como \textit{re-phasing} basado en frecuencias de conflicto \textbf{1}, mejoró hasta un 40\% el rendimiento en instancias satisfacibles. En paralelo, meta-heurísticas como AutoSAT \textbf{35} exploraron el uso de modelos de lenguaje grande (LLMs) para optimizar parámetros dinámicos, aunque su adopción práctica sigue siendo incipiente.
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.8\textwidth]{cdcl-evolucion.pdf}
+%\caption{Reducción acumulada en tiempo de ejecución atribuible a mejoras en CDCL (Fuente: Análisis de resultados de SAT Competition 2010-2023).}
+%\label{fig:cdcl-evol}
+%\end{figure}
+
+\subsection{CDCL como Motor para Problemas con Restricciones}
+La efectividad de CDCL en CSPs depende críticamente de su arquitectura adaptativa. VSIDS explota patrones emergentes en restricciones codificadas, mientras los reinicios LBD-driven manejan la modularidad típica de estos problemas \textbf{15,21}. Técnicas como CFUP, al priorizar cláusulas "core", reflejan jerarquías implícitas en redes de restricciones \textbf{96}. Esta sinergia explica por qué solvers como Kissat y Glucose se han convertido en motores subyacentes para sistemas de verificación y planificación industrial \textbf{12}.
+
+%\subsection{CDCL como Motor para Problemas con Restricciones}
+%La versatilidad de CDCL trasciende SAT: al codificar Problemas de Satisfacción de Restricciones (CSPs) en FNC, estos \textit{solvers} actúan como oráculos para la clase NP \textbf{8}. Su capacidad para generar \textit{testigos} (soluciones) o \textit{núcleos insatisfacibles} (subconjuntos conflictivos) los hace herramientas clave en verificación formal, planificación y optimización combinatoria. Además, técnicas como el aprendizaje de cláusulas han influido en el diseño de solucionadores híbridos que integran SAT con dominios específicos \textbf{12} La elección de heurísticas como VSIDS y políticas de reinicio adaptativo resulta crucial al codificar CSPs en SAT, donde la estructura de restricciones se traduce en patrones específicos de aparición de variables que estas técnicas explotan \textbf{15,22}..
+
+\subsection{Conclusión: De la Teoría a la Revolución Práctica}
+La transición desde el PR y DP hasta CDCL ilustra cómo innovaciones algorítmicas pueden superar barreras teóricas aparentemente infranqueables. Mientras DPLL sentó las bases de la integración búsqueda-inferencia, CDCL introdujo un paradigma de \textit{aprendizaje reflexivo}, donde cada conflicto alimenta la inteligencia del solver. Esta evolución, respaldada por mejoras en heurísticas y estructuras de datos, ha convertido a los SAT \textit{solvers} en pilares de la computación moderna, demostrando que incluso problemas NP-completos pueden abordarse eficientemente en escenarios prácticos \textbf{5,7,11}.
+
+
+\section{Parámetros de Evaluación para Solvers CDCL: Taxonomía de \textit{Benchmarks}}
+\label{sec:tipos-problemas}
+
+La evaluación rigurosa de solvers CDCL —particularmente en el análisis comparativo de heurísticas como VSIDS y DLIS, estrategias de reinicio y selección de cláusulas unitarias— requiere una taxonomía precisa de instancias SAT. Estas se clasifican no solo por su origen, sino por propiedades intrínsecas que revelan fortalezas y limitaciones algorítmicas \textbf{15,17}.
+
+\subsection{Clasificación por Origen y Estructura}
+Las competiciones anuales de SAT (\textit{SAT Competition}) establecen cuatro categorías canónicas \textbf{17}:
+
+\textbf{Instancias de Aplicación}: Derivadas de problemas industriales como verificación de circuitos o planificación logística \textbf{11}, exhiben estructuras modulares y \textit{backdoors} pequeños —subconjuntos de variables cuya asignación correcta simplifica drásticamente la solución \textbf{21,23}. Estas características permiten a heurísticas dinámicas como VSIDS explotar patrones locales mediante el rastreo de conflictos recientes \textbf{20}.
+
+\textbf{Instancias Combinatorias Dificultosas}: Construidas artificialmente para desafiar a los solvers (e.g., codificaciones del principio del palomar) \textbf{16}, carecen de la estructura implícita de las aplicaciones reales pero poseen simetrías y dependencias globales que prueban la capacidad de generalización de las heurísticas \textbf{19}.
+
+\textbf{Instancias Aleatorias}: Generadas mediante modelos como Random k-SAT \textbf{17}, su falta de estructura las convierte en un desafío para CDCL, donde técnicas como el aprendizaje de cláusulas muestran eficacia limitada \textbf{21}. Estas instancias son críticas para evaluar el desempeño en ausencia de sesgos estructurales.
+
+\textbf{Instancias Ágiles}: Resultantes de la conversión de problemas de lógicas superiores a SAT (\textit{bit-blasting}) \textbf{19}, testean la capacidad de manejar fórmulas con alta densidad de cláusulas y variables auxiliares.
+
+\subsection{Clasificación por Satisfacibilidad y Propiedades Estructurales}
+La naturaleza SAT o UNSAT de una instancia influye significativamente en el comportamiento del solver. Mientras las instancias SAT benefician a heurísticas que priorizan la exploración de asignaciones prometedoras (e.g., VSIDS con \textit{phase saving}), las UNSAT requieren estrategias que aceleren la refutación mediante cláusulas aprendidas de alto impacto \textbf{41}.
+
+Propiedades estructurales como la modularidad, \textit{treewidth} y presencia de \textit{backbones} (variables con valor fijo en todas las soluciones) \textbf{20,22} ofrecen insights adicionales. Por ejemplo, instancias con alta modularidad —típicas en aplicaciones industriales— permiten a los reinicios adaptativos reorientar la búsqueda hacia comunidades no exploradas \textbf{21}, mientras que un \textit{treewidth} bajo correlaciona con tiempos de resolución reducidos debido a la eficiencia de la propagación unitaria \textbf{20}.
+
+\subsection{Densidad y Transición de Fase}
+La relación cláusulas/variables (densidad) determina la dificultad en instancias aleatorias. Para 3-SAT, la transición de fase alrededor de 4.27 cláusulas por variable \textbf{25} marca el pico de complejidad, donde métodos como DLIS —basados en frecuencias estáticas— fallan ante la ausencia de patrones explotables \textbf{17}. En contraste, VSIDS combinado con reinicios dinámicos (\textit{LBD-driven}) logra navegar estas regiones mediante un balance entre explotación local y exploración global \textbf{21}.
+
+En instancias estructuradas, sin embargo, densidades altas no siempre implican mayor dificultad. Codificaciones compactas de problemas como el coloreado de grafos pueden ser resueltas eficientemente si los \textit{solvers} identifican \textit{backdoors} mediante heurísticas sensibles al contexto \textbf{23}.
+
+\subsection{Relevancia para la Evaluación de Heurísticas}
+La elección de \textit{benchmarks} es crucial al comparar técnicas como VSIDS y DLIS. Mientras DLIS —dependiente de conteos estáticos de aparición— rinde mejor en instancias aleatorias lejos de la transición de fase \textbf{18}, VSIDS domina en aplicaciones reales gracias a su adaptación dinámica \textbf{30}. Estrategias de reinicio como MAB \textbf{37} muestran ventajas en instancias modulares, donde reiniciar preservando cláusulas \textit{glue} acelera la cobertura del espacio de búsqueda \textbf{21}.
+
+Propiedades como la presencia de \textit{backbones} o bajo \textit{treewidth} permiten diseccionar el impacto de técnicas específicas. Por ejemplo, la selección de cláusulas unitarias mediante CFUP \textbf{96} reduce hasta un 40\% el tiempo en instancias con alta densidad de cláusulas \textit{core} ($LBD \leq 7$), pero tiene efecto marginal en fórmulas sin estructura comunitaria \textbf{21}.
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.85\textwidth]{benchmark-heuristicas.pdf}
+%\caption{Desempeño comparativo de VSIDS vs DLIS en diferentes clases de \textit{benchmarks} (Fuente: Análisis de resultados de SAT Competition 2018-2023).}
+%\label{fig:heuristicas-bench}
+%\end{figure}
+
+Este marco taxonómico no solo sistematiza la evaluación de solvers, sino que guía el diseño de heurísticas híbridas. Por ejemplo, la integración de VSIDS con métricas de centralidad de grafos \textbf{22} ha demostrado mejorar la cobertura en instancias combinatorias, mientras el acoplamiento con búsqueda local \textbf{1} beneficia a instancias ágiles. La elección estratégica de \textit{benchmarks} representa, así, un puente entre la complejidad teórica de SAT y su aplicabilidad práctica.
 
 
 
