@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  25 MAY 2025 00:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  25 MAY 2025 17:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1329,15 +1329,19 @@ Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
 \mc@col@check@num=\count513
 )
 \@float@every@table=\toks45
+
+(C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
 \@nomenclaturefile=\write5
 \openout5 = `Thesis.nlo'.
 
-Package nomencl Info: Writing nomenclature file Thesis.nlo on input line 66.
+Package nomencl Info: Writing nomenclature file Thesis.nlo on input line 74.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 85
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 93
 .
 
 (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
@@ -1357,27 +1361,27 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 (BackMatter/Bibliography.aux))
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Info: Redefining \. on input line 85.
-LaTeX Info: Redefining \% on input line 85.
-Package tocbasic Info: usage of `tocbibind' detected on input line 85.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Info: Redefining \. on input line 93.
+LaTeX Info: Redefining \% on input line 93.
+Package tocbasic Info: usage of `tocbibind' detected on input line 93.
 
 (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -1433,9 +1437,9 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Thesis.bbl' not found.
 
 No file Thesis.bbl.
-Package biblatex Info: Reference section=0 on input line 85.
-Package biblatex Info: Reference segment=0 on input line 85.
-Package hyperref Info: Link coloring ON on input line 85.
+Package biblatex Info: Reference section=0 on input line 93.
+Package biblatex Info: Reference segment=0 on input line 93.
+Package hyperref Info: Link coloring ON on input line 93.
 (Thesis.out) (Thesis.out)
 \@outlinefile=\write6
 \openout6 = `Thesis.out'.
@@ -1445,11 +1449,11 @@ Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count520
-Package tocbasic Info: setting babel extension for `lol' on input line 85.
+Package tocbasic Info: setting babel extension for `lol' on input line 93.
 <Graphics/uhlogo.pdf, id=138, 375.98297pt x 481.67456pt>
 File: Graphics/uhlogo.pdf Graphic file (type pdf)
 <use Graphics/uhlogo.pdf>
-Package pdftex.def Info: Graphics/uhlogo.pdf  used on input line 88.
+Package pdftex.def Info: Graphics/uhlogo.pdf  used on input line 96.
 (pdftex.def)             Requested size: 49.79231pt x 63.7885pt.
 
 
@@ -1679,19 +1683,74 @@ Package pdftex.def Info: Graphics/arboldp.png  used on input line 88.
 [15]
 
 [16]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+67.
+ (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 
 [17]
 
-[18])
+[18]
 
 [19]
+
+[20]
+
+[21]
+
+[22]
+
+[23]
+
+[24]
+Overfull \hbox (21.81699pt too wide) in paragraph at lines 401--402
+[]\T1/lmr/m/n/12 Una vez en-con-tra-da una cláu-su-la de con-flic-to, se lla-ma
+ al mé-to-do \T1/lmr/m/it/12 con-flict_analysis(self,
+ []
+
+
+
+[25]
+
+[26]
+
+[27]
+
+[28]
+
+[29]
+
+[30]
+
+[31]
+
+[32]
+
+[33]
+
+[34]
+
+[35]
+
+[36]
+
+[37]
+
+[38]
+
+[39]
+
+[40])
+
+[41]
 \openout2 = `MainMatter/Proposal.aux'.
 
  (MainMatter/Proposal.tex
 Cap\'{\i }tulo 3.
 )
 
-[20
+[42
 
 
 
@@ -1703,7 +1762,7 @@ Cap\'{\i }tulo 3.
 Cap\'{\i }tulo 4.
 )
 
-[21
+[43
 
 
 
@@ -1713,7 +1772,7 @@ Cap\'{\i }tulo 4.
 
  (BackMatter/Conclusions.tex)
 
-[22
+[44
 
 
 
@@ -1724,7 +1783,7 @@ Cap\'{\i }tulo 4.
 
  (BackMatter/Recomendations.tex)
 
-[23
+[45
 
 
 
@@ -1768,11 +1827,11 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37143 strings out of 469941
- 707944 string characters out of 5469431
- 1669680 words of memory out of 5000000
- 63188 multiletter control sequences out of 15000+600000
- 729457 words of font info for 108 fonts, out of 8000000 for 9000
+ 38399 strings out of 469941
+ 724210 string characters out of 5469431
+ 1847424 words of memory out of 5000000
+ 63752 multiletter control sequences out of 15000+600000
+ 729775 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,12n,121p,1665b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
@@ -1790,10 +1849,11 @@ ers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Us
 ers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Us
 ers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Use
 rs/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/User
+s/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/User
 s/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/uncb8a.pfb>
-Output written on Thesis.pdf (33 pages, 492346 bytes).
+Output written on Thesis.pdf (55 pages, 669515 bytes).
 PDF statistics:
- 470 PDF objects out of 1000 (max. 8388607)
- 92 named destinations out of 1000 (max. 500000)
+ 1369 PDF objects out of 1440 (max. 8388607)
+ 777 named destinations out of 1000 (max. 500000)
  287 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -213,14 +213,6 @@ class SATSolver:
                 self.backjump(backjump_level)
                 self.decision_level = backjump_level
             else:
-                # Check if every variable has been assigned.
-                # all_vars = set()
-                # for clause in self.formula:
-                #     for literal in clause:
-                #         all_vars.add(abs(literal))
-                # if all(v in self.assignments for v in all_vars):
-                #     return self.assignments
-                # Otherwise, choose a branching variable.
                 var = self.pick_branching_variable()
                 if var is None:
                     return self.assignments
@@ -261,6 +253,15 @@ if __name__ == "__main__":
         print("Formula 4 is UNSAT")
     else:
         print("Formula 4 is SAT with assignment:", solution4)
+
+                # Check if every variable has been assigned.
+                # all_vars = set()
+                # for clause in self.formula:
+                #     for literal in clause:
+                #         all_vars.add(abs(literal))
+                # if all(v in self.assignments for v in all_vars):
+                #     return self.assignments
+                # Otherwise, choose a branching variable.
 
     # def conflict_analysis(self, conflict_clause):
     #     """
