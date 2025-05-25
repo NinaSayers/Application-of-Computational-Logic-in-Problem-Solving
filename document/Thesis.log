@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  24 MAY 2025 03:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  25 MAY 2025 00:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1665,27 +1665,33 @@ Cap\'{\i }tulo 2.
 
 
 ]
-<Graphics/arboldp.png, id=301, 406.51875pt x 199.947pt>
+
+[13]
+<Graphics/arboldp.png, id=307, 406.51875pt x 199.947pt>
 File: Graphics/arboldp.png Graphic file (type png)
 <use Graphics/arboldp.png>
-Package pdftex.def Info: Graphics/arboldp.png  used on input line 62.
+Package pdftex.def Info: Graphics/arboldp.png  used on input line 88.
 (pdftex.def)             Requested size: 346.89731pt x 170.62695pt.
 
 
-[13]
-
 [14 <./Graphics/arboldp.png>]
 
-[15])
+[15]
 
 [16]
+
+[17]
+
+[18])
+
+[19]
 \openout2 = `MainMatter/Proposal.aux'.
 
  (MainMatter/Proposal.tex
 Cap\'{\i }tulo 3.
 )
 
-[17
+[20
 
 
 
@@ -1697,7 +1703,7 @@ Cap\'{\i }tulo 3.
 Cap\'{\i }tulo 4.
 )
 
-[18
+[21
 
 
 
@@ -1707,7 +1713,7 @@ Cap\'{\i }tulo 4.
 
  (BackMatter/Conclusions.tex)
 
-[19
+[22
 
 
 
@@ -1718,7 +1724,7 @@ Cap\'{\i }tulo 4.
 
  (BackMatter/Recomendations.tex)
 
-[20
+[23
 
 
 
@@ -1751,7 +1757,7 @@ L3 programming layer <2025-04-14>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: CABD0BEDFA59DD00DBD9111AEA94E567;7710.
+(rerunfilecheck)             Checksum: 2176A1AC52F6F08A9506712F20FB92FB;7705.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                Thesis
@@ -1762,30 +1768,32 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37107 strings out of 469941
- 707480 string characters out of 5469431
- 1669681 words of memory out of 5000000
- 63166 multiletter control sequences out of 15000+600000
- 720625 words of font info for 105 fonts, out of 8000000 for 9000
+ 37143 strings out of 469941
+ 707944 string characters out of 5469431
+ 1669680 words of memory out of 5000000
+ 63188 multiletter control sequences out of 15000+600000
+ 729457 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,12n,121p,1170b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,12n,121p,1665b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
-b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.p
-fb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.p
-fb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.p
-fb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pf
-b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb
-><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb>
-<C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><
-C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:
-/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/U
-sers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/U
-sers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/U
-sers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Us
-ers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/uncb8a.pfb>
-Output written on Thesis.pdf (30 pages, 444693 bytes).
+b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb
+><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pf
+b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pf
+b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pf
+b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb
+><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb>
+<C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><
+C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C
+:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/
+Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Us
+ers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Us
+ers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Us
+ers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Use
+rs/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/User
+s/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/uncb8a.pfb>
+Output written on Thesis.pdf (33 pages, 492346 bytes).
 PDF statistics:
- 431 PDF objects out of 1000 (max. 8388607)
- 81 named destinations out of 1000 (max. 500000)
+ 470 PDF objects out of 1000 (max. 8388607)
+ 92 named destinations out of 1000 (max. 500000)
  287 words of extra memory for PDF output out of 10000 (max. 10000000)
 
