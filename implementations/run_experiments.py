@@ -30,7 +30,7 @@ FLAG_TIME = "-t 360"
 CADICAL_EXECUTABLE = "./cadical/build/cadical"  # Ajusta la ruta si es necesario
 # ====================================================
 
-INPUT_DIR = "./"
+INPUT_DIR = "./run/media/massy/massyta/universidad_nuevo/tesis/muestra_representativa/"
 OUTPUT_CSV = "resultados_experimento.csv"
 
 COMBINACIONES = [
@@ -158,7 +158,7 @@ def ejecutar_solver(path_cnf, flags):
             [CADICAL_EXECUTABLE] + flags + [path_cnf],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            timeout=60,
+            timeout=360,
             text=True
         )
         duracion = time.time() - inicio
