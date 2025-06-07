@@ -1129,21 +1129,21 @@ bool Internal::traverse_clauses (ClauseIterator &it) {
 }
 
 
-int Internal::count_literal_in_unsatisfied_binary_clauses(int lit) {
-  int count = 0;
-  const Watches &ws = watches(lit);
-  for (const Watch &w : ws) {
-    if (!w.binary()) continue;
-    int other = w.blit;
-    if (val(lit) > 0 || val(other) > 0) continue;
-    count++;
-  }
-  return count;
-}
+// int Internal::count_literal_in_unsatisfied_binary_clauses(int lit) {
+//   int count = 0;
+//   const Watches &ws = watches(lit);
+//   for (const Watch &w : ws) {
+//     if (!w.binary()) continue;
+//     int other = w.blit;
+//     if (val(lit) > 0 || val(other) > 0) continue;
+//     count++;
+//   }
+//   return count;
+// }
 
-int Internal::compute_dlis_score(int lit) {
-  return count_literal_in_unsatisfied_binary_clauses(lit);
-}
+// int Internal::compute_dlis_score(int lit) {
+//   return count_literal_in_unsatisfied_binary_clauses(lit);
+// }
 
 // int Internal::pick_dlis_branch_literal() {
 //   int best_lit = 0, best_score = -1;
@@ -1171,16 +1171,45 @@ int Internal::compute_dlis_score(int lit) {
 
 // ---------------------------------------------------------------------------
 
+bool Internal::clause_is_satisfied(Clause *c) {
+  for (const int lit : *c)
+    if (val(lit) > 0) return true;
+  return false;
+}
 
-/**
- * Recorre la lista de variables sin asignar (usando `queue.unassigned` y `link(...).prev`)
- * y calcula la puntuación DLIS de cada literal (positivo y negativo). Devuelve
- * el literal (por ejemplo, +x o -x) cuya puntuación sea la máxima, o cero si
- * no hubiera variables sin asignar.
- *
- * De forma interna, utiliza count_literal_in_unsatisfied_binary_clauses() para
- * calcular la "frecuencia en cláusulas binarias no satisfechas" de cada literal.
- */
+/// Cuenta ocurrencias de un literal 'lit' en cláusulas binarias
+/// no basura y no satisfechas, optimizando la llamada a val(lit).
+int Internal::count_literal_in_unsatisfied_binary_clauses (int lit) {
+  int count = 0;
+  // Cacheamos una sola vez el valor de 'lit'.
+  const signed char val_lit = val (lit);
+  // Recorremos su lista de watchers
+  const Watches &ws = watches (lit);
+  for (const Watch &w : ws) {
+    if (!w.binary ()) continue;          // Solo cláusulas binarias
+    Clause *c = w.clause;                
+    if (!c || c->garbage) continue;      // Saltar nulos y garbage
+    int other = w.blit;                  // El otro literal de la cláusula
+    // Si 'lit' o 'other' ya son verdaderos, la cláusula está satisfecha
+    if (val_lit > 0 || val (other) > 0) continue;
+    ++count;
+  }
+  return count;
+}
+
+int Internal::compute_dlis_score(int lit) {
+  return count_literal_in_unsatisfied_binary_clauses(lit);
+}
+
+// /**
+//  * Recorre la lista de variables sin asignar (usando `queue.unassigned` y `link(...).prev`)
+//  * y calcula la puntuación DLIS de cada literal (positivo y negativo). Devuelve
+//  * el literal (por ejemplo, +x o -x) cuya puntuación sea la máxima, o cero si
+//  * no hubiera variables sin asignar.
+//  *
+//  * De forma interna, utiliza count_literal_in_unsatisfied_binary_clauses() para
+//  * calcular la "frecuencia en cláusulas binarias no satisfechas" de cada literal.
+//  */
 int Internal::next_decision_variable_with_dlis () {
   int best_lit = 0;
   int best_score = -1;
@@ -1213,10 +1242,32 @@ int Internal::next_decision_variable_with_dlis () {
   }
 
   LOG ("next DLIS decision literal %d with score %d", best_lit, best_score);
-  return best_lit;
+  return abs(best_lit);
 }
 
+// OTRA IMPLEMENTACION
+int Internal::pick_dlis_branch_literal() {
+  int best_lit = 0, best_score = -1;
 
+  for (int idx = 1; idx <= max_var; ++idx) {
+    if (val(idx)) continue;
+
+    int pos_score = compute_dlis_score(idx);
+    int neg_score = compute_dlis_score(-idx);
+
+    if (pos_score > best_score) {
+      best_score = pos_score;
+      best_lit = idx;
+    }
+
+    if (neg_score > best_score) {
+      best_score = neg_score;
+      best_lit = -idx;
+    }
+  }
+
+  return best_lit;
+}
 
 
 } // namespace CaDiCaL

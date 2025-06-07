@@ -371,9 +371,10 @@ struct Internal {
   }
 
   // DLIS
+  int next_decision_variable_with_dlis ();
+  bool clause_is_satisfied(Clause *c);
   int count_literal_in_unsatisfied_binary_clauses(int lit);
   int compute_dlis_score(int lit);
-  int next_decision_variable_with_dlis ();
   int pick_dlis_branch_literal();
 
   // Unsigned version with LSB denoting sign.  This is used in indexing
@@ -395,7 +396,6 @@ struct Internal {
     assert (lrat || frat);
     return unit_clauses_idx[lit];
   }
-
   // Helper functions to access variable and literal data.
   //
   Var &var (int lit) { return vtab[vidx (lit)]; }

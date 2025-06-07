@@ -21,12 +21,12 @@ from collections import Counter
 #         CONFIGURACIÓN DE FLAGS DE CADICAL
 # ====================================================
 FLAG_VSIDS = "--score=false"  # VSIDS implícito
-FLAG_DLIS_TRUE = "--dlis=true --bump=false --bumpreason=false"
+FLAG_DLIS_TRUE = "--dlis=true --score=false --bump=false --bumpreason=false"
 FLAG_DLIS_FALSE = "--dlis=false"
-FLAG_RESTART = ""
+FLAG_RESTART = "--restart=true"
 FLAG_NO_RESTART = "--restart=false"
 FLAG_STATS = "--stats"
-FLAG_TIME = "-t 60"
+FLAG_TIME = "-t 360"
 CADICAL_EXECUTABLE = "./cadical/build/cadical"  # Ajusta la ruta si es necesario
 # ====================================================
 

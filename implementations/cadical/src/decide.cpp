@@ -212,20 +212,27 @@ int Internal::decide () {
   } else {
 
     int decision = 0;
+    int idx = 0;
+    int threshold = std::max(100, (int)std::sqrt(internal->max_var));
 
-    if (opts.dlis) {
-      LOG ("using DLIS decision heuristic");
-      decision = next_decision_variable_with_dlis ();
-      // decision = pick_dlis_branch_literal ();
-      if (!decision)
-        LOG ("DLIS found no literal, falling back");
+    // if (opts.dlis) {
+    //   LOG ("using DLIS decision heuristic");
+    //   decision = next_decision_variable_with_dlis ();
+    //   // decision = pick_dlis_branch_literal ();
+    //   if (!decision)
+    //     LOG ("DLIS found no literal, falling back");
+    // }
+    
+    if (opts.dlis && stats.decisions < threshold) {
+      //decision = pick_dlis_branch_literal();
+      idx = next_decision_variable_with_dlis ();
+      LOG ("DLIS decision literal %d", decision);
+    } else {
+      idx = next_decision_variable ();
     }
-
-    if (!decision) {
-      int idx = next_decision_variable ();
-      const bool target = (opts.target > 1 || (stable && opts.target));
-      if (idx) decision = decide_phase (idx, target);
-    }
+    const bool target = (opts.target > 1 || (stable && opts.target));
+    if (idx) decision = decide_phase (idx, target);
+    
 
     if (decision) {
       stats.decisions++;
