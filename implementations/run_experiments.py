@@ -30,7 +30,7 @@ FLAG_TIME = "-t 60"
 CADICAL_EXECUTABLE = "./cadical/build/cadical"  # Ajusta la ruta si es necesario
 # ====================================================
 
-INPUT_DIR = "./48_benchmarks/"
+INPUT_DIR = "./generated_benchmarks/"
 OUTPUT_CSV = "resultados_experimento.csv"
 
 COMBINACIONES = [
@@ -199,38 +199,35 @@ def main():
         print("No se encontraron archivos .cnf en la carpeta de entrada.")
         return
 
-    with open(OUTPUT_CSV, 'w', newline='') as csvfile:
-        writer = None
 
-        for archivo in archivos_cnf:
-            path_cnf = os.path.join(INPUT_DIR, archivo)
-            caracteristicas = extraer_caracteristicas_cnf(path_cnf)
+    for archivo in archivos_cnf:
+        path_cnf = os.path.join(INPUT_DIR, archivo)
+        caracteristicas = extraer_caracteristicas_cnf(path_cnf)
 
-            for comb in COMBINACIONES:
-                flags = construir_flags(comb)
-                print(f"Procesando {archivo} con VSIDS={comb['vsids']} DLIS={comb['dlis']} RESTART={comb['restart']}...")
-                stats = ejecutar_solver(path_cnf, flags)
+        for comb in COMBINACIONES:
+            flags = construir_flags(comb)
+            print(f"Procesando {archivo} con VSIDS={comb['vsids']} DLIS={comb['dlis']} RESTART={comb['restart']}...")
+            stats = ejecutar_solver(path_cnf, flags)
 
-                fila = {
-                    "nombre_cnf": archivo,
-                    "vsids": comb["vsids"],
-                    "dlis": comb["dlis"],
-                    "restart": comb["restart"],
-                    "resultado": stats.get("resultado", "UNKNOWN"),
-                    **caracteristicas,
-                    **{k: v for k, v in stats.items() if k not in {"resultado", "timeout", "error"}}
+            fila = {
+                "nombre_cnf": archivo,
+                "vsids": comb["vsids"],
+                "dlis": comb["dlis"],
+                "restart": comb["restart"],
+                "resultado": stats.get("resultado", "UNKNOWN"),
+                **caracteristicas,
+                **{k: v for k, v in stats.items() if k not in {"resultado", "timeout", "error"}}
 
-                }
-
-                if writer is None:
-                    columnas = list(fila.keys())
-                    writer = csv.DictWriter(csvfile, fieldnames=columnas)
-                    writer.writeheader()
-                    # Rellenar valores faltantes con None
+            }
+            with open(OUTPUT_CSV, 'a', newline='') as csvfile:
+                columnas = list(fila.keys())
+                writer = csv.DictWriter(csvfile, fieldnames=columnas)
+                writer.writeheader()
+                # Rellenar valores faltantes con None
                 fila_filtrada = {col: fila.get(col, None) for col in writer.fieldnames}
                 writer.writerow(fila_filtrada)
 
-                #fila_filtrada = {k: fila[k] for k in writer.fieldnames}
+            #fila_filtrada = {k: fila[k] for k in writer.fieldnames}
 
 
 if __name__ == "__main__":
