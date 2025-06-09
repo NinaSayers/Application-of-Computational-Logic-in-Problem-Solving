@@ -1,100 +1,103 @@
-\chapter{Algoritmos}\label{chapter:algorithms}
+\chapter{Algoritmos}
+\label{chapter:algorithms}
 
 \section{DP/DPLL}
 
 \subsection{Principio de Resolución (PR)}
-El Principio de Resolución (PR) es una de las primeras técnicas aplicadas para intentar resolver SAT.
+El Principio de Resolución (PR) constituye una técnica fundamental para abordar el problema SAT. Dada una fórmula en Forma Normal Conjuntiva (FNC), cada cláusula se representa como un conjunto de literales, evitando repeticiones tanto dentro de una cláusula como en la fórmula completa. A partir de esta representación, PR identifica pares de cláusulas que contienen literales complementarios y genera una nueva cláusula al unir ambas y eliminar el literal y su negación.
 
-Dada una fórmula de la Lógica Proposicional escrita en Forma Normal Conjuntiva (FNC), esta se representa en su forma conjuntual, donde cada cláusula constituye un conjunto de literales y la fórmula en general es un conjunto de conjuntos. Gracias al concepto de ``conjunto'' esta representación evita la repetición de literales en las cláusulas, así como aquellas que aparezcan más de una vez en la FNC. 
+Concretamente, si \(\mathbf{B}\) y \(\mathbf{C}\) son cláusulas de la FNC \(\mathbf{A}\) tales que \(l\in\mathbf{B}\) y \(\neg l\in\mathbf{C}\), entonces la cláusula resultante se define como:
+\[
+\mathbf{D}=(\mathbf{B}\setminus\{l\})\cup(\mathbf{C}\setminus\{\neg l\})
+\]
+En este proceso, \(\mathbf{B}\) y \(\mathbf{C}\) actúan como cláusulas padres o premisas, mientras que \(\mathbf{D}\) corresponde al solvente o conclusión.
 
-Tomando esta representación como entrada, PR busca iterativamente pares de clásulas que contengan literales opuestos, para a partir de ellas generar una nueva clásula que constituya la unión de ambas, quitando eliminando el literal en cuestión y su opuesto. Es decir:
-
-Sean $\textbf{B}$ y $\textbf{C}$ dos cláusulas de la FNC $\textbf{A}$, tales que $l \in \textbf{B}$ y $\neg l \in \textbf{C}$, donde $l$ es un literal y $\neg l$ su opuesto; entonces la cláusula resultante sería:
-\begin{equation*}
-\textbf{D} = (\textbf{B}-\{l\}) \cup (\textbf{C}-\{\neg l\})
-\end{equation*}
-
-Aquí las cláusulas $\textbf{B}$ y $\textbf{C}$ se denominan ``cláusulas padres'' o ``premisas'' y $\textbf{D}$ constituye el ``solvente'' o ``conclusión'' de $\textbf{B}$ y $\textbf{C}$.
-
-Téngase en cuenta el siguiente ejemplo para una mejor comprensión.
-
-\begin{equation*}
-\frac{\{\neg p, \neg q, \neg r\},\{\neg p, q, \neg r\}}{\{\neg p, \neg r\}}
-\end{equation*}
-
-\begin{equation*}
-\frac{\{\neg q\},\{q\}}{\{\}}
-\end{equation*}
-
+Por ejemplo, la resolución de las cláusulas
+\[
+\{\neg p,\neg q,\neg r\}\quad y\quad\{\neg p,q,\neg r\}
+\]
+produce
+\[
+\{\neg p,\neg r\}
+\]
+Asimismo, la combinación de
+\[
+\{\neg q\}\quad y\quad\{q\}
+\]
+conduce a la cláusula vacía, lo que evidencia la insatisfacibilidad de la fórmula.
 
 
+\subsubsection{Resoluci\'on Unitaria (RU)}
+Una instancia particular del Principio de Resoluci\'on (PR) es la Resoluci\'on Unitaria (RU), en la cual una de las premisas es una cl\'ausula unitaria\footnote{Una cl\'ausula que contiene un \'unico literal, y por tanto, fuerza su valor a ser verdadero bajo una interpretaci\'on determinada.}. Este caso especial adquiere relevancia por su simplicidad y eficiencia, ya que permite deducciones inmediatas a partir de asignaciones forzadas.
 
-El objetivo principal de PR es refutar $\textbf{A}$ si esta es insatisfacible, derivando una cláusula vacía ($\{\}$). Es decir, si $\{\} \in \textbf{A}$ entonces $\textbf{A}$ es insatisfacible, y si $\{\} = \textbf{A}$ entonces $\textbf{A}$ es satisfacible.
-
-\subsubsection{Resolución Unitaria (RU)}
-Un caso particular de PR es Resolución Unitaria (RU), donde una de las ``cláusulas padres'' es una cláusula unitaria \footnote{Cláusula que contiene un único literal, por ende su valor se ve forzado a ser 1.} Por ejemplo:
+El proceso consiste en identificar una cl\'ausula unitaria y aplicarla sobre otra cl\'ausula que contenga el literal complementario, elimin\'andolo y generando una nueva cl\'ausula m\'as restringida. Por ejemplo:
 
 \begin{equation*}
 \dfrac{\{\neg q, p, \neg r\},\{r\}}{\{\neg q, p\}}
 \end{equation*}
 
+En este caso, la cl\'{a}usula unitaria \( \{r\} \) permite simplificar la cl\'{a}usula \( \{\neg q, p, \neg r\} \), eliminando el literal \( \neg r \) y generando una nueva cl\'{a}usula \( \{\neg q, p\} \). Esta operaci\'{o}n puede aplicarse iterativamente, facilitando la propagaci\'{o}n de valores l\'{o}gicos en la f\'{o}rmula original, y constituye un componente fundamental en algoritmos como DPLL y CDCL, donde se utiliza para propagar restricciones a lo largo del proceso de asignaci\'{o}n.
 
 \subsection{Davis-Putnam (DP)}
-Uno de los primeros algoritmos para resolver SAT fue Davis-Putnam (DP), donde PR constituye uno de sus pilares. DP realiza tres procedimientos fundamentales: Propagación Unitaria (PU), Eliminación de Literales Puros (ELP) y Resolución Basada en División (RD). PU busca en la FNC de entrada clásulas unitarias y procede a eliminarlas de la fórmula, además de eliminar el literal complemntario de cada cláusula donde aparezca. ELP busca los literales que tengan una única polaridad en toda la fórmula (no exista su complementario) y procede a eliminar aquellas cláusula que contengan literales puros. Ambas, PU y ELP, son preprocesamientos que buscan simplificar lo más posible la FNC. Una vez realizados, DP procede con RD donde asigna un valor (0 o 1) a una variable y continúa recursivamente aplicando DP hasta encontrar poder decidir si la FNC es satisfacible o no. Véase el ejemplo a continuación:
+Uno de los primeros algoritmos propuestos para la resolución del problema SAT fue el de Davis-Putnam (DP), cuyo funcionamiento se basa en gran medida en el Principio de Resolución (PR). Este algoritmo implementa tres procedimientos fundamentales: la Propagación Unitaria (PU), la Eliminación de Literales Puros (ELP) y la Resolución Basada en División (RD).
 
-Sean las siguientes, fórmulas de la Lógica Proposicional
+La Propagación Unitaria (PU) identifica cláusulas unitarias dentro de la fórmula en forma normal conjuntiva (FNC) y procede a asignar forzosamente el valor correspondiente al literal involucrado. A continuación, elimina de la fórmula todas las cláusulas satisfechas por dicha asignación, y también suprime el literal complementario en aquellas cláusulas donde aparezca. Por su parte, la Eliminación de Literales Puros (ELP) detecta literales cuya polaridad es única en toda la fórmula (es decir, cuyo complemento no se encuentra presente) y elimina las cláusulas en las que aparezcan, pues estas pueden satisfacerse directamente sin afectar la satisfacibilidad de la fórmula. Tanto PU como ELP se consideran técnicas de preprocesamiento, destinadas a simplificar la FNC antes de aplicar los pasos recursivos del algoritmo.
 
-\begin{equation*}
-r, [q \land r] \implies p, [q \lor r ] \implies \neg p, [\neg q \land r] \implies \neg p, \neg s \implies p
-\end{equation*}
+Una vez agotadas estas simplificaciones, DP procede con la Resolución Basada en División (RD), que consiste en seleccionar una variable, asignarle un valor (0 o 1) y continuar la resolución de forma recursiva sobre la fórmula resultante. Esta estrategia permite explorar sistemáticamente el espacio de soluciones posibles hasta determinar si la fórmula es satisfacible o no.
 
-
-A paritr de la conjunción de estas, se obtiene la siguiente FNC:
+Sean las siguientes fórmulas de la Lógica Proposicional:
 
 \begin{equation*}
-{\{r\}, \{p,\neg q, \neg r\}, \{\neg p, \neg q\}, \{\neg p, \neg r\}, \{\neg p,q,\neg r\}, \{p,s\}}
+    r, \quad [q \land r] \implies p, \quad [q \lor r] \implies \neg p, \quad [\neg q \land r] \implies \neg p, \quad \neg s \implies p
 \end{equation*}
 
-Aplicando \textbf{PU} en $\{r\}$:
+A partir de la conjunción de estas proposiciones, se obtiene la siguiente forma normal conjuntiva (FNC):
 
 \begin{equation*}
-\{\{p,\neg q\},\{\neg p,\neg q\},\{\neg p\},\{\neg p,q\},\{p,s\}\}
+    \{\{r\}, \{p,\neg q, \neg r\}, \{\neg p, \neg q\}, \{\neg p, \neg r\}, \{\neg p, q, \neg r\}, \{p, s\}\}
 \end{equation*}
 
-Aplicando \textbf{PU} en $\{\neg p\}$:
+Aplicando \textbf{Propagación Unitaria (PU)} sobre la cláusula unitaria $\{r\}$, se eliminan todas las cláusulas que contienen $r$ y se suprime $\neg r$ de las restantes:
 
 \begin{equation*}
-\{\{\neg q\},\{s\}\}
+    \{\{p,\neg q\}, \{\neg p,\neg q\}, \{\neg p\}, \{\neg p,q\}, \{p,s\}\}
 \end{equation*}
 
-Aplicando \textbf{PU} en $\{\neg q\}$:
+Posteriormente, al aplicar \textbf{PU} sobre la cláusula unitaria $\{\neg p\}$, se elimina toda cláusula que contenga $\neg p$ y se remueve $p$ de las demás:
 
 \begin{equation*}
-\{\{s\}\}
+    \{\{\neg q\}, \{s\}\}
 \end{equation*}
 
-Aplicando \textbf{PU} en $\{s\}$:
+Aplicando nuevamente \textbf{PU} sobre $\{\neg q\}$:
 
 \begin{equation*}
-\{\}
+    \{\{s\}\}
 \end{equation*}
 
-Luego la fórmula es satisfacible.
+Y finalmente, aplicando \textbf{PU} sobre $\{s\}$:
 
-DP requiere una memoria exponencial ya que evalúa todas las posibles asignaciones para las variables, generando un árbol de decisión como espacio de búsqueda que crece exponencialmente.
+\begin{equation*}
+    \{\}
+\end{equation*}
+
+Dado que la fórmula ha sido completamente reducida sin generar contradicciones, se concluye que la instancia es satisfacible.
+
+Cabe señalar que el algoritmo Davis-Putnam requiere memoria exponencial en el peor de los casos, ya que explora todas las asignaciones posibles para las variables. Esto se traduce en un árbol de decisión cuyo tamaño crece exponencialmente con el número de variables involucradas.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{Graphics/arboldp.png}
-    \caption{Posible espacio de búsqueda de una FNC}
+    \caption{Posible espacio de b\'usqueda de una FNC}
     \label{fig:arbol DP}
 \end{figure}
 
 \subsection{Davis-Putnam-Logemann-Loveland (DPLL)}
-El algoritmo Davis-Putnam-Logemann-Lovelans (DPLL) aplica las mismas bases que DP, excepto que resuelve el problema de la memoria exponencial al realizar un \textit{backtrack} cronológico (al nivel anterior de decisión) en el árbol de asignaciones una vez encontrada una ``cláusula de conflicto''\footnote{Se denomina cláusula de conflicto a aquella cláusula cuyos literales evaluaron a 0 tras una asignación.}. Con este método, DPLL utiliza una estrategia \textit{``lazy''} para generar el árbol, dado que antes de ramificarse (otorgar un valor a una variable) verifica que no haya conflictos, garantizando que las asiganaciones válidas para la fórmula de entrada se encuentren en las hojas del árbol de decisión. Obsérvese que si un conflicto se produce en el nivel de decisión 0 y ambos valores para la variable ya han sido examinados, entonces se concluye que la fórmula es insatisfacible. Este proceso realizado por DPLL se denomina ramificación + propagación unitaria + retroceso.
+El algoritmo Davis-Putnam-Logemann-Loveland (DPLL) constituye una mejora significativa del método Davis-Putnam (DP), al preservar sus fundamentos teóricos y superar una de sus principales limitaciones: el consumo exponencial de memoria. Para ello, DPLL incorpora un mecanismo de retroceso (	extit{backtracking}) cronológico que le permite deshacer asignaciones al regresar al último nivel de decisión anterior una vez detectada una “cláusula de conflicto”ootnote{Se denomina cláusula de conflicto a aquella en la que todos sus literales son evaluados como falsos bajo una asignación parcial.}. Este enfoque permite explorar el árbol de búsqueda de forma más eficiente, reduciendo la necesidad de almacenar todas las ramas posibles.
 
-Cabe destacar que DPLL tiene una etapa de preprocesamiento de la FNC, sobre la cual se aplican leyes de la Lógica Proposicional, así como se eliminan cláusulas redundantes mediante la aplicación de la subsunción de cláusulas\footnote{Sean $C$ y $C'$, cláusulas de una FNC; si $C' \subseteq C$, entonces se elimina $C'$ de la FNC.}. 
+DPLL adopta una estrategia de generación “lazy” del árbol de asignaciones: antes de realizar una nueva ramificación, verifica mediante propagación unitaria si existen conflictos que invaliden dicha extensión. Esta verificación garantiza que las asignaciones parciales se mantengan consistentes, y que las soluciones (cuando existen) se ubiquen en las hojas del árbol de decisión. En caso de que el conflicto se produzca en el nivel de decisión cero, y ambas asignaciones posibles para una variable hayan sido consideradas, se concluye que la fórmula es insatisfacible. En conjunto, el procedimiento de DPLL puede resumirse como una combinación de ramificación, propagación unitaria y retroceso sistemático.
 
+Adicionalmente, DPLL incluye una etapa de preprocesamiento sobre la f\'ormula en Forma Normal Conjuntiva (FNC), en la cual se aplican simplificaciones basadas en leyes de la L\'ogica Proposicional. Entre estas se encuentra la eliminaci\'on de cl\'ausulas redundantes mediante el principio de subsunci\'on\footnote{Sean $C$ y $C'$ dos cl\'ausulas de una FNC; si $C' \subseteq C$, entonces $C'$ se considera subsumida por $C$ y puede eliminarse sin alterar la satisfacibilidad de la f\'ormula.}. Estas t\'ecnicas contribuyen a reducir el tama\~no de la instancia antes de la b\'usqueda propiamente dicha, mejorando la eficiencia del algoritmo sin comprometer su completitud.
 Obsérvese el siguiente ejemplo:
 
 Sea la FNC:
@@ -103,7 +106,7 @@ Sea la FNC:
 \{\{\neg p,\neg q\},\{\neg p, \neg q\},\{\neg p,q,\neg r\},\{\neg p,r,s\},\{p,s\}\}
 \end{equation*}
 
-Simplificando mediante la Ley de Absorción:
+Simplificando mediante la ley de absorción:
 
 \begin{equation*}
 \{\{\neg p,\neg q\},\{\neg p,q,\neg r\},\{\neg p,r,s\},\{p,s\}\}
@@ -115,52 +118,44 @@ Eliminando el literal puro $s$:
 \{\{\neg p,\neg q\},\{\neg p,q,\neg r\}\}
 \end{equation*}
 
-Ramificando: $p=1$
+Ramificando: $p = 1$
 
 \begin{equation*}
 \{\{\neg q\},\{q,\neg r\}\}
 \end{equation*}
 
-Aplicando PU:
+Aplicando \textbf{PU} en $\{\neg q\}$:
 
 \begin{equation*}
-\{\{\neg q\},\{q,\neg r\}\}
+\{\{\neg r\}\}
 \end{equation*}
 
-Aplicando PU:
-
-\begin{equation*}
-\{\neg r\}
-\end{equation*}
+Aplicando \textbf{PU} en $\{\neg r\}$:
 
 \begin{equation*}
 \emptyset
 \end{equation*}
 
+Luego, la FNC es satisfacible.
 
-Luego la FNC es satisfacible.
+No obstante la reducción del espacio de memoria de DPLL respecto a DP, aún persisten problemas fundamentales: la selección de variables, el \textit{backtrack} cronológico y la elección de cláusulas unitarias.
 
-No obstante la reducción del espacio de memoria de DPLL respecto a DP, aún quedan problemas fundamentales: selección de variables, \textit{backtrack} cronológico y selección de cláusulas unitarias.
+En primer lugar, la selección de la variable a la que se asignará un valor influye directamente en la ``forma'' del espacio de búsqueda. Una decisión inapropiada puede derivar en caminos significativamente más largos hacia una solución. Por tanto, resulta crucial emplear heurísticas que optimicen esta elección. (poner ejemplo)
 
-En primer lugar la selección de la variable a asignar un valor influye en la ``forma'' que tomará el espacio de búsqueda, por lo que malas decisiones en este sentido conllevan a caminos más largos en la búsqueda de una solución. Análogamente se gana en eficiencia considerando heurísticas en la selección de variables. (poner ejemplo)
+En segundo lugar, el \textit{backtrack} cronológico ante un conflicto obliga a explorar, posiblemente de forma innecesaria, las asignaciones alternativas en niveles anteriores. Esta ineficiencia se acentúa cuando la causa real del conflicto se encuentra a $k$ niveles de distancia del punto donde se detectó. Además, DPLL no capitaliza las cláusulas que originaron los conflictos; es decir, no ``aprende'' de ellos. En consecuencia, es susceptible de incurrir reiteradamente en los mismos patrones erróneos de asignación.
 
-En segundo lugar, el \textit{backtrack} cronológico a partir de un conflicto obliga a explorar el resto de las posibles asignaciones de las variables en niveles anterirores, potencialmente, de forma innecesaria, sobre todo para aquellos casos donde la asignación causante del conflicto se encuentre a $k$ niveles de distancia del nivel del conflicto. Además, DPLL no aprovecha las cláusulas que han resultado conflictos, es decir, no aprende de ellas, por lo que es vulnerable a cometer el mismo error (mismo patrón incorrecto de asignaciones para las variables involucradas en el conflicto). Esto lo hace susceptible a repetir errores de forma recurrente.
-
-Finalmente, el problema de selección de cláusulas unitarias, influye también en la eficiencia del algoritmo. Se puede decir que guarda relacón con la estrategia de selección de variables.
+Finalmente, el problema de la selección de cláusulas unitarias también repercute en la eficiencia del algoritmo, estando íntimamente relacionado con la estrategia de selección de variables.
 
 \section{CDCL}
-CDCL es una mejora que se le añadió al algoritmo DPLL con el objetivo de erradicar el problema del retroceso (\textit{backtrack}) cronológico, una vez encontrada una cláusula de conflicto (todos sus literales evalúan 0).
+CDCL es una mejora que se le a\~nadi\'o al algoritmo DPLL con el objetivo de erradicar el problema del retroceso (\textit{backtrack}) cronol\'ogico, una vez encontrada una cl\'ausula de conflicto (todos sus literales eval\'uan 0).
 
-El retroceso cronológico consiste en recorrer el árbol de decisión (estructura propia del algoritmo DPLL que se forma al asignarle valores a las variables) retrocediendo de a 1 por cada nivel, probando todos los valores aún sin explorar de cada variable hasta encontrar la asignación causante del conflicto. Esta búsqueda es ineficiente dado que, además de analizar casos innecesarios, se vuelve susceptible a cometer el mismo error en el futuro (potencialmente realiza la misma combinación de asignaciones) generando búsquedas redundantes.
+El retroceso cronol\'ogico consiste en recorrer el \'arbol de decisi\'on (estructura propia del algoritmo DPLL que se forma al asignarle valores a las variables) retrocediendo de a 1 por cada nivel, probando todos los valores a\'un sin explorar de cada variable hasta encontrar la asignaci\'on causante del conflicto. Esta b\'usqueda es ineficiente dado que, adem\'as de analizar casos innecesarios, se vuelve susceptible a cometer el mismo error en el futuro (potencialmente realiza la misma combinaci\'on de asignaciones) generando b\'usquedas redundantes.
 
-Para solucionar este problema, CDCL crea un grafo dirigido y acíclico que permite guardar el historial de asignaciones de cada variable. En dicho grafo, los nodos son las variables y los arcos constituyen la causa de la asignación de dicha variable: la cláusula a la que pertenece, si fue asignada por propagación unitaria, y null para variables asignadas por decisión. El grafo también contiene 2 metadatos: el valor asignado a cada variable (0 o 1), y el nivel de decisión en el que se asignó (los diferentes niveles de decisión están marcados por la asignación de valores por decisión). Cabe destacar que la dirección de los arcos en el grafo va desde las variables de decisión hacia aquellas que, en el mismo nivel, tuvieron que forzar su valor por propagación unitaria. En el caso de una nueva variable de decisión, se crea un nuevo arco con valor nulo desde la variable asignada por decisión en el nivel anterior, hasta la nueva variable.
+Para solucionar este problema, CDCL crea un grafo dirigido y ac\'iclico que permite guardar el historial de asignaciones de cada variable. En dicho grafo, los nodos son las variables y los arcos constituyen la causa de la asignaci\'on de dicha variable: la cl\'ausula a la que pertenece, si fue asignada por propagaci\'on unitaria, y \texttt{null} para variables asignadas por decisi\'on. El grafo tambi\'en contiene dos metadatos: el valor asignado a cada variable (0 o 1) y el nivel de decisi\'on en el que se asign\'o (los diferentes niveles de decisi\'on est\'an marcados por la asignaci\'on de valores por decisi\'on). Cabe destacar que la direcci\'on de los arcos en el grafo va desde las variables de decisi\'on hacia aquellas que, en el mismo nivel, tuvieron que forzar su valor por propagaci\'on unitaria. En el caso de una nueva variable de decisi\'on, se crea un nuevo arco con valor \texttt{null} desde la variable asignada por decisi\'on en el nivel anterior hasta la nueva variable.
 
-Cuando una cláusula resulta ser de conflicto (sus literales evaluaron 0), CDCL crea un nuevo nodo en el grafo que representa dicho conflicto, para comenzar con su análisis.
-Este análisis busca en el grafo la asignación causante del conflicto, para retroceder justo hacia ese punto y realizar un \textit{backjump} en lugar de un retroceso cronológico, como en DPLL. Asimismo, con este análisis CDCL busca conformar una cláusula (cláusula aprendida) que represente la combinación de asignación de valores que condujo a dicho conflicto, para incluirla en la base de datos de las cláusulas de la FNC y evitar cometer el mismo error en iteraciones futuras. El punto escogido para realizar el \textit{backjump} es conocido como primer punto de implicación único (\textit{First-UIP} por sus siglas en inglés). Este punto, será aquel literal que en la cláusula aprendida, posea el más alto nivel de decisión, diferente del actual.
+Cuando una cl\'ausula resulta ser de conflicto (sus literales evaluaron 0), CDCL crea un nuevo nodo en el grafo que representa dicho conflicto, para comenzar con su an\'alisis. Este an\'alisis busca en el grafo la asignaci\'on causante del conflicto, para retroceder justo hacia ese punto y realizar un \textit{backjump} en lugar de un retroceso cronol\'ogico, como en DPLL. En caso de que el nivel del \textit{backjump} sea el nivel 0, CDCL considera la FNC como insatisfacible. Asimismo, con este an\'alisis CDCL busca conformar una cl\'ausula (cl\'ausula aprendida) que represente la combinaci\'on de asignaci\'on de valores que condujo a dicho conflicto, para incluirla en la base de datos de las cl\'ausulas de la FNC y evitar cometer el mismo error en iteraciones futuras. El punto escogido para realizar el \textit{backjump} es conocido como primer punto de implicaci\'on \'unico (\textit{First-UIP} por sus siglas en ingl\'es). Este punto ser\'a aquel literal que, en la cl\'ausula aprendida, posea el m\'as alto nivel de decisi\'on diferente del actual.
 
-Es necesario enfatizar en el hecho de que la cláusula aprendida debe contener únicamente 1 literal cuyo valor haya sido asignado en el nivel de decisión actual. En caso de haber más de uno, CDCL recorre el grafo en busca de la cláusula que causó la asignación de una de estas variables y aplica el Principio de Resolución entre esta y la cláusula aprendida hasta el momento. La cláusula resultante pasará a ser la nueva cláusula aprendida. El proceso se repetirá hasta que la cláusula aprendida contenga solo un literal cuyo valor fue asignado en el nivel de decisión actual.
-
-En caso de que el nivel del \textit{backjump} sea el nivel 0, CDCL considera la FNC como insatisfacible.
+Es necesario enfatizar en el hecho de que la cl\'ausula aprendida debe contener \textbf{\'unicamente} un literal cuyo valor haya sido asignado en el nivel de decisi\'on actual. En caso de haber m\'as de uno, CDCL recorre el grafo en busca de la cl\'ausula que caus\'o la asignaci\'on de una de estas variables y aplica el Principio de Resoluci\'on entre esta y la cl\'ausula aprendida hasta el momento. La cl\'ausula resultante pasar\'a a ser la nueva cl\'ausula aprendida. El proceso se repetir\'a hasta que la cl\'ausula aprendida contenga solo un literal cuyo valor fue asignado en el nivel de decisi\'on actual.
 
 A continuación, se muestra como ejemplo la implementación en Python de un CDCL SAT \textit{solver}
 
@@ -383,45 +378,51 @@ class SATSolver:
                 self.decision_stack.append((var, True, self.decision_level))
 \end{lstlisting}
 
-La implementación anterior consiste en una clase SATSolver que realiza los pasos de CDCL dada una FNC escrita en forma de \textit{array} de \textit{arrays} donde estos últimos son las cláusulas. Por su parte, cada variable está representada por un número entero positivo y sus literales serán el propio número y su opuesto.
+La implementación anterior consiste en una clase \texttt{SATSolver} que realiza los pasos del algoritmo CDCL, dada una FNC escrita como un \textit{array} de \textit{arrays}, donde estos últimos representan las cláusulas. Cada variable está representada por un número entero positivo, y sus literales son ese número o su opuesto (negado).
 
-El primer método inicializa las estructuras con las que trabajará:
+El método \texttt{\_\_init\_\_(self, formula)} inicializa las estructuras internas:
 \begin{itemize}
-\item \textit{assigments}: Mapea cada variable asignada con su valor.
-\item \textit{levels}: Mapea cada variable aasignada con el nivel de decisión en el que se le dio su valor.
-\item \textit{reasons}: Estos serán los ``arcos'' del grafo de decisión, pues mapea por cada variable asignada la cláusula que provocó su asignación, y \textit{None} para el caso de variables asignadas por decisión.
-\item \textit{decision\_level}: guarda el actual nivel de decisión.
-\item \textit{decision\_stack}: registra el grafo al guardar en una pila tuplas de 3 elementos: variable asignada, valor que tomó y el nivel de decisión en el que se le asignón su valor.
+  \item \texttt{assignments}: Mapea cada variable con su valor asignado (\texttt{True} o \texttt{False}).
+  \item \texttt{levels}: Mapea cada variable con el nivel de decisión en que fue asignada.
+  \item \texttt{reasons}: Mapea cada variable con la cláusula que forzó su asignación, o \texttt{None} si fue por decisión. Estos funcionan como los ``arcos'' del grafo de decisión.
+  \item \texttt{decision\_level}: Guarda el nivel actual de decisión.
+  \item \texttt{decision\_stack}: Pila que registra el historial de asignaciones como tuplas: (variable, valor, nivel de decisión).
 \end{itemize}
 
-El bucle principal del algoritmo se encuentra en el método \textit{solve(self)} que mientras no haya conflicto asigna valores a las variables y actualiza las estructuras de la clase, y en caso de no existir más variables por asignar, entonces devuelve la solución (asignaciones para cada variable) declarando la fórmula como satisfacible. En cambio, si una cláusula conflicto es detectada y el nivel actual de decisión es 0, entonces devuelve \textit{None}, declarando no existe una asignación válida para las variables, luego la fórmula es insatisfacible.
+El bucle principal del algoritmo se encuentra en el método \texttt{solve(self)}. Mientras no se detecte un conflicto, asigna valores a variables no asignadas, actualizando las estructuras del solver. Si no quedan variables por asignar, devuelve la asignación completa y declara la fórmula como satisfacible. Si se detecta una cláusula conflicto y el nivel actual de decisión es 0, entonces devuelve \texttt{None}, declarando que la fórmula es insatisfacible. 
 
-El método encargado de realizar la propagación unitaria por cada nivel de decisión es \textit{unit\_propagate(self)}. Este, cosiste en un algoritmo de punto fijo que se ejecuta mientras haya cambio, es decir, mientras existan cláusulas unitarias, y en caso de haber una cláusula conflicto detiene el bucle y devuelve dicha cláusula. En caso de no haber conflicto, retorna \textit{None}. La salida de este algoritmo es tomada por el método \textit{solve()} explicado anteriormente. El status de una cláusula (`\textit{satisfied}', `\textit{conflict}', `\textit{unit}', `\textit{undefined}') es determinado por \textit{check\_clause(self, clause)}.
+El método \texttt{unit\_propagate(self)} realiza propagación unitaria dentro de un ciclo de punto fijo que se repite mientras haya cambios (es decir, mientras existan cláusulas unitarias). Si se encuentra una cláusula conflicto, se detiene y la devuelve. Si no hay conflicto, retorna \texttt{None}. Para determinar el estado de una cláusula (\texttt{'satisfied'}, \texttt{'conflict'}, \texttt{'unit'}, \texttt{'undefined'}), se utiliza el método \texttt{check\_clause(self, clause)}.
 
-Una vez encontrada una cláusula de conflicto, se llama al método \textit{conflict\_analysis(self, conflict\_clause)}, el cual primero analiza a cuántas variables en la cláusula conflicto se le asignaron valor en el nivel de decisión actual. Esto debido a que la cláusula aprendida solo debe contener un literal cuyo valor haya sido asignado en el nivel de decisión actual. En caso de haber más de 1, se busca el último de estos literales cuya variable fue asignada, se toma a partir del grafo de decisión la cláusula que causó su asignación, y se realiza Pincipio de Resolución con esta y la actual cláusula aprendida. La cláusula resultante para a ser la cláusula aprendida hasta el momento. Este prcedimiento se repite hasta que solo quede un literal asignado en el actual nivel de decisión.
+Cuando se detecta una cláusula conflicto, se invoca \texttt{conflict\_analysis(self, conflict\_clause)}. Este analiza cuántos literales de la cláusula conflicto fueron asignados en el nivel de decisión actual. La cláusula aprendida debe contener exactamente un literal asignado en ese nivel. Si hay más de uno, se identifica el último literal asignado (según el grafo de decisión), se busca la cláusula que causó su asignación y se aplica el Principio de Resolución entre ella y la cláusula aprendida. Este proceso se repite hasta obtener una cláusula con un solo literal en el nivel actual.
 
-Luego de obtener la cláusula aprendida a partir de un conflicto se determina el \textit{backjump level}, el cual será el nivel de decisión más alto de los literales se la cláusula aprendida. Una vez hallado el nivel al cual retroceder, el método \textit{backjump(self, level)} realiza las actualizaciones de todas las estructuras de la clase (\textit{backjump}).
+Luego, se determina el \textit{backjump level}, es decir, el nivel de decisión más alto presente en los literales de la cláusula aprendida (distinto del actual). Si este nivel es 0, CDCL considera la FNC como insatisfacible. Finalmente, se invoca el método \texttt{backjump(self, level)} que deshace las asignaciones por encima del nivel objetivo y actualiza las estructuras correspondientes.
 
 
 \section{DLIS}
-La heurística Dynamic Largest Individual Sum (DLIS) para selección de variables, es uno de los métodos aproximados que pueden integrarse en un CDCL SAT \textit{solver} con el objetivo de aumentar la eficiencia al asignar un valor a una variable en cada nivel de decisión.
 
-DLIS lleva un contador por cada variable que indica el número máximo que clásulas insatisfechas que pueden resolverse al asignar uno de los dos valores (0 o 1). Es decir, dada una variable $x$, se calcula la cantidad de cláusulas insatisfechas en las que aparece el literal $x$ y su complementario $\neg x$. Sea $dlis(x)$ la mayor cantidad de cláusulas que $x$ puede satisfacer, y $count_pos(x)$ y $count_neg(x)$ la cantidad de veces que aparece el literal positivo y negativo, repectivamente, en cláusulas aún sin resolver; luego:
+La heur\'istica \textit{Dynamic Largest Individual Sum} (DLIS) es un m\'etodo aproximado de selecci\'on de variables que puede integrarse en un SAT \textit{solver} con CDCL, con el objetivo de mejorar la eficiencia al decidir qu\'e variable asignar en cada nivel de decisi\'on.
+
+DLIS mantiene un contador por cada variable que indica la m\'axima cantidad de cl\'ausulas actualmente insatisfechas que podr\'ian satisfacerse al asignarle uno de sus dos posibles valores (0 o 1). Es decir, para una variable $x$, se calcula la cantidad de cl\'ausulas no satisfechas en las que aparece el literal $x$ (forma positiva) y su complemento $\neg x$ (forma negativa). Denotamos:
+
+\begin{itemize}
+  \item $\textit{count\_pos}(x)$: cantidad de veces que $x$ aparece positivamente en cl\'ausulas insatisfechas.
+  \item $\textit{count\_neg}(x)$: cantidad de veces que $\neg x$ aparece en cl\'ausulas insatisfechas.
+  \item $\textit{dlis}(x) = \max(\textit{count\_pos}(x), \textit{count\_neg}(x))$.
+\end{itemize}
+
+La pr\'oxima variable a seleccionar ser\'a aquella que maximice el valor de $\textit{dlis}(x)$ entre todas las variables no asignadas:
 
 \begin{equation*}
-dlis(x)=max(count_pos(x), count_neg(x))
+  x_k \mid \textit{dlis}(x_k) = \max(\textit{dlis}(x_i)),\quad i \in [1,n]
 \end{equation*}
 
-Teniendo en cuenta este cálcula la próxima variable a asignar será:
-\begin{equation*}
-x_k \mid dlis(x_k)=max(dlis(x_i)), i \in [1,n]
-\end{equation*}
+donde $n$ es el total de variables de la FNC.
 
-donde $n$ es la cantidad de variables de la FNC.
+Obs\'ervese que si $\textit{count\_pos}(x_k) > \textit{count\_neg}(x_k)$, entonces se asigna a $x_k$ el valor 1; en caso contrario, se asigna 0. Esto con el objetivo de satisfacer la mayor cantidad de cl\'ausulas posibles en esa decisi\'on. El c\'alculo debe aplicarse \textbf{solo a las variables no asignadas} y \textbf{solo considerar valores a\'{u}n no explorados en el nivel actual de decisi\'on}.
 
-Obsétvese que si $count_pos(x_k) > count_neg(x_k)$ entonces $x_k$ tomará como valor 1, y 0 en caso contrario, puesto que el objetivo es satisfacer dichas cláusulas. Téngase en cuenta que el cálculo se le aplica a las variables que aún no han sido asignadas, además de solo tenerse en cuenta aquellos valores que aún no han sido explorados para una misma variable en el actual nivel de decisión.
+Esta estrategia de selecci\'on de variables puede integrarse en el algoritmo CDCL previamente presentado, sustituyendo la funci\'on \texttt{pick\_branching\_variable(self)} por una versi\'on que implemente la heur\'istica DLIS.
 
-La estrategia de selección de variables se puede insertar en el anterior algoritmo de CDCL en el método \textit{pick\_branching\_variable(self)} el cual se encarga de decidir la próxima variable a la cual se le asignará un valor (0 o 1). Tomando como base el código anterior y modificando el método \textit{pick\_branching\_variable(self)}, una posible implementación de DLIS podría quedar de la siguiente forma:
+A continuaci\'on, se presenta una posible implementaci\'on de esta heur\'istica, considerando como base el c\'odigo del \texttt{SATSolver} previamente desarrollado.
 
 \begin{lstlisting}
 def pick_branching_variable(self):
@@ -472,20 +473,32 @@ def pick_branching_variable(self):
 
 \end{lstlisting}
 
-Las estructuras \textit{pos\_counts} y \textit{neg\_counts} almacenan la cantidad de veces que el literal positivo y el negativo, respectivamente, de una variable aparece en cláusulas aún sin satisfacer. Para actualizar estas estructuras primero se inspeccionan aquellas cláusulas que aún no han sido resueltas. Luego se completa la información con aquellas variables sin asignar que no se hayan incluido en el procedimiento anterior y se pone su contador en 0. Este puede ser el caso de variables sin asignar que solo se encuentren en cláusulas satisfechas (a otra variable de la misma cláusula se le asignó 1 como valor). Una vez actualizado el conteo por cada literal, se haya el \textit{score} por vaiable (el máximo entre ambos conteos), se ordenan de mayor a menor y se decide asignar aquella variable con el \textit{score} más alto. El valor a asignársele a esta variable es el de mayor conteo entre ambas polaridades.
+Las estructuras \texttt{pos\_counts} y \texttt{neg\_counts} se utilizan para almacenar, respectivamente, la cantidad de veces que el literal positivo y el literal negativo de cada variable no asignada aparece en las cláusulas actualmente insatisfechas. Este conteo es esencial para aplicar la heurística DLIS (\textit{Dynamic Largest Individual Sum}) de forma efectiva.
 
-Con esta estrategia DLIS busca satisfacer en una sola asignación la mayor cantidad de cláusulas posibles, sin embargo, esta estrategia resulta costosa en instancias grandes: $O(n)$ por cada nivel de decisión, donde $n$ es la cantidad de literales.
+El procedimiento comienza recorriendo todas las cláusulas de la fórmula. Por cada cláusula que no esté satisfecha, se inspeccionan sus literales, y se incrementa el contador correspondiente de cada literal no asignado. Por ejemplo, si un literal positivo $x$ aparece en una cláusula insatisfecha, se incrementa \texttt{pos\_counts[$x$]}, y si aparece su complemento $\neg x$, se incrementa \texttt{neg\_counts[$x$]}.
+
+Luego de este recorrido, se identifican todas las variables no asignadas que podrían no haber sido contadas, ya que podrían aparecer solamente en cláusulas ya satisfechas. A estas variables se les inicializa ambos contadores (positivo y negativo) en cero para garantizar una evaluación completa.
+
+A continuación, se calcula el \textit{score} para cada variable no asignada, definido como el máximo entre \texttt{pos\_counts[$x$]} y \texttt{neg\_counts[$x$]}. Este valor representa la cantidad máxima de cláusulas que podrían satisfacerse al asignarle a la variable el valor correspondiente. Las variables se ordenan según su \textit{score} en orden descendente, y se elige aquella con el \textit{score} más alto como la próxima variable a asignar. En caso de empate, se utilizan criterios secundarios como la suma total de apariciones y el índice de la variable.
+
+El valor que se asigna a la variable seleccionada depende de cuál de los dos conteos es mayor. Si \texttt{pos\_counts[$x$]} es mayor que \texttt{neg\_counts[$x$]}, entonces se asigna el valor \texttt{True} (es decir, $x$), de lo contrario se asigna \texttt{False} (es decir, $\neg x$).
+
+Esta heurística DLIS tiene como objetivo maximizar el número de cláusulas satisfechas con cada asignación, lo que en teoría podría reducir la cantidad total de decisiones requeridas para encontrar una solución o para detectar una contradicción. Sin embargo, su aplicación resulta costosa para instancias de gran tamaño, debido a que implica una revisión completa de todas las cláusulas insatisfechas en cada nivel de decisión. Esto conduce a una complejidad computacional de $O(n)$ por nivel, donde $n$ es el número total de literales en la fórmula.
 
 \section{VSIDS}
-Por su parte, la heurística Variable State Independent Decaying Sum (VSIDS) prioriza asignarle valores aquellas variables que hayan estado en conflictos recientes. Para ello, VSIDS lleva un \textit{score} por cada literal $l$ (no por cada variable) que aumenta cada vez que aparezcan en clásulas aprendidas de conflictos. Además, para evitar que literales que hayan pertenecido a conflictos pasados y no recientes sean tenidos en cuenta por encima de los más actuales, cada cierta cantidad $T$ de conflictos se multiplica los \textit{scores} de cada literal por $\alpha$, donde $0 < \alpha < 1$ (usualmente $\alpha = 0.95$). Integrado con CDCL, VSIDS se comportaría de la siguiente forma:
-\begin{enumerate}
-    \item Procede el algoritmo CDCL.
-    \item Si ocurre un conflicto, se añade la cláusula aprendida $\mathbf{C_{learn}}$. Luego, por cada literal $l$ tal que $l \in \mathbf{C_{learn}}$ se tiene que $score(l) += \delta$, donde $\delta$ es el incremento.
-    \item Si ocurre el conflicto $T$-ésimo, entonces $\delta = \delta \cdot \alpha$ con $0 < \alpha < 1$.
-    \item Si no ocurre un conflicto, se seleccionará según VSIDS la variable $v$ si $score(l_v) = \max(score(l_i))$ para todo $i$ tal que $1 \leq i \leq 2n$, con $n$ cantidad de variables. Si $l_v$ es positivo, entonces $v$ tomará valor 1, y 0 en caso contrario.
-\end{enumerate}
 
-Una posible implementación para VSIDS que se integre al código base anterior de CDCL es la siguiente.
+Por su parte, la heurística \textit{Variable State Independent Decaying Sum} (VSIDS) prioriza asignar valores a aquellas variables cuyos literales hayan estado involucrados en conflictos recientes. Para ello, VSIDS mantiene un \textit{score} para cada literal \( l \) (no por variable) que se incrementa cada vez que dicho literal aparece en cláusulas aprendidas a partir de conflictos. 
+
+Además, para evitar que literales involucrados en conflictos antiguos tengan mayor prioridad que los relacionados con conflictos recientes, cada cierta cantidad \( T \) de conflictos se actualizan los \textit{scores} de todos los literales multiplicándolos por un factor de decaimiento \(\alpha\), con \(0 < \alpha < 1\) (usualmente \(\alpha = 0.95\)). 
+
+Integrado en el algoritmo CDCL, VSIDS funciona del siguiente modo:
+
+\begin{enumerate}
+    \item Se ejecuta el algoritmo CDCL.
+    \item Si ocurre un conflicto, se añade la cláusula aprendida \(\mathbf{C_{learn}}\). Luego, para cada literal \( l \) en \(\mathbf{C_{learn}}\), se actualiza su \textit{score} con \(score(l) = score(l) + \delta\), donde \(\delta\) es un incremento positivo.
+    \item Si se alcanza el conflicto número \( T \), se actualiza el incremento con \( \delta = \delta \times \alpha \), con \(0 < \alpha < 1\).
+    \item Si no ocurre un conflicto, se selecciona la variable \( v \) cuyo literal \( l_v \) cumple que su \textit{score} es máximo entre todos los literales \( l_i \), con \( i = 1, 2, \ldots, 2n \), siendo \( n \) la cantidad de variables. Si \( l_v \) es positivo, se asigna el valor 1 a \( v \), y 0 en caso contrario.
+\end{enumerate}
 
 \begin{lstlisting}
 def pick_branching_variable(self):
@@ -505,7 +518,7 @@ def pick_branching_variable(self):
     return best_vars[0]
 \end{lstlisting}
 
-Este método solo selecciona entre las que no han sido asignadas, aquella variable con mayor \textit{score} de acuerdo al criterio de este algoritmo. Para llevarlo a cabo, se añadió a la clase \textit{SATSolver} una estructura \textit{activity} que mapea cada variable con su \textit{score}. Esta estructura se inicializaría como se muestra a continuación:
+Este método selecciona, de entre las variables aún no asignadas, aquella con el mayor \textit{score} de acuerdo con la estrategia VSIDS. Para implementar este comportamiento, se añade a la clase \textit{SATSolver} una estructura llamada \textit{activity}, la cual asocia a cada variable un valor numérico que representa su actividad o relevancia. Esta estructura se inicializa al comienzo de la ejecución inspeccionando todas las variables presentes en las cláusulas de la fórmula, como se muestra a continuación:
 
 \begin{lstlisting}
 # previus code
@@ -516,42 +529,64 @@ Este método solo selecciona entre las que no han sido asignadas, aquella variab
                 self.activity[var] = 0.0
 \end{lstlisting}
 
-Además, \textit{activity} se pudiese actualizar dentro del método \textit{solve(self)} de la siguiente forma:
+Durante la ejecución del algoritmo CDCL, la estructura \textit{activity} se actualiza dentro del método \textit{solve(self)}. En particular, cada vez que se detecta un conflicto y se aprende una nueva cláusula, se incrementa la actividad de todas las variables que aparecen en dicha cláusula. Además, para priorizar los conflictos más recientes, se aplica un factor de decaimiento a todas las variables. A continuación se muestra el fragmento correspondiente:
 
 \begin{lstlisting}
 decay_factor = 0.95
 while True:
-           conflict = self.unit_propagate()
-           if conflict:
-               if self.decision_level == 0:
-                    # Conflict at level 0 indicates an unsolvable (UNSAT) condition.
-                   return None
-               learned_clause, backjump_level = self.conflict_analysis(conflict)
-               # Learn the clause by adding it to the formula.
-               self.formula.append(learned_clause)
-               # Update activities for variables in the learned clause
-               for lit in learned_clause:
-                   var = abs(lit)
-                   self.activity[var] += 1.0
-               # Decay all activities
-               for var in self.activity:
-                   self.activity[var] *= decay_factor
-               # Backjump to the appropriate decision level.
-               self.backjump(backjump_level)
-               self.decision_level = backjump_level
+    conflict = self.unit_propagate()
+    if conflict:
+        if self.decision_level == 0:
+            # Conflict at level 0 indicates an unsolvable (UNSAT) condition.
+            return None
+        learned_clause, backjump_level = self.conflict_analysis(conflict)
+        # Learn the clause by adding it to the formula.
+        self.formula.append(learned_clause)
+        # Update activities for variables in the learned clause
+        for lit in learned_clause:
+            var = abs(lit)
+            self.activity[var] += 1.0
+        # Decay all activities
+        for var in self.activity:
+            self.activity[var] *= decay_factor
+        # Backjump to the appropriate decision level.
+        self.backjump(backjump_level)
+        self.decision_level = backjump_level
 # rest of code
 \end{lstlisting}
 
-\section{Reinicio (\textit{restart})}
-Las estrategias de reinicio buscan no estancarse en espacios locales de búsqueda mediante un ``reinicio'' del árbol de decisión, es decir, eliminan todas las asignaciones realizadas hasta el momento y vuelven a empezar, pero manteniendo en la FNC las cláusulas aprendidas producto de CDCL, y los datos extras como \textit{scores} de los literales que hayan aportado las heurísticas de selección de variables.
+De este modo, la heurística VSIDS logra priorizar variables relevantes en conflictos recientes, mejorando la toma de decisiones del solucionador sin necesidad de reexaminar toda la fórmula.
 
-Existen varios criterios para realizar los \textit{restarts}:
+
+\section{Reinicio (\textit{restart})}
+
+Las estrategias de reinicio tienen como objetivo evitar que el algoritmo de CDCL se estanque en regiones locales del espacio de búsqueda. Para ello, se permite reiniciar el árbol de decisiones, es decir, eliminar todas las asignaciones realizadas hasta el momento y comenzar nuevamente desde el nivel de decisión cero. Sin embargo, se conservan las cláusulas aprendidas durante el proceso, así como la información acumulada por las heurísticas de selección de variables (por ejemplo, las actividades de los literales en VSIDS o los conteos en DLIS).
+
+Estas estrategias buscan que, al conservar el conocimiento adquirido (cláusulas aprendidas), el solucionador pueda explorar regiones más prometedoras del espacio de soluciones sin tener que recorrer nuevamente caminos improductivos.
+
+Existen diversos criterios para decidir cuándo realizar un reinicio:
+
 \begin{enumerate}
-\item Fijo: se reinicia cada $k$ conflictos fijos.
-\item Geométrico: cada intervalo $r_i$ crece como un secuencia geométrica de la siguiente forma: $r_0 = b; r_i = \alpha \cdot r_{i-1} \mid \alpha > 1$. Es importante definir bien el valor de $\alpha$ pues si este es muy grande los reinicios serán muy espaciados, y si es muy pequeño habrá una sobrecarga de \textit{restarts}.
-\item Luby: Este reinicio se basa en la secuencia de Luby (1,1,2,1,1,2,4,1,1,2,…), obteniéndose que $r_i = b \cdot Luby(i)$, donde $r_i$ constituye el i-ésimo \textit{restart}, y $b$ es un parámetro de intervalo.
-\item \textit{Glucose-style (LBD-based)}: esta estrategia está basada en el cálculo Literal Block Distance (LBD) que consiste en, dada una cláusula aprendida, contar la cantidad de niveles de decisión diferentes a los que pertenecen cada uno de sus literales. Es decir, dada una cláusula aprendida $C_{learm}$ se tiene que $LBD(C_{learn}) = \|\{level(l)\: l \in C_{learn} \}\|$. LBD busca medir la calidad de una cláusula a partir de la diversidad de niveles de decisión en una cláusula, planteando que mientras menor sea este número las variables implicadas en el conflicto estarán más cerca en el árbol de decisión, por ende más relacionadas, luego más útil la cláusula. Por tanto, a menor LBD, mayor calidad de cláusula. Ahora, la estrategia de reinicio \textit{Glucose-style} haya dos promedios de LBD para una ventana ``rápida'' (usualmente 50 o 100 últimos conflictos) y una ventana ``lenta'' (usualmente 1000 últimos confilctos)de cantidad de conflictos. Estas dos cantidades se dividen de la siguiente forma: sean $\mu_r$ promedio de LBD en la ventana rápida de últimos conflictos, y $\mu_l$ su homólogo para la ventana lenta; sea, además, $T > 1$ umbral de decisión, entonces \textit{Glucose-style} realiza la comparación $\dfrac{\mu_r}{\mu_l} > T$, y si esta resulta verdadera entonces procede con el reinicio. Esta estrategia sugiere que si el promedio de LBD en cláusulas aprendidas recientes supera significativamente al de cláusulas más antiguas, el algoritmo estaría estancado en espacios locales de búsqueda infructíferos.
+    \item \textbf{Fijo}: se realiza un reinicio después de un número fijo $k$ de conflictos. Esta es una estrategia sencilla pero poco adaptativa.
+
+    \item \textbf{Geométrico}: el número de conflictos entre reinicios crece de forma geométrica según la relación $r_0 = b$, $r_i = \alpha \cdot r_{i-1}$ con $\alpha > 1$. Esta estrategia permite reinicios más frecuentes al principio, reduciéndose con el tiempo. Un valor muy grande de $\alpha$ puede hacer que los reinicios sean demasiado esporádicos, mientras que un valor muy pequeño puede provocar una sobrecarga de reinicios.
+
+    \item \textbf{Luby}: utiliza la secuencia de Luby $(1,1,2,1,1,2,4,1,1,2,\dots)$ para definir los intervalos entre reinicios, según la fórmula $r_i = b \cdot \text{Luby}(i)$, donde $b$ es un parámetro base que define el tamaño mínimo del intervalo. Esta estrategia tiene fundamentos teóricos que justifican su uso en entornos donde no se conoce a priori una buena política de reinicio.
+
+    \item \textbf{Glucose-style (basada en LBD)}: esta estrategia se basa en el cómputo de la medida Literal Block Distance (LBD) de las cláusulas aprendidas. Dada una cláusula $C_{learn}$, su LBD se define como el número de niveles de decisión distintos a los que pertenecen sus literales:
+    \begin{equation*}
+        \text{LBD}(C_{learn}) = |\{ \text{level}(l)\mid l \in C_{learn} \}|
+    \end{equation*}
+    La idea es que una cláusula con menor LBD involucra decisiones más cercanas entre sí, lo que la hace más relevante para guiar el proceso de resolución. 
+
+    Para implementar esta estrategia, se mantienen dos promedios móviles de los LBD: uno para una ventana rápida de conflictos recientes (por ejemplo, los últimos 50 o 100) y otro para una ventana más larga (por ejemplo, los últimos 1000). Denotando estos promedios como $\mu_r$ (rápido) y $\mu_l$ (lento), se define un umbral $T > 1$. Si se cumple la condición:
+    \begin{equation*}
+        \frac{\mu_r}{\mu_l} > T
+    \end{equation*}
+    entonces se considera que el solucionador está atrapado en una región poco productiva y se procede con un reinicio.
 \end{enumerate}
+
+La incorporación de estrategias de reinicio, particularmente aquellas adaptativas como Luby o Glucose-style, ha demostrado ser fundamental para el éxito de solucionadores modernos de SAT, ya que permiten alternar entre exploración y explotación de manera eficiente en espacios de búsqueda complejos.
 
 Ussando como base el código anterior de CDCL, una posible implementación para la estrategia Luby puede ser la siguiente:
 
@@ -627,7 +662,28 @@ class SATSolverLuby:
                 self.decision_stack.append((var, True, self.decision_level))
 \end{lstlisting}
 
-Análogo a las heurísticas anteriores, se añaden nuevas estructuras a la clase \textit{SATSolver}, y en base a la estrategia de \textit{restart} de Luby, se decide en el método \textit{solve(self)} si es necesario un reinicio.
+En el caso de la estrategia basada en la secuencia de Luby, esta se ha integrado al algoritmo CDCL modificando su estructura de control de conflictos. Para ello, se define una funci\'on \texttt{luby(u, k)} que genera el k-\'esimo valor de la secuencia de Luby multiplicado por una unidad base \texttt{u}, la cual determina el n\'umero de conflictos que deben ocurrir antes de realizar un reinicio.
+
+Dentro de la clase principal del solucionador, se inicializan los siguientes parámetros:
+
+\begin{itemize}
+    \item \texttt{unit\_run}: intervalo base de conflictos entre reinicios.
+    \item \texttt{luby\_idx}: índice actual dentro de la secuencia de Luby.
+    \item \texttt{conflicts\_since\_restart}: contador de conflictos desde el último reinicio.
+    \item \texttt{next\_restart}: umbral de conflictos para el siguiente reinicio, calculado como \texttt{luby(unit\_run, luby\_idx)}.
+\end{itemize}
+
+Durante la ejecución del método \texttt{solve()}, cada vez que se detecta un conflicto y se realiza el correspondiente análisis y retroceso (“\textit{backjump}”), se incrementa el contador de conflictos. Luego, se verifica si el número acumulado de conflictos ha alcanzado el umbral definido por la secuencia de Luby. En caso afirmativo, se ejecuta un reinicio que implica:
+
+\begin{itemize}
+    \item Vaciar las estructuras de asignaciones, niveles de decisión, razones de propagación y la pila de decisiones.
+    \item Reiniciar el nivel de decisión a cero.
+    \item Calcular el nuevo umbral de reinicio actualizando el índice de Luby y recalculando \texttt{next\_restart}.
+    \item Reiniciar el contador de conflictos desde el reinicio.
+\end{itemize}
+
+Cabe destacar que durante el reinicio no se eliminan las cláusulas aprendidas, lo cual permite conservar información valiosa obtenida en decisiones anteriores. Esta estrategia favorece la salida de áreas del espacio de búsqueda poco prometedoras, maximizando la posibilidad de encontrar una solución en regiones más relevantes del espacio de soluciones.
+
 
 De igual modo, una implementación para la estrategia \textit{Glucose-Style (LBD-based)} sería como la que se muestra a continuación:
 
@@ -702,229 +758,242 @@ class SATSolverGlucose:
 
 \end{lstlisting}
 
-\section{Selección de cláusulas unitarias}
+\section{Selecci\'on de cl\'ausulas unitarias}
 
-Una de las estrategias más usadas actualmente es \textit{Two Watched Literals (TWL)}. Esta tiene por objetivo evitar el recorrido de todas las cláusulas en el momento de realizar la propagación unitaria mediante la ``vigilancia'' de dos literales $l_1$ y $l_2$ por cada cláusula. Si durante el algoritmo tanto $l_1$ como $l_2$ no han sidp evaluados, pues no es necesario revisar dicha cláusula dado que no es unitaria ni de conflicto. En cambio, si alguno ha sido asignado a 0 se busca en cada cláusula otro literal para sustituirlo y, de no ser posible implicaría que la cláusula es unitaria (asumiendo que el otro literal vigilado no tiene valor). Si ambos literales son evaluados a 0, entonces la cláusula es de conflicto. Esta estrategia reduce grandemente el costo de recorrer cada cláusula en cada nivel de asignación.
+Una de las estrategias m\'as empleadas en solucionadores modernos de SAT para optimizar la propagaci\'on unitaria es \\textit{Two Watched Literals (TWL)}. Esta t\'ecnica tiene como objetivo evitar el recorrido exhaustivo de todas las cl\'ausulas en cada paso de propagaci\'on, mediante la vigilancia de dos literales por cl\'ausula, denominados $l_1$ y $l_2$.
 
-Para insertar esta estrategia en el código base de CDCL, es necesario realizar cambios en casi todos los métodos. Véase el siguiente ejemplo de implementación:
+Durante la ejecuci\'on del algoritmo, si ambos literales vigilados en una cl\'ausula no han sido evaluados, o al menos uno de ellos tiene valor verdadero, entonces no es necesario revisar dicha cl\'ausula, ya que no es unitaria ni entra en conflicto. En caso contrario, si uno de los literales es asignado a falso, se intenta buscar dentro de la cl\'ausula otro literal que no haya sido evaluado o que tenga valor verdadero, con el fin de reemplazar al literal que fue asignado a falso. Si no se encuentra un reemplazo v\'alido y el otro literal vigilado a\'un no tiene valor, entonces la cl\'ausula se vuelve unitaria, forzando la asignaci\'on del segundo literal. Si ambos literales vigilados son evaluados a falso, la cl\'ausula se considera en conflicto.
 
-\begin{lstlisting}
-import formulas as f
-from collections import defaultdict, deque
+Esta estrategia resulta altamente eficiente, ya que disminuye considerablemente el n\'umero de cl\'ausulas que deben revisarse en cada nivel de decisi\'on, optimizando as\'i el rendimiento del algoritmo CDCL.
 
-class SATSolver:
-    def __init__(self, formula):
-        """
-        Initializes the SAT solver.
+Para integrar la estrategia TWL en el c\'odigo base de CDCL, es necesario modificar la estructura interna del solucionador, incluyendo los m\'etodos de propagaci\'on, asignaci\'on y retroceso, entre otros. A continuaci\'on se presentar\'a un ejemplo de implementaci\'on.
 
-        Parameters:
-          formula: A list of clauses, where each clause is represented as a list of integers.
-                   A positive integer i represents the variable x_i, and a negative integer -i represents -x_i.
-        """
-        # Copy the formula so that learned clauses can be appended.
-        self.clauses = [list(c) for c in formula]
-        self.assignments = {}    # Maps variable -> True/False assignment.
-        self.levels = {}         # Maps variable -> decision level at which it was assigned.
-        self.reasons = {}        # Maps variable -> clause that forced the assignment (None for decision vars).
-        self.decision_level = 0  # Current decision level.
-        self.decision_stack = [] # Stack of (variable, value, level).
+%\begin{lstlisting}
+%import formulas as f
+%from collections import defaultdict, deque
+%
+%class SATSolver:
+%    def __init__(self, formula):
+%        """
+%        Initializes the SAT solver.
+%
+%        Parameters:
+%          formula: A list of clauses, where each clause is represented as a list of integers.
+%                   A positive integer i represents the variable x_i, and a negative integer -i represents -x_i.
+%        """
+%        # Copy the formula so that learned clauses can be appended.
+%        self.clauses = [list(c) for c in formula]
+%        self.assignments = {}    # Maps variable -> True/False assignment.
+%        self.levels = {}         # Maps variable -> decision level at which it was assigned.
+%        self.reasons = {}        # Maps variable -> clause that forced the assignment (None for decision vars).
+%        self.decision_level = 0  # Current decision level.
+%        self.decision_stack = [] # Stack of (variable, value, level).
+%
+%        # Two-Watched Literals: map literal -> list of clause indices watching it
+%        self.watches = defaultdict(list)
+%        self._init_watches()
+%
+%    def _init_watches(self):
+%        """Initialize two watched literals per clause."""
+%        for ci, clause in enumerate(self.clauses):
+%            # If clause has only one literal, watch it twice.
+%            w0 = clause[0]
+%            w1 = clause[1] if len(clause) > 1 else clause[0]
+%            self.watches[w0].append(ci)
+%            self.watches[w1].append(ci)
+%
+%    def literal_value(self, literal):
+%        """
+%        Evaluate a literal under current partial assignment.
+%        Returns True, False, or None if unassigned.
+%        """
+%        var = abs(literal)
+%        if var not in self.assignments:
+%            return None
+%        return self.assignments[var] if literal > 0 else not self.assignments[var]
+%
+%    def check_clause(self, clause):
+%        """
+%        Determine clause status: 'satisfied', 'conflict', 'unit', or 'undefined'.
+%        If 'unit', also return the unit literal.
+%        """
+%        unassigned = 0
+%        last = None
+%        for lit in clause:
+%            val = self.literal_value(lit)
+%            if val is True:
+%                return ('satisfied', None)
+%            if val is None:
+%                unassigned += 1
+%                last = lit
+%        if unassigned == 0:
+%            return ('conflict', None)
+%        if unassigned == 1:
+%            return ('unit', last)
+%        return ('undefined', None)
+%
+%    def _enqueue(self, var, value, level, reason):
+%        """
+%        Assign var=value at given level with reason and push onto decision stack.
+%        Returns the corresponding literal for propagation.
+%        """
+%        self.assignments[var] = value
+%        self.levels[var] = level%
+%        self.reasons[var] = reason%
+%        self.decision_stack.append((var, va%lue, level))
+%        return var if value else -var%
+%
+%    def unit_propagate(self):%
+%        """%
+%        Perform unit propagation using two-%watched literals.
+%        Returns a conflicting clause if con%flict, else None.
+%        """%
+%        queue = deque()%
+%        # Enqueue all literals assigned at %current level
+%        for var, val, lvl in self.decision_%stack:
+%            if lvl == self.decision_level:%
+%                queue.append(var if val els%e -var)
+%
+%        while queue:%
+%            lit = queue.popleft()%
+%            lit_false = -lit%
+%            # We iterate over a snapshot si%nce watch list may change
+%            watchers = list(self.watches[li%t_false])
+%            for ci in watchers:%
+%                clause = self.clauses[ci]%
+%                # Try to find a new literal% to watch instead of lit_false
+%                found_replacement = False%
+%                for l in clause:%
+%                    if l == lit_false:%
+%                        continue%
+%                    if self.literal_value(l%) is not False:
+%                        # relocate watch fr%om lit_false to l
+%                        self.watches[l].app%end(ci)
+%                        self.watches[lit_fa%lse].remove(ci)
+%                        found_replacement =% True
+%                        break%
+%                if found_replacement:%
+%                    continue%
+%
+%                # No replacement found: cla%use must be unit or conflict
+%                status, unit_lit = self.che%ck_clause(clause)
+%                if status == 'conflict':%
+%                    return clause%
+%                elif status == 'unit':%
+%                    v = abs(unit_lit)%
+%                    if v not in self.assign%ments:
+%                        new_lit = self._enq%ueue(v, unit_lit > 0, self.decision_level, clause)
+%                        queue.append(new_li%t)
+%        return None%
+%
+%    def pick_branching_variable(self):%
+%        """%
+%        Select next unassigned variable (na%ive).
+%        """%
+%        all_vars = {abs(l) for c in self.cl%auses for l in c}
+%        for v in all_vars:%
+%            if v not in self.assignments:%
+%                return v%
+%        return None%
+%
+%    def resolve(self, c1, c2, pivot):%
+%        """%
+%        Resolve two clauses on pivot litera%l.
+%        Returns the resolvent.%
+%        """%
+%        res = [l for l in c1 if l != pivot]%
+%        for l in c2:%
+%            if l != -pivot and l not in res%:
+%                res.append(l)%
+%        return res%
+%
+%    def conflict_analysis(self, conflict_clause):
+%        """
+%        First-UIP conflict analysis.
+%        Returns (learned_clause, backjump_level).
+%        """
+%        learned = conflict_clause.copy()
+%        cur_lvl = self.decision_level
+%        while True:
+%            # Count lits at current level
+%            lvl_lits = [l for l in learned if self.levels.get(abs(l), -1) == cur_lvl]
+%            if len(lvl_lits) <= 1:
+%                break
+%            # Find most recent one
+%            last = None
+%            for v,_,lvl in reversed(self.decision_stack):
+%                if lvl != cur_lvl:
+%                    continue
+%                for l in lvl_lits:
+%                    if abs(l) == v:
+%                        last = l
+%                        break
+%                if last:
+%                    break
+%            reason = self.reasons.get(abs(last))
+%            if not reason:
+%                break
+%            learned = self.resolve(learned, reason, last)
+%
+%        # Compute backjump level
+%        back_lvl = 0
+%        for l in learned:
+%            lvl = self.levels.get(abs(l), 0)
+%            if lvl != cur_lvl and lvl > back_lvl:
+%                back_lvl = lvl
+%        return learned, back_lvl
+%
+%    def backjump(self, level):
+%        """
+%        Undo assignments above given level.
+%        """
+%        new_stack = []
+%        for v, val, lvl in self.decision_stack:
+%            if lvl > level:
+%                self.assignments.pop(v, None)
+%                self.levels.pop(v, None)
+%                self.reasons.pop(v, None)
+%            else:
+%                new_stack.append((v, val, lvl))
+%        self.decision_stack = new_stack
+%
+%    def solve(self):
+%        """
+%        Main CDCL loop.
+%        Returns a satisfying assignment or None if UNSAT.
+%        """
+%        while True:
+%            conflict = self.unit_propagate()
+%            if conflict:
+%                if self.decision_level == 0:
+%                    return None
+%                learned, bj = self.conflict_analysis(conflict)
+%                # add learned clause and set up its watches
+%                self.clauses.append(learned)
+%                ci = len(self.clauses) - 1
+%                w0 = learned[0]
+%                w1 = learned[1] if len(learned) > 1 else learned[0]
+%                self.watches[w0].append(ci)
+%                self.watches[w1].append(ci)
+%                # backjump and continue
+%                self.backjump(bj)
+%                self.decision_level = bj
+%            else:
+%                var = self.pick_branching_variable()
+%                if var is None:
+%                    return self.assignments
+%                # make a new decision
+%                self.decision_level += 1
+%                lit = self._enqueue(var, True, self.decision_level, None)
+%\end{lstlisting}
 
-        # Two-Watched Literals: map literal -> list of clause indices watching it
-        self.watches = defaultdict(list)
-        self._init_watches()
 
-    def _init_watches(self):
-        """Initialize two watched literals per clause."""
-        for ci, clause in enumerate(self.clauses):
-            # If clause has only one literal, watch it twice.
-            w0 = clause[0]
-            w1 = clause[1] if len(clause) > 1 else clause[0]
-            self.watches[w0].append(ci)
-            self.watches[w1].append(ci)
+La implementaci\'on del algoritmo CDCL puede enriquecerse significativamente mediante la integraci\'on de estrategias que optimicen sus componentes cr\'iticos. Una de estas mejoras es la adopci\'on del esquema Two Watched Literals (TWL), el cual transforma de manera sustancial la manera en que se gestiona la propagaci\'on unitaria.
 
-    def literal_value(self, literal):
-        """
-        Evaluate a literal under current partial assignment.
-        Returns True, False, or None if unassigned.
-        """
-        var = abs(literal)
-        if var not in self.assignments:
-            return None
-        return self.assignments[var] if literal > 0 else not self.assignments[var]
+En la versi\'on b\'asica de CDCL, el procedimiento de propagaci\'on unitaria examina exhaustivamente todas las cl\'ausulas de la f\'ormula para identificar aquellas que se reducen a una sola literal no asignada bajo la interpretaci\'on parcial actual. Este enfoque, si bien correcto, resulta ineficiente, ya que el costo computacional de revisar cl\'ausula por cl\'ausula crece linealmente con el tama\~no de la f\'ormula. En contraste, el enfoque basado en TWL introduce una estructura auxiliar que asigna a cada cl\'ausula exactamente dos literales que act\'uan como ``vigilantes''. Mientras al menos uno de ellos no est\'e asignado a falso, se garantiza que la cl\'ausula no puede causar conflicto ni ser unitaria, permitiendo as\'i omitir su revisi\'on durante la propagaci\'on.
 
-    def check_clause(self, clause):
-        """
-        Determine clause status: 'satisfied', 'conflict', 'unit', or 'undefined'.
-        If 'unit', also return the unit literal.
-        """
-        unassigned = 0
-        last = None
-        for lit in clause:
-            val = self.literal_value(lit)
-            if val is True:
-                return ('satisfied', None)
-            if val is None:
-                unassigned += 1
-                last = lit
-        if unassigned == 0:
-            return ('conflict', None)
-        if unassigned == 1:
-            return ('unit', last)
-        return ('undefined', None)
+El impacto de esta estrategia se observa de inmediato en la estructura del c\'odigo. En la implementaci\'on enriquecida, se incorpora un diccionario que mapea cada literal a una lista de \'indices de cl\'ausulas que lo est\'an ``observando''. Esta organizaci\'on permite que, ante la asignaci\'on de un literal, solo se revisen aquellas cl\'ausulas que lo tienen como vigilante, reduciendo de forma dr\'astica la cantidad de cl\'ausulas analizadas en cada nivel de decisi\'on. Adem\'as, se redefine el procedimiento de propagaci\'on unitaria para que, al detectar que un literal vigilado ha sido evaluado a falso, se intente encontrar otro literal en la cl\'ausula que pueda ocupar su lugar como nuevo vigilante. Si esto no es posible y el otro literal vigilado tampoco satisface la cl\'ausula, se deduce que esta es unitaria o de conflicto, y se act\'ua en consecuencia.
 
-    def _enqueue(self, var, value, level, reason):
-        """
-        Assign var=value at given level with reason and push onto decision stack.
-        Returns the corresponding literal for propagation.
-        """
-        self.assignments[var] = value
-        self.levels[var] = level
-        self.reasons[var] = reason
-        self.decision_stack.append((var, value, level))
-        return var if value else -var
+Adem\'as de modificar la propagaci\'on unitaria, la estrategia TWL afecta tambi\'en la gesti\'on de cl\'ausulas aprendidas. Cada vez que se genera una nueva cl\'ausula como resultado del an\'alisis de conflictos, se seleccionan dos de sus literales para ser vigilados y se actualizan las estructuras de observaci\'on en consecuencia. Esto asegura que las optimizaciones ofrecidas por TWL se mantengan vigentes incluso cuando la f\'ormula evoluciona durante la ejecuci\'on del algoritmo.
 
-    def unit_propagate(self):
-        """
-        Perform unit propagation using two-watched literals.
-        Returns a conflicting clause if conflict, else None.
-        """
-        queue = deque()
-        # Enqueue all literals assigned at current level
-        for var, val, lvl in self.decision_stack:
-            if lvl == self.decision_level:
-                queue.append(var if val else -var)
-
-        while queue:
-            lit = queue.popleft()
-            lit_false = -lit
-            # We iterate over a snapshot since watch list may change
-            watchers = list(self.watches[lit_false])
-            for ci in watchers:
-                clause = self.clauses[ci]
-                # Try to find a new literal to watch instead of lit_false
-                found_replacement = False
-                for l in clause:
-                    if l == lit_false:
-                        continue
-                    if self.literal_value(l) is not False:
-                        # relocate watch from lit_false to l
-                        self.watches[l].append(ci)
-                        self.watches[lit_false].remove(ci)
-                        found_replacement = True
-                        break
-                if found_replacement:
-                    continue
-
-                # No replacement found: clause must be unit or conflict
-                status, unit_lit = self.check_clause(clause)
-                if status == 'conflict':
-                    return clause
-                elif status == 'unit':
-                    v = abs(unit_lit)
-                    if v not in self.assignments:
-                        new_lit = self._enqueue(v, unit_lit > 0, self.decision_level, clause)
-                        queue.append(new_lit)
-        return None
-
-    def pick_branching_variable(self):
-        """
-        Select next unassigned variable (naive).
-        """
-        all_vars = {abs(l) for c in self.clauses for l in c}
-        for v in all_vars:
-            if v not in self.assignments:
-                return v
-        return None
-
-    def resolve(self, c1, c2, pivot):
-        """
-        Resolve two clauses on pivot literal.
-        Returns the resolvent.
-        """
-        res = [l for l in c1 if l != pivot]
-        for l in c2:
-            if l != -pivot and l not in res:
-                res.append(l)
-        return res
-
-    def conflict_analysis(self, conflict_clause):
-        """
-        First-UIP conflict analysis.
-        Returns (learned_clause, backjump_level).
-        """
-        learned = conflict_clause.copy()
-        cur_lvl = self.decision_level
-        while True:
-            # Count lits at current level
-            lvl_lits = [l for l in learned if self.levels.get(abs(l), -1) == cur_lvl]
-            if len(lvl_lits) <= 1:
-                break
-            # Find most recent one
-            last = None
-            for v,_,lvl in reversed(self.decision_stack):
-                if lvl != cur_lvl:
-                    continue
-                for l in lvl_lits:
-                    if abs(l) == v:
-                        last = l
-                        break
-                if last:
-                    break
-            reason = self.reasons.get(abs(last))
-            if not reason:
-                break
-            learned = self.resolve(learned, reason, last)
-
-        # Compute backjump level
-        back_lvl = 0
-        for l in learned:
-            lvl = self.levels.get(abs(l), 0)
-            if lvl != cur_lvl and lvl > back_lvl:
-                back_lvl = lvl
-        return learned, back_lvl
-
-    def backjump(self, level):
-        """
-        Undo assignments above given level.
-        """
-        new_stack = []
-        for v, val, lvl in self.decision_stack:
-            if lvl > level:
-                self.assignments.pop(v, None)
-                self.levels.pop(v, None)
-                self.reasons.pop(v, None)
-            else:
-                new_stack.append((v, val, lvl))
-        self.decision_stack = new_stack
-
-    def solve(self):
-        """
-        Main CDCL loop.
-        Returns a satisfying assignment or None if UNSAT.
-        """
-        while True:
-            conflict = self.unit_propagate()
-            if conflict:
-                if self.decision_level == 0:
-                    return None
-                learned, bj = self.conflict_analysis(conflict)
-                # add learned clause and set up its watches
-                self.clauses.append(learned)
-                ci = len(self.clauses) - 1
-                w0 = learned[0]
-                w1 = learned[1] if len(learned) > 1 else learned[0]
-                self.watches[w0].append(ci)
-                self.watches[w1].append(ci)
-                # backjump and continue
-                self.backjump(bj)
-                self.decision_level = bj
-            else:
-                var = self.pick_branching_variable()
-                if var is None:
-                    return self.assignments
-                # make a new decision
-                self.decision_level += 1
-                lit = self._enqueue(var, True, self.decision_level, None)
-\end{lstlisting}
-
-En este código, de igual forma, se añaden las estrucutras necesarias y se realiza el procedimiento de acuerdo con la idea que plantea TWL.
+En s\'intesis, la transici\'on desde un esquema de propagaci\'on unitaria tradicional hacia un enfoque basado en Two Watched Literals representa una mejora sustancial en t\'erminos de eficiencia algor\'itmica. Al limitar el conjunto de cl\'ausulas a inspeccionar en cada paso, se logra una aceleraci\'on significativa del proceso de inferencia, lo cual resulta especialmente beneficioso en instancias de gran escala, donde los costos de propagaci\'on pueden dominar el tiempo total de ejecuci\'on. Esta adaptaci\'on no solo evidencia una comprensi\'on profunda de los mecanismos internos de CDCL, sino que tambi\'en refleja el compromiso con la incorporaci\'on de estrategias de vanguardia para la resoluci\'on eficiente del problema de satisfacibilidad booleana.
