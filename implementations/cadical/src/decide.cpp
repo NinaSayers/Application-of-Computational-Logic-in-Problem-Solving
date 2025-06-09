@@ -213,7 +213,7 @@ int Internal::decide () {
 
     int decision = 0;
     int idx = 0;
-    int threshold = std::max(100, (int)std::sqrt(internal->max_var));
+    //int threshold = std::max(100, (int)std::sqrt(internal->max_var));
 
     // if (opts.dlis) {
     //   LOG ("using DLIS decision heuristic");
@@ -223,7 +223,7 @@ int Internal::decide () {
     //     LOG ("DLIS found no literal, falling back");
     // }
     
-    if (opts.dlis && stats.decisions < threshold) {
+    if (opts.dlis /*&& stats.decisions < threshold*/) {
       //decision = pick_dlis_branch_literal();
       idx = next_decision_variable_with_dlis ();
       LOG ("DLIS decision literal %d", decision);

@@ -26,11 +26,11 @@ FLAG_DLIS_FALSE = "--dlis=false"
 FLAG_RESTART = "--restart=true"
 FLAG_NO_RESTART = "--restart=false"
 FLAG_STATS = "--stats"
-FLAG_TIME = "-t 60"
+FLAG_TIME = "-t 900"
 CADICAL_EXECUTABLE = "./cadical/build/cadical"  # Ajusta la ruta si es necesario
 # ====================================================
 
-INPUT_DIR = "./generated_benchmarks/"
+INPUT_DIR = "./"
 OUTPUT_CSV = "resultados_experimento.csv"
 
 COMBINACIONES = [
@@ -158,7 +158,7 @@ def ejecutar_solver(path_cnf, flags):
             [CADICAL_EXECUTABLE] + flags + [path_cnf],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            timeout=60,
+            timeout=900,
             text=True
         )
         duracion = time.time() - inicio

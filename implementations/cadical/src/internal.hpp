@@ -320,7 +320,7 @@ struct Internal {
   void reserve_ids (int number);
 
   // Enlarge tables.
-  // dlis
+  // 
   void enlarge_vals (size_t new_vsize);
   void enlarge (int new_max_var);
 
@@ -372,8 +372,9 @@ struct Internal {
 
   // DLIS
   int next_decision_variable_with_dlis ();
-  bool clause_is_satisfied(Clause *c);
   int count_literal_in_unsatisfied_binary_clauses(int lit);
+
+  bool clause_is_satisfied(Clause *c);
   int compute_dlis_score(int lit);
   int pick_dlis_branch_literal();
 
