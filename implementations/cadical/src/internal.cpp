@@ -1179,14 +1179,14 @@ bool Internal::clause_is_satisfied(Clause *c) {
  
 /// Cuenta ocurrencias de un literal 'lit' en cláusulas binarias
 /// no basura y no satisfechas, optimizando la llamada a val(lit).
-int Internal::count_literal_in_unsatisfied_binary_clauses (int lit) {
+int Internal::count_literal_in_unsatisfied_clauses_ (int lit) {
   int count = 0;
   // Cacheamos una sola vez el valor de 'lit'.
   const signed char val_lit = val (lit);
   // Recorremos su lista de watchers
   const Watches &ws = watches (lit);
   for (const Watch &w : ws) {
-    if (!w.binary ()) continue;          // Solo cláusulas binarias
+    //if (!w.binary ()) continue;          // Solo cláusulas binarias
     Clause *c = w.clause;                
     if (!c || c->garbage) continue;      // Saltar nulos y garbage
     int other = w.blit;                  // El otro literal de la cláusula
@@ -1198,7 +1198,7 @@ int Internal::count_literal_in_unsatisfied_binary_clauses (int lit) {
 }
 
 int Internal::compute_dlis_score(int lit) {
-  return count_literal_in_unsatisfied_binary_clauses(lit);
+  return count_literal_in_unsatisfied_clauses_(lit);
 }
 
 // /**
@@ -1210,40 +1210,6 @@ int Internal::compute_dlis_score(int lit) {
 //  * De forma interna, utiliza count_literal_in_unsatisfied_binary_clauses() para
 //  * calcular la "frecuencia en cláusulas binarias no satisfechas" de cada literal.
 //  */
-int Internal::next_decision_variable_with_dlis () {
-  int best_lit = 0;
-  int best_score = -1;
-
-  // Empezamos en el primer nodo “no asignado” de la cola:
-  int idx = queue.unassigned;
-
-  // Recorremos la lista de variables sin asignar (link(idx).prev nos lleva
-  // al siguiente “sin asignar”), igual que en next_decision_variable_on_queue().
-  while (idx) {
-    // Si idx ya tiene val(idx) != 0, saltemos (aunque en teoría queue.unassigned
-    // siempre apunta a un idx tal que val(idx)==0; no obstante, por seguridad lo comprobamos).
-    if (val(idx) == 0) {
-      // Calcular la puntuación DLIS para +idx y para -idx
-      int pos_score = count_literal_in_unsatisfied_binary_clauses(idx);
-      int neg_score = count_literal_in_unsatisfied_binary_clauses(-idx);
-
-      // Comparar con el mejor hasta ahora
-      if (pos_score > best_score) {
-        best_score = pos_score;
-        best_lit   = idx;    // literal positivo
-      }
-      if (neg_score > best_score) {
-        best_score = neg_score;
-        best_lit   = -idx;   // literal negativo
-      }
-    }
-    // Avanzamos al siguiente índice “no asignado”:
-    idx = link(idx).prev;
-  }
-
-  LOG ("next DLIS decision literal %d with score %d", best_lit, best_score);
-  return abs(best_lit);
-}
 
 // OTRA IMPLEMENTACION
 int Internal::pick_dlis_branch_literal() {
@@ -1268,6 +1234,142 @@ int Internal::pick_dlis_branch_literal() {
 
   return best_lit;
 }
+
+#include <unordered_set>
+#include <vector>
+
+////////////////////////////////////////////////////////////////////////////////
+// // Clase derivada para contar ocurrencias del literal en cláusulas insatisfechas
+// class CountLiteralInUnsatClauses : public ClauseIterator {
+//   Internal *internal;
+//   int target_lit;
+//   int count;
+
+// public:
+//   CountLiteralInUnsatClauses(Internal *i, int lit) : internal(i), target_lit(lit), count(0) {}
+
+//   bool clause(const std::vector<int> &c) override {
+//     // Verificar si la cláusula contiene el literal target_lit
+//     bool contains = false;
+//     for (int l : c) {
+//       if (l == target_lit) {
+//         contains = true;
+//         break;
+//       }
+//     }
+//     if (!contains) return true; // continuar iterando
+
+//     // Verificar si la cláusula está satisfecha
+//     bool satisfied = false;
+//     for (int l : c) {
+//       const int tmp = internal->fixed(l);
+//       if (tmp > 0) {
+//         satisfied = true;
+//         break;
+//       }
+//       if (tmp < 0) continue;
+//     }
+//     if (satisfied) return true; // cláusula satisfecha, no contar
+
+//     ++count;
+//     return true; // continuar iterando
+//   }
+
+//   int get_count() const { return count; }
+// };
+
+// Función para recolectar todas las cláusulas activas sin duplicados
+// std::unordered_set<Clause*> Internal::gather_all_active_clauses() {
+//   std::unordered_set<Clause*> seen;
+
+//   // Recorrer lista principal de cláusulas
+//   for (auto c : clauses) {
+//     if (!c->garbage)
+//       seen.insert(c);
+//   }
+
+//   // Recorrer watchers para incluir cláusulas adicionales
+// for (int lit = 0; lit < 2 * max_var; ++lit) {
+//   const Watches &ws = watches(lit);  // Llamada a la función miembro
+//   for (const auto &w : ws) {
+//     if (w.clause == nullptr) continue;
+//     Clause *c = w.clause;
+//     if (c->garbage) continue;
+//     seen.insert(c);
+//   }
+// }
+
+//   return seen;
+// }
+
+// Función para iterar todas las cláusulas activas usando ClauseIterator
+// bool Internal::iterate_all_clauses(ClauseIterator &it) {
+//   auto active_clauses = gather_all_active_clauses();
+
+//   for (Clause *c : active_clauses) {
+//     std::vector<int> eclause;
+//     bool satisfied = false;
+
+//     for (int ilit : *c) {
+//       const int tmp = fixed(ilit);
+//       if (tmp > 0) {
+//         satisfied = true;
+//         break;
+//       }
+//       if (tmp < 0) continue;
+//       const int elit = externalize(ilit);
+//       eclause.push_back(elit);
+//     }
+
+//     if (!satisfied) {
+//       if (!it.clause(eclause))
+//         return false;  // detener iteración si it.clause devuelve false
+//     }
+//   }
+//   return true;
+// }
+
+// Función principal para contar ocurrencias DLIS
+// int Internal::count_literal_in_unsatisfied_clauses(int lit) {
+//   CountLiteralInUnsatClauses counter(this, lit);
+//   iterate_all_clauses(counter);
+//   return counter.get_count();
+// }
+
+int Internal::next_decision_variable_with_dlis () {
+  int best_lit = 0;
+  int best_score = -1;
+
+  // Empezamos en el primer nodo “no asignado” de la cola:
+  int idx = queue.unassigned;
+
+  // Recorremos la lista de variables sin asignar (link(idx).prev nos lleva
+  // al siguiente “sin asignar”), igual que en next_decision_variable_on_queue().
+  while (idx) {
+    // Si idx ya tiene val(idx) != 0, saltemos (aunque en teoría queue.unassigned
+    // siempre apunta a un idx tal que val(idx)==0; no obstante, por seguridad lo comprobamos).
+    if (val(idx) == 0) {
+      // Calcular la puntuación DLIS para +idx y para -idx
+      int pos_score = count_literal_in_unsatisfied_clauses_(idx);
+      int neg_score = count_literal_in_unsatisfied_clauses_(-idx);
+
+      float med_score = (pos_score + neg_score)/2; // Se toma el promedio por la estrategia de phase
+
+      // Comparar con el mejor hasta ahora
+      if (med_score > best_score) {
+        best_score = pos_score;
+        best_lit   = idx;    // literal positivo
+      }      
+    }
+    // Avanzamos al siguiente índice “no asignado”:
+    idx = link(idx).prev;
+  }
+
+  LOG ("next DLIS decision literal %d with score %d", best_lit, best_score);
+  return abs(best_lit);
+}
+
+
 
 
 } // namespace CaDiCaL

@@ -372,7 +372,17 @@ struct Internal {
 
   // DLIS
   int next_decision_variable_with_dlis ();
-  int count_literal_in_unsatisfied_binary_clauses(int lit);
+  // Vector donde cada posición corresponde a un literal (indexado por lit)
+  // y contiene punteros a cláusulas donde aparece ese literal.
+  //std::vector<std::vector<Clause*>> clauses_by_literal;
+
+  //int count_literal_in_unsatisfied_clauses(int lit);
+  int count_literal_in_unsatisfied_clauses_(int lit);
+  //const std::vector<Clause*>& clauses_containing_literal(int lit);
+  //bool iterate_all_clauses(ClauseIterator &it);
+  //std::unordered_set<Clause*> gather_all_active_clauses();
+
+  //int count_literal_in_unsatisfied_binary_clauses(int lit);
 
   bool clause_is_satisfied(Clause *c);
   int compute_dlis_score(int lit);
