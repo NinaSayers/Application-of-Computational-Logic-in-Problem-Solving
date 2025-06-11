@@ -21,16 +21,16 @@ from collections import Counter
 #         CONFIGURACIÓN DE FLAGS DE CADICAL
 # ====================================================
 FLAG_VSIDS = "--score=false"  # VSIDS implícito
-FLAG_DLIS_TRUE = "--dlis=true --score=false --bump=false --bumpreason=false"
+FLAG_DLIS_TRUE = "--dlis=true --score=false"
 FLAG_DLIS_FALSE = "--dlis=false"
 FLAG_RESTART = "--restart=true"
 FLAG_NO_RESTART = "--restart=false"
 FLAG_STATS = "--stats"
-FLAG_TIME = "-t 900"
+FLAG_TIME = "-t 120"
 CADICAL_EXECUTABLE = "./cadical/build/cadical"  # Ajusta la ruta si es necesario
 # ====================================================
 
-INPUT_DIR = "./"
+INPUT_DIR = "./generated_benchmarks"
 OUTPUT_CSV = "resultados_experimento.csv"
 
 COMBINACIONES = [
@@ -158,7 +158,7 @@ def ejecutar_solver(path_cnf, flags):
             [CADICAL_EXECUTABLE] + flags + [path_cnf],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            timeout=900,
+            timeout=120,
             text=True
         )
         duracion = time.time() - inicio

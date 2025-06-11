@@ -1177,7 +1177,7 @@ bool Internal::clause_is_satisfied(Clause *c) {
   return false;
 }
  
-/// Cuenta ocurrencias de un literal 'lit' en cláusulas binarias
+/// Cuenta ocurrencias de un literal 'lit' en cláusulas
 /// no basura y no satisfechas, optimizando la llamada a val(lit).
 int Internal::count_literal_in_unsatisfied_clauses_ (int lit) {
   int count = 0;
@@ -1191,7 +1191,7 @@ int Internal::count_literal_in_unsatisfied_clauses_ (int lit) {
     if (!c || c->garbage) continue;      // Saltar nulos y garbage
     int other = w.blit;                  // El otro literal de la cláusula
     // Si 'lit' o 'other' ya son verdaderos, la cláusula está satisfecha
-    if (val_lit > 0 || val (other) > 0) continue;
+    if (val_lit != 0 || val (other) != 0) continue;
     ++count;
   }
   return count;
@@ -1357,10 +1357,12 @@ int Internal::next_decision_variable_with_dlis () {
 
       // Comparar con el mejor hasta ahora
       if (med_score > best_score) {
-        best_score = pos_score;
-        best_lit   = idx;    // literal positivo
-      }      
+        best_score = med_score;
+        best_lit   = idx;    
+      } 
+
     }
+    
     // Avanzamos al siguiente índice “no asignado”:
     idx = link(idx).prev;
   }
