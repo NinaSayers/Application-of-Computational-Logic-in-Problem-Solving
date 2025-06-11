@@ -14,19 +14,23 @@ from glob import glob
 # 4. Graph coloring en grafos aleatorios
 # 5. Parity (XOR) constraints
 # 6. BMC de circuito Flip-Flop simple
+# 7. Problemas DLIS-friendly (cláusulas largas, sesgo en literales, baja densidad)
+# 8. Problemas no DLIS-friendly (cláusulas cortas, sin sesgo, alta densidad)
 # ====================================================
 
 # Carpeta principal de salida
 BASE_OUTPUT_DIR = "generated_benchmarks"
 CSV_SUMMARY = os.path.join(BASE_OUTPUT_DIR, "benchmarks_summary.csv")
 
-# Cantidades a generar (total = 75)
+# Cantidades a generar (total aumentado para cubrir nuevos grupos)
 NUM_RANDOM3 = 15    # instancias Random-3SAT
 NUM_PIGEON = 15     # instancias Pigeonhole
 NUM_RANDOM4 = 15    # instancias Random-4SAT
 NUM_GRAPH = 10      # instancias Graph coloring
 NUM_PARITY = 10     # instancias Parity
 NUM_BMC = 10        # instancias BMC flip-flop
+NUM_DLIS_PROBS = 30 # problemas DLIS-friendly nuevos
+NUM_NON_DLIS_PROBS = 30 # problemas no DLIS-friendly nuevos
 
 # Parámetros de generación
 # Random-3SAT
@@ -79,6 +83,29 @@ def generate_random_ksat(n_vars, k, ratio, idx, output_dir):
     filepath = os.path.join(output_dir, filename)
     write_cnf(clauses, n_vars, filepath)
     return filename, n_vars, n_clauses, f"random{k}sat"
+
+# Función para generar cláusulas con sesgo en literales (más positivas o negativas)
+
+def generate_biased_clause(n_vars, k, bias_pos=0.7):
+    """
+    Genera una cláusula con k literales, donde la probabilidad de que un literal sea positivo es bias_pos,
+    para introducir sesgos en la distribución de literales.
+    """
+    lits = set()
+    while len(lits) < k:
+        var = random.randint(1, n_vars)
+        sign = 1 if random.random() < bias_pos else -1
+        lits.add(sign * var)
+    return list(lits)
+
+def generate_biased_ksat(n_vars, k, ratio, idx, output_dir, bias_pos=0.7):
+    random.seed(SEED + idx)
+    n_clauses = int(n_vars * ratio)
+    clauses = [generate_biased_clause(n_vars, k, bias_pos) for _ in range(n_clauses)]
+    filename = f"biased_random{k}sat_n{n_vars}_r{ratio:.2f}_b{bias_pos:.2f}_{idx}.cnf"
+    filepath = os.path.join(output_dir, filename)
+    write_cnf(clauses, n_vars, filepath)
+    return filename, n_vars, n_clauses, f"biased_random{k}sat"
 
 # 2. Pigeonhole
 
@@ -192,6 +219,22 @@ if __name__ == '__main__':
     for idx in range(NUM_BMC):
         d = BMC_DEPTHS[idx % len(BMC_DEPTHS)]
         summary.append(generate_bmc_flipflop(d, idx, BASE_OUTPUT_DIR))
+
+    # Problemas DLIS-friendly (cláusulas largas, sesgo en literales, baja densidad)
+    for idx in range(NUM_DLIS_PROBS):
+        n_vars = random.choice([200, 300, 400])
+        k = random.choice([5, 6])
+        ratio = random.uniform(2.0, 3.5)
+        bias_pos = random.uniform(0.7, 0.8)
+        summary.append(generate_biased_ksat(n_vars, k, ratio, idx + 2000, BASE_OUTPUT_DIR, bias_pos))
+
+    # Problemas no DLIS-friendly (cláusulas cortas, sin sesgo, alta densidad)
+    for idx in range(NUM_NON_DLIS_PROBS):
+        n_vars = random.choice([1000, 2000, 5000])
+        k = 3
+        ratio = random.uniform(4.0, 5.0)
+        bias_pos = 0.5
+        summary.append(generate_biased_ksat(n_vars, k, ratio, idx + 3000, BASE_OUTPUT_DIR, bias_pos))
 
     # Escribir CSV resumen
     with open(CSV_SUMMARY, 'w', newline='') as csvfile:

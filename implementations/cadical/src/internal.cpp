@@ -1176,7 +1176,7 @@ bool Internal::clause_is_satisfied(Clause *c) {
     if (val(lit) > 0) return true;
   return false;
 }
-
+ 
 /// Cuenta ocurrencias de un literal 'lit' en cláusulas binarias
 /// no basura y no satisfechas, optimizando la llamada a val(lit).
 int Internal::count_literal_in_unsatisfied_binary_clauses (int lit) {
