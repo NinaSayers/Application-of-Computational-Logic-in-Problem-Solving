@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  9 JUN 2025 03:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  11 JUN 2025 01:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1450,7 +1450,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count520
 Package tocbasic Info: setting babel extension for `lol' on input line 94.
-<Graphics/uhlogo.pdf, id=206, 375.98297pt x 481.67456pt>
+<Graphics/uhlogo.pdf, id=198, 375.98297pt x 481.67456pt>
 File: Graphics/uhlogo.pdf Graphic file (type pdf)
 <use Graphics/uhlogo.pdf>
 Package pdftex.def Info: Graphics/uhlogo.pdf  used on input line 97.
@@ -1682,43 +1682,43 @@ Overfull \hbox (4.28653pt too wide) in paragraph at lines 179--179
 
 [13]
 
-[14])
+[14]
 
 [15{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.e
-nc}]
+nc}])
+
+[16]
 \openout2 = `MainMatter/Algorithms.aux'.
 
  (MainMatter/Algorithms.tex
 Cap\'{\i }tulo 2.
 
 
-[16
+[17
 
 
 
 
 ]
 
-[17]
-<Graphics/arboldp.png, id=409, 406.51875pt x 199.947pt>
+[18]
+<Graphics/arboldp.png, id=403, 406.51875pt x 199.947pt>
 File: Graphics/arboldp.png Graphic file (type png)
 <use Graphics/arboldp.png>
 Package pdftex.def Info: Graphics/arboldp.png  used on input line 90.
 (pdftex.def)             Requested size: 346.89731pt x 170.62695pt.
 
 
-[18]
+[19]
 
-[19 <./Graphics/arboldp.png>]
+[20 <./Graphics/arboldp.png>]
 
-[20]
+[21]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 54.
  (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-
-[21]
 
 [22]
 
@@ -1733,6 +1733,8 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [27]
 
 [28]
+
+[29]
 Overfull \hbox (18.07846pt too wide) in paragraph at lines 394--395
 \T1/lmtt/m/n/12 'conflict'\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 'unit'\T1/lmr/m/n/12
  , \T1/lmtt/m/n/12 'undefined'\T1/lmr/m/n/12 ), se uti-li-za el mé-to-do \T1/lm
@@ -1740,8 +1742,6 @@ tt/m/n/12 check_clause(self, clause)\T1/lmr/m/n/12 .
  []
 
 
-
-[29]
 
 [30]
 
@@ -1765,16 +1765,18 @@ tt/m/n/12 check_clause(self, clause)\T1/lmr/m/n/12 .
 
 [40]
 
-[41])
+[41]
 
-[42]
+[42])
+
+[43]
 \openout2 = `MainMatter/Proposal.aux'.
 
  (MainMatter/Proposal.tex
 Cap\'{\i }tulo 3.
 )
 
-[43
+[44
 
 
 
@@ -1786,7 +1788,7 @@ Cap\'{\i }tulo 3.
 Cap\'{\i }tulo 4.
 
 
-[44
+[45
 
 
 
@@ -1802,18 +1804,18 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 
-[45]
+[46]
 
-[46])
-
-[47]
+[47])
 
 [48]
+
+[49]
 \openout2 = `BackMatter/Conclusions.aux'.
 
  (BackMatter/Conclusions.tex
 
-[49
+[50
 
 
 
@@ -1821,12 +1823,12 @@ File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 
 ])
 
-[50]
+[51]
 \openout2 = `BackMatter/Recomendations.aux'.
 
  (BackMatter/Recomendations.tex)
 
-[51
+[52
 
 
 
@@ -1859,7 +1861,7 @@ L3 programming layer <2025-04-14>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: A6520377FBE650508BD0C932BACD1A09;11825.
+(rerunfilecheck)             Checksum: C2F7537FDE640478C03CFF6D041B5B90;11321.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                Thesis
@@ -1870,8 +1872,8 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38622 strings out of 469941
- 728397 string characters out of 5469431
+ 38621 strings out of 469941
+ 728372 string characters out of 5469431
  1862387 words of memory out of 5000000
  64099 multiletter control sequences out of 15000+600000
  745414 words of font info for 113 fonts, out of 8000000 for 9000
@@ -1894,9 +1896,9 @@ ers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Use
 rs/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/User
 s/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/User
 s/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/uncb8a.pfb>
-Output written on Thesis.pdf (61 pages, 674295 bytes).
+Output written on Thesis.pdf (62 pages, 682491 bytes).
 PDF statistics:
- 1297 PDF objects out of 1440 (max. 8388607)
- 645 named destinations out of 1000 (max. 500000)
- 423 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1291 PDF objects out of 1440 (max. 8388607)
+ 644 named destinations out of 1000 (max. 500000)
+ 407 words of extra memory for PDF output out of 10000 (max. 10000000)
 

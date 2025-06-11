@@ -67,7 +67,7 @@ int Internal::next_decision_variable_with_dlis () {
 Como puede observarse, este m/'etodo hace un llamado a \begin{lstlisting}
 count_literal_in_unsatisfied_binary_clauses(idx)
 \end{lstlisting} 
-que es el m\'etodo encargado realizar el conteo de ocurrencias de literales por variable sin asignar, por cl\'ausula insatisfecha.
+que es el encargado de realizar el conteo de ocurrencias de literales por variable sin asignar, por cl\'ausula insatisfecha.
 
 \begin{lstlisting}[escapechar=!., language=C++]
 /// Cuenta ocurrencias de un literal 'lit' en cl\'ausulas binarias
@@ -91,12 +91,13 @@ int Internal::count_literal_in_unsatisfied_binary_clauses (int lit) {
 }
 \end{lstlisting}
 
-Es importante aclarar que el c/'alculo del \textit{score} de cada variable no se hace tal cual dicta DLIS, pues en aras de mantener lo m/' con la implementaci/'on 
+Es importante aclarar que el c/'alculo del \textit{score} de cada literal no se hace tal cual dicta DLIS, pues en aras de mantener la consistencia del c\'odigo con la implementaci/'on de CaDiCaL se usaron estrategias y estructuras que ya vienen implementadas, y a las cuales se acoplan las heur/'isticas de decisi/'on de variables que iya incorpora el solucionador. Por ejemplo, en el c/'odigo anterior puede verse que el recorrido para efectuar el conteo de ocurrencias de un literal no se realiza sobre todas las cl\'ausulas insatisfechas, sino que, haciendo uso de la estrategia \textit{Two Watched Literals} (TWL) (hacer referencia al marco te\'orico) 
 
-\subsection{Integraci/'on de DLIS}
+(assumptions--> hacer referencia a donde se explican en el marco teorico)
+
 \subsection{Empleo de \textit{flags} en la l/'inea de comandos}
+Los \textit{flags} usados en la l/'inea de comandos para combinar las heur/'isticas fueron:
+
 \section{Problemas}
 \section{Generador de problemas}
-\section{Selecci/'on de problemas de la SAT Competition 2023}
 \section{Estad/'isticas}
-Los \textit{flags} usados para combna

@@ -215,4 +215,36 @@ Propiedades estructurales como la presencia de \textit{backbones} o un \textit{t
 Este marco taxonómico no solo sistematiza la evaluación de solvers, sino que orienta el diseño de heurísticas híbridas. Por ejemplo, la integración de VSIDS con métricas de centralidad de grafos \textbf{22} mejora la cobertura en instancias combinatorias, mientras el acoplamiento con búsqueda local \textbf{1} beneficia a instancias ágiles. De este modo, la elección estratégica de benchmarks establece un puente entre la complejidad teórica de SAT y su aplicabilidad práctica.
 
 
+
+% COSAS EXTRAS POR EXPLICAAAAAARRR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+%///////////////////////BEGIN ASSUMPTIONS//////////////////////////////////
+¿Qué son las 'assumptions'?
+•
+En esencia, las 'assumptions' permiten invocar un SAT solver con un conjunto de valores ya asignados a ciertas variables. Esto es particularmente útil en escenarios donde el solver se utiliza iterativamente.
+•
+Por ejemplo, si se necesita agregar o eliminar una cláusula ci entre llamadas al solver, se puede añadir a la fórmula como (ci $\lor$ si), donde si es una variable de activación, selección o indicador. Al establecer si = 1, la cláusula ci se ``considera'' en la fórmula, y al establecer si = 0, no se considera.
+•
+Esta técnica fue propuesta inicialmente en el solver MiniSat. %Chapter 4 Conflict-Driven Clause Learning SAT Solvers Marquwa-Silva Handbook of Satisfiability 2021.pdf
+
+Además de su rol en la resolución incremental, las variables de activación también se emplean para cláusulas temporales. Por ejemplo, para añadir una cláusula temporal c, se introduce una variable de activación a y se añade (c $\lor$ a) a la fórmula, asumiendo ¬a. Para "eliminar" c, simplemente se añade la cláusula unitaria (a).
+•
+Un aumento en el número de variables de activación puede impactar negativamente el rendimiento del solver, lo que tradicionalmente se ha abordado mediante reinicios periódicos del solver. Sin embargo, algunos enfoques, como GipSAT, permiten la reutilización de una única variable de activación al eliminar proactivamente las cláusulas aprendidas que la contienen después de cada proceso de resolución. %Deeply Optimizing the SAT Solver fir the IC3 Algorithm.pdf
+CaDiCaL, en sus versiones recientes, utiliza 'constraints' que pueden simularse con 'activation literals' en versiones anteriores % Documento cadical
+
+¿Por qué se comprueban antes de la heurística de decisión de variables?
+Las 'assumptions' se asignan y se propagan antes de que comience la búsqueda efectiva mediante la heurística de decisión de variables. Esto se debe a la forma en que los solvers CDCL (Conflict-Driven Clause Learning) operan: %Chapter 4 Conflict-Driven Clause Learning SAT Solvers Marquwa-Silva Handbook of Satisfiability 2021.pdf
+
+Propagación Unitaria (BCP) Inicial: El algoritmo CDCL inicia con una fase de Propagación Unitaria (BCP, por sus siglas en inglés, Boolean Constraint Propagation). En esta fase, se asignan valores a las variables que son forzadas por las cláusulas unitarias existentes o por las 'assumptions'.
+•
+Detección de Conflictos Temprana: Si la Propagación Unitaria (BCP) detecta un conflicto al nivel de decisión 0 (es decir, antes de que el solver haya tomado cualquier decisión propia), significa que la fórmula (junto con las 'assumptions' actuales) es insatisfacible. %AutoSAT Automatically Optimize SAT Solvers via Large Language Models.pdf
+
+•
+Eficiencia: Esta comprobación temprana es crucial para la eficiencia. Permite que el solver determine la insatisfacibilidad rápidamente, sin necesidad de explorar el espacio de búsqueda haciendo decisiones de ramificación que, en última instancia, llevarían a un conflicto inevitable debido a los supuestos. %%Chapter 4 Conflict-Driven Clause Learning SAT Solvers Marquwa-Silva Handbook of Satisfiability 2021.pdf
+Solo si BCP no detecta conflictos y no todas las variables están asignadas, el solver procede a seleccionar una variable para ramificar utilizando la heurística de decisión.%AutoSAT Automatically Optimize SAT Solvers via Large Language Models.pdf
+
+En resumen, las 'assumptions' son como un punto de partida para el solver. Se procesan inicialmente a través de la propagación unitaria para asegurarse de que la configuración inicial (incluyendo estos supuestos) no genere un conflicto inmediato. Esto optimiza el proceso, ya que evita búsquedas infructuosas en partes del espacio que ya se sabe que son inconsistentes con los supuestos dados.
+
+%///////////////////////////////////END ASSUMPTIONS//////////////////////////
+
 %En resumen, la eficiencia de heurísticas como VSIDS se evalúa en solvers CDCL completos utilizando benchmarks de SAT Competition que representan problemas del mundo real (Aplicación), problemas construidos para ser difíciles (Combinatorios) y, en menor medida para CDCL, problemas aleatorios. Los problemas se clasifican por origen, satisfacibilidad y propiedades estructurales como densidad, modularidad y la existencia de "backdoors". La densidad es particularmente relevante en la zona de transición de fase de las instancias aleatorias.
