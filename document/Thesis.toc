@@ -34,18 +34,31 @@
 \contentsline {subsection}{\numberline {1.6.4}XOR}{27}{subsection.1.6.4}%
 \contentsline {subsection}{\numberline {1.6.5}\textit {Bounded Model Checking} (BCM)}{27}{subsection.1.6.5}%
 \contentsline {section}{\numberline {1.7}Ineficiencias Fundamentales de SAT}{27}{section.1.7}%
-\contentsline {chapter}{\numberline {2}Algoritmos}{29}{chapter.2}%
-\contentsline {section}{\numberline {2.1}DP/DPLL}{29}{section.2.1}%
-\contentsline {section}{\numberline {2.2}CDCL}{29}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Propuesta}{50}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Detalles de Implementación y Experimentos}{51}{chapter.4}%
-\contentsline {section}{\numberline {4.1}CaDiCaL}{51}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Integraci/'on de DLIS}{52}{subsection.4.1.1}%
-\contentsline {subsubsection}{\textit {internal.hpp}}{52}{section*.11}%
-\contentsline {subsubsection}{\textit {internal.cpp}}{52}{section*.12}%
-\contentsline {subsection}{\numberline {4.1.2}Empleo de \textit {flags} en la l/'inea de comandos}{54}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Problemas}{55}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Generador de problemas}{55}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Estad/'isticas}{55}{section.4.4}%
-\contentsline {chapter}{Conclusiones}{56}{section*.13}%
-\contentsline {chapter}{Recomendaciones}{58}{section*.15}%
+\contentsline {chapter}{\numberline {2}Detalles de Implementación y Experimentos}{30}{chapter.2}%
+\contentsline {subsection}{\numberline {2.0.1}CaDiCaL}{30}{subsection.2.0.1}%
+\contentsline {subsubsection}{Integraci/'on de DLIS}{31}{section*.11}%
+\contentsline {subsubsection}{\textit {decide.cpp}}{33}{section*.12}%
+\contentsline {subsubsection}{options.hpp}{35}{section*.13}%
+\contentsline {subsection}{\numberline {2.0.2}Empleo de \textit {flags} en la l/'inea de comandos}{35}{subsection.2.0.2}%
+\contentsline {subsection}{\numberline {2.0.3}Problemas}{35}{subsection.2.0.3}%
+\contentsline {subsection}{\numberline {2.0.4}Generador de problemas}{37}{subsection.2.0.4}%
+\contentsline {subsection}{\numberline {2.0.5}Estad/'isticas}{37}{subsection.2.0.5}%
+\contentsline {section}{\numberline {2.1}Resultados}{38}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}An\'alisis de los problemas con TIMEOUT}{38}{subsection.2.1.1}%
+\contentsline {subsubsection}{Tabla resumen de TIMEOUTs}{38}{section*.14}%
+\contentsline {subsubsection}{Estad\'isticas descriptivas}{39}{section*.15}%
+\contentsline {subsubsection}{Conteo de TIMEOUT por heur\'istica y por problema}{39}{section*.16}%
+\contentsline {subsection}{\numberline {2.1.2}An\'alisis de problemas resueltos (SATISFIABLE/UNSATISFIABLE)}{40}{subsection.2.1.2}%
+\contentsline {subsubsection}{Tabla resumen de RESUELTOS}{40}{section*.17}%
+\contentsline {subsubsection}{Estad\'isticas descriptivas}{40}{section*.18}%
+\contentsline {subsection}{\numberline {2.1.3}Porblemas RESUELTOS vs TIMEOUT}{41}{subsection.2.1.3}%
+\contentsline {subsubsection}{An\'alisis de multicolinealidad}{41}{section*.19}%
+\contentsline {subsubsection}{Comparaci\'on de caracter\'isticas entre RESUELTOS Y TIMEOUTs}{41}{section*.20}%
+\contentsline {subsubsection}{Prueba Mann-Whitney U}{42}{section*.21}%
+\contentsline {subsubsection}{Regresi\'on log\'istica: ¿Qué características predicen TIMEOUT?}{42}{section*.22}%
+\contentsline {subsection}{\numberline {2.1.4}Rendimiento de las heur\'isticas en problemas resueltos}{43}{subsection.2.1.4}%
+\contentsline {subsubsection}{Correlaci\'on de Spearman}{43}{section*.23}%
+\contentsline {subsubsection}{Kruskal-Wallis: ¿El tiempo difiere entre heurísticas para un mismo tipo de problema?}{44}{section*.24}%
+\contentsline {subsubsection}{Pruebas post hoc con test de Dunn}{45}{section*.25}%
+\contentsline {chapter}{Conclusiones}{47}{section*.26}%
+\contentsline {chapter}{Recomendaciones}{48}{section*.28}%

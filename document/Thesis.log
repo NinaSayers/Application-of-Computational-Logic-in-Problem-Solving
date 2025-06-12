@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  12 JUN 2025 07:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  12 JUN 2025 10:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1355,10 +1355,9 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
  (FrontMatter/Dedication.aux) (FrontMatter/Thanks.aux)
 (FrontMatter/SupervisorOpinion.aux) (FrontMatter/Abstract.aux)
 (FrontMatter/Contents.aux) (MainMatter/Introduction.aux)
-(MainMatter/Background.aux) (MainMatter/Algorithms.aux)
-(MainMatter/Proposal.aux) (MainMatter/Implementation.aux)
-(BackMatter/Conclusions.aux) (BackMatter/Recomendations.aux)
-(BackMatter/Bibliography.aux))
+(MainMatter/Background.aux) (MainMatter/Proposal.aux)
+(MainMatter/Implementation.aux) (BackMatter/Conclusions.aux)
+(BackMatter/Recomendations.aux) (BackMatter/Bibliography.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
@@ -1559,7 +1558,13 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
 
 
-])
+]
+Overfull \hbox (2.14784pt too wide) in paragraph at lines 51--51
+ [][] []\T1/lmr/m/n/12 Análisis de pro-ble-mas re-suel-tos (SA-TIS-FIA-BLE/UN-S
+A-TIS-FIA- 
+ []
+
+)
 \tf@toc=\write7
 \openout7 = `Thesis.toc'.
 
@@ -1735,66 +1740,11 @@ rdware-bmc'' y ``hardware-
 [27])
 
 [28]
-\openout2 = `MainMatter/Algorithms.aux'.
-
- (MainMatter/Algorithms.tex
-Cap\'{\i }tulo 2.
-
-
-[29
-
-
-
-
-]
-
-[30]
-
-[31]
-
-[32]
-
-[33]
-
-[34]
-
-[35]
-
-[36]
-
-[37]
-
-[38]
-
-[39]
-
-[40]
-
-[41]
-
-[42]
-
-[43]
-
-[44]
-
-[45]
-
-[46]
-
-[47]
-
-[48])
-
-[49]
 \openout2 = `MainMatter/Proposal.aux'.
 
- (MainMatter/Proposal.tex
-Cap\'{\i }tulo 3.
-)
+ (MainMatter/Proposal.tex)
 
-[50
-
+[29
 
 
 
@@ -1802,10 +1752,14 @@ Cap\'{\i }tulo 3.
 \openout2 = `MainMatter/Implementation.aux'.
 
  (MainMatter/Implementation.tex
-Cap\'{\i }tulo 4.
+Cap\'{\i }tulo 2.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 6.
 
 
-[51
+
+[30
 
 
 
@@ -1821,31 +1775,435 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 
-[52]
+[31]
 
-[53])
+[32]
 
-[54]
+[33]
 
-[55]
+[34]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+73.
+ (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+
+[35{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
+]
+
+[36]
+
+[37]
+Overfull \hbox (39.13786pt too wide) in paragraph at lines 245--246
+\T1/lmr/m/n/12 python: \T1/lmr/m/it/12 pan-das\T1/lmr/m/n/12 , \T1/lmr/m/it/12 
+numpy\T1/lmr/m/n/12 , \T1/lmr/m/it/12 sea-born\T1/lmr/m/n/12 , \T1/lmr/m/it/12 
+mat-plotlib.pyplot\T1/lmr/m/n/12 , \T1/lmr/m/it/12 stats-mo-dels.api\T1/lmr/m/n
+/12 , \T1/lmr/m/it/12 va-rian-ce_inflation_factor
+ []
+
+
+Overfull \hbox (7.46298pt too wide) in paragraph at lines 245--246
+\T1/lmr/m/n/12 y va-rian-ce_inflation_factor, am-bas de \T1/lmr/m/it/12 stats-m
+o-dels.stats.outliers_influence\T1/lmr/m/n/12 , \T1/lmr/m/it/12 ols \T1/lmr/m/n
+/12 de \T1/lmr/m/it/12 stats-
+ []
+
+
+Overfull \hbox (41.88762pt too wide) in paragraph at lines 245--246
+\T1/lmr/m/it/12 mo-dels.formula.api\T1/lmr/m/n/12 , \T1/lmr/m/it/12 scipy.stats
+\T1/lmr/m/n/12 , \T1/lmr/m/it/12 Lo-gis-ti-cRe-gres-sion \T1/lmr/m/n/12 de \T1/
+lmr/m/it/12 sklearn.linear_model\T1/lmr/m/n/12 , y sci-kit_posthocs. 
+ []
+
+
+
+[38]
+
+[39]
+
+[40]
+Overfull \hbox (29.77446pt too wide) in paragraph at lines 310--311
+[]\T1/lmr/m/n/12 Como se pue-de apre-ciar, en-tre las va-ria-bles num_vars y va
+rs_positivas y vars_negativas,
+ []
+
+
+Overfull \hbox (45.11923pt too wide) in paragraph at lines 310--311
+\T1/lmtt/m/n/12 caracteristicas_reducidas = ['num_vars', 'densidad', 'tamanio_p
+rom_clausula']\T1/lmr/m/n/12 . 
+ []
+
+
+Overfull \hbox (47.09503pt too wide) in paragraph at lines 324--325
+[]\T1/lmtt/m/n/12 num_vars (TIMEOUT): ShapiroResult(statistic=np.float64(0.7933
+191376191727),
+ []
+
+
+Overfull \hbox (313.47133pt too wide) in paragraph at lines 324--325
+\T1/lmtt/m/n/12 pvalue=np.float64(1.1794648547679767e-18)) num_vars (NO TIMEOUT
+): ShapiroResult(statistic=np.float64(0.6698142994834743),
+ []
+
+
+Overfull \hbox (288.77832pt too wide) in paragraph at lines 324--325
+\T1/lmtt/m/n/12 pvalue=np.float64(9.428437191286474e-26)) densidad (TIMEOUT): S
+hapiroResult(statistic=np.float64(0.6461253813664019),
+ []
+
+
+Overfull \hbox (307.34535pt too wide) in paragraph at lines 324--325
+\T1/lmtt/m/n/12 pvalue=np.float64(7.820027948180053e-24)) densidad (NO TIMEOUT)
+: ShapiroResult(statistic=np.float64(0.5441281055563653),
+ []
+
+
+Overfull \hbox (23.2812pt too wide) in paragraph at lines 324--325
+\T1/lmtt/m/n/12 pvalue=np.float64(2.297890446301959e-29)) tamanio_prom_clausula
+ (TIMEOUT):
+ []
+
+
+Overfull \hbox (165.30627pt too wide) in paragraph at lines 324--325
+\T1/lmtt/m/n/12 ShapiroResult(statistic=np.float64(0.752042266567243), pvalue=n
+p.float64(2.4804046463422804e-20))
+ []
+
+
+Overfull \hbox (128.27727pt too wide) in paragraph at lines 324--325
+\T1/lmtt/m/n/12 tamanio_prom_clausula (NO TIMEOUT): ShapiroResult(statistic=np.
+float64(0.8112114166434761),
+ []
+
+
+
+[41]
+Overfull \hbox (10.08003pt too wide) in paragraph at lines 334--335
+[]\T1/lmtt/m/n/12 Mann-Whitney U para num_vars: p-value = 1.383e-83 Mann-Whitne
+y U para
+ []
+
+
+Overfull \hbox (10.96622pt too wide) in paragraph at lines 334--335
+\T1/lmtt/m/n/12 densidad: p-value = 3.168e-29 Mann-Whitney U para tamanio_prom_
+clausula:
+ []
+
+
+Overfull \hbox (40.95505pt too wide) in paragraph at lines 352--353
+[]\T1/lmtt/m/n/12 num_vars: coeficiente logit = 0.0032 densidad: coeficiente lo
+git = -0.0314
+ []
+
+
+
+[42]
+Overfull \hbox (34.76604pt too wide) in paragraph at lines 370--371
+[]\T1/lmtt/m/n/12 Spearman num_vars vs tiempo_segundos: rho = 0.845, p = 1.116e
+-63 Spearman
+ []
+
+
+Overfull \hbox (97.41626pt too wide) in paragraph at lines 370--371
+\T1/lmtt/m/n/12 densidad vs tiempo_segundos: rho = 0.318, p = 8.968e-07 Spearma
+n tamanio_prom_clausula
+ []
+
+
+
+[43]
+Overfull \hbox (65.65506pt too wide) in paragraph at lines 390--391
+[] \T1/lmtt/m/n/12 Kruskal-Wallis para heurística: VSIDS+restart Variable: num_
+vars, estadístico
+ []
+
+
+Overfull \hbox (17.14822pt too wide) in paragraph at lines 390--391
+\T1/lmtt/m/n/12 = 55.0704, p-valor = 1.738e-06 Variable: densidad, estadístico 
+= 55.8711,
+ []
+
+
+Overfull \hbox (29.49123pt too wide) in paragraph at lines 390--391
+\T1/lmtt/m/n/12 p-valor = 8.922e-05 Variable: tamanio_prom_clausula, estadístic
+o = 54.8239,
+ []
+
+
+Overfull \hbox (10.08003pt too wide) in paragraph at lines 396--397
+[] \T1/lmtt/m/n/12 Kruskal-Wallis para heurística: VSIDS+no-restart Variable: n
+um_vars,
+ []
+
+
+Overfull \hbox (23.31622pt too wide) in paragraph at lines 396--397
+\T1/lmtt/m/n/12 estadístico = 54.7791, p-valor = 9.448e-07 Variable: densidad, 
+estadístico
+ []
+
+
+Overfull \hbox (29.49823pt too wide) in paragraph at lines 396--397
+\T1/lmtt/m/n/12 = 55.2582, p-valor = 6.482e-05 Variable: tamanio_prom_clausula,
+ estadístico
+ []
+
+
+Overfull \hbox (59.48006pt too wide) in paragraph at lines 402--403
+[] \T1/lmtt/m/n/12 Kruskal-Wallis para heurística: DLIS+restart Variable: num_v
+ars, estadístico
+ []
+
+
+Overfull \hbox (17.14122pt too wide) in paragraph at lines 402--403
+\T1/lmtt/m/n/12 = 41.2553, p-valor = 4.441e-05 Variable: densidad, estadístico 
+= 40.6674,
+ []
+
+
+Overfull \hbox (23.30922pt too wide) in paragraph at lines 402--403
+\T1/lmtt/m/n/12 p-valor = 0.001692 Variable: tamanio_prom_clausula, estadístico
+ = 42.9055,
+ []
+
+
+Overfull \hbox (3.90503pt too wide) in paragraph at lines 408--409
+[] \T1/lmtt/m/n/12 Kruskal-Wallis para heurística: DLIS+no-restart Variable: nu
+m_vars,
+ []
+
+
+Overfull \hbox (23.30222pt too wide) in paragraph at lines 408--409
+\T1/lmtt/m/n/12 estadístico = 46.9197, p-valor = 4.813e-06 Variable: densidad, 
+estadístico
+ []
+
+
+Overfull \hbox (23.32323pt too wide) in paragraph at lines 408--409
+\T1/lmtt/m/n/12 = 47.8132, p-valor = 9.17e-05 Variable: tamanio_prom_clausula, 
+estadístico
+ []
+
+
+
+[44]
+Overfull \hbox (59.48006pt too wide) in paragraph at lines 428--429
+[] \T1/lmtt/m/n/12 Variable: num_vars (grupos por cuartiles con ranking) 1 2 3 
+4 1 1.000000e+00
+ []
+
+
+Overfull \hbox (35.65222pt too wide) in paragraph at lines 428--429
+\T1/lmtt/m/n/12 0.703180 0.000015 1.056421e-07 2 7.031804e-01 1.000000 0.011745
+ 4.209616e-04
+ []
+
+
+Overfull \hbox (48.00923pt too wide) in paragraph at lines 428--429
+\T1/lmtt/m/n/12 3 1.466021e-05 0.011745 1.000000 1.000000e+00 4 1.056421e-07 0.
+000421 1.000000
+ []
+
+
+Overfull \hbox (34.78004pt too wide) in paragraph at lines 436--437
+[] \T1/lmtt/m/n/12 Variable: densidad (grupos por cuartiles con ranking) 1 2 3 
+4 1 1.000000
+ []
+
+
+Overfull \hbox (29.49823pt too wide) in paragraph at lines 436--437
+\T1/lmtt/m/n/12 0.000007 0.000503 0.070783 2 0.000007 1.000000 1.000000 0.10346
+5 3 0.000503
+ []
+
+
+Overfull \hbox (10.08003pt too wide) in paragraph at lines 444--445
+[] \T1/lmtt/m/n/12 Variable: tamanio_prom_clausula (grupos por cuartiles con ra
+nking) 1
+ []
+
+
+Overfull \hbox (29.49123pt too wide) in paragraph at lines 444--445
+\T1/lmtt/m/n/12 2 3 4 1 1.000000e+00 0.123377 0.040784 7.498526e-08 2 1.233771e
+-01 1.000000
+ []
+
+
+Overfull \hbox (72.68823pt too wide) in paragraph at lines 444--445
+\T1/lmtt/m/n/12 1.000000 6.133981e-03 3 4.078389e-02 1.000000 1.000000 2.285046
+e-02 4 7.498526e-08
+ []
+
+
+Overfull \hbox (59.48006pt too wide) in paragraph at lines 455--456
+[] \T1/lmtt/m/n/12 Variable: num_vars (grupos por cuartiles con ranking) 1 2 3 
+4 1 1.000000e+00
+ []
+
+
+Overfull \hbox (35.6242pt too wide) in paragraph at lines 455--456
+\T1/lmtt/m/n/12 0.937707 0.000237 2.446266e-07 2 9.377070e-01 1.000000 0.039659
+ 2.823215e-04
+ []
+
+
+Overfull \hbox (47.98122pt too wide) in paragraph at lines 455--456
+\T1/lmtt/m/n/12 3 2.368724e-04 0.039659 1.000000 1.000000e+00 4 2.446266e-07 0.
+000282 1.000000
+ []
+
+
+Overfull \hbox (34.78004pt too wide) in paragraph at lines 463--464
+[] \T1/lmtt/m/n/12 Variable: densidad (grupos por cuartiles con ranking) 1 2 3 
+4 1 1.000000
+ []
+
+
+Overfull \hbox (29.49823pt too wide) in paragraph at lines 463--464
+\T1/lmtt/m/n/12 0.000001 0.000050 0.108825 2 0.000001 1.000000 1.000000 0.02746
+5 3 0.000050
+ []
+
+
+Overfull \hbox (10.08003pt too wide) in paragraph at lines 471--472
+[] \T1/lmtt/m/n/12 Variable: tamanio_prom_clausula (grupos por cuartiles con ra
+nking) 1
+ []
+
+
+Overfull \hbox (29.47722pt too wide) in paragraph at lines 471--472
+\T1/lmtt/m/n/12 2 3 4 1 1.000000e+00 0.189033 0.004745 3.629837e-08 2 1.890331e
+-01 1.000000
+ []
+
+
+Overfull \hbox (72.70924pt too wide) in paragraph at lines 471--472
+\T1/lmtt/m/n/12 1.000000 1.485490e-03 3 4.745457e-03 1.000000 1.000000 1.082227
+e-01 4 3.629837e-08
+ []
+
+
+Overfull \hbox (59.48006pt too wide) in paragraph at lines 482--483
+[] \T1/lmtt/m/n/12 Variable: num_vars (grupos por cuartiles con ranking) 1 2 3 
+4 1 1.000000e+00
+ []
+
+
+Overfull \hbox (35.65222pt too wide) in paragraph at lines 482--483
+\T1/lmtt/m/n/12 1.000000 0.004494 1.182619e-07 2 1.000000e+00 1.000000 0.058306
+ 1.022282e-05
+ []
+
+
+Overfull \hbox (47.9602pt too wide) in paragraph at lines 482--483
+\T1/lmtt/m/n/12 3 4.494466e-03 0.058306 1.000000 1.668414e-01 4 1.182619e-07 0.
+000010 0.166841
+ []
+
+
+Overfull \hbox (34.78004pt too wide) in paragraph at lines 490--491
+[] \T1/lmtt/m/n/12 Variable: densidad (grupos por cuartiles con ranking) 1 2 3 
+4 1 1.000000
+ []
+
+
+Overfull \hbox (29.48422pt too wide) in paragraph at lines 490--491
+\T1/lmtt/m/n/12 0.024023 0.039453 0.005794 2 0.024023 1.000000 1.000000 1.00000
+0 3 0.039453
+ []
+
+
+
+[45]
+Overfull \hbox (10.08003pt too wide) in paragraph at lines 498--499
+[] \T1/lmtt/m/n/12 Variable: tamanio_prom_clausula (grupos por cuartiles con ra
+nking) 1
+ []
+
+
+Overfull \hbox (54.20525pt too wide) in paragraph at lines 498--499
+\T1/lmtt/m/n/12 2 3 4 1 1.000000 0.00071 0.078823 0.000005 2 0.000710 1.00000 1
+.000000 1.000000
+ []
+
+
+Overfull \hbox (17.14122pt too wide) in paragraph at lines 498--499
+\T1/lmtt/m/n/12 3 0.078823 1.00000 1.000000 0.098370 4 0.000005 1.00000 0.09837
+0 1.000000 
+ []
+
+
+Overfull \hbox (59.48006pt too wide) in paragraph at lines 509--510
+[] \T1/lmtt/m/n/12 Variable: num_vars (grupos por cuartiles con ranking) 1 2 3 
+4 1 1.000000e+00
+ []
+
+
+Overfull \hbox (35.63821pt too wide) in paragraph at lines 509--510
+\T1/lmtt/m/n/12 0.563525 0.000105 1.981346e-08 2 5.635254e-01 1.000000 0.048111
+ 1.336627e-04
+ []
+
+
+Overfull \hbox (47.98822pt too wide) in paragraph at lines 509--510
+\T1/lmtt/m/n/12 3 1.047943e-04 0.048111 1.000000 7.859709e-01 4 1.981346e-08 0.
+000134 0.785971
+ []
+
+
+Overfull \hbox (59.48006pt too wide) in paragraph at lines 517--518
+[] \T1/lmtt/m/n/12 Variable: densidad (grupos por cuartiles con ranking) 1 2 3 
+4 1 1.000000e+00
+ []
+
+
+Overfull \hbox (35.63821pt too wide) in paragraph at lines 517--518
+\T1/lmtt/m/n/12 6.856812e-07 0.001024 0.010847 2 6.856812e-07 1.000000e+00 0.89
+1933 0.174521
+ []
+
+
+Overfull \hbox (17.13422pt too wide) in paragraph at lines 517--518
+\T1/lmtt/m/n/12 3 1.023563e-03 8.919335e-01 1.000000 1.000000 4 1.084705e-02 1.
+745214e-01
+ []
+
+
+Overfull \hbox (10.08003pt too wide) in paragraph at lines 525--526
+[] \T1/lmtt/m/n/12 Variable: tamanio_prom_clausula (grupos por cuartiles con ra
+nking) 1
+ []
+
+
+Overfull \hbox (29.46321pt too wide) in paragraph at lines 525--526
+\T1/lmtt/m/n/12 2 3 4 1 1.000000e+00 0.016085 0.029254 5.334288e-09 2 1.608499e
+-02 1.000000
+ []
+
+
+Overfull \hbox (72.68823pt too wide) in paragraph at lines 525--526
+\T1/lmtt/m/n/12 1.000000 1.063184e-02 3 2.925435e-02 1.000000 1.000000 8.289626
+e-03 4 5.334288e-09
+ []
+
+)
+
+[46]
 \openout2 = `BackMatter/Conclusions.aux'.
 
- (BackMatter/Conclusions.tex
+ (BackMatter/Conclusions.tex)
 
-[56
-
-
+[47
 
 
 
-])
 
-[57]
+
+]
 \openout2 = `BackMatter/Recomendations.aux'.
 
  (BackMatter/Recomendations.tex)
 
-[58
+[48
 
 
 
@@ -1865,10 +2223,9 @@ LaTeX Info: Redefining \% on input line 13.
  (FrontMatter/Dedication.aux) (FrontMatter/Thanks.aux)
 (FrontMatter/SupervisorOpinion.aux) (FrontMatter/Abstract.aux)
 (FrontMatter/Contents.aux) (MainMatter/Introduction.aux)
-(MainMatter/Background.aux) (MainMatter/Algorithms.aux)
-(MainMatter/Proposal.aux) (MainMatter/Implementation.aux)
-(BackMatter/Conclusions.aux) (BackMatter/Recomendations.aux)
-(BackMatter/Bibliography.aux))
+(MainMatter/Background.aux) (MainMatter/Proposal.aux)
+(MainMatter/Implementation.aux) (BackMatter/Conclusions.aux)
+(BackMatter/Recomendations.aux) (BackMatter/Bibliography.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
@@ -1878,7 +2235,7 @@ L3 programming layer <2025-04-14>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 333557C0ADEB1570FFCBFCA5071FB391;9472.
+(rerunfilecheck)             Checksum: 43728D4F7D7DEF58C80B553F0D1D3758;10314.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                Thesis
@@ -1889,11 +2246,11 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38717 strings out of 469941
- 728342 string characters out of 5469431
- 1867354 words of memory out of 5000000
- 63974 multiletter control sequences out of 15000+600000
- 769114 words of font info for 136 fonts, out of 8000000 for 9000
+ 38026 strings out of 469941
+ 717793 string characters out of 5469431
+ 1797431 words of memory out of 5000000
+ 63903 multiletter control sequences out of 15000+600000
+ 769489 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,12n,121p,1167b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
@@ -1915,9 +2272,9 @@ s/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/User
 s/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/un
 cb8a.pfb>
-Output written on Thesis.pdf (68 pages, 731319 bytes).
+Output written on Thesis.pdf (58 pages, 638879 bytes).
 PDF statistics:
- 1589 PDF objects out of 1728 (max. 8388607)
- 866 named destinations out of 1000 (max. 500000)
+ 819 PDF objects out of 1000 (max. 8388607)
+ 248 named destinations out of 1000 (max. 500000)
  399 words of extra memory for PDF output out of 10000 (max. 10000000)
 
