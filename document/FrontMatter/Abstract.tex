@@ -1,7 +1,19 @@
 \begin{resumen}
-	Resumen en español
+Esta tesis realiza un an\'alisis comparativo de las heur\'isticas de decisi\'on de variables VSIDS (Variable State Independent Decaying Sum) y DLIS (Dynamic Largest Individual Sum) en solvers SAT basados en Conflict-Driven Clause Learning (CDCL). El estudio examina ambas heur\'isticas con y sin estrategias de \textit{restart}, utilizando como plataforma de evaluaci\'on el solver CaDiCaL. 
+
+Se implement\'o DLIS en CaDiCaL mediante modificaciones que permitieron su integraci\'on con la estructura existente del solver y sus otras heur\'isticas. Para la evaluaci\'on, se desarroll\'o un benchmark de 135 problemas SAT mediante un script Python, abarcando diversas categor\'ias: random k-sat, random biased k-sat, pingeonhole, graph coloring, parity XOR y BCM flip flop. Estos problemas presentan variaciones en sus estructuras, incluyendo n\'umeros de variables (desde decenas hasta miles), cantidad de cl\'ausulas y densidad de restricciones.
+
+Cada combinaci\'on heur\'istica (VSIDS/DLIS, con/sin \textit{restart}) se ejecut\'o sobre todos los problemas mediante flags espec\'ificos de CaDiCaL, estableciendo un timeout de 2 minutos por ejecuci\'on. Los resultados se almacenaron sistem\'aticamente en un CSV, registrando: nombre del problema, heur\'istica empleada, resultado (SATISFIABLE/UNSATISFIABLE/TIMEOUT), tiempo de resoluci\'on, cantidad de variables, cantidad de cl\'ausulas y densidad.
+
+El an\'alisis estad\'istico revel\'o que el rendimiento depende m\'as de la estructura intr\'inseca del problema que de la heur\'istica espec\'ifica o el uso de \textit{restart}. No se observaron diferencias significativas entre DLIS con/sin \textit{restart} ni entre VSIDS con/sin \textit{restart}. Sin embargo, VSIDS exhibi\'o mayor varianza en los tiempos de ejecuci\'on, mientras DLIS demostr\'o ser m\'as eficiente para problemas espec\'ificos como los de coloraci\'on de grafos y estructuras XOR-parity. Estos hallazgos sugieren que la selecci\'on \'optima de heur\'isticas deber\'ia considerar las caracter\'isticas estructurales de los problemas SAT a resolver.
 \end{resumen}
 
 \begin{abstract}
-	Resumen en inglés
+Resumen en inglésThis Bachelor's Thesis in Computer Science conducts a comparative analysis of variable decision heuristics VSIDS (Variable State Independent Decaying Sum) and DLIS (Dynamic Largest Individual Sum) in Conflict-Driven Clause Learning (CDCL) SAT solvers. The study examines both heuristics with and without restart strategies, using the CaDiCaL solver as the evaluation platform.
+
+DLIS was implemented in CaDiCaL through modifications that enabled its integration with the solver's existing structure and other heuristics. For evaluation, a benchmark of 135 SAT problems was developed using a Python script, covering diverse categories: random k-sat, random biased k-sat, pigeonhole principle, graph coloring, parity XOR, and BCM flip flop. These problems feature structural variations including variable counts (from tens to thousands), clause quantities, and constraint densities.
+
+Each heuristic combination (VSIDS/DLIS, with/without restart) was executed on all problems using specific CaDiCaL flags, with a 2-minute timeout per execution. Results were systematically stored in a CSV file, recording: problem name, heuristic used, outcome (SATISFIABLE/UNSATISFIABLE/TIMEOUT), resolution time, variable count, clause count, and density.
+
+Statistical analysis revealed that performance depends more on the intrinsic structure of the problem than on the specific heuristic or restart usage. No significant differences were observed between DLIS with/without restart or VSIDS with/without restart. However, VSIDS exhibited greater variance in execution times, while DLIS proved more efficient for specific problems such as graph coloring and XOR-parity structures. These findings suggest that optimal heuristic selection should consider the structural characteristics of target SAT problems.
 \end{abstract}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  12 JUN 2025 10:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  14 JUN 2025 06:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1618,6 +1618,10 @@ LaTeX Info: Redefining \% on input line 1.
  (MainMatter/Background.tex
 Cap\'{\i }tulo 1.
 
+LaTeX Warning: Citation 'garcia_conferencia1' on page 5 undefined on input line
+ 6.
+
+
 
 [5
 
@@ -2246,10 +2250,10 @@ Package logreq Info: Writing requests to 'Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38026 strings out of 469941
- 717793 string characters out of 5469431
- 1797431 words of memory out of 5000000
- 63903 multiletter control sequences out of 15000+600000
+ 38219 strings out of 469941
+ 721643 string characters out of 5469431
+ 1797511 words of memory out of 5000000
+ 64096 multiletter control sequences out of 15000+600000
  769489 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,12n,121p,1167b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2272,7 +2276,7 @@ s/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/User
 s/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/un
 cb8a.pfb>
-Output written on Thesis.pdf (58 pages, 638879 bytes).
+Output written on Thesis.pdf (58 pages, 642295 bytes).
 PDF statistics:
  819 PDF objects out of 1000 (max. 8388607)
  248 named destinations out of 1000 (max. 500000)
