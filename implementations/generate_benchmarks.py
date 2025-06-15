@@ -1,8 +1,6 @@
 import os
 import random
 import csv
-import shutil
-from glob import glob
 
 # ====================================================
 #           GENERADOR DE BENCHMARKS CNF DIVERSIFICADOS

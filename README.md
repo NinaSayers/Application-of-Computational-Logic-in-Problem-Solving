@@ -53,22 +53,13 @@ Cada familia varía en parámetros clave como número de variables, relación cl
 ### Compilación y ejecución de CaDiCaL
 
 - **Compilador C++:** gcc/g++ compatible con C++11 o superior
-- **Sistema operativo:** Linux recomendado (también compatible con macOS y Windows)
+- **Sistema operativo:** Linux
 - **Make** (para la compilación del solver)
 
 ### Análisis estadístico y generación de gráficos
 
-El análisis estadístico se realizó en Python utilizando las siguientes bibliotecas:
-- pandas
-- numpy
-- seaborn
-- matplotlib.pyplot
-- statsmodels.api
-- statsmodels.stats.outliers_influence.variance_inflation_factor
-- statsmodels.formula.api.ols
-- scipy.stats
-- sklearn.linear_model.LogisticRegression
-- scikit_posthocs
+Todos los requerimientos necesarios se encuentran en el archivo *requirements.txt*. Para instalarlos basta con ejecutar el comando *pip install -r requirements.txt*
+
 
 ### Generación de benchmarks
 
