@@ -35,7 +35,7 @@
 \contentsline {section}{\numberline {1.7}Insuficiencias Fundamentales de SAT}{34}{section.1.7}%
 \contentsline {chapter}{\numberline {2}Detalles de Implementación y Experimentos}{36}{chapter.2}%
 \contentsline {subsection}{\numberline {2.0.1}CaDiCaL}{36}{subsection.2.0.1}%
-\contentsline {subsubsection}{Integraci/'on de DLIS}{37}{section*.17}%
+\contentsline {subsubsection}{Integraci\'on de DLIS}{36}{section*.17}%
 \contentsline {subsubsection}{\textit {decide.cpp}}{39}{section*.18}%
 \contentsline {subsubsection}{options.hpp}{40}{section*.19}%
 \contentsline {subsection}{\numberline {2.0.2}Empleo de \textit {flags} en la l/'inea de comandos}{41}{subsection.2.0.2}%

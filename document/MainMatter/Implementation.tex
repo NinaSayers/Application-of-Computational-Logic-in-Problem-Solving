@@ -1,13 +1,13 @@
 \chapter{Detalles de Implementación y Experimentos}
 \label{chapter:implementation}
-El objetivo de esta tesis es comparar dos de las heuristicas integradas a CDCL, en este caso, dos de las que intentan dar soluci/'on al problema de selecci/'on de variables: Dichas estrategias, VSIDS y DLIS, son comparadas usando \textit{restart} y no.
+El objetivo de esta tesis es comparar dos de las heuristicas integradas a CDCL, en este caso, dos de las que intentan dar soluci\'on al problema de selecci\'on de variables: Dichas estrategias, VSIDS y DLIS, son comparadas usando \textit{restart} y no.
 
-En el trabajo se usaron los lenguajes de programaci/'on C++, Python y bash. CaDiCaL est/'a programado en C++, por lo que es el lenguaje en el que est/'an implementadas las heur/'isticas. Python fue usado para automatizar los procesos de pruebas, guardar los resultados obtenidos y realizar los an/'lisis estad/'sticos. Finalemnte, bash se usa como parte de la "compilaci/'on" del solver, cuyos archivos como \textit{configure} y \textit{makefile} que vienen integrados al \textit{solver}, son los encargados de hacerlo funcionar.
+En el trabajo se usaron los lenguajes de programaci\'on C++, Python y bash. CaDiCaL est\'a programado en C++, por lo que es el lenguaje en el que est\'an implementadas las heur\'isticas. Python fue usado para automatizar los procesos de pruebas, guardar los resultados obtenidos y realizar los an\'lisis estad\'sticos. Finalemnte, bash se usa como parte de la ``compilaci\'on'' del solver, cuyos archivos como \textit{configure} y \textit{makefile} que vienen integrados al \textit{solver}, son los encargados de hacerlo funcionar.
 
 \subsection{CaDiCaL}
-CaDiCaL fue el \textit{solver} escogido para esta comparaci/'on, ya que cuenta con la posibilidad de activar y desactivar VSIDS (ya viene integrada), al igual que la estrategia \textit{restart}, tambi/'en integrada en el solucionador.\footnote{Cabe destacar que CaDiCaL ofrece esta misma posibilidad para much/'isimas heur/'sticas, adem/'as de estrategias para adaptar la v/'a de soluci/'on al tipo de problemas (citar documentaci/'n de CaDiCaL)} Como ya se mencion/'o con anterioridad en este documento, pr/'acticamente todos los CDCL SAT \textit{solvers} modernos no incluyen DLIS como heur/'istica de selecci/'on de variables, y CaDiCaL es uno de ellos. Por esta raz/'on, se decidi/'o integrar una implementaci/'on de DLIS a este solucionador, aprovechando la pol/'itica \textit{open source} de su c/'odigo fuente \cite{cadical2024}.%insertar link al repo original de cadical.
+CaDiCaL fue el \textit{solver} escogido para esta comparaci\'on, ya que cuenta con la posibilidad de activar y desactivar VSIDS (ya viene integrada), al igual que la estrategia \textit{restart}, tambi\'en integrada en el solucionador.\footnote{Cabe destacar que CaDiCaL ofrece esta misma posibilidad para much\'isimas heur\'sticas, adem\'as de estrategias para adaptar la v\'ia de soluci\'on al tipo de problemas \cite{cadical2024}} Como ya se mencion\'o con anterioridad en este documento, pr\'acticamente todos los CDCL SAT \textit{solvers} modernos no incluyen DLIS como heur\'istica de selecci\'on de variables, y CaDiCaL es uno de ellos. Por esta raz\'on, se decidi\'o integrar una implementaci\'on de DLIS a este solucionador, aprovechando la pol\'itica \textit{open source} de su c\'odigo fuente \cite{cadical2024}.%insertar link al repo original de cadical.
 
-\subsubsection{Integraci/'on de DLIS}
+\subsubsection{Integraci\'on de DLIS}
 Para integrar DLIS en CaDiCaL se modificaron los siguientes archivos:
 \begin{itemize}
     \item \textit{internal.hpp}
@@ -17,7 +17,7 @@ Para integrar DLIS en CaDiCaL se modificaron los siguientes archivos:
 \end{itemize}
 
 {\textit{internal.hpp}}
-En este archivo se declaran los m/'todos que ser/'an implementados como parte de la clase \textit{Internal} \ref{lst:cadical-dlis-internal.hpp}:
+En este archivo se declaran los m\'todos que se implementaron como parte de la clase \textit{Internal} \ref{lst:cadical-dlis-internal.hpp}:
 
 \begin{lstlisting}[
     language=C++,
@@ -33,8 +33,8 @@ int count_literal_in_unsatisfied_binary_clauses(int lit);
 \end{lstlisting}
 
 {\textit{internal.cpp}}
-En \textit{internal.cpp} se a/~nadi/'o el c/'odigo \ref{lst:cadical-dlis-logic-internal.cpp} que contiene la l/'ogica de funcionamiento de DLIS.
-CaDiCaL almacena las variables de la FNC en una lista doblemente enlazada, en la que aquellas que ya han sido asignadas y las que a/'un no tienen un valor definido se encuentran separadas en dos grupos (dentro de la misma lista) separadas por un /'indice que marca el l/'mite entre ellas. Este valor va cambiando con cada asignaci/'on. Haciendo uso de esta estructura, el siguiente m/'etodo se encarga de comparar la ocurrencia, en cl/'ausulas insatisfechas, de los literales correspondientes a las variables sin asignar, y elige el de valor m/'aximo.
+En \textit{internal.cpp} se a\~nadi\'o el c\'odigo \ref{lst:cadical-dlis-logic-internal.cpp} que contiene la l\'ogica de funcionamiento de DLIS.
+CaDiCaL almacena las variables de la FNC en una lista doblemente enlazada, en la que aquellas que ya han sido asignadas y las que a\'un no tienen un valor definido se encuentran separadas en dos grupos (dentro de la misma lista) separadas por un \'indice que marca el l\'imite entre ellas. Este valor va cambiando con cada asignaci\'on. Haciendo uso de esta estructura, el siguiente m\'etodo se encarga de comparar la ocurrencia, en cl\'ausulas insatisfechas, de los literales correspondientes a las variables sin asignar, y elige el de valor m\'aximo.
 
 \begin{lstlisting}[
     language=C++,

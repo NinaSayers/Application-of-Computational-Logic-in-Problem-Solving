@@ -12,5 +12,5 @@
 \contentsline {lstlisting}{\numberline {2.2}{\ignorespaces Integraci\'on de DLIS en CaDiCaL. Internal.cpp}}{37}{lstlisting.2.2}%
 \contentsline {lstlisting}{\numberline {2.3}{\ignorespaces Integraci\'on de DLIS en CaDiCaL. Calcular \textit {score}. Internal.cpp}}{38}{lstlisting.2.3}%
 \contentsline {lstlisting}{\numberline {2.4}{\ignorespaces Integraci\'on de DLIS en CaDiCaL. decide.cpp}}{39}{lstlisting.2.4}%
-\contentsline {lstlisting}{\numberline {2.5}{\ignorespaces Integraci\'on de DLIS en CaDiCaL. options.hpp}}{41}{lstlisting.2.5}%
+\contentsline {lstlisting}{\numberline {2.5}{\ignorespaces Integraci\'on de DLIS en CaDiCaL. options.hpp}}{40}{lstlisting.2.5}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

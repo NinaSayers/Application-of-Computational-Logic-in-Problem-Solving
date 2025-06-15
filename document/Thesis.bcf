@@ -3156,6 +3156,7 @@
     <bcf:citekey order="84" intorder="1">luo2017clause_minimization</bcf:citekey>
     <bcf:citekey order="85" intorder="1">ganesh_unreasonable</bcf:citekey>
     <bcf:citekey order="86" intorder="1">cadical2024</bcf:citekey>
+    <bcf:citekey order="87" intorder="1">cadical2024</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">
