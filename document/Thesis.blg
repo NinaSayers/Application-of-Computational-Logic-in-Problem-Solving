@@ -1,0 +1,23 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'Thesis.blg'
+[113] biber-MSWIN64:340> INFO - === 
+[152] Biber.pm:420> INFO - Reading 'Thesis.bcf'
+[293] Biber.pm:994> INFO - Found 24 citekeys in bib section 0
+[523] Biber.pm:4463> INFO - Processing section 0
+[537] Biber.pm:4654> INFO - Looking for bibtex file 'Bibliography.bib' for section 0
+[603] bibtex.pm:1713> INFO - LaTeX decoding ...
+[692] bibtex.pm:1519> INFO - Found BibTeX data source 'Bibliography.bib'
+[942] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[942] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[942] Biber.pm:4283> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'es-ES'
+[997] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[997] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[997] Biber.pm:4283> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'es-ES'
+[1024] bbl.pm:676> INFO - Writing 'Thesis.bbl' with encoding 'UTF-8'
+[1066] bbl.pm:779> INFO - Output to Thesis.bbl
+[1066] Biber.pm:131> WARN - legacy month field 'May' in entry 'zhang2024revisiting' is not an integer - this will probably not sort properly.
+[1066] Biber.pm:131> WARN - legacy month field 'August' in entry 'cai2022better_heuristics' is not an integer - this will probably not sort properly.
+[1066] Biber.pm:131> WARN - legacy month field 'January' in entry 'oh2016improving' is not an integer - this will probably not sort properly.
+[1067] Biber.pm:131> WARN - legacy month field 'February' in entry 'nandi2024margin' is not an integer - this will probably not sort properly.
+[1067] Biber.pm:131> WARN - legacy month field 'January' in entry 'trimoska2020parity' is not an integer - this will probably not sort properly.
+[1067] Biber.pm:133> INFO - WARNINGS: 5

@@ -1,10 +1,11 @@
-\chapter{Detalles de Implementación y Experimentos}\label{chapter:implementation}
+\chapter{Detalles de Implementación y Experimentos}
+\label{chapter:implementation}
 El objetivo de esta tesis es comparar dos de las heuristicas integradas a CDCL, en este caso, dos de las que intentan dar soluci/'on al problema de selecci/'on de variables: Dichas estrategias, VSIDS y DLIS, son comparadas usando \textit{restart} y no.
 
 En el trabajo se usaron los lenguajes de programaci/'on C++, Python y bash. CaDiCaL est/'a programado en C++, por lo que es el lenguaje en el que est/'an implementadas las heur/'isticas. Python fue usado para automatizar los procesos de pruebas, guardar los resultados obtenidos y realizar los an/'lisis estad/'sticos. Finalemnte, bash se usa como parte de la "compilaci/'on" del solver, cuyos archivos como \textit{configure} y \textit{makefile} que vienen integrados al \textit{solver}, son los encargados de hacerlo funcionar.
 
 \subsection{CaDiCaL}
-CaDiCaL fue el \textit{solver} escogido para esta comparaci/'on, ya que cuenta con la posibilidad de activar y desactivar VSIDS (ya viene integrada), al igual que la estrategia \textit{restart}, tambi/'en integrada en el solucionador.\footnote{Cabe destacar que CaDiCaL ofrece esta misma posibilidad para much/'isimas heur/'sticas, adem/'as de estrategias para adaptar la v/'a de soluci/'on al tipo de problemas (citar documentaci/'n de CaDiCaL)} Como ya se mencion/'o con anterioridad en este documento, pr/'acticamente todos los CDCL SAT \textit{solvers} modernos no incluyen DLIS como heur/'istica de selecci/'on de variables, y CaDiCaL es uno de ellos. Por esta raz/'on, se decidi/'o integrar una implementaci/'on de DLIS a este solucionador, aprovechando la pol/'itica \textit{open source} de su c/'odigo fuente.%insertar link al repo original de cadical.
+CaDiCaL fue el \textit{solver} escogido para esta comparaci/'on, ya que cuenta con la posibilidad de activar y desactivar VSIDS (ya viene integrada), al igual que la estrategia \textit{restart}, tambi/'en integrada en el solucionador.\footnote{Cabe destacar que CaDiCaL ofrece esta misma posibilidad para much/'isimas heur/'sticas, adem/'as de estrategias para adaptar la v/'a de soluci/'on al tipo de problemas (citar documentaci/'n de CaDiCaL)} Como ya se mencion/'o con anterioridad en este documento, pr/'acticamente todos los CDCL SAT \textit{solvers} modernos no incluyen DLIS como heur/'istica de selecci/'on de variables, y CaDiCaL es uno de ellos. Por esta raz/'on, se decidi/'o integrar una implementaci/'on de DLIS a este solucionador, aprovechando la pol/'itica \textit{open source} de su c/'odigo fuente \cite{cadical2024}.%insertar link al repo original de cadical.
 
 \subsubsection{Integraci/'on de DLIS}
 Para integrar DLIS en CaDiCaL se modificaron los siguientes archivos:
@@ -16,19 +17,32 @@ Para integrar DLIS en CaDiCaL se modificaron los siguientes archivos:
 \end{itemize}
 
 {\textit{internal.hpp}}
-En este archivo se declaran los m/'todos que ser/'an implementados como parte de la clase \textit{Internal}:
+En este archivo se declaran los m/'todos que ser/'an implementados como parte de la clase \textit{Internal} \ref{lst:cadical-dlis-internal.hpp}:
 
-\begin{lstlisting}
-  // DLIS
-  int next_decision_variable_with_dlis ();
-  int count_literal_in_unsatisfied_binary_clauses(int lit);
+\begin{lstlisting}[
+    language=C++,
+    caption={Integraci\'on de DLIS en CaDiCaL. Internal.hpp},
+    label={lst:cadical-dlis-internal.hpp},
+    captionpos=b,
+    frame=tb
+]
+// DLIS
+int next_decision_variable_with_dlis ();
+int count_literal_in_unsatisfied_binary_clauses(int lit);
+
 \end{lstlisting}
 
 {\textit{internal.cpp}}
-En \textit{internal.cpp} se a/~nadi/'o el siguiente c/'odigo que contiene la l/'ogica de funcionamiento de DLIS.
+En \textit{internal.cpp} se a/~nadi/'o el c/'odigo \ref{lst:cadical-dlis-logic-internal.cpp} que contiene la l/'ogica de funcionamiento de DLIS.
 CaDiCaL almacena las variables de la FNC en una lista doblemente enlazada, en la que aquellas que ya han sido asignadas y las que a/'un no tienen un valor definido se encuentran separadas en dos grupos (dentro de la misma lista) separadas por un /'indice que marca el l/'mite entre ellas. Este valor va cambiando con cada asignaci/'on. Haciendo uso de esta estructura, el siguiente m/'etodo se encarga de comparar la ocurrencia, en cl/'ausulas insatisfechas, de los literales correspondientes a las variables sin asignar, y elige el de valor m/'aximo.
 
-\begin{lstlisting}[escapechar=!., language=C++]
+\begin{lstlisting}[
+    language=C++,
+    caption={Integraci\'on de DLIS en CaDiCaL. Internal.cpp},
+    label={lst:cadical-dlis-logic-internal.cpp},
+    captionpos=b,
+    frame=tb
+]
 int Internal::next_decision_variable_with_dlis () {
   int best_lit = 0;
   int best_score = -1;
@@ -60,17 +74,20 @@ int Internal::next_decision_variable_with_dlis () {
 
   LOG ("next DLIS decision literal %d with score %d", best_lit, best_score);
   return abs(best_lit);
-}
+
 \end{lstlisting}
 
-Es importante aclarar que el c\'alculo del \textit{score} de cada literal no se hace tal cual dicta DLIS, pues en aras de mantener la consistencia del c\'odigo de CaDiCaL se usaron estrategias y estructuras que ya vienen implementadas, y a las cuales se acoplan las heur\'isticas de decisi\'on de variables que ya incorpora el solucionador. En este caso, obs\'ervese que se promedian los \textit{scores} de ambos literales. Esto, debido a que CaDiCaL implementa la estrategia \textit{phase} (citar info en marco te\'orico) para elegir la polaridad de la variable. Por esta raz\'on el m\'etodo devuelve la variable y no el literal.
+Es importante aclarar que en \ref{lst:cadical-dlis-logic-internal.cpp} el c\'alculo del \textit{score} de cada literal no se hace tal cual dicta DLIS, pues en aras de mantener la consistencia del c\'odigo de CaDiCaL se usaron estrategias y estructuras que ya vienen implementadas, y a las cuales se acoplan las heur\'isticas de decisi\'on de variables que ya incorpora el solucionador. En este caso, obs\'ervese que se promedian los \textit{scores} de ambos literales. Esto, debido a que CaDiCaL implementa la estrategia \textit{phase} \ref{subsec:cadical-phasing} para elegir la polaridad de la variable. Por esta raz\'on el m\'etodo devuelve la variable y no el literal.
 
-Obs\'ervese que este m\'etodo hace un llamado a \begin{lstlisting}[escapechar=!., language=C++]
-int count_literal_in_unsatisfied_clauses_(idx)
-\end{lstlisting} 
-que es el encargado de calcular el \textit{score} para un literal.
+Obs\'ervese que este m\'etodo hace un llamado a \texttt{int count\_literal\_in\_unsatisfied\_clauses\_(idx)} que es el encargado de calcular el \textit{score} para un literal \ref{lst:cadical-dlis-calc-internal.cpp}.
 
-\begin{lstlisting}[escapechar=!., language=C++]
+\begin{lstlisting}[
+    language=C++,
+    caption={Integraci\'on de DLIS en CaDiCaL. Calcular \textit{score}. Internal.cpp},
+    label={lst:cadical-dlis-calc-internal.cpp},
+    captionpos=b,
+    frame=tb
+]
 int Internal::count_literal_in_unsatisfied_clauses_ (int lit) {
   int count = 0;
   // Cacheamos una sola vez el valor de 'lit'.
@@ -88,17 +105,20 @@ int Internal::count_literal_in_unsatisfied_clauses_ (int lit) {
   return count;
 }
 
-int Internal::compute_dlis_score(int lit) {
-  return count_literal_in_unsatisfied_clauses_(lit);
-}
 \end{lstlisting}
 
-En el c\'odigo anterior puede verse que para efectuar el conteo de ocurrencias de un literal no se revisan todas las cl\'ausulas insatisfechas; en su lugar se aprovecha la estructura que usa CaDiCaL para aplicar la estrategia \textit{Two Watched Literals} (TWL) (hacer referencia al marco te\'orico). Luego, se recorren solo las cl\'ausulas insatisfechas donde el literal est\'e vigilado, y se procede con el c\'alculo de su \textit{score}. Con esta implementaci\'on se busca disminuir para algunos problemas el costo de recorrer todas las clausulas.
+En el c\'odigo \ref{lst:cadical-dlis-calc-internal.cpp} puede verse que para efectuar el conteo de ocurrencias de un literal no se revisan todas las cl\'ausulas insatisfechas; en su lugar se aprovecha la estructura que usa CaDiCaL para aplicar la estrategia \textit{Two Watched Literals} (TWL)\ref{subsec:twl}. Luego, se recorren solo las cl\'ausulas insatisfechas donde el literal est\'e vigilado, y se procede con el c\'alculo de su \textit{score}. Con esta implementaci\'on se busca disminuir para algunos problemas el costo de recorrer todas las clausulas.
 
 \subsubsection{\textit{decide.cpp}}
-El flujo de decisi\'on sobre la pr\'oxima variable a asignar se lleva a cabo en el archivo \textit{decide.cpp}, espec\'ificamente en el siguiente m\'etodo:
+El flujo de decisi\'on sobre la pr\'oxima variable a asignar se lleva a cabo en el archivo \textit{decide.cpp}, espec\'ificamente en el siguiente m\'etodo \ref{lst:cadical-dlis-decide.cpp}:
 
-\begin{lstlisting}[escapechar=!., language=C++]
+\begin{lstlisting}[
+    language=C++,
+    caption={Integraci\'on de DLIS en CaDiCaL. decide.cpp},
+    label={lst:cadical-dlis-decide.cpp},
+    captionpos=b,
+    frame=tb
+]
 int Internal::decide () {
   assert (!satisfied ());
   START (decide);
@@ -133,16 +153,23 @@ int Internal::decide () {
   STOP (decide);
   return res;
 }
+
 \end{lstlisting}
 
-Como se puede observar, se respeta el orden de decisi\'on que sigue CaDiCaL, garantizando primero el an\'alisis de los valores de las variables seg\'un \textit{assumption} ((assumptions--> hacer referencia a donde se explican en el marco te\'orico). Luego, antes de aplicar DLIS se verifica si su flag correspondiente est\'a activada (DLIS no se usa por defecto), y en caso positivo se procede con la elecci\'on de la variable seg\'un lo explicado anteriormente. Obs\'ervese tambi\'en que heur\'isticas las heur\'sticas de decisi\'on de variables implementadas en el \textit{solver} se analizan luego de \textit{assumptions}.
+Como se puede observar en \ref{lst:cadical-dlis-decide.cpp}, se respeta el orden de decisi\'on que sigue CaDiCaL, garantizando primero el an\'alisis de los valores de las variables seg\'un \textit{assumption} \ref{subsec:cadical-assumptions}. Luego, antes de aplicar DLIS se verifica si su flag correspondiente est\'a activada (DLIS no se usa por defecto), y en caso positivo se procede con la elecci\'on de la variable seg\'un lo explicado anteriormente. Obs\'ervese tambi\'en que heur\'isticas las heur\'sticas de decisi\'on de variables implementadas en el \textit{solver} se analizan luego de \textit{assumptions}.
 
-Una vez escogida la variable, se llama al m\'etodo \textit{decide\_phase} para elegir su polaridad en base a la estrategia \textit{phasing} (citar phasing en el marco te\'orico).
+Una vez escogida la variable, se llama al m\'etodo \textit{decide\_phase} para elegir su polaridad en base a la estrategia \textit{phasing} \ref{subsec:cadical-phasing}.
 
 \subsubsection{options.hpp}
-Finalmente, para habilitar la \textit{flag} \textit{--dlis=<bool>} para activar y desactivar la heur\'istica incorporada, se a\~nadi\'o la siguiente l\'inea al archivo \textit{options.hpp}
+Finalmente, para habilitar la \textit{flag} \textit{--dlis=<bool>} para activar y desactivar la heur\'istica incorporada, se a\~nadi\'o la siguiente l\'inea al archivo \textit{options.hpp} \ref{lst:cadical-dlis-options.hpp}.
 
-\begin{lstlisting}[escapechar=!._, language=C++]
+\begin{lstlisting}[
+    language=C++,
+    caption={Integraci\'on de DLIS en CaDiCaL. options.hpp},
+    label={lst:cadical-dlis-options.hpp},
+    captionpos=b,
+    frame=tb
+]
 #define OPTIONS \
 \
 /*      NAME         DEFAULT, LO, HI,O,P,R, USAGE */ \
@@ -150,19 +177,20 @@ Finalmente, para habilitar la \textit{flag} \textit{--dlis=<bool>} para activar 
 //... varias options...
 OPTION( dlis,              0,  0,  1,0,0,1, "use DLIS decision heuristic") \
 //...varias options...
+
 \end{lstlisting}
 
 \subsection{Empleo de \textit{flags} en la l/'inea de comandos}
 Los \textit{flags} usados en la l/'inea de comandos para combinar las heur/'isticas fueron:
 \begin{itemize}
-    \item VSIDS + restart = --score=false
-    \item VSIDS + no restart = --score=false --restart=false
-    \item DLIS + restart = --dlis=true --score=false
-    \item DLIS + no restart = --dlis=true --score=false --restart=false
+    \item VSIDS + restart = \texttt{--score=false}
+    \item VSIDS + no restart = \texttt{--score=false --restart=false}
+    \item DLIS + restart = \texttt{--dlis=true --score=false}
+    \item DLIS + no restart = \texttt{--dlis=true --score=false --restart=false}
 \end{itemize}
 
-La \textit{flag} \textit{--score=false} desactiva el empleo de la estrategia EVSIDS (citar en el marco te\'orico) para usar solo el \textit{bump} caracter\'istico de VSIDS. El resto de las que est\'an son bastante descriptivas. 
-Fueron usadas, adem\'as, dos \textit{flags} generales para cada heur\'istica: \textit{-t 120} que pone un \textit{timeout} de m\'aximo 120 segundos, y \textit{--stats} que muestra estad\'isticas extra para los problemas resueltos (resultado = \textit{SATISFIABLE}/\textit{UNSATISFIABLE}).
+La \textit{flag} \texttt{--score=false} desactiva el empleo de la estrategia EVSIDS (citar en el marco te\'orico) para usar solo el \textit{bump} caracter\'istico de VSIDS. El resto de las que est\'an son bastante descriptivas. 
+Fueron usadas, adem\'as, dos \textit{flags} generales para cada heur\'istica: \texttt{-t 120} que pone un \textit{timeout} de m\'aximo 120 segundos, y \texttt{--stats} que muestra estad\'isticas extra para los problemas resueltos (resultado = \textit{SATISFIABLE}/\textit{UNSATISFIABLE}).
 
 \subsection{Problemas}
 Cada combinaci\'on de heur\'istica fue probada en cada uno de los 135 problemas generados que abarcan las siguientes categor\'ias:
@@ -242,7 +270,7 @@ Para realizar la comparaci\'on en cuanto a caracter\'isticas entre los problemas
 La otra parte de la evaluaci\'on consiste en un an\'alisis del rendimiento de cada combinaci\'on de heur\'isticas en cuanto al tiempo de ejecuci\'on en los problemas resueltos. Para ello se hizo un an\'alisis de la correlaci\'on de Spearman entre las caracter\'isticas de los problemas y el tiempo en segundos. Se realiz\'o, adem\'as, el test de Kruskal-Wallis para analizar si el tiempo difiere entre heur\'isticas para un mismo tipo de problema. Asimismo, se realiz\'o el test de Dunn por cada heur\'istica para realizar una comparaci\'on estad\'istica post-hoc (prueba de Dunn) para analizar si existen diferencias significativas en los tiempos de resoluci\'on (\textit{log}(\text{tiempo})) de una heur\'istica espec\'ifica en los problemas resueltos, seg\'un los valores de una caracter\'istica. 
 Los resultados son graficados en \textit{boxplot}. Finalmente, se realiza una regresi\'on lineal m\'ultiple para definir qu\'e caracter\'isticas predicen el tiempo de resoluci\'on.
 
-Para la implementaci\'on de estos an\'alisis se usaron las siguientes bibliotecas de python: \textit{pandas}, \textit{numpy}, \textit{seaborn}, \textit{matplotlib.pyplot}, \textit{statsmodels.api}, \textit{variance\_inflation\_factor} y variance\_inflation\_factor, ambas de \textit{statsmodels.stats.outliers\_influence}, \textit{ols} de \textit{statsmodels.formula.api}, \textit{scipy.stats}, \textit{LogisticRegression} de \textit{sklearn.linear\_model}, y scikit\_posthocs.
+Para la implementaci\'on de estos an\'alisis se usaron las siguientes bibliotecas de python: \texttt{pandas}, \texttt{numpy}, \texttt{seaborn}, \texttt{matplotlib.pyplot}, \texttt{statsmodels.api}, \texttt{variance\_inflation\_factor} y variance\_inflation\_factor, ambas de \texttt{statsmodels.stats.outliers\_influence}, \texttt{ols} de \texttt{statsmodels.formula.api}, \texttt{scipy.stats}, \texttt{LogisticRegression} de \texttt{sklearn.linear\_model}, y \texttt{scikit\_posthocs.}
 
 \section{Resultados}
 \subsection{An\'alisis de los problemas con TIMEOUT}
@@ -258,24 +286,82 @@ En contraste, DLIS sin reinicio acumula TIMEOUT en instancias con un mayor núme
 Estas observaciones permiten suponer que la elección de heurística y estrategia de reinicio debe adaptarse a la estructura específica del problema SAT para optimizar el rendimiento y evitar fallos por límite de tiempo.
 
 \subsubsection{Estad\'isticas descriptivas}
-(insertar graficas boxplot)
 
 El análisis estadístico descriptivo y las visualizaciones mediante diagramas de caja permiten observar con mayor detalle cómo se distribuyen las características de las instancias que resultaron en TIMEOUT según la heurística aplicada. En términos generales, las cuatro heurísticas (DLIS+no-restart, DLIS+restart, VSIDS+no-restart y VSIDS+restart) presentan distribuciones muy similares en cuanto a las métricas de número de variables, número de cláusulas, densidad, tamaño promedio de cláusula y cantidad de variables positivas y negativas.
 
-Asimismo, la densidad media se mantiene cercana a 7.4–7.7 para todas las heurísticas, con una dispersión considerable que alcanza hasta 25, lo que refleja que tanto problemas poco densos como muy densos pueden provocar fallos por tiempo.
+Por ejemplo, en la figura \ref{fig:num-vars-timeout-x-heuristica} puede apreciarse que el número de variables en los casos con TIMEOUT oscila entre valores mínimos cercanos a 100 y máximos de 5000, con medianas alrededor de 2000 para todas las heurísticas, lo que indica que los problemas que causan TIMEOUT no se limitan a un rango estrecho de tamaño.
 
-El tamaño promedio de cláusula se mantiene estable alrededor de 3, con poca variabilidad, sugiriendo que esta característica no discrimina el comportamiento de las heurísticas en cuanto a TIMEOUT.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/num_vars_timeout_x_heuristica.png}
+    \caption{Distribuci\'on de n\'umero de variables en problemas con timeout por heur\'istica.}
+    \label{fig:num-vars-timeout-x-heuristica}
+\end{figure}
 
-Las variables positivas y negativas también muestran simetría y valores medios similares entre heurísticas, lo que implica que la polaridad de las variables no es un factor determinante en la ocurrencia de TIMEOUT. 
+Por otro lado, en la figura \ref{fig:num-claus-timeout-x-heuristica} puede observarse que el n\'umero de cl\'ausulas de las instancias analizadas muestra valores elevados y gran variabilidad, con promedios entre 15.758 y 16.875 cl\'ausulas y m\'aximos por encima de 63.000. No se observan diferencias significativas entre las estrategias con DLIS o VSIDS, ni tampoco al incorporar o no el mecanismo de restart.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/num_claus_timeout_x_heuristica.png}
+    \caption{Distribuci\'on de n\'umero de cl\'ausulas en problemas con timeout por heur\'istica.}
+    \label{fig:num-claus-timeout-x-heuristica}
+\end{figure}
+
+Como se muestra en \ref{fig:densidad-timeout-x-heuristica}, la densidad media se mantiene cercana a 7.4–7.7 para todas las heurísticas, con una dispersión considerable que alcanza hasta 25, lo que refleja que tanto problemas poco densos como muy densos pueden provocar fallos por tiempo.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/densidad_timeout_x_heuristica.png}
+    \caption{Distribuci\'on de densidad en problemas con timeout por heur\'istica.}
+    \label{fig:densidad-timeout-x-heuristica}
+\end{figure}
+
+En la figura \ref{fig:tamanio-prom-claus-timeout-x-heuristica} se puede apreciar que el tamaño promedio de cláusula se mantiene estable alrededor de 3, con poca variabilidad, sugiriendo que esta característica no discrimina el comportamiento de las heurísticas en cuanto a TIMEOUT.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/tamanio_prom_claus_timeout_x_heuristica.png}
+    \caption{Distribuci\'on de tama\~no promedio de cl\'ausula en problemas con timeout por heur\'istica.}
+    \label{fig:tamanio-prom-claus-timeout-x-heuristica}
+\end{figure}
+
+Por su parte, en las gr\'aficas \ref{fig:vars-pos-timeout-x-heuristica} y \ref{fig:vars-neg-timeout-x-heuristica}, se puede ver que las variables positivas y negativas, respectivamente, también muestran simetría y valores medios similares entre heurísticas, lo que implica que la polaridad de las variables no es un factor determinante en la ocurrencia de TIMEOUT.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/vars_pos_timeout_x_heuristica.png}
+    \caption{Distribuci\'on de variables positivas en problemas con timeout por heur\'istica.}
+    \label{fig:vars-pos-timeout-x-heuristica}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/vars_neg_timeout_x_heuristica.png}
+    \caption{Distribuci\'on de variables negativas en problemas con timeout por heur\'istica.}
+    \label{fig:vars-neg-timeout-x-heuristica}
+\end{figure}
 
 En conjunto, estos resultados sugieren que las diferencias en el rendimiento entre heurísticas no se explican fácilmente por las características básicas de las instancias con TIMEOUT.
 
-Las visualizaciones de caja refuerzan esta interpretación al mostrar solapamientos amplios en las distribuciones de cada característica por heurística.
+Las visualizaciones de caja muestran solapamientos amplios en las distribuciones de cada caracter\'istica por heur\'istica.
 
 \subsubsection{Conteo de TIMEOUT por heur\'istica y por problema}
 
-(insertar gr\'aficas)
-En las graficas se puede observar que los problemas que tomaron mas tiempo en resolverse coinciden con los los planteados en la literatura que resultan mas dificiles de resolver a instancias SAT. Respecto a la cantidad de problemas con TIMEOUTS por heuristica, se puede apreciar que DLIS, independientemente del restart, se comporta mas lento que vsids para algunos problemas. Por su parte, vsids con restart se comporta mas lento que vsids sin restart para unas pocas instancias.
+En las gr\'aficas \ref{fig:timeouts-x-heuristica} y \ref{fig:timeouts-x-problema} se puede observar que los problemas que tomaron mas tiempo en resolverse coinciden con los los planteados en la literatura que resultan mas dificiles de resolver a instancias SAT. Respecto a la cantidad de problemas con TIMEOUTS por heuristica, se puede apreciar que DLIS, independientemente del restart, se comporta mas lento que vsids para algunos problemas. Por su parte, vsids con restart se comporta mas lento que vsids sin restart para unas pocas instancias.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/timeouts_x_heuristica.png}
+    \caption{Distribuci\'on de timeouts por heur\'istica.}
+    \label{fig:timeouts-x-heuristica}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/timeouts_x_problema.png}
+    \caption{Distribuci\'on de timeouts por problema.}
+    \label{fig:timeouts-x-problema}
+\end{figure}
 
 \subsection{An\'alisis de problemas resueltos (SATISFIABLE/UNSATISFIABLE)}
 
@@ -289,9 +375,17 @@ Los tiempos de resolución registrados varían notablemente, desde fracciones de
 La presencia de las cuatro heurísticas en los resultados resueltos sugiere que todas son capaces de resolver ciertos conjuntos de problemas. Sin embargo, la diversidad en tiempos y tamaños sugiere que la heurística y la estrategia de reinicio podrían influir en la eficiencia, especialmente en problemas de mayor escala.
 
 \subsubsection{Estad\'isticas descriptivas}
-(insertar gr\'afica boxplot)
 
-El análisis estadístico descriptivo del tiempo de resolución y las características de las instancias resueltas por cada heurística revela patrones importantes sobre el comportamiento del \textit{solver}.
+
+El análisis estadístico descriptivo del tiempo de resolución y las características de las instancias resueltas por cada heurística revela patrones importantes sobre el comportamiento del \textit{solver}. Estos resultados pueden apreciarse en conjunto en la gr\'afica \ref{fig:caract-tiempo-x-heuristica}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/caracteristica_tiempo_x_heuristica.png}
+    \caption{Distribuci\'on de caracter\'isticas y tiempo por heur\'istica.}
+    \label{fig:caract-tiempo-x-heuristica}
+\end{figure}
+
 
 En primer lugar, se observa que las instancias resueltas por las cuatro heurísticas (DLIS+no-restart, DLIS+restart, VSIDS+no-restart y VSIDS+restart) cubren un rango amplio en tamaño, con número de variables promedio entre 322 y 403, y máximos que alcanzan hasta 2000 o incluso 5000 variables en el caso de VSIDS+restart. La cantidad de cláusulas también presenta gran dispersión, con medias cercanas a 3100–3400 y máximos que superan las 50,000, lo que indica que el solver puede manejar problemas desde muy pequeños hasta instancias complejas. La densidad promedio se mantiene alrededor de 7,2 a 7,4, con valores máximos muy altos (hasta 51.9), reflejando diversidad en la estructura de los problemas.
 
@@ -305,53 +399,79 @@ En conjunto, estos resultados sugieren que la elección de heurística impacta s
 
 \subsubsection{An\'alisis de multicolinealidad}
 
-(insertar matriz de correlaci\'on)
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/correlation_matrix_solveds_vs_timeouts.png}
+    \caption{Matriz de correlaci\'on - Problemas resueltos vs TIMEOUTS.}
+    \label{fig:correlation-matrix-solved-vs-timeout}
+\end{figure}
 
-Como se puede apreciar, entre las variables num\_vars y vars\_positivas y vars\_negativas, existe correlaci\'on perfecta ($r=1$). Adem\'as, existe una correlaci\'on moderada entre las variables num\_clausulas con vars\_negativas, vars\_positivas, num\_vars y densidad). Luego, es necesario reducir el conjunto de caracter\'isticas, quedando  el siguiente: \texttt{caracteristicas\_reducidas = ['num\_vars', 'densidad', 'tamanio\_prom\_clausula']}.
+Como se puede apreciar en la matriz de correlaci\'on \ref{fig:correlation-matrix-solved-vs-timeout}, entre las variables num\_vars y vars\_positivas y vars\_negativas, existe correlaci\'on perfecta ($r=1$). Adem\'as, existe una correlaci\'on moderada entre las variables num\_clausulas con vars\_negativas, vars\_positivas, num\_vars y densidad). Luego, es necesario reducir el conjunto de caracter\'isticas, quedando  el siguiente: \texttt{caracteristicas\_reducidas = ['num\_vars', 'densidad', 'tamanio\_prom\_clausula']}.
 
-(insertar matriz de correlacion del nuevo conjunto)
-Como se muestra en la matriz, se elimin\'o las correlaciones moderadas y severas.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/correlation_matrix_after_delete_multicol.png}
+    \caption{Matriz de correlaci\'on tras eliminar multicolinealidad.}
+    \label{fig:correlation-matrix-after-delete-multicol}
+\end{figure}
+
+Como se muestra en la matriz \ref{fig:correlation-matrix-after-delete-multicol}, se elimin\'o las correlaciones moderadas y severas.
 
 \subsubsection{Comparaci\'on de caracter\'isticas entre RESUELTOS Y TIMEOUTs}
 
-Al realizar el test de normalidad de Shapiro-Wilk se obtuvo los siguientes resultados:
+Al realizar el test de normalidad de Shapiro-Wilk se obtuvo los resultados mostrados en \ref{fig:test-shapiro-wilk}:
 
-\texttt{num\_vars (TIMEOUT): ShapiroResult(statistic=np.float64(0.7933191376191727), pvalue=np.float64(1.1794648547679767e-18))
-num\_vars (NO TIMEOUT): ShapiroResult(statistic=np.float64(0.6698142994834743), pvalue=np.float64(9.428437191286474e-26))
-densidad (TIMEOUT): ShapiroResult(statistic=np.float64(0.6461253813664019), pvalue=np.float64(7.820027948180053e-24))
-densidad (NO TIMEOUT): ShapiroResult(statistic=np.float64(0.5441281055563653), pvalue=np.float64(2.297890446301959e-29))
-tamanio\_prom\_clausula (TIMEOUT): ShapiroResult(statistic=np.float64(0.752042266567243), pvalue=np.float64(2.4804046463422804e-20))
-tamanio\_prom\_clausula (NO TIMEOUT): ShapiroResult(statistic=np.float64(0.8112114166434761), pvalue=np.float64(4.389991714803694e-20))}
 
-Este an\'alisis revela que ninguna de estas características sigue una distribución normal en los grupos de instancias que terminaron en TIMEOUT ni en las que fueron resueltas. Esto se evidencia en los valores de p muy bajos (todos menores a 0.05, incluso extremadamente cercanos a cero), lo que permite rechazar la hipótesis nula de normalidad para cada variable en ambos grupos. En concreto, los estadísticos de Shapiro oscilan entre aproximadamente 0.54 y 0.81, y los p-valores indican una desviación significativa de la normalidad.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/test_shapiro_wilk.png}
+    \caption{Test de normalidad Shapiro-Wilk.}
+    \label{fig:test-shapiro-wilk}
+\end{figure}
+
+Este an\'alisis mostrado en la tabla \ref{fig:test-shapiro-wilk} revela que ninguna de estas características sigue una distribución normal en los grupos de instancias que terminaron en TIMEOUT ni en las que fueron resueltas. Esto se evidencia en los valores de p muy bajos (todos menores a 0.05, incluso extremadamente cercanos a cero), lo que permite rechazar la hipótesis nula de normalidad para cada variable en ambos grupos. En concreto, los estadísticos de Shapiro oscilan entre aproximadamente 0.54 y 0.81, y los p-valores indican una desviación significativa de la normalidad.
 
 Luego, para comparar estas características entre instancias con y sin TIMEOUT no es apropiado utilizar pruebas paramétricas basadas en la normalidad, como el t-test, sino que se deben emplear métodos no paramétricos, por ejemplo la prueba de Mann-Whitney, cuyo resultado se presenta a continuaci\'on. 
 
 \subsubsection{Prueba Mann-Whitney U}
 
-\texttt{Mann-Whitney U para num\_vars: p-value = 1.383e-83
-Mann-Whitney U para densidad: p-value = 3.168e-29
-Mann-Whitney U para tamanio\_prom\_clausula: p-value = 0.803}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/prueba_mann_whitney_u.png}
+    \caption{Prueba Mann-Whitney U.}
+    \label{fig:prueba-mann-whitney-u}
+\end{figure}
 
-La prueba muestra resultados concluyentes sobre las diferencias entre las instancias que terminaron en TIMEOUT y las que fueron resueltas.
+Como se muestra en \ref{fig:prueba-mann-whitney-u}, la prueba muestra resultados concluyentes sobre las diferencias entre las instancias que terminaron en TIMEOUT y las que fueron resueltas. Estos, visualizarse de igual forma mediante las gr\'aficas \ref{fig:dist-man-whitney}.
 
-Para las variables número de variables y densidad, los valores p son extremadamente bajos (1.383e-83 y 3.168e-29 respectivamente), lo que indica diferencias estadísticamente significativas entre ambos grupos en estas características. Esto sugiere que tanto el tamaño del problema como su densidad influyen fuertemente en la probabilidad de que un problema termine en TIMEOUT.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/man_whitney.png}
+    \caption{Distribuciones de prueba Mann-Whitney U por resultados.}
+    \label{fig:dist-man-whitney}
+\end{figure}
+
+Para las variables n\'umero de variables y densidad, los valores p son extremadamente bajos (1.383e-83 y 3.168e-29 respectivamente), lo que indica diferencias estadísticamente significativas entre ambos grupos en estas características. Esto sugiere que tanto el tamaño del problema como su densidad influyen fuertemente en la probabilidad de que un problema termine en TIMEOUT.
 
 En contraste, para el tamaño promedio de cláusula el p-valor es alto (0.803), lo que implica que no hay evidencia suficiente para afirmar que esta característica difiera entre problemas con y sin TIMEOUT.
 
-Estos resultados confirman que las variables relacionadas con la escala y complejidad estructural del problema (num\_vars y densidad) son factores determinantes en el rendimiento del solver, mientras que el tamaño promedio de las cláusulas no parece ser un factor discriminante en la ocurrencia de TIMEOUT.
+Estos resultados confirman que las variables relacionadas con la escala y complejidad estructural del problema (num\_vars y densidad) son factores determinantes en el rendimiento del \textit{solver}, mientras que el tamaño promedio de las cl\'ausulas no parece ser un factor discriminante en la ocurrencia de TIMEOUT.
 
-En consecuencia, para modelar o predecir la probabilidad de TIMEOUT conviene priorizar las variables num\_vars y densidad, y descartar o tratar con menor peso el tamaño promedio de cláusula. 
+En consecuencia, para modelar o predecir la probabilidad de TIMEOUT conviene priorizar las variables num\_vars y densidad, y descartar o tratar con menor peso el tamaño promedio de cláusula.
 
-\subsubsection{Regresi\'on log\'istica: ¿Qué características predicen TIMEOUT?}
+\subsubsection{Regresi\'on log\'istica: ¿Qué caracter\'isticas predicen TIMEOUT?}
 
-Trasa efectuar la regresi\'on se obtuvieron los siguientes resultados:
+Trasa efectuar la regresi\'on se obtuvieron los siguientes resultados \ref{fig:regresion-logistica}:
 
-\texttt{num\_vars: coeficiente logit = 0.0032
-densidad: coeficiente logit = -0.0314
-tamanio\_prom\_clausula: coeficiente logit = -0.5455}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/regresion_logistica.png}
+    \caption{Regresi\'on log\'istica.}
+    \label{fig:regresion-logistica}
+\end{figure}
 
-Con base en estos resultados, el modelo ofrece una interpretación clara sobre la influencia de cada característica en la probabilidad de que un problema no se resuelva en el tiempo límite.
+Con base en estos resultados de la tabla \ref{fig:regresion-logistica} , el modelo ofrece una interpretación clara sobre la influencia de cada característica en la probabilidad de que un problema no se resuelva en el tiempo límite.
 
 El coeficiente positivo para num\_vars (0.0032) indica que a medida que aumenta el número de variables, la probabilidad de TIMEOUT también incrementa, lo cual es consistente con la intuición y los análisis descriptivos previos que mostraron que problemas más grandes tienden a ser más difíciles de resolver. 
 
@@ -363,51 +483,37 @@ Estos signos y magnitudes reflejan que la complejidad estructural del problema n
 Para los an\'alisis estad\'isticos en esta secci\'on se incluy\'o la variable tiempo, que e=indica en seg cu\'anto tard\'o el \textit{solver} en dar una soluci\'on.
 
 \subsubsection{Correlaci\'on de Spearman}
-Se obtuvo los siguientes resultados:
+Se obtuvo los siguientes resultados \ref{fig:correlacion-spearman}:
 
-\texttt{Spearman num\_vars vs tiempo\_segundos: rho = 0.845, p = 1.116e-63
-Spearman densidad vs tiempo\_segundos: rho = 0.318, p = 8.968e-07
-Spearman tamanio\_prom\_clausula vs tiempo\_segundos: rho = 0.710, p = 1.929e-36}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/correlacion_spearman.png}
+    \caption{Correlaci\'on de Spearman.}
+    \label{fig:correlacion-spearman}
+\end{figure}
 
-Este an\'alisis revela asociaciones significativas y de distinta intensidad.
+Los resultados que se muestran en la tabla \ref{fig:correlacion-spearman} an\'alisis revela asociaciones significativas y de distinta intensidad.
 
 La variable número de variables muestra una correlación muy fuerte y positiva con el tiempo de resolución (rho = 0.845, p < 0.001), indicando que a mayor tamaño del problema, mayor es el tiempo requerido para resolverlo, lo cual es coherente con la complejidad esperada en problemas SAT.
 
 La densidad presenta una correlación positiva moderada (rho = 0.318, p < 0.001), lo que sugiere que problemas con mayor densidad de cláusulas por variable tienden a requerir más tiempo, aunque este efecto es menos pronunciado que el del tamaño.
 
-Por último, el tamaño promedio de cláusula también exhibe una correlación fuerte positiva (rho = 0.710, p < 0.001), indicando que cláusulas más largas o complejas están asociadas con un aumento significativo en el tiempo de resolución.
+Por último, el tamaño promedio de cl\'ausula tambi\'en exhibe una correlación fuerte positiva (rho = 0.710, p < 0.001), indicando que cláusulas más largas o complejas están asociadas con un aumento significativo en el tiempo de resolución.
 
 Estos resultados confirman que tanto la escala del problema como su estructura influyen en el rendimiento del solver, siendo el número de variables el factor más determinante, seguido por la complejidad de las cláusulas y la densidad. 
 
 \subsubsection{Kruskal-Wallis: ¿El tiempo difiere entre heurísticas para un mismo tipo de problema?}
 
-Dados los siguientes resultados:
 
-\texttt{
-Kruskal-Wallis para heurística: VSIDS+restart
-Variable: num\_vars, estadístico = 55.0704, p-valor = 1.738e-06
-Variable: densidad, estadístico = 55.8711, p-valor = 8.922e-05
-Variable: tamanio\_prom\_clausula, estadístico = 54.8239, p-valor = 0.0001258}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/kruskal_wallis.png}
+    \caption{Kruskal-Wallis.}
+    \label{fig:kruskal-wallis}
+\end{figure}
 
-\texttt{
-Kruskal-Wallis para heurística: VSIDS+no-restart
-Variable: num\_vars, estadístico = 54.7791, p-valor = 9.448e-07
-Variable: densidad, estadístico = 55.2582, p-valor = 6.482e-05
-Variable: tamanio\_prom\_clausula, estadístico = 55.6763, p-valor = 9.513e-05}
 
-\texttt{
-Kruskal-Wallis para heurística: DLIS+restart
-Variable: num\_vars, estadístico = 41.2553, p-valor = 4.441e-05
-Variable: densidad, estadístico = 40.6674, p-valor = 0.001692
-Variable: tamanio\_prom\_clausula, estadístico = 42.9055, p-valor = 0.003232}
-
-\texttt{
-Kruskal-Wallis para heurística: DLIS+no-restart
-Variable: num\_vars, estadístico = 46.9197, p-valor = 4.813e-06
-Variable: densidad, estadístico = 47.8132, p-valor = 9.17e-05
-Variable: tamanio\_prom\_clausula, estadístico = 48.7640, p-valor = 0.000332}
-
-Se tiene que El análisis mediante la prueba no paramétrica de Kruskal-Wallis aplicado a la variable transformada del tiempo de resolución (logaritmo natural del tiempo más uno) para cada heurística y característica del problema revela diferencias estadísticamente significativas en todos los casos evaluados.
+Dados los siguientes resultados mostrados en la tabla \ref{fig:kruskal-wallis}, se tiene que el análisis mediante la prueba no paramétrica de Kruskal-Wallis aplicado a la variable transformada del tiempo de resolución (logaritmo natural del tiempo más uno) para cada heurística y característica del problema revela diferencias estadísticamente significativas en todos los casos evaluados.
 
 Para las cuatro heurísticas (VSIDS+restart, VSIDS+no-restart, DLIS+restart y DLIS+no-restart), las variables número de variables, densidad y tamaño promedio de cláusula muestran valores de estadístico elevados y p-valores muy bajos (todos menores a 0.005), lo que indica que la distribución del tiempo de resolución difiere significativamente entre los distintos grupos definidos por cada una de estas características. Esto implica que, independientemente de la heurística utilizada, las propiedades estructurales del problema impactan de forma relevante en el rendimiento temporal del \textit{solver}.
 
@@ -415,118 +521,39 @@ La consistencia de estos resultados a través de todas las heurísticas sugiere 
 
 \subsubsection{Pruebas post hoc con test de Dunn}
 
-Para estas pruebas se obtuvieron los siguientes resultados:
+Para estas pruebas se obtuvieron los resultados mostrados en las tablas \ref{fig:test-dunn-vsids-restart}, \ref{fig:test-dunn-vsids-no-restart}, \ref{fig:test-dunn-dlis-restart} y \ref{fig:test-dunn-dlis-no-restart}:
 
-\texttt{Test de Dunn para heurística: VSIDS+restart}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/test_dunn_vsids_restart.png}
+    \caption{Test Dunn por cuartiles para VSIDS con restart.}
+    \label{fig:test-dunn-vsids-restart}
+\end{figure}
 
-\texttt{
-Variable: num\_vars (grupos por cuartiles con ranking)
-              1         2         3             4
-1  1.000000e+00  0.703180  0.000015  1.056421e-07
-2  7.031804e-01  1.000000  0.011745  4.209616e-04
-3  1.466021e-05  0.011745  1.000000  1.000000e+00
-4  1.056421e-07  0.000421  1.000000  1.000000e+00}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/test_dunn_vsids_no_restart.png}
+    \caption{Test Dunn por cuartiles para VSIDS sin restart.}
+    \label{fig:test-dunn-vsids-no-restart}
+\end{figure}
 
-\texttt{
-Variable: densidad (grupos por cuartiles con ranking)
-          1         2         3         4
-1  1.000000  0.000007  0.000503  0.070783
-2  0.000007  1.000000  1.000000  0.103465
-3  0.000503  1.000000  1.000000  0.872152
-4  0.070783  0.103465  0.872152  1.000000}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/test_dunn_dlis_restart.png}
+    \caption{Test Dunn por cuartiles para DLIS con restart.}
+    \label{fig:test-dunn-dlis-restart}
+\end{figure}
 
-\texttt{
-Variable: tamanio\_prom\_clausula (grupos por cuartiles con ranking)
-              1         2         3             4
-1  1.000000e+00  0.123377  0.040784  7.498526e-08
-2  1.233771e-01  1.000000  1.000000  6.133981e-03
-3  4.078389e-02  1.000000  1.000000  2.285046e-02
-4  7.498526e-08  0.006134  0.022850  1.000000e+00}
-
-
-\texttt{Test de Dunn para heurística: VSIDS+no-restart}
-
-\texttt{
-Variable: num\_vars (grupos por cuartiles con ranking)
-              1         2         3             4
-1  1.000000e+00  0.937707  0.000237  2.446266e-07
-2  9.377070e-01  1.000000  0.039659  2.823215e-04
-3  2.368724e-04  0.039659  1.000000  1.000000e+00
-4  2.446266e-07  0.000282  1.000000  1.000000e+00}
-
-\texttt{
-Variable: densidad (grupos por cuartiles con ranking)
-          1         2         3         4
-1  1.000000  0.000001  0.000050  0.108825
-2  0.000001  1.000000  1.000000  0.027465
-3  0.000050  1.000000  1.000000  0.197057
-4  0.108825  0.027465  0.197057  1.000000}
-
-\texttt{
-Variable: tamanio\_prom\_clausula (grupos por cuartiles con ranking)
-              1         2         3             4
-1  1.000000e+00  0.189033  0.004745  3.629837e-08
-2  1.890331e-01  1.000000  1.000000  1.485490e-03
-3  4.745457e-03  1.000000  1.000000  1.082227e-01
-4  3.629837e-08  0.001485  0.108223  1.000000e+00}
-
-\texttt{
-Test de Dunn para heurística: DLIS+restart}
-
-\texttt{
-Variable: num\_vars (grupos por cuartiles con ranking)
-              1         2         3             4
-1  1.000000e+00  1.000000  0.004494  1.182619e-07
-2  1.000000e+00  1.000000  0.058306  1.022282e-05
-3  4.494466e-03  0.058306  1.000000  1.668414e-01
-4  1.182619e-07  0.000010  0.166841  1.000000e+00}
-
-\texttt{
-Variable: densidad (grupos por cuartiles con ranking)
-          1         2         3         4
-1  1.000000  0.024023  0.039453  0.005794
-2  0.024023  1.000000  1.000000  1.000000
-3  0.039453  1.000000  1.000000  1.000000
-4  0.005794  1.000000  1.000000  1.000000}
-
-\texttt{
-Variable: tamanio\_prom\_clausula (grupos por cuartiles con ranking)
-          1        2         3         4
-1  1.000000  0.00071  0.078823  0.000005
-2  0.000710  1.00000  1.000000  1.000000
-3  0.078823  1.00000  1.000000  0.098370
-4  0.000005  1.00000  0.098370  1.000000}
-
-\texttt{
-Test de Dunn para heurística: DLIS+no-restart}
-
-\texttt{
-Variable: num\_vars (grupos por cuartiles con ranking)
-              1         2         3             4
-1  1.000000e+00  0.563525  0.000105  1.981346e-08
-2  5.635254e-01  1.000000  0.048111  1.336627e-04
-3  1.047943e-04  0.048111  1.000000  7.859709e-01
-4  1.981346e-08  0.000134  0.785971  1.000000e+00}
-
-\texttt{
-Variable: densidad (grupos por cuartiles con ranking)
-              1             2         3         4
-1  1.000000e+00  6.856812e-07  0.001024  0.010847
-2  6.856812e-07  1.000000e+00  0.891933  0.174521
-3  1.023563e-03  8.919335e-01  1.000000  1.000000
-4  1.084705e-02  1.745214e-01  1.000000  1.000000}
-
-\texttt{
-Variable: tamanio\_prom\_clausula (grupos por cuartiles con ranking)
-              1         2         3             4
-1  1.000000e+00  0.016085  0.029254  5.334288e-09
-2  1.608499e-02  1.000000  1.000000  1.063184e-02
-3  2.925435e-02  1.000000  1.000000  8.289626e-03
-4  5.334288e-09  0.010632  0.008290  1.000000e+00}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Graphics/test_dunn_dlis_no_restart.png}
+    \caption{Test Dunn por cuartiles para DLIS csin restart.}
+    \label{fig:test-dunn-dlis-no-restart}
+\end{figure}
 
 El test post-hoc de Dunn aplicado por cuartiles (grupos definidos con ranking para evitar empates) para cada heurística y variable seleccionada permite identificar con precisión entre qué grupos existen diferencias significativas en el tiempo de resolución (logaritmo del tiempo).
 
-En general, para la variable número de variables, se observan diferencias altamente significativas entre los cuartiles extremos (por ejemplo, grupo 1 vs. 4) en todas las heurísticas, con p-valores muy bajos (p < 0.001), lo que confirma que problemas más grandes requieren tiempos significativamente mayores para resolverse. En los grupos intermedios, las diferencias son menos consistentes pero también aparecen comparaciones significativas, evidenciando una relación gradual entre tamaño y tiempo. 
+En general, para la variable ``número de variables'', se observan diferencias altamente significativas entre los cuartiles extremos (por ejemplo, grupo 1 vs. 4) en todas las heurísticas, con p-valores muy bajos (p < 0.001), lo que confirma que problemas más grandes requieren tiempos significativamente mayores para resolverse. En los grupos intermedios, las diferencias son menos consistentes pero también aparecen comparaciones significativas, evidenciando una relación gradual entre tamaño y tiempo. 
 
 Para la densidad, los resultados muestran diferencias significativas principalmente entre los cuartiles más bajos y más altos, aunque en algunos casos los grupos intermedios no difieren tanto, indicando que la densidad afecta el tiempo pero con menor fuerza y de manera menos lineal que el tamaño.
 

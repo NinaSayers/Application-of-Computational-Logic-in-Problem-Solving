@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  14 JUN 2025 06:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  15 JUN 2025 02:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -700,11 +700,11 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthR=\skip89
 \@temptokenb=\toks24
 )
-Package biblatex Info: Redefining '\cite' on input line 77.
-Package biblatex Info: Redefining '\parencite' on input line 91.
-Package biblatex Info: Redefining '\footcite' on input line 105.
-Package biblatex Info: Redefining '\footcitetext' on input line 112.
-Package biblatex Info: Redefining '\textcite' on input line 119.
+Package biblatex Info: Redefining '\cite' on input line 78.
+Package biblatex Info: Redefining '\parencite' on input line 92.
+Package biblatex Info: Redefining '\footcite' on input line 106.
+Package biblatex Info: Redefining '\footcitetext' on input line 113.
+Package biblatex Info: Redefining '\textcite' on input line 120.
 \c@theorem=\count440
 \c@definition=\count441
 \c@lemma=\count442
@@ -1336,12 +1336,12 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 \@nomenclaturefile=\write5
 \openout5 = `Thesis.nlo'.
 
-Package nomencl Info: Writing nomenclature file Thesis.nlo on input line 76.
+Package nomencl Info: Writing nomenclature file Thesis.nlo on input line 79.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 95
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 98
 .
 
 (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
@@ -1355,32 +1355,32 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
  (FrontMatter/Dedication.aux) (FrontMatter/Thanks.aux)
 (FrontMatter/SupervisorOpinion.aux) (FrontMatter/Abstract.aux)
 (FrontMatter/Contents.aux) (MainMatter/Introduction.aux)
-(MainMatter/Background.aux) (MainMatter/Proposal.aux)
-(MainMatter/Implementation.aux) (BackMatter/Conclusions.aux)
-(BackMatter/Recomendations.aux) (BackMatter/Bibliography.aux))
+(MainMatter/Background.aux) (MainMatter/Implementation.aux)
+(BackMatter/Conclusions.aux) (BackMatter/Recomendations.aux)
+(BackMatter/Bibliography.aux))
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Info: Redefining \. on input line 95.
-LaTeX Info: Redefining \% on input line 95.
-Package tocbasic Info: usage of `tocbibind' detected on input line 95.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Info: Redefining \. on input line 98.
+LaTeX Info: Redefining \% on input line 98.
+Package tocbasic Info: usage of `tocbibind' detected on input line 98.
 
 (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -1433,13 +1433,12 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `Thesis.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'Thesis.bbl' not found.
-
-No file Thesis.bbl.
-Package biblatex Info: Reference section=0 on input line 95.
-Package biblatex Info: Reference segment=0 on input line 95.
-Package hyperref Info: Link coloring ON on input line 95.
-(Thesis.out) (Thesis.out)
+Package biblatex Info: ... file 'Thesis.bbl' found.
+ (Thesis.bbl)
+Package biblatex Info: Reference section=0 on input line 98.
+Package biblatex Info: Reference segment=0 on input line 98.
+Package hyperref Info: Link coloring ON on input line 98.
+ (Thesis.out) (Thesis.out)
 \@outlinefile=\write6
 \openout6 = `Thesis.out'.
 
@@ -1448,11 +1447,11 @@ Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count520
-Package tocbasic Info: setting babel extension for `lol' on input line 95.
+Package tocbasic Info: setting babel extension for `lol' on input line 98.
 <Graphics/uhlogo.pdf, id=194, 375.98297pt x 481.67456pt>
 File: Graphics/uhlogo.pdf Graphic file (type pdf)
 <use Graphics/uhlogo.pdf>
-Package pdftex.def Info: Graphics/uhlogo.pdf  used on input line 98.
+Package pdftex.def Info: Graphics/uhlogo.pdf  used on input line 101.
 (pdftex.def)             Requested size: 49.79231pt x 63.7885pt.
 
 
@@ -1558,8 +1557,9 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
 
 
+{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}
 ]
-Overfull \hbox (2.14784pt too wide) in paragraph at lines 51--51
+Overfull \hbox (2.14784pt too wide) in paragraph at lines 50--50
  [][] []\T1/lmr/m/n/12 Análisis de pro-ble-mas re-suel-tos (SA-TIS-FIA-BLE/UN-S
 A-TIS-FIA- 
  []
@@ -1570,20 +1570,21 @@ A-TIS-FIA-
 
 
 
-[8{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.en
-c}] (Thesis.lof
+[8] (Thesis.lof
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
+
+
+[9
+
+])
 \tf@lof=\write8
 \openout8 = `Thesis.lof'.
 
 
 
-[9
-
-] (Thesis.lol
+[10] (Thesis.lol
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -1593,7 +1594,7 @@ LaTeX Info: Redefining \% on input line 1.
 
 )
 
-[10
+[11
 
 ]
 \openout2 = `MainMatter/Introduction.aux'.
@@ -1618,10 +1619,6 @@ LaTeX Info: Redefining \% on input line 1.
  (MainMatter/Background.tex
 Cap\'{\i }tulo 1.
 
-LaTeX Warning: Citation 'garcia_conferencia1' on page 5 undefined on input line
- 6.
-
-
 
 [5
 
@@ -1630,12 +1627,8 @@ LaTeX Warning: Citation 'garcia_conferencia1' on page 5 undefined on input line
 
 ]
 
-LaTeX Warning: Reference `subsection: cdcl' on page 6 undefined on input line 1
-6.
-
-
-
-[6]
+[6{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
+c}]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 60.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1650,125 +1643,43 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 60.
 
 
-[7{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
-c}]
+[7]
 
 [8]
-<Graphics/arboldp.png, id=356, 406.51875pt x 199.947pt>
+<Graphics/arboldp.png, id=485, 406.51875pt x 199.947pt>
 File: Graphics/arboldp.png Graphic file (type png)
 <use Graphics/arboldp.png>
 Package pdftex.def Info: Graphics/arboldp.png  used on input line 125.
 (pdftex.def)             Requested size: 346.89731pt x 170.62695pt.
 
-Overfull \hbox (11.35126pt too wide) in paragraph at lines 131--131
+Overfull \hbox (11.35126pt too wide) in paragraph at lines 132--132
 []\T1/lmr/bx/n/14.4 Algoritmo Da-vis^^UPutnam^^ULogemann^^ULoveland (DPLL) 
  []
 
 
 
-[9]
+[9 <./Graphics/arboldp.png>]
 
-[10 <./Graphics/arboldp.png>]
-
-[11]
+[10]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-96.
+97.
  (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-
-[12]
-
-[13]
-
-[14]
-
-[15]
-
-[16]
-
-[17]
-
-[18]
-
-[19]
-
-[20]
-
-[21]
-
-[22]
-Overfull \hbox (3.874pt too wide) in paragraph at lines 451--451
-[]\T1/lmr/bx/n/17.28 Parámetros de Eva-lua-ción pa-ra \T1/lmr/bx/it/17.28 sol-v
-ers \T1/lmr/bx/n/17.28 CDCL:
- []
+<Graphics/conflict_graph.png, id=511, 699.8145pt x 329.43076pt>
+File: Graphics/conflict_graph.png Graphic file (type png)
+<use Graphics/conflict_graph.png>
+Package pdftex.def Info: Graphics/conflict_graph.png  used on input line 201.
+(pdftex.def)             Requested size: 346.89731pt x 163.29744pt.
 
 
+[11]
+<Graphics/first_uip.png, id=520, 708.84825pt x 347.49825pt>
+File: Graphics/first_uip.png Graphic file (type png)
+<use Graphics/first_uip.png>
+Package pdftex.def Info: Graphics/first_uip.png  used on input line 211.
+(pdftex.def)             Requested size: 346.89731pt x 170.05821pt.
 
-[23]
-
-[24]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 477.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 477.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 477.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 477.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 477.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 477.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 477.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 477.
-
-
-
-[25]
-
-[26]
-Overfull \hbox (7.71681pt too wide) in paragraph at lines 520--521
-[]\T1/lmr/m/n/12 Instancias de pro-ble-mas re-la-cio-na-dos con BMC, co-mo ``ha
-rdware-bmc'' y ``hardware-
- []
-
-
-
-[27])
-
-[28]
-\openout2 = `MainMatter/Proposal.aux'.
-
- (MainMatter/Proposal.tex)
-
-[29
-
-
-
-]
-\openout2 = `MainMatter/Implementation.aux'.
-
- (MainMatter/Implementation.tex
-Cap\'{\i }tulo 2.
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 6.
-
-
-
-[30
-
-
-
-
-]
 (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
@@ -1779,44 +1690,147 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 
-[31]
+[12 <./Graphics/conflict_graph.png>]
 
-[32]
+[13 <./Graphics/first_uip.png>]
 
-[33]
+[14]
 
-[34]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-73.
+[15]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+60.
  (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[35{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
+[16{C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
 ]
 
-[36]
+[17]
+
+LaTeX Warning: Reference `lst:decide-vsid' on page 18 undefined on input line 4
+63.
+
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 475.
+
+
+[18]
+<Graphics/cola_pesada.png, id=642, 560.69475pt x 380.01974pt>
+File: Graphics/cola_pesada.png Graphic file (type png)
+<use Graphics/cola_pesada.png>
+Package pdftex.def Info: Graphics/cola_pesada.png  used on input line 496.
+(pdftex.def)             Requested size: 346.89731pt x 235.11691pt.
+<Graphics/restart_effects.png, id=646, 695.59875pt x 433.62pt>
+File: Graphics/restart_effects.png Graphic file (type png)
+<use Graphics/restart_effects.png>
+Package pdftex.def Info: Graphics/restart_effects.png  used on input line 506.
+(pdftex.def)             Requested size: 346.89731pt x 216.24706pt.
+<Graphics/geom_restart.png, id=650, 667.293pt x 422.17725pt>
+File: Graphics/geom_restart.png Graphic file (type png)
+<use Graphics/geom_restart.png>
+Package pdftex.def Info: Graphics/geom_restart.png  used on input line 521.
+(pdftex.def)             Requested size: 346.89731pt x 219.46901pt.
+<Graphics/luby_restart.png, id=654, 675.12225pt x 406.51875pt>
+File: Graphics/luby_restart.png Graphic file (type png)
+<use Graphics/luby_restart.png>
+Package pdftex.def Info: Graphics/luby_restart.png  used on input line 531.
+(pdftex.def)             Requested size: 346.89731pt x 208.88496pt.
+
+
+[19]
+
+[20 <./Graphics/cola_pesada.png>]
+
+[21 <./Graphics/restart_effects.png>]
+
+[22 <./Graphics/geom_restart.png> <./Graphics/luby_restart.png>]
+
+[23]
+
+[24]
+
+[25]
+
+[26]
+
+[27]
+
+[28]
+
+[29]
+Overfull \hbox (3.874pt too wide) in paragraph at lines 830--830
+[]\T1/lmr/bx/n/17.28 Parámetros de Eva-lua-ción pa-ra \T1/lmr/bx/it/17.28 sol-v
+ers \T1/lmr/bx/n/17.28 CDCL:
+ []
+
+
+
+[30]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 856.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 856.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 856.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 856.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 856.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 856.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 856.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 856.
+
+
+
+[31]
+
+[32]
+
+LaTeX Warning: Reference `zhang2024revisiting' on page 33 undefined on input li
+ne 885.
+
+
+Overfull \hbox (7.71681pt too wide) in paragraph at lines 899--900
+[]\T1/lmr/m/n/12 Instancias de pro-ble-mas re-la-cio-na-dos con BMC, co-mo ``ha
+rdware-bmc'' y ``hardware-
+ []
+
+
+
+[33])
+
+[34]
+
+[35]
+\openout2 = `MainMatter/Implementation.aux'.
+
+ (MainMatter/Implementation.tex
+Cap\'{\i }tulo 2.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 7.
+
+
+
+[36
+
+
+
+
+]
 
 [37]
-Overfull \hbox (39.13786pt too wide) in paragraph at lines 245--246
-\T1/lmr/m/n/12 python: \T1/lmr/m/it/12 pan-das\T1/lmr/m/n/12 , \T1/lmr/m/it/12 
-numpy\T1/lmr/m/n/12 , \T1/lmr/m/it/12 sea-born\T1/lmr/m/n/12 , \T1/lmr/m/it/12 
-mat-plotlib.pyplot\T1/lmr/m/n/12 , \T1/lmr/m/it/12 stats-mo-dels.api\T1/lmr/m/n
-/12 , \T1/lmr/m/it/12 va-rian-ce_inflation_factor
- []
-
-
-Overfull \hbox (7.46298pt too wide) in paragraph at lines 245--246
-\T1/lmr/m/n/12 y va-rian-ce_inflation_factor, am-bas de \T1/lmr/m/it/12 stats-m
-o-dels.stats.outliers_influence\T1/lmr/m/n/12 , \T1/lmr/m/it/12 ols \T1/lmr/m/n
-/12 de \T1/lmr/m/it/12 stats-
- []
-
-
-Overfull \hbox (41.88762pt too wide) in paragraph at lines 245--246
-\T1/lmr/m/it/12 mo-dels.formula.api\T1/lmr/m/n/12 , \T1/lmr/m/it/12 scipy.stats
-\T1/lmr/m/n/12 , \T1/lmr/m/it/12 Lo-gis-ti-cRe-gres-sion \T1/lmr/m/n/12 de \T1/
-lmr/m/it/12 sklearn.linear_model\T1/lmr/m/n/12 , y sci-kit_posthocs. 
+Overfull \hbox (98.17459pt too wide) in paragraph at lines 82--83
+[]\T1/lmr/m/n/12 Obsérvese que es-te mé-to-do ha-ce un lla-ma-do a \T1/lmtt/m/n
+/12 int count_literal_in_unsatisfied_clauses_(idx)
  []
 
 
@@ -1826,377 +1840,214 @@ lmr/m/it/12 sklearn.linear_model\T1/lmr/m/n/12 , y sci-kit_posthocs.
 [39]
 
 [40]
-Overfull \hbox (29.77446pt too wide) in paragraph at lines 310--311
-[]\T1/lmr/m/n/12 Como se pue-de apre-ciar, en-tre las va-ria-bles num_vars y va
-rs_positivas y vars_negativas,
- []
-
-
-Overfull \hbox (45.11923pt too wide) in paragraph at lines 310--311
-\T1/lmtt/m/n/12 caracteristicas_reducidas = ['num_vars', 'densidad', 'tamanio_p
-rom_clausula']\T1/lmr/m/n/12 . 
- []
-
-
-Overfull \hbox (47.09503pt too wide) in paragraph at lines 324--325
-[]\T1/lmtt/m/n/12 num_vars (TIMEOUT): ShapiroResult(statistic=np.float64(0.7933
-191376191727),
- []
-
-
-Overfull \hbox (313.47133pt too wide) in paragraph at lines 324--325
-\T1/lmtt/m/n/12 pvalue=np.float64(1.1794648547679767e-18)) num_vars (NO TIMEOUT
-): ShapiroResult(statistic=np.float64(0.6698142994834743),
- []
-
-
-Overfull \hbox (288.77832pt too wide) in paragraph at lines 324--325
-\T1/lmtt/m/n/12 pvalue=np.float64(9.428437191286474e-26)) densidad (TIMEOUT): S
-hapiroResult(statistic=np.float64(0.6461253813664019),
- []
-
-
-Overfull \hbox (307.34535pt too wide) in paragraph at lines 324--325
-\T1/lmtt/m/n/12 pvalue=np.float64(7.820027948180053e-24)) densidad (NO TIMEOUT)
-: ShapiroResult(statistic=np.float64(0.5441281055563653),
- []
-
-
-Overfull \hbox (23.2812pt too wide) in paragraph at lines 324--325
-\T1/lmtt/m/n/12 pvalue=np.float64(2.297890446301959e-29)) tamanio_prom_clausula
- (TIMEOUT):
- []
-
-
-Overfull \hbox (165.30627pt too wide) in paragraph at lines 324--325
-\T1/lmtt/m/n/12 ShapiroResult(statistic=np.float64(0.752042266567243), pvalue=n
-p.float64(2.4804046463422804e-20))
- []
-
-
-Overfull \hbox (128.27727pt too wide) in paragraph at lines 324--325
-\T1/lmtt/m/n/12 tamanio_prom_clausula (NO TIMEOUT): ShapiroResult(statistic=np.
-float64(0.8112114166434761),
- []
-
-
 
 [41]
-Overfull \hbox (10.08003pt too wide) in paragraph at lines 334--335
-[]\T1/lmtt/m/n/12 Mann-Whitney U para num_vars: p-value = 1.383e-83 Mann-Whitne
-y U para
- []
-
-
-Overfull \hbox (10.96622pt too wide) in paragraph at lines 334--335
-\T1/lmtt/m/n/12 densidad: p-value = 3.168e-29 Mann-Whitney U para tamanio_prom_
-clausula:
- []
-
-
-Overfull \hbox (40.95505pt too wide) in paragraph at lines 352--353
-[]\T1/lmtt/m/n/12 num_vars: coeficiente logit = 0.0032 densidad: coeficiente lo
-git = -0.0314
- []
-
-
 
 [42]
-Overfull \hbox (34.76604pt too wide) in paragraph at lines 370--371
-[]\T1/lmtt/m/n/12 Spearman num_vars vs tiempo_segundos: rho = 0.845, p = 1.116e
--63 Spearman
- []
-
-
-Overfull \hbox (97.41626pt too wide) in paragraph at lines 370--371
-\T1/lmtt/m/n/12 densidad vs tiempo_segundos: rho = 0.318, p = 8.968e-07 Spearma
-n tamanio_prom_clausula
- []
-
-
 
 [43]
-Overfull \hbox (65.65506pt too wide) in paragraph at lines 390--391
-[] \T1/lmtt/m/n/12 Kruskal-Wallis para heurística: VSIDS+restart Variable: num_
-vars, estadístico
+Overfull \hbox (100.66945pt too wide) in paragraph at lines 273--274
+\T1/lmr/m/n/12 python: \T1/lmtt/m/n/12 pandas\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 n
+umpy\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 seaborn\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 ma
+tplotlib.pyplot\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 statsmodels.api\T1/lmr/m/n/12 ,
+ \T1/lmtt/m/n/12 variance_inflation_factor
  []
 
 
-Overfull \hbox (17.14822pt too wide) in paragraph at lines 390--391
-\T1/lmtt/m/n/12 = 55.0704, p-valor = 1.738e-06 Variable: densidad, estadístico 
-= 55.8711,
- []
-
-
-Overfull \hbox (29.49123pt too wide) in paragraph at lines 390--391
-\T1/lmtt/m/n/12 p-valor = 8.922e-05 Variable: tamanio_prom_clausula, estadístic
-o = 54.8239,
- []
-
-
-Overfull \hbox (10.08003pt too wide) in paragraph at lines 396--397
-[] \T1/lmtt/m/n/12 Kruskal-Wallis para heurística: VSIDS+no-restart Variable: n
-um_vars,
- []
-
-
-Overfull \hbox (23.31622pt too wide) in paragraph at lines 396--397
-\T1/lmtt/m/n/12 estadístico = 54.7791, p-valor = 9.448e-07 Variable: densidad, 
-estadístico
- []
-
-
-Overfull \hbox (29.49823pt too wide) in paragraph at lines 396--397
-\T1/lmtt/m/n/12 = 55.2582, p-valor = 6.482e-05 Variable: tamanio_prom_clausula,
- estadístico
- []
-
-
-Overfull \hbox (59.48006pt too wide) in paragraph at lines 402--403
-[] \T1/lmtt/m/n/12 Kruskal-Wallis para heurística: DLIS+restart Variable: num_v
-ars, estadístico
- []
-
-
-Overfull \hbox (17.14122pt too wide) in paragraph at lines 402--403
-\T1/lmtt/m/n/12 = 41.2553, p-valor = 4.441e-05 Variable: densidad, estadístico 
-= 40.6674,
- []
-
-
-Overfull \hbox (23.30922pt too wide) in paragraph at lines 402--403
-\T1/lmtt/m/n/12 p-valor = 0.001692 Variable: tamanio_prom_clausula, estadístico
- = 42.9055,
- []
-
-
-Overfull \hbox (3.90503pt too wide) in paragraph at lines 408--409
-[] \T1/lmtt/m/n/12 Kruskal-Wallis para heurística: DLIS+no-restart Variable: nu
-m_vars,
- []
-
-
-Overfull \hbox (23.30222pt too wide) in paragraph at lines 408--409
-\T1/lmtt/m/n/12 estadístico = 46.9197, p-valor = 4.813e-06 Variable: densidad, 
-estadístico
- []
-
-
-Overfull \hbox (23.32323pt too wide) in paragraph at lines 408--409
-\T1/lmtt/m/n/12 = 47.8132, p-valor = 9.17e-05 Variable: tamanio_prom_clausula, 
-estadístico
+Overfull \hbox (78.46619pt too wide) in paragraph at lines 273--274
+\T1/lmtt/m/n/12 ols \T1/lmr/m/n/12 de \T1/lmtt/m/n/12 statsmodels.formula.api\T
+1/lmr/m/n/12 , \T1/lmtt/m/n/12 scipy.stats\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 Logi
+sticRegression \T1/lmr/m/n/12 de \T1/lmtt/m/n/12 sklearn.linear_model\T1/lmr/m/
+n/12 ,
  []
 
 
 
 [44]
-Overfull \hbox (59.48006pt too wide) in paragraph at lines 428--429
-[] \T1/lmtt/m/n/12 Variable: num_vars (grupos por cuartiles con ranking) 1 2 3 
-4 1 1.000000e+00
- []
-
-
-Overfull \hbox (35.65222pt too wide) in paragraph at lines 428--429
-\T1/lmtt/m/n/12 0.703180 0.000015 1.056421e-07 2 7.031804e-01 1.000000 0.011745
- 4.209616e-04
- []
-
-
-Overfull \hbox (48.00923pt too wide) in paragraph at lines 428--429
-\T1/lmtt/m/n/12 3 1.466021e-05 0.011745 1.000000 1.000000e+00 4 1.056421e-07 0.
-000421 1.000000
- []
-
-
-Overfull \hbox (34.78004pt too wide) in paragraph at lines 436--437
-[] \T1/lmtt/m/n/12 Variable: densidad (grupos por cuartiles con ranking) 1 2 3 
-4 1 1.000000
- []
-
-
-Overfull \hbox (29.49823pt too wide) in paragraph at lines 436--437
-\T1/lmtt/m/n/12 0.000007 0.000503 0.070783 2 0.000007 1.000000 1.000000 0.10346
-5 3 0.000503
- []
-
-
-Overfull \hbox (10.08003pt too wide) in paragraph at lines 444--445
-[] \T1/lmtt/m/n/12 Variable: tamanio_prom_clausula (grupos por cuartiles con ra
-nking) 1
- []
-
-
-Overfull \hbox (29.49123pt too wide) in paragraph at lines 444--445
-\T1/lmtt/m/n/12 2 3 4 1 1.000000e+00 0.123377 0.040784 7.498526e-08 2 1.233771e
--01 1.000000
- []
-
-
-Overfull \hbox (72.68823pt too wide) in paragraph at lines 444--445
-\T1/lmtt/m/n/12 1.000000 6.133981e-03 3 4.078389e-02 1.000000 1.000000 2.285046
-e-02 4 7.498526e-08
- []
-
-
-Overfull \hbox (59.48006pt too wide) in paragraph at lines 455--456
-[] \T1/lmtt/m/n/12 Variable: num_vars (grupos por cuartiles con ranking) 1 2 3 
-4 1 1.000000e+00
- []
-
-
-Overfull \hbox (35.6242pt too wide) in paragraph at lines 455--456
-\T1/lmtt/m/n/12 0.937707 0.000237 2.446266e-07 2 9.377070e-01 1.000000 0.039659
- 2.823215e-04
- []
-
-
-Overfull \hbox (47.98122pt too wide) in paragraph at lines 455--456
-\T1/lmtt/m/n/12 3 2.368724e-04 0.039659 1.000000 1.000000e+00 4 2.446266e-07 0.
-000282 1.000000
- []
-
-
-Overfull \hbox (34.78004pt too wide) in paragraph at lines 463--464
-[] \T1/lmtt/m/n/12 Variable: densidad (grupos por cuartiles con ranking) 1 2 3 
-4 1 1.000000
- []
-
-
-Overfull \hbox (29.49823pt too wide) in paragraph at lines 463--464
-\T1/lmtt/m/n/12 0.000001 0.000050 0.108825 2 0.000001 1.000000 1.000000 0.02746
-5 3 0.000050
- []
-
-
-Overfull \hbox (10.08003pt too wide) in paragraph at lines 471--472
-[] \T1/lmtt/m/n/12 Variable: tamanio_prom_clausula (grupos por cuartiles con ra
-nking) 1
- []
-
-
-Overfull \hbox (29.47722pt too wide) in paragraph at lines 471--472
-\T1/lmtt/m/n/12 2 3 4 1 1.000000e+00 0.189033 0.004745 3.629837e-08 2 1.890331e
--01 1.000000
- []
-
-
-Overfull \hbox (72.70924pt too wide) in paragraph at lines 471--472
-\T1/lmtt/m/n/12 1.000000 1.485490e-03 3 4.745457e-03 1.000000 1.000000 1.082227
-e-01 4 3.629837e-08
- []
-
-
-Overfull \hbox (59.48006pt too wide) in paragraph at lines 482--483
-[] \T1/lmtt/m/n/12 Variable: num_vars (grupos por cuartiles con ranking) 1 2 3 
-4 1 1.000000e+00
- []
-
-
-Overfull \hbox (35.65222pt too wide) in paragraph at lines 482--483
-\T1/lmtt/m/n/12 1.000000 0.004494 1.182619e-07 2 1.000000e+00 1.000000 0.058306
- 1.022282e-05
- []
-
-
-Overfull \hbox (47.9602pt too wide) in paragraph at lines 482--483
-\T1/lmtt/m/n/12 3 4.494466e-03 0.058306 1.000000 1.668414e-01 4 1.182619e-07 0.
-000010 0.166841
- []
-
-
-Overfull \hbox (34.78004pt too wide) in paragraph at lines 490--491
-[] \T1/lmtt/m/n/12 Variable: densidad (grupos por cuartiles con ranking) 1 2 3 
-4 1 1.000000
- []
-
-
-Overfull \hbox (29.48422pt too wide) in paragraph at lines 490--491
-\T1/lmtt/m/n/12 0.024023 0.039453 0.005794 2 0.024023 1.000000 1.000000 1.00000
-0 3 0.039453
- []
-
-
-
-[45]
-Overfull \hbox (10.08003pt too wide) in paragraph at lines 498--499
-[] \T1/lmtt/m/n/12 Variable: tamanio_prom_clausula (grupos por cuartiles con ra
-nking) 1
- []
-
-
-Overfull \hbox (54.20525pt too wide) in paragraph at lines 498--499
-\T1/lmtt/m/n/12 2 3 4 1 1.000000 0.00071 0.078823 0.000005 2 0.000710 1.00000 1
-.000000 1.000000
- []
-
-
-Overfull \hbox (17.14122pt too wide) in paragraph at lines 498--499
-\T1/lmtt/m/n/12 3 0.078823 1.00000 1.000000 0.098370 4 0.000005 1.00000 0.09837
-0 1.000000 
- []
-
-
-Overfull \hbox (59.48006pt too wide) in paragraph at lines 509--510
-[] \T1/lmtt/m/n/12 Variable: num_vars (grupos por cuartiles con ranking) 1 2 3 
-4 1 1.000000e+00
- []
-
-
-Overfull \hbox (35.63821pt too wide) in paragraph at lines 509--510
-\T1/lmtt/m/n/12 0.563525 0.000105 1.981346e-08 2 5.635254e-01 1.000000 0.048111
- 1.336627e-04
- []
-
-
-Overfull \hbox (47.98822pt too wide) in paragraph at lines 509--510
-\T1/lmtt/m/n/12 3 1.047943e-04 0.048111 1.000000 7.859709e-01 4 1.981346e-08 0.
-000134 0.785971
- []
-
-
-Overfull \hbox (59.48006pt too wide) in paragraph at lines 517--518
-[] \T1/lmtt/m/n/12 Variable: densidad (grupos por cuartiles con ranking) 1 2 3 
-4 1 1.000000e+00
- []
-
-
-Overfull \hbox (35.63821pt too wide) in paragraph at lines 517--518
-\T1/lmtt/m/n/12 6.856812e-07 0.001024 0.010847 2 6.856812e-07 1.000000e+00 0.89
-1933 0.174521
- []
-
-
-Overfull \hbox (17.13422pt too wide) in paragraph at lines 517--518
-\T1/lmtt/m/n/12 3 1.023563e-03 8.919335e-01 1.000000 1.000000 4 1.084705e-02 1.
-745214e-01
- []
-
-
-Overfull \hbox (10.08003pt too wide) in paragraph at lines 525--526
-[] \T1/lmtt/m/n/12 Variable: tamanio_prom_clausula (grupos por cuartiles con ra
-nking) 1
- []
-
-
-Overfull \hbox (29.46321pt too wide) in paragraph at lines 525--526
-\T1/lmtt/m/n/12 2 3 4 1 1.000000e+00 0.016085 0.029254 5.334288e-09 2 1.608499e
--02 1.000000
- []
-
-
-Overfull \hbox (72.68823pt too wide) in paragraph at lines 525--526
-\T1/lmtt/m/n/12 1.000000 1.063184e-02 3 2.925435e-02 1.000000 1.000000 8.289626
-e-03 4 5.334288e-09
- []
-
-)
-
-[46]
+<Graphics/num_vars_timeout_x_heuristica.png, id=1108, 844.8363pt x 396.0396pt>
+File: Graphics/num_vars_timeout_x_heuristica.png Graphic file (type png)
+<use Graphics/num_vars_timeout_x_heuristica.png>
+Package pdftex.def Info: Graphics/num_vars_timeout_x_heuristica.png  used on in
+put line 296.
+(pdftex.def)             Requested size: 346.89731pt x 162.619pt.
+
+
+[45 <./Graphics/num_vars_timeout_x_heuristica.png>]
+<Graphics/num_claus_timeout_x_heuristica.png, id=1116, 851.3406pt x 396.0396pt>
+
+File: Graphics/num_claus_timeout_x_heuristica.png Graphic file (type png)
+<use Graphics/num_claus_timeout_x_heuristica.png>
+Package pdftex.def Info: Graphics/num_claus_timeout_x_heuristica.png  used on i
+nput line 305.
+(pdftex.def)             Requested size: 346.89731pt x 161.37413pt.
+<Graphics/densidad_timeout_x_heuristica.png, id=1118, 831.8277pt x 396.0396pt>
+File: Graphics/densidad_timeout_x_heuristica.png Graphic file (type png)
+<use Graphics/densidad_timeout_x_heuristica.png>
+Package pdftex.def Info: Graphics/densidad_timeout_x_heuristica.png  used on in
+put line 314.
+(pdftex.def)             Requested size: 346.89731pt x 165.15709pt.
+<Graphics/tamanio_prom_claus_timeout_x_heuristica.png, id=1120, 841.9455pt x 39
+6.0396pt>
+File: Graphics/tamanio_prom_claus_timeout_x_heuristica.png Graphic file (type p
+ng)
+<use Graphics/tamanio_prom_claus_timeout_x_heuristica.png>
+Package pdftex.def Info: Graphics/tamanio_prom_claus_timeout_x_heuristica.png  
+used on input line 323.
+(pdftex.def)             Requested size: 346.89731pt x 163.17496pt.
+
+
+[46 <./Graphics/num_claus_timeout_x_heuristica.png> <./Graphics/densidad_timeou
+t_x_heuristica.png>]
+<Graphics/vars_pos_timeout_x_heuristica.png, id=1129, 844.8363pt x 396.0396pt>
+File: Graphics/vars_pos_timeout_x_heuristica.png Graphic file (type png)
+<use Graphics/vars_pos_timeout_x_heuristica.png>
+Package pdftex.def Info: Graphics/vars_pos_timeout_x_heuristica.png  used on in
+put line 332.
+(pdftex.def)             Requested size: 346.89731pt x 162.619pt.
+<Graphics/vars_neg_timeout_x_heuristica.png, id=1130, 844.8363pt x 396.0396pt>
+File: Graphics/vars_neg_timeout_x_heuristica.png Graphic file (type png)
+<use Graphics/vars_neg_timeout_x_heuristica.png>
+Package pdftex.def Info: Graphics/vars_neg_timeout_x_heuristica.png  used on in
+put line 339.
+(pdftex.def)             Requested size: 346.89731pt x 162.619pt.
+
+
+[47 <./Graphics/tamanio_prom_claus_timeout_x_heuristica.png> <./Graphics/vars_p
+os_timeout_x_heuristica.png>]
+<Graphics/timeouts_x_heuristica.png, id=1139, 714.7503pt x 426.393pt>
+File: Graphics/timeouts_x_heuristica.png Graphic file (type png)
+<use Graphics/timeouts_x_heuristica.png>
+Package pdftex.def Info: Graphics/timeouts_x_heuristica.png  used on input line
+ 354.
+(pdftex.def)             Requested size: 346.89731pt x 206.95pt.
+<Graphics/timeouts_x_problema.png, id=1140, 859.2903pt x 570.933pt>
+File: Graphics/timeouts_x_problema.png Graphic file (type png)
+<use Graphics/timeouts_x_problema.png>
+Package pdftex.def Info: Graphics/timeouts_x_problema.png  used on input line 3
+61.
+(pdftex.def)             Requested size: 346.89731pt x 230.4861pt.
+
+
+[48 <./Graphics/vars_neg_timeout_x_heuristica.png> <./Graphics/timeouts_x_heuri
+stica.png>]
+
+[49 <./Graphics/timeouts_x_problema.png>]
+<Graphics/caracteristica_tiempo_x_heuristica.png, id=1155, 1149.8157pt x 643.20
+3pt>
+File: Graphics/caracteristica_tiempo_x_heuristica.png Graphic file (type png)
+<use Graphics/caracteristica_tiempo_x_heuristica.png>
+Package pdftex.def Info: Graphics/caracteristica_tiempo_x_heuristica.png  used 
+on input line 384.
+(pdftex.def)             Requested size: 346.89731pt x 194.05179pt.
+
+
+[50 <./Graphics/caracteristica_tiempo_x_heuristica.png>]
+<Graphics/correlation_matrix_solveds_vs_timeouts.png, id=1163, 569.4876pt x 490
+.7133pt>
+File: Graphics/correlation_matrix_solveds_vs_timeouts.png Graphic file (type pn
+g)
+<use Graphics/correlation_matrix_solveds_vs_timeouts.png>
+Package pdftex.def Info: Graphics/correlation_matrix_solveds_vs_timeouts.png  u
+sed on input line 404.
+(pdftex.def)             Requested size: 346.89731pt x 298.91536pt.
+
+
+[51 <./Graphics/correlation_matrix_solveds_vs_timeouts.png>]
+<Graphics/correlation_matrix_after_delete_multicol.png, id=1171, 366.4089pt x 3
+25.9377pt>
+File: Graphics/correlation_matrix_after_delete_multicol.png Graphic file (type 
+png)
+<use Graphics/correlation_matrix_after_delete_multicol.png>
+Package pdftex.def Info: Graphics/correlation_matrix_after_delete_multicol.png 
+ used on input line 413.
+(pdftex.def)             Requested size: 346.89731pt x 308.57971pt.
+<Graphics/test_shapiro_wilk.png, id=1174, 518.53725pt x 275.22826pt>
+File: Graphics/test_shapiro_wilk.png Graphic file (type png)
+<use Graphics/test_shapiro_wilk.png>
+Package pdftex.def Info: Graphics/test_shapiro_wilk.png  used on input line 427
+.
+(pdftex.def)             Requested size: 346.89731pt x 184.1248pt.
+
+
+[52 <./Graphics/correlation_matrix_after_delete_multicol.png>]
+<Graphics/prueba_mann_whitney_u.png, id=1182, 387.24675pt x 112.62074pt>
+File: Graphics/prueba_mann_whitney_u.png Graphic file (type png)
+<use Graphics/prueba_mann_whitney_u.png>
+Package pdftex.def Info: Graphics/prueba_mann_whitney_u.png  used on input line
+ 440.
+(pdftex.def)             Requested size: 346.89731pt x 100.89201pt.
+<Graphics/man_whitney.png, id=1185, 1082.6046pt x 354.123pt>
+File: Graphics/man_whitney.png Graphic file (type png)
+<use Graphics/man_whitney.png>
+Package pdftex.def Info: Graphics/man_whitney.png  used on input line 450.
+(pdftex.def)             Requested size: 346.89731pt x 113.46756pt.
+
+
+[53 <./Graphics/test_shapiro_wilk.png> <./Graphics/prueba_mann_whitney_u.png>]
+<Graphics/regresion_logistica.png, id=1194, 383.63326pt x 108.405pt>
+File: Graphics/regresion_logistica.png Graphic file (type png)
+<use Graphics/regresion_logistica.png>
+Package pdftex.def Info: Graphics/regresion_logistica.png  used on input line 4
+69.
+(pdftex.def)             Requested size: 346.89731pt x 98.02509pt.
+
+
+[54 <./Graphics/man_whitney.png> <./Graphics/regresion_logistica.png>]
+<Graphics/correlacion_spearman.png, id=1204, 549.85425pt x 130.68825pt>
+File: Graphics/correlacion_spearman.png Graphic file (type png)
+<use Graphics/correlacion_spearman.png>
+Package pdftex.def Info: Graphics/correlacion_spearman.png  used on input line 
+490.
+(pdftex.def)             Requested size: 346.89731pt x 82.44968pt.
+
+
+[55 <./Graphics/correlacion_spearman.png>]
+<Graphics/kruskal_wallis.png, id=1212, 561.89925pt x 368.577pt>
+File: Graphics/kruskal_wallis.png Graphic file (type png)
+<use Graphics/kruskal_wallis.png>
+Package pdftex.def Info: Graphics/kruskal_wallis.png  used on input line 510.
+(pdftex.def)             Requested size: 346.89731pt x 227.55365pt.
+
+
+[56 <./Graphics/kruskal_wallis.png>]
+<Graphics/test_dunn_vsids_restart.png, id=1225, 576.35326pt x 441.44925pt>
+File: Graphics/test_dunn_vsids_restart.png Graphic file (type png)
+<use Graphics/test_dunn_vsids_restart.png>
+Package pdftex.def Info: Graphics/test_dunn_vsids_restart.png  used on input li
+ne 528.
+(pdftex.def)             Requested size: 346.89731pt x 265.7001pt.
+<Graphics/test_dunn_vsids_no_restart.png, id=1226, 573.342pt x 437.83575pt>
+File: Graphics/test_dunn_vsids_no_restart.png Graphic file (type png)
+<use Graphics/test_dunn_vsids_no_restart.png>
+Package pdftex.def Info: Graphics/test_dunn_vsids_no_restart.png  used on input
+ line 535.
+(pdftex.def)             Requested size: 346.89731pt x 264.92151pt.
+<Graphics/test_dunn_dlis_restart.png, id=1227, 558.888pt x 440.24475pt>
+File: Graphics/test_dunn_dlis_restart.png Graphic file (type png)
+<use Graphics/test_dunn_dlis_restart.png>
+Package pdftex.def Info: Graphics/test_dunn_dlis_restart.png  used on input lin
+e 542.
+(pdftex.def)             Requested size: 346.89731pt x 273.25793pt.
+<Graphics/test_dunn_dlis_no_restart.png, id=1228, 579.96675pt x 443.85825pt>
+File: Graphics/test_dunn_dlis_no_restart.png Graphic file (type png)
+<use Graphics/test_dunn_dlis_no_restart.png>
+Package pdftex.def Info: Graphics/test_dunn_dlis_no_restart.png  used on input 
+line 549.
+(pdftex.def)             Requested size: 346.89731pt x 265.4975pt.
+
+
+[57 <./Graphics/test_dunn_vsids_restart.png>])
+
+[58 <./Graphics/test_dunn_vsids_no_restart.png>]
+
+[59 <./Graphics/test_dunn_dlis_restart.png>]
+
+[60 <./Graphics/test_dunn_dlis_no_restart.png>]
 \openout2 = `BackMatter/Conclusions.aux'.
 
  (BackMatter/Conclusions.tex)
 
-[47
+[61
 
 
 
@@ -2207,7 +2058,7 @@ e-03 4 5.334288e-09
 
  (BackMatter/Recomendations.tex)
 
-[48
+[62
 
 
 
@@ -2218,18 +2069,25 @@ e-03 4 5.334288e-09
 
  (BackMatter/Bibliography.tex
 
-LaTeX Warning: Empty bibliography on input line 1.
+[63
 
-) (Thesis.aux
+
+
+
+]
+
+[64])
+
+[65] (Thesis.aux
 LaTeX Info: Redefining \sptext on input line 13.
 LaTeX Info: Redefining \. on input line 13.
 LaTeX Info: Redefining \% on input line 13.
  (FrontMatter/Dedication.aux) (FrontMatter/Thanks.aux)
 (FrontMatter/SupervisorOpinion.aux) (FrontMatter/Abstract.aux)
 (FrontMatter/Contents.aux) (MainMatter/Introduction.aux)
-(MainMatter/Background.aux) (MainMatter/Proposal.aux)
-(MainMatter/Implementation.aux) (BackMatter/Conclusions.aux)
-(BackMatter/Recomendations.aux) (BackMatter/Bibliography.aux))
+(MainMatter/Background.aux) (MainMatter/Implementation.aux)
+(BackMatter/Conclusions.aux) (BackMatter/Recomendations.aux)
+(BackMatter/Bibliography.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
@@ -2239,46 +2097,41 @@ L3 programming layer <2025-04-14>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 43728D4F7D7DEF58C80B553F0D1D3758;10314.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                Thesis
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 2C11ED2CED72D6A86182BB79D41ADE1D;9934.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38219 strings out of 469941
- 721643 string characters out of 5469431
- 1797511 words of memory out of 5000000
- 64096 multiletter control sequences out of 15000+600000
- 769489 words of font info for 137 fonts, out of 8000000 for 9000
+ 38901 strings out of 469941
+ 741635 string characters out of 5469431
+ 1842175 words of memory out of 5000000
+ 64577 multiletter control sequences out of 15000+600000
+ 769807 words of font info for 138 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,12n,121p,1167b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,12n,121p,1206b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
-b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb
-><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pf
-b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pf
-b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pf
-b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb
-><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb>
-<C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><
-C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C
-:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/
-Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Us
-ers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Us
-ers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Us
-ers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Use
-rs/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/User
-s/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/User
-s/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm1
-0.pfb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/un
-cb8a.pfb>
-Output written on Thesis.pdf (58 pages, 642677 bytes).
+b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.p
+fb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.p
+fb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.p
+fb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pf
+b><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb
+><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb>
+<C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><
+C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:
+/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/U
+sers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/U
+sers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/U
+sers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Us
+ers/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Use
+rs/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Use
+rs/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Use
+rs/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/u
+ncb8a.pfb>
+Output written on Thesis.pdf (76 pages, 1638592 bytes).
 PDF statistics:
- 819 PDF objects out of 1000 (max. 8388607)
- 248 named destinations out of 1000 (max. 500000)
- 399 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1524 PDF objects out of 1728 (max. 8388607)
+ 453 named destinations out of 1000 (max. 500000)
+ 534 words of extra memory for PDF output out of 10000 (max. 10000000)
 

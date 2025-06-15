@@ -1,0 +1,2377 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{almabetterCSP}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a7a4b769443319ec107126ac055b10cc}{%
+           family={{AlmaBetter}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a7a4b769443319ec107126ac055b10cc}
+      \strng{fullhash}{a7a4b769443319ec107126ac055b10cc}
+      \strng{fullhashraw}{a7a4b769443319ec107126ac055b10cc}
+      \strng{bibnamehash}{a7a4b769443319ec107126ac055b10cc}
+      \strng{authorbibnamehash}{a7a4b769443319ec107126ac055b10cc}
+      \strng{authornamehash}{a7a4b769443319ec107126ac055b10cc}
+      \strng{authorfullhash}{a7a4b769443319ec107126ac055b10cc}
+      \strng{authorfullhashraw}{a7a4b769443319ec107126ac055b10cc}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.almabetter.com/bytes/tutorials/artificial-intelligence/constraint-satisfaction-problem-in-ai}}
+      \field{note}{Accedido: 2025-06-15}
+      \field{title}{Constraint Satisfaction Problem in {AI}}
+      \field{year}{2025}
+    \endentry
+    \entry{cadical2024}{misc}{}{}
+      \name{author}{6}{ul=2}{%
+        {{un=0,uniquepart=base,hash=22081d00e30965a89f413e528510617e}{%
+           family={Biere},
+           familyi={B\bibinitperiod},
+           given={Armin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2924c54a9875b88d7893f70cb5c5e729}{%
+           family={Fleury},
+           familyi={F\bibinitperiod},
+           given={Mathias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a1349c1859354955c1cb0f8a9310cc92}{%
+           family={Faller},
+           familyi={F\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1045a4734d89ee905d4a53b5ca50a3b2}{%
+           family={Froleyks},
+           familyi={F\bibinitperiod},
+           given={Nils},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aeba9a6c0728884b4ec3500970b53c69}{%
+           family={Fazekas},
+           familyi={F\bibinitperiod},
+           given={Katalin},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=437090c86b89faa523536c5e0654cdc4}{%
+           family={Pollitt},
+           familyi={P\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{84af19532618c7b595ff4126e7b0e2ce}
+      \strng{fullhash}{830d1501d9c6868eddf0cf722e4f3788}
+      \strng{fullhashraw}{830d1501d9c6868eddf0cf722e4f3788}
+      \strng{bibnamehash}{830d1501d9c6868eddf0cf722e4f3788}
+      \strng{authorbibnamehash}{830d1501d9c6868eddf0cf722e4f3788}
+      \strng{authornamehash}{84af19532618c7b595ff4126e7b0e2ce}
+      \strng{authorfullhash}{830d1501d9c6868eddf0cf722e4f3788}
+      \strng{authorfullhashraw}{830d1501d9c6868eddf0cf722e4f3788}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/arminbiere/cadical}}
+      \field{note}{University Freiburg, Johannes Kepler University Linz, TU Wien}
+      \field{title}{CaDiCaL 2.0}
+      \field{year}{2024}
+    \endentry
+    \entry{biere2019restart_schemes}{inbook}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=22081d00e30965a89f413e528510617e}{%
+           family={Biere},
+           familyi={B\bibinitperiod},
+           given={Armin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=00cba42bd010c829a401a390bbaece9c}{%
+           family={Fröhlich},
+           familyi={F\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=e5ce3ab023fe63ab5e2207375db6bb64}{%
+           family={Berre},
+           familyi={B\bibinitperiod},
+           given={D.\bibnamedelimi Le},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=ac781d4fdce48e885be25c4584abda98}{%
+           family={Järvisalo},
+           familyi={J\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Linz, Austria}%
+      }
+      \list{publisher}{1}{%
+        {EasyChair}%
+      }
+      \strng{namehash}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{fullhash}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{fullhashraw}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{bibnamehash}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{authorbibnamehash}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{authornamehash}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{authorfullhash}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{authorfullhashraw}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{editorbibnamehash}{a2d3a8f82d8b79ba8f7d18a92e3c1382}
+      \strng{editornamehash}{a2d3a8f82d8b79ba8f7d18a92e3c1382}
+      \strng{editorfullhash}{a2d3a8f82d8b79ba8f7d18a92e3c1382}
+      \strng{editorfullhashraw}{a2d3a8f82d8b79ba8f7d18a92e3c1382}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of Pragmatics of SAT 2015 and 2018 (POS-18)}
+      \field{note}{Partially supported by FWF, NFN Grant S11408-N23 (RiSE)}
+      \field{series}{EPiC Series in Computing}
+      \field{title}{Evaluating CDCL Restart Schemes}
+      \field{volume}{59}
+      \field{year}{2019}
+      \field{pages}{1\bibrangedash 17}
+      \range{pages}{17}
+    \endentry
+    \entry{cai2022better_heuristics}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=e3c58c5d2b10b57204187fd4269b4086}{%
+           family={Cai},
+           familyi={C\bibinitperiod},
+           given={Shaowei},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6f3b60153762563f9ad3f24a85652d84}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xindi},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2924c54a9875b88d7893f70cb5c5e729}{%
+           family={Fleury},
+           familyi={F\bibinitperiod},
+           given={Mathias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=22081d00e30965a89f413e528510617e}{%
+           family={Biere},
+           familyi={B\bibinitperiod},
+           given={Armin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{96dd89001a9756f531a21a5f3e445e8c}
+      \strng{fullhash}{8b517f46a6cb0dd011040f6fde2faebf}
+      \strng{fullhashraw}{8b517f46a6cb0dd011040f6fde2faebf}
+      \strng{bibnamehash}{8b517f46a6cb0dd011040f6fde2faebf}
+      \strng{authorbibnamehash}{8b517f46a6cb0dd011040f6fde2faebf}
+      \strng{authornamehash}{96dd89001a9756f531a21a5f3e445e8c}
+      \strng{authorfullhash}{8b517f46a6cb0dd011040f6fde2faebf}
+      \strng{authorfullhashraw}{8b517f46a6cb0dd011040f6fde2faebf}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Artificial Intelligence Research}
+      \field{month}{8}
+      \field{note}{Submitted 01/2022; published 08/2022}
+      \field{title}{Better Decision Heuristics in CDCL through Local Search and Target Phases}
+      \field{volume}{74}
+      \field{year}{2022}
+      \field{pages}{1515\bibrangedash 1563}
+      \range{pages}{49}
+    \endentry
+    \entry{cherif2021combining}{inbook}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5b585f86772b233d10873dcb75a57f49}{%
+           family={Cherif},
+           familyi={C\bibinitperiod},
+           given={Mohamed\bibnamedelima Sami},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa7934674b5bc398634a7d343bba4a32}{%
+           family={Habet},
+           familyi={H\bibinitperiod},
+           given={Djamal},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dbbfa85f2db08dd07a5a283c8786909a}{%
+           family={Terrioux},
+           familyi={T\bibinitperiod},
+           given={Cyril},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=1a711dab4262e3bd7f295cd504fdf074}{%
+           family={Michel},
+           familyi={M\bibinitperiod},
+           given={Laurent\bibnamedelima D.},
+           giveni={L\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Marseille, France}%
+      }
+      \list{publisher}{1}{%
+        {Schloss Dagstuhl -- Leibniz-Zentrum für Informatik, Dagstuhl Publishing, Germany}%
+      }
+      \strng{namehash}{f80a286f9d893f03a72212c836c848b6}
+      \strng{fullhash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{fullhashraw}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{bibnamehash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{authorbibnamehash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{authornamehash}{f80a286f9d893f03a72212c836c848b6}
+      \strng{authorfullhash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{authorfullhashraw}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{editorbibnamehash}{1a711dab4262e3bd7f295cd504fdf074}
+      \strng{editornamehash}{1a711dab4262e3bd7f295cd504fdf074}
+      \strng{editorfullhash}{1a711dab4262e3bd7f295cd504fdf074}
+      \strng{editorfullhashraw}{1a711dab4262e3bd7f295cd504fdf074}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{27th International Conference on Principles and Practice of Constraint Programming (CP 2021)}
+      \field{note}{Article No.20; Licensed under Creative Commons License CC-BY 4.0}
+      \field{series}{Leibniz International Proceedings in Informatics}
+      \field{title}{Combining {VSIDS} and {CHB} Using Restarts in {SAT}}
+      \field{year}{2021}
+      \field{pages}{20:1\bibrangedash 20:19}
+      \range{pages}{-1}
+    \endentry
+    \entry{cherif2024vsidschb}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5b585f86772b233d10873dcb75a57f49}{%
+           family={Cherif},
+           familyi={C\bibinitperiod},
+           given={Mohamed\bibnamedelima Sami},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa7934674b5bc398634a7d343bba4a32}{%
+           family={Habet},
+           familyi={H\bibinitperiod},
+           given={Djamal},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dbbfa85f2db08dd07a5a283c8786909a}{%
+           family={Terrioux},
+           familyi={T\bibinitperiod},
+           given={Cyril},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Aix-Marseille Univ, Université de Toulon, CNRS, LIS, France}%
+      }
+      \strng{namehash}{f80a286f9d893f03a72212c836c848b6}
+      \strng{fullhash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{fullhashraw}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{bibnamehash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{authorbibnamehash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{authornamehash}{f80a286f9d893f03a72212c836c848b6}
+      \strng{authorfullhash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{authorfullhashraw}{d4f0d2e6785795aff6328f4cc268bc89}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of a Conference or Workshop (details not specified)}
+      \field{title}{Combining VSIDS and CHB Using Restarts in SAT}
+      \field{year}{2024}
+    \endentry
+    \entry{fichte2023silent}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b35881e116f0ff5e0da60dd6921c903d}{%
+           family={Fichte},
+           familyi={F\bibinitperiod},
+           given={Johannes\bibnamedelima K.},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=95bbd753b34566c4676c39bfa40b1fed}{%
+           family={Berre},
+           familyi={B\bibinitperiod},
+           given={Daniel\bibnamedelima Le},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d33b71325cc0a66b4d9784ed66bdaa7}{%
+           family={Hecher},
+           familyi={H\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bc1ac5443283d9c1021f64467bd1ad77}{%
+           family={Szeider},
+           familyi={S\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a52eb9f9b6d9917cefc01ad1f8b28afa}
+      \strng{fullhash}{9b6f4221dcbe1086c31f451013e2ecd4}
+      \strng{fullhashraw}{9b6f4221dcbe1086c31f451013e2ecd4}
+      \strng{bibnamehash}{9b6f4221dcbe1086c31f451013e2ecd4}
+      \strng{authorbibnamehash}{9b6f4221dcbe1086c31f451013e2ecd4}
+      \strng{authornamehash}{a52eb9f9b6d9917cefc01ad1f8b28afa}
+      \strng{authorfullhash}{9b6f4221dcbe1086c31f451013e2ecd4}
+      \strng{authorfullhashraw}{9b6f4221dcbe1086c31f451013e2ecd4}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications of the ACM}
+      \field{number}{6}
+      \field{title}{The Silent (R)evolution of SAT}
+      \field{volume}{66}
+      \field{year}{2023}
+      \field{pages}{54\bibrangedash 63}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/3581777
+      \endverb
+      \verb{urlraw}
+      \verb https://cacm.acm.org/research/the-silent-revolution-of-sat/
+      \endverb
+      \verb{url}
+      \verb https://cacm.acm.org/research/the-silent-revolution-of-sat/
+      \endverb
+    \endentry
+    \entry{ganesh_unreasonable}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e7a563f2d0aa7eca2d78388c064a0db4}{%
+           family={Ganesh},
+           familyi={G\bibinitperiod},
+           given={Vijay},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a4cf237a06b02ad7e7601b14b4d005be}{%
+           family={Vardi},
+           familyi={V\bibinitperiod},
+           given={Moshe\bibnamedelima Y.},
+           giveni={M\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{46082353e112619771c5b751bebf63cc}
+      \strng{fullhash}{46082353e112619771c5b751bebf63cc}
+      \strng{fullhashraw}{46082353e112619771c5b751bebf63cc}
+      \strng{bibnamehash}{46082353e112619771c5b751bebf63cc}
+      \strng{authorbibnamehash}{46082353e112619771c5b751bebf63cc}
+      \strng{authornamehash}{46082353e112619771c5b751bebf63cc}
+      \strng{authorfullhash}{46082353e112619771c5b751bebf63cc}
+      \strng{authorfullhashraw}{46082353e112619771c5b751bebf63cc}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{No se especifica año ni fuente en la información proporcionada}
+      \field{title}{On The Unreasonable Effectiveness of SAT Solvers}
+    \endentry
+    \entry{garcia_conferencia1}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3666c287bf62df3488f934379f64f6ff}{%
+           family={Garrido},
+           familyi={G\bibinitperiod},
+           given={Luciano\bibnamedelima García},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{fullhash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{fullhashraw}{3666c287bf62df3488f934379f64f6ff}
+      \strng{bibnamehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authorbibnamehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authornamehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authorfullhash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authorfullhashraw}{3666c287bf62df3488f934379f64f6ff}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Conferencia, Facultad de Matemática y Computación, Universidad de La Habana}
+      \field{note}{Profesor Titular Consultante}
+      \field{title}{LC-CSP\_Conferencia \#1}
+      \field{year}{2024}
+    \endentry
+    \entry{garcia-satcap}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3666c287bf62df3488f934379f64f6ff}{%
+           family={Garrido},
+           familyi={G\bibinitperiod},
+           given={Luciano\bibnamedelima García},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{fullhash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{fullhashraw}{3666c287bf62df3488f934379f64f6ff}
+      \strng{bibnamehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authorbibnamehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authornamehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authorfullhash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authorfullhashraw}{3666c287bf62df3488f934379f64f6ff}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Capítulo de libro sin especificar}
+      \field{note}{Capítulo educativo}
+      \field{title}{El problema de la Satisfacibilidad (SAT)}
+      \field{year}{2025}
+    \endentry
+    \entry{guo2024progress}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1cab28533f9119032a014539a5520570}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Mengyu},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Warwick Evans Publishing}%
+      }
+      \strng{namehash}{1cab28533f9119032a014539a5520570}
+      \strng{fullhash}{1cab28533f9119032a014539a5520570}
+      \strng{fullhashraw}{1cab28533f9119032a014539a5520570}
+      \strng{bibnamehash}{1cab28533f9119032a014539a5520570}
+      \strng{authorbibnamehash}{1cab28533f9119032a014539a5520570}
+      \strng{authornamehash}{1cab28533f9119032a014539a5520570}
+      \strng{authorfullhash}{1cab28533f9119032a014539a5520570}
+      \strng{authorfullhashraw}{1cab28533f9119032a014539a5520570}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{3005-9682 (Print), 3005-7140 (Online)}
+      \field{journaltitle}{International Journal of Computer Science and Information Technology}
+      \field{note}{© Content licensed under CC BY-NC 4.0}
+      \field{number}{2}
+      \field{title}{Progress in the Study of the Boolean Satisfiability Problem}
+      \field{volume}{2}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.62051/ijcsit.v2n2.25
+      \endverb
+      \verb{urlraw}
+      \verb https://wepub.org/index.php/IJCSIT/index
+      \endverb
+      \verb{url}
+      \verb https://wepub.org/index.php/IJCSIT/index
+      \endverb
+    \endentry
+    \entry{hoos1998sat}{inbook}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7038b3724d98251482688b5fd2461f95}{%
+           family={Hoos},
+           familyi={H\bibinitperiod},
+           given={Holger\bibnamedelima H.},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=7038b3724d98251482688b5fd2461f95}{%
+           family={Hoos},
+           familyi={H\bibinitperiod},
+           given={Holger\bibnamedelima H.},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=fe8c0dacc6efae8023b930228f5abc18}{%
+           family={Stützle},
+           familyi={S\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {San Francisco, CA}%
+      }
+      \list{publisher}{1}{%
+        {Morgan Kaufmann}%
+      }
+      \strng{namehash}{7038b3724d98251482688b5fd2461f95}
+      \strng{fullhash}{7038b3724d98251482688b5fd2461f95}
+      \strng{fullhashraw}{7038b3724d98251482688b5fd2461f95}
+      \strng{bibnamehash}{7038b3724d98251482688b5fd2461f95}
+      \strng{authorbibnamehash}{7038b3724d98251482688b5fd2461f95}
+      \strng{authornamehash}{7038b3724d98251482688b5fd2461f95}
+      \strng{authorfullhash}{7038b3724d98251482688b5fd2461f95}
+      \strng{authorfullhashraw}{7038b3724d98251482688b5fd2461f95}
+      \strng{editorbibnamehash}{02df1014b790a00c1c1e533ab8b3136b}
+      \strng{editornamehash}{02df1014b790a00c1c1e533ab8b3136b}
+      \strng{editorfullhash}{02df1014b790a00c1c1e533ab8b3136b}
+      \strng{editorfullhashraw}{02df1014b790a00c1c1e533ab8b3136b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Stochastic Local Search: Foundations and Applications}
+      \field{chapter}{6}
+      \field{note}{Available online: \url{https://www.cs.ubc.ca/~hoos/SLS-Internal/ch6.pdf}}
+      \field{title}{SAT and Constraint Satisfaction}
+      \field{year}{1998}
+      \field{pages}{203\bibrangedash 260}
+      \range{pages}{58}
+      \verb{doi}
+      \verb 10.1016/B978-1-55860-508-4.50012-4
+      \endverb
+    \endentry
+    \entry{iser2021unit}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=14da64a17f5ead070f39927eea8ad8b7}{%
+           family={Iser},
+           familyi={I\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=44d64e65bab8f67d2324170cdee5c176}{%
+           family={Balyo},
+           familyi={B\bibinitperiod},
+           given={Tomáš},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{fullhash}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{fullhashraw}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{bibnamehash}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{authorbibnamehash}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{authornamehash}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{authorfullhash}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{authorfullhashraw}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 2021 International Conference on Principles and Practice of Constraint Programming (CP 2021)}
+      \field{note}{Category: Short Paper; Supplementary Material: \url{https://github.com/sat-clique/cadical_stability}}
+      \field{title}{Unit Propagation with Stable Watches}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.4230/LIPIcs.CP.2021.6
+      \endverb
+    \endentry
+    \entry{li2024reset_rl}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=2ee3c28b643f9701eae99995e1443d35}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Chunxiao},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb8dfef3df96b6f56d0d6cb5e0dea5e9}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Charlie},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6ad6f0f7a9dd506db5776d182df60bf2}{%
+           family={Chung},
+           familyi={C\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=454c659d91e9c5411f38e4b898689cb4}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Zhengyang},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7ce480dcd85deb670b2b2cfa4393fce2}{%
+           family={Jha},
+           familyi={J\bibinitperiod},
+           given={Piyush},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e7a563f2d0aa7eca2d78388c064a0db4}{%
+           family={Ganesh},
+           familyi={G\bibinitperiod},
+           given={Vijay},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Dagstuhl Publishing}%
+      }
+      \strng{namehash}{ef26af9f7b7f8759702add1facca8dc7}
+      \strng{fullhash}{a9a307251363897d08a53b5610388cdc}
+      \strng{fullhashraw}{a9a307251363897d08a53b5610388cdc}
+      \strng{bibnamehash}{a9a307251363897d08a53b5610388cdc}
+      \strng{authorbibnamehash}{a9a307251363897d08a53b5610388cdc}
+      \strng{authornamehash}{ef26af9f7b7f8759702add1facca8dc7}
+      \strng{authorfullhash}{a9a307251363897d08a53b5610388cdc}
+      \strng{authorfullhashraw}{a9a307251363897d08a53b5610388cdc}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{42nd Conference on Very Important Topics (CVIT 2016)}
+      \field{series}{Leibniz International Proceedings in Informatics}
+      \field{title}{A Reinforcement Learning based Reset Policy for CDCL SAT Solvers}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.4230/LIPIcs.CVIT.2016.23
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.4230/LIPIcs.CVIT.2016.23
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.4230/LIPIcs.CVIT.2016.23
+      \endverb
+    \endentry
+    \entry{luo2017clause_minimization}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=1805be1443eb44a6d1f78801554e959e}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Mao},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=43a015bcaa306bb18fd1f50b5e11d975}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Chu-Min},
+           giveni={C\bibinithyphendelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e457af38f003185e103aea974a11016a}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Fan},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6bfdf965d709334343435db69401251e}{%
+           family={Manyà},
+           familyi={M\bibinitperiod},
+           given={Felip},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a72bbf2561e85ee1cd1c946e36978d26}{%
+           family={Lü},
+           familyi={L\bibinitperiod},
+           given={Zhipeng},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Melbourne, Australia}%
+      }
+      \list{publisher}{1}{%
+        {IJCAI}%
+      }
+      \strng{namehash}{bc316176c840fa547bcd5e98b39c6b19}
+      \strng{fullhash}{a5adbb1048901db6ecc798f321c482f1}
+      \strng{fullhashraw}{a5adbb1048901db6ecc798f321c482f1}
+      \strng{bibnamehash}{a5adbb1048901db6ecc798f321c482f1}
+      \strng{authorbibnamehash}{a5adbb1048901db6ecc798f321c482f1}
+      \strng{authornamehash}{bc316176c840fa547bcd5e98b39c6b19}
+      \strng{authorfullhash}{a5adbb1048901db6ecc798f321c482f1}
+      \strng{authorfullhashraw}{a5adbb1048901db6ecc798f321c482f1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Twenty-Sixth International Joint Conference on Artificial Intelligence (IJCAI-17)}
+      \field{title}{An Effective Learnt Clause Minimization Approach for CDCL SAT Solvers}
+      \field{year}{2017}
+      \field{pages}{703\bibrangedash 709}
+      \range{pages}{7}
+    \endentry
+    \entry{marques-silva2024cdcl}{inbook}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5357f73e1213b0d17a31ed70805f9653}{%
+           family={Marques-Silva},
+           familyi={M\bibinithyphendelim S\bibinitperiod},
+           given={Joao},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1de046a9bb62e5389ad04fc26969069d}{%
+           family={Lynce},
+           familyi={L\bibinitperiod},
+           given={Ines},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e146ec2b9c0b7fc6062cd4dec46383d4}{%
+           family={Malik},
+           familyi={M\bibinitperiod},
+           given={Sharad},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=b6a85aabf982fa0236b58eb6b9f2ce66}{%
+           family={Gurfinkel},
+           familyi={G\bibinitperiod},
+           given={Arie},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e7a563f2d0aa7eca2d78388c064a0db4}{%
+           family={Ganesh},
+           familyi={G\bibinitperiod},
+           given={Vijay},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{414fa63d853be931cd4cfb96e937d522}
+      \strng{fullhash}{439ac1fc1b8adc3c1fcc0591890c6ccd}
+      \strng{fullhashraw}{439ac1fc1b8adc3c1fcc0591890c6ccd}
+      \strng{bibnamehash}{439ac1fc1b8adc3c1fcc0591890c6ccd}
+      \strng{authorbibnamehash}{439ac1fc1b8adc3c1fcc0591890c6ccd}
+      \strng{authornamehash}{414fa63d853be931cd4cfb96e937d522}
+      \strng{authorfullhash}{439ac1fc1b8adc3c1fcc0591890c6ccd}
+      \strng{authorfullhashraw}{439ac1fc1b8adc3c1fcc0591890c6ccd}
+      \strng{editorbibnamehash}{ece130ee3745c7b498207e44312cfc9a}
+      \strng{editornamehash}{ece130ee3745c7b498207e44312cfc9a}
+      \strng{editorfullhash}{ece130ee3745c7b498207e44312cfc9a}
+      \strng{editorfullhashraw}{ece130ee3745c7b498207e44312cfc9a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Computer Aided Verification}
+      \field{chapter}{4}
+      \field{note}{CAV 2024, Montreal, QC, Canada}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{Conflict-Driven Clause Learning SAT Solvers}
+      \field{volume}{14681}
+      \field{year}{2024}
+      \field{pages}{-\bibrangedash -}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1007/978-3-031-65627-9
+      \endverb
+    \endentry
+    \entry{nandi2024margin}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9b0963151f3d006fd64110c4a1aa1220}{%
+           family={Nandi},
+           familyi={N\bibinitperiod},
+           given={Ankita},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d6918ea8aef1092ef1d965abae6a0311}{%
+           family={Chakrabartty},
+           familyi={C\bibinitperiod},
+           given={Shantanu},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a4fe3df83103f9cd695637f024122182}{%
+           family={Thakur},
+           familyi={T\bibinitperiod},
+           given={Chetan\bibnamedelima Singh},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{18e3c07d6869d35f01b474330691987f}
+      \strng{fullhash}{405bc71d0803baec45c9af633fdb98fc}
+      \strng{fullhashraw}{405bc71d0803baec45c9af633fdb98fc}
+      \strng{bibnamehash}{405bc71d0803baec45c9af633fdb98fc}
+      \strng{authorbibnamehash}{405bc71d0803baec45c9af633fdb98fc}
+      \strng{authornamehash}{18e3c07d6869d35f01b474330691987f}
+      \strng{authorfullhash}{405bc71d0803baec45c9af633fdb98fc}
+      \strng{authorfullhashraw}{405bc71d0803baec45c9af633fdb98fc}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2402.04959}
+      \field{month}{2}
+      \field{note}{arXiv:2402.04959v}
+      \field{title}{Margin Propagation based XOR-SAT Solvers for Decoding of LDPC Codes}
+      \field{year}{2024}
+    \endentry
+    \entry{oh2016improving}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2e7a06ac7e1a921a841aea39d041a33a}{%
+           family={Oh},
+           familyi={O\bibinitperiod},
+           given={Chanseok},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {New York University}%
+      }
+      \strng{namehash}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{fullhash}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{fullhashraw}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{bibnamehash}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{authorbibnamehash}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{authornamehash}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{authorfullhash}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{authorfullhashraw}{2e7a06ac7e1a921a841aea39d041a33a}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{title}{Improving SAT Solvers by Exploiting Empirical Characteristics of CDCL}
+      \field{type}{Ph.D. dissertation}
+      \field{year}{2016}
+    \endentry
+    \entry{oliveras2009dpll_cdcl}{misc}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e2ba4d9cf7e8bdf98cb32d08498311d3}{%
+           family={Oliveras},
+           familyi={O\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e811bc42141bc9911e091bc2c4d479eb}{%
+           family={Rodríguez-Carbonell},
+           familyi={R\bibinithyphendelim C\bibinitperiod},
+           given={Enric},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Departament de Llenguatges i Sistemes Informàtics, Universitat Politècnica de Catalunya}%
+      }
+      \list{location}{1}{%
+        {Barcelona, Spain}%
+      }
+      \strng{namehash}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{fullhash}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{fullhashraw}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{bibnamehash}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{authorbibnamehash}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{authornamehash}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{authorfullhash}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{authorfullhashraw}{d7d65ef516ec57d963652c739c64b7fe}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Lecture notes, Logic and Algebra in Computer Science, Session 4}
+      \field{note}{Fall 2009}
+      \field{title}{From DPLL to CDCL SAT Solvers}
+      \field{year}{2009}
+    \endentry
+    \entry{su2025deeply_ic3}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=3af3cf3cac2ca7a65e510330166bbbd1}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Yuheng},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d8c08a915fa4b0910ad4535c4f4f30bb}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Qiusong},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1b9c1563f4fecf3c728d6530e6c4cd37}{%
+           family={Ci},
+           familyi={C\bibinitperiod},
+           given={Yiwei},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cb95f83244b2e3e6981527ad70e79373}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yingcheng},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bc5e9c93519e49534b5258b784f7c028}{%
+           family={Bu},
+           familyi={B\bibinitperiod},
+           given={Tianjun},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b228699fec71a07406b0d9f40956f298}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Ziyu},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{afc0ec99e5d60efc1e29735a3fd8c4d5}
+      \strng{fullhash}{81bf3d86ca2631f9a17e844cf82cfefc}
+      \strng{fullhashraw}{81bf3d86ca2631f9a17e844cf82cfefc}
+      \strng{bibnamehash}{81bf3d86ca2631f9a17e844cf82cfefc}
+      \strng{authorbibnamehash}{81bf3d86ca2631f9a17e844cf82cfefc}
+      \strng{authornamehash}{afc0ec99e5d60efc1e29735a3fd8c4d5}
+      \strng{authorfullhash}{81bf3d86ca2631f9a17e844cf82cfefc}
+      \strng{authorfullhashraw}{81bf3d86ca2631f9a17e844cf82cfefc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint}
+      \field{title}{Deeply Optimizing the SAT Solver for the IC3 Algorithm}
+      \field{volume}{arXiv:2501.18612}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2501.18612
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2501.18612
+      \endverb
+    \endentry
+    \entry{sun2024autosat}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=f6299e213ea00cdfc1ec1960ce60ec75}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Yiwen},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=41c8b90aff2c99739017b09cd9a6e427}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Furong},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aaaced66e77138357a77fd711befcd80}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xianyin},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d021f423cec89b1d3f75f923aa47b53}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Shiyu},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8631ca938a521d1a5a117653c63867b1}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Bingzhen},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=52d45a717cc51f834c981c4e2890c040}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={Ke},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e3c58c5d2b10b57204187fd4269b4086}{%
+           family={Cai},
+           familyi={C\bibinitperiod},
+           given={Shaowei},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{63433225b0a1757fb93033bddddecef8}
+      \strng{fullhash}{b361e6d4228e2487726f8e65021a57fc}
+      \strng{fullhashraw}{b361e6d4228e2487726f8e65021a57fc}
+      \strng{bibnamehash}{b361e6d4228e2487726f8e65021a57fc}
+      \strng{authorbibnamehash}{b361e6d4228e2487726f8e65021a57fc}
+      \strng{authornamehash}{63433225b0a1757fb93033bddddecef8}
+      \strng{authorfullhash}{b361e6d4228e2487726f8e65021a57fc}
+      \strng{authorfullhashraw}{b361e6d4228e2487726f8e65021a57fc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Artificial Intelligence Research}
+      \field{note}{arXiv:2402.10705v3 [cs.AI]}
+      \field{title}{AutoSAT: Automatically Optimize SAT Solvers via Large Language Models}
+      \field{volume}{1}
+      \field{year}{2024}
+      \field{pages}{1\bibrangedash 37}
+      \range{pages}{37}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2402.10705
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2402.10705
+      \endverb
+    \endentry
+    \entry{trimoska2020parity}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=ac77e5b9997e84adea6ebf4510256d35}{%
+           family={Trimoska},
+           familyi={T\bibinitperiod},
+           given={Monika},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7ac6f2691d4fe47213a76227614f44c6}{%
+           family={Ionica},
+           familyi={I\bibinitperiod},
+           given={Sorina},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b08268f0699658ce772412576b065731}{%
+           family={Dequen},
+           familyi={D\bibinitperiod},
+           given={Gilles},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {MIS Laboratory, University of Picardie Jules Verne, France}%
+      }
+      \strng{namehash}{516c84059136b03708c22877edae1d34}
+      \strng{fullhash}{d8fe202cfd7cda9851ead3fb532374d1}
+      \strng{fullhashraw}{d8fe202cfd7cda9851ead3fb532374d1}
+      \strng{bibnamehash}{d8fe202cfd7cda9851ead3fb532374d1}
+      \strng{authorbibnamehash}{d8fe202cfd7cda9851ead3fb532374d1}
+      \strng{authornamehash}{516c84059136b03708c22877edae1d34}
+      \strng{authorfullhash}{d8fe202cfd7cda9851ead3fb532374d1}
+      \strng{authorfullhashraw}{d8fe202cfd7cda9851ead3fb532374d1}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2001.11229}
+      \field{month}{1}
+      \field{note}{arXiv:2001.11229v1 [cs.CR], submitted January 30, 2020}
+      \field{title}{Parity (XOR) Reasoning for the Index Calculus Attack}
+      \field{year}{2020}
+    \endentry
+    \entry{zhang2024revisiting}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=6f3b60153762563f9ad3f24a85652d84}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xindi},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d897ecd0cbcf45b34370d2454805922}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zhihan},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e3c58c5d2b10b57204187fd4269b4086}{%
+           family={Cai},
+           familyi={C\bibinitperiod},
+           given={Shaowei},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Dagstuhl, Germany}%
+      }
+      \list{publisher}{1}{%
+        {Leibniz International Proceedings in Informatics (LIPIcs), Schloss Dagstuhl – Leibniz-Zentrum für Informatik, Germany}%
+      }
+      \strng{namehash}{de27cc98c1754e68d232f7075ebae2cc}
+      \strng{fullhash}{a96a4f49438bb3bd18ad12931ee6e0a7}
+      \strng{fullhashraw}{a96a4f49438bb3bd18ad12931ee6e0a7}
+      \strng{bibnamehash}{a96a4f49438bb3bd18ad12931ee6e0a7}
+      \strng{authorbibnamehash}{a96a4f49438bb3bd18ad12931ee6e0a7}
+      \strng{authornamehash}{de27cc98c1754e68d232f7075ebae2cc}
+      \strng{authorfullhash}{a96a4f49438bb3bd18ad12931ee6e0a7}
+      \strng{authorfullhashraw}{a96a4f49438bb3bd18ad12931ee6e0a7}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{42nd Conference on Very Important Topics (CVIT 2016)}
+      \field{month}{5}
+      \field{note}{arXiv:2404.16387v2 [cs.LO], submitted May 28, 2024; Licensed under CC-BY 4.0}
+      \field{title}{Revisiting Restarts of CDCL: Should the Search Information be Preserved?}
+      \field{year}{2024}
+      \field{pages}{23:1\bibrangedash 23:17}
+      \range{pages}{-1}
+    \endentry
+    \entry{zulkoski2018understanding}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=345e7a009abebf71855f20ab95bf2d12}{%
+           family={Zulkoski},
+           familyi={Z\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {University of Waterloo}%
+      }
+      \list{location}{1}{%
+        {Waterloo, Ontario, Canada}%
+      }
+      \strng{namehash}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{fullhash}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{fullhashraw}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{bibnamehash}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{authorbibnamehash}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{authornamehash}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{authorfullhash}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{authorfullhashraw}{345e7a009abebf71855f20ab95bf2d12}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Understanding and Enhancing CDCL-based SAT Solvers}
+      \field{type}{Ph.D. dissertation}
+      \field{year}{2018}
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{almabetterCSP}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a7a4b769443319ec107126ac055b10cc}{%
+           family={{AlmaBetter}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a7a4b769443319ec107126ac055b10cc}
+      \strng{fullhash}{a7a4b769443319ec107126ac055b10cc}
+      \strng{fullhashraw}{a7a4b769443319ec107126ac055b10cc}
+      \strng{bibnamehash}{a7a4b769443319ec107126ac055b10cc}
+      \strng{authorbibnamehash}{a7a4b769443319ec107126ac055b10cc}
+      \strng{authornamehash}{a7a4b769443319ec107126ac055b10cc}
+      \strng{authorfullhash}{a7a4b769443319ec107126ac055b10cc}
+      \strng{authorfullhashraw}{a7a4b769443319ec107126ac055b10cc}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.almabetter.com/bytes/tutorials/artificial-intelligence/constraint-satisfaction-problem-in-ai}}
+      \field{note}{Accedido: 2025-06-15}
+      \field{title}{Constraint Satisfaction Problem in {AI}}
+      \field{year}{2025}
+    \endentry
+    \entry{cadical2024}{misc}{}{}
+      \name{author}{6}{ul=2}{%
+        {{un=0,uniquepart=base,hash=22081d00e30965a89f413e528510617e}{%
+           family={Biere},
+           familyi={B\bibinitperiod},
+           given={Armin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2924c54a9875b88d7893f70cb5c5e729}{%
+           family={Fleury},
+           familyi={F\bibinitperiod},
+           given={Mathias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a1349c1859354955c1cb0f8a9310cc92}{%
+           family={Faller},
+           familyi={F\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1045a4734d89ee905d4a53b5ca50a3b2}{%
+           family={Froleyks},
+           familyi={F\bibinitperiod},
+           given={Nils},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aeba9a6c0728884b4ec3500970b53c69}{%
+           family={Fazekas},
+           familyi={F\bibinitperiod},
+           given={Katalin},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=437090c86b89faa523536c5e0654cdc4}{%
+           family={Pollitt},
+           familyi={P\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{84af19532618c7b595ff4126e7b0e2ce}
+      \strng{fullhash}{830d1501d9c6868eddf0cf722e4f3788}
+      \strng{fullhashraw}{830d1501d9c6868eddf0cf722e4f3788}
+      \strng{bibnamehash}{830d1501d9c6868eddf0cf722e4f3788}
+      \strng{authorbibnamehash}{830d1501d9c6868eddf0cf722e4f3788}
+      \strng{authornamehash}{84af19532618c7b595ff4126e7b0e2ce}
+      \strng{authorfullhash}{830d1501d9c6868eddf0cf722e4f3788}
+      \strng{authorfullhashraw}{830d1501d9c6868eddf0cf722e4f3788}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/arminbiere/cadical}}
+      \field{note}{University Freiburg, Johannes Kepler University Linz, TU Wien}
+      \field{title}{CaDiCaL 2.0}
+      \field{year}{2024}
+    \endentry
+    \entry{biere2019restart_schemes}{inbook}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=22081d00e30965a89f413e528510617e}{%
+           family={Biere},
+           familyi={B\bibinitperiod},
+           given={Armin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=00cba42bd010c829a401a390bbaece9c}{%
+           family={Fröhlich},
+           familyi={F\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=e5ce3ab023fe63ab5e2207375db6bb64}{%
+           family={Berre},
+           familyi={B\bibinitperiod},
+           given={D.\bibnamedelimi Le},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=ac781d4fdce48e885be25c4584abda98}{%
+           family={Järvisalo},
+           familyi={J\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Linz, Austria}%
+      }
+      \list{publisher}{1}{%
+        {EasyChair}%
+      }
+      \strng{namehash}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{fullhash}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{fullhashraw}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{bibnamehash}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{authorbibnamehash}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{authornamehash}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{authorfullhash}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{authorfullhashraw}{637824bc93b3324e60f9d2a2b6e1c9de}
+      \strng{editorbibnamehash}{a2d3a8f82d8b79ba8f7d18a92e3c1382}
+      \strng{editornamehash}{a2d3a8f82d8b79ba8f7d18a92e3c1382}
+      \strng{editorfullhash}{a2d3a8f82d8b79ba8f7d18a92e3c1382}
+      \strng{editorfullhashraw}{a2d3a8f82d8b79ba8f7d18a92e3c1382}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of Pragmatics of SAT 2015 and 2018 (POS-18)}
+      \field{note}{Partially supported by FWF, NFN Grant S11408-N23 (RiSE)}
+      \field{series}{EPiC Series in Computing}
+      \field{title}{Evaluating CDCL Restart Schemes}
+      \field{volume}{59}
+      \field{year}{2019}
+      \field{pages}{1\bibrangedash 17}
+      \range{pages}{17}
+    \endentry
+    \entry{cai2022better_heuristics}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=e3c58c5d2b10b57204187fd4269b4086}{%
+           family={Cai},
+           familyi={C\bibinitperiod},
+           given={Shaowei},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6f3b60153762563f9ad3f24a85652d84}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xindi},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2924c54a9875b88d7893f70cb5c5e729}{%
+           family={Fleury},
+           familyi={F\bibinitperiod},
+           given={Mathias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=22081d00e30965a89f413e528510617e}{%
+           family={Biere},
+           familyi={B\bibinitperiod},
+           given={Armin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{96dd89001a9756f531a21a5f3e445e8c}
+      \strng{fullhash}{8b517f46a6cb0dd011040f6fde2faebf}
+      \strng{fullhashraw}{8b517f46a6cb0dd011040f6fde2faebf}
+      \strng{bibnamehash}{8b517f46a6cb0dd011040f6fde2faebf}
+      \strng{authorbibnamehash}{8b517f46a6cb0dd011040f6fde2faebf}
+      \strng{authornamehash}{96dd89001a9756f531a21a5f3e445e8c}
+      \strng{authorfullhash}{8b517f46a6cb0dd011040f6fde2faebf}
+      \strng{authorfullhashraw}{8b517f46a6cb0dd011040f6fde2faebf}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Artificial Intelligence Research}
+      \field{month}{8}
+      \field{note}{Submitted 01/2022; published 08/2022}
+      \field{title}{Better Decision Heuristics in CDCL through Local Search and Target Phases}
+      \field{volume}{74}
+      \field{year}{2022}
+      \field{pages}{1515\bibrangedash 1563}
+      \range{pages}{49}
+    \endentry
+    \entry{cherif2021combining}{inbook}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5b585f86772b233d10873dcb75a57f49}{%
+           family={Cherif},
+           familyi={C\bibinitperiod},
+           given={Mohamed\bibnamedelima Sami},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa7934674b5bc398634a7d343bba4a32}{%
+           family={Habet},
+           familyi={H\bibinitperiod},
+           given={Djamal},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dbbfa85f2db08dd07a5a283c8786909a}{%
+           family={Terrioux},
+           familyi={T\bibinitperiod},
+           given={Cyril},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=1a711dab4262e3bd7f295cd504fdf074}{%
+           family={Michel},
+           familyi={M\bibinitperiod},
+           given={Laurent\bibnamedelima D.},
+           giveni={L\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Marseille, France}%
+      }
+      \list{publisher}{1}{%
+        {Schloss Dagstuhl -- Leibniz-Zentrum für Informatik, Dagstuhl Publishing, Germany}%
+      }
+      \strng{namehash}{f80a286f9d893f03a72212c836c848b6}
+      \strng{fullhash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{fullhashraw}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{bibnamehash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{authorbibnamehash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{authornamehash}{f80a286f9d893f03a72212c836c848b6}
+      \strng{authorfullhash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{authorfullhashraw}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{editorbibnamehash}{1a711dab4262e3bd7f295cd504fdf074}
+      \strng{editornamehash}{1a711dab4262e3bd7f295cd504fdf074}
+      \strng{editorfullhash}{1a711dab4262e3bd7f295cd504fdf074}
+      \strng{editorfullhashraw}{1a711dab4262e3bd7f295cd504fdf074}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{27th International Conference on Principles and Practice of Constraint Programming (CP 2021)}
+      \field{note}{Article No.20; Licensed under Creative Commons License CC-BY 4.0}
+      \field{series}{Leibniz International Proceedings in Informatics}
+      \field{title}{Combining {VSIDS} and {CHB} Using Restarts in {SAT}}
+      \field{year}{2021}
+      \field{pages}{20:1\bibrangedash 20:19}
+      \range{pages}{-1}
+    \endentry
+    \entry{cherif2024vsidschb}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5b585f86772b233d10873dcb75a57f49}{%
+           family={Cherif},
+           familyi={C\bibinitperiod},
+           given={Mohamed\bibnamedelima Sami},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa7934674b5bc398634a7d343bba4a32}{%
+           family={Habet},
+           familyi={H\bibinitperiod},
+           given={Djamal},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dbbfa85f2db08dd07a5a283c8786909a}{%
+           family={Terrioux},
+           familyi={T\bibinitperiod},
+           given={Cyril},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Aix-Marseille Univ, Université de Toulon, CNRS, LIS, France}%
+      }
+      \strng{namehash}{f80a286f9d893f03a72212c836c848b6}
+      \strng{fullhash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{fullhashraw}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{bibnamehash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{authorbibnamehash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{authornamehash}{f80a286f9d893f03a72212c836c848b6}
+      \strng{authorfullhash}{d4f0d2e6785795aff6328f4cc268bc89}
+      \strng{authorfullhashraw}{d4f0d2e6785795aff6328f4cc268bc89}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of a Conference or Workshop (details not specified)}
+      \field{title}{Combining VSIDS and CHB Using Restarts in SAT}
+      \field{year}{2024}
+    \endentry
+    \entry{fichte2023silent}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b35881e116f0ff5e0da60dd6921c903d}{%
+           family={Fichte},
+           familyi={F\bibinitperiod},
+           given={Johannes\bibnamedelima K.},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=95bbd753b34566c4676c39bfa40b1fed}{%
+           family={Berre},
+           familyi={B\bibinitperiod},
+           given={Daniel\bibnamedelima Le},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d33b71325cc0a66b4d9784ed66bdaa7}{%
+           family={Hecher},
+           familyi={H\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bc1ac5443283d9c1021f64467bd1ad77}{%
+           family={Szeider},
+           familyi={S\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a52eb9f9b6d9917cefc01ad1f8b28afa}
+      \strng{fullhash}{9b6f4221dcbe1086c31f451013e2ecd4}
+      \strng{fullhashraw}{9b6f4221dcbe1086c31f451013e2ecd4}
+      \strng{bibnamehash}{9b6f4221dcbe1086c31f451013e2ecd4}
+      \strng{authorbibnamehash}{9b6f4221dcbe1086c31f451013e2ecd4}
+      \strng{authornamehash}{a52eb9f9b6d9917cefc01ad1f8b28afa}
+      \strng{authorfullhash}{9b6f4221dcbe1086c31f451013e2ecd4}
+      \strng{authorfullhashraw}{9b6f4221dcbe1086c31f451013e2ecd4}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications of the ACM}
+      \field{number}{6}
+      \field{title}{The Silent (R)evolution of SAT}
+      \field{volume}{66}
+      \field{year}{2023}
+      \field{pages}{54\bibrangedash 63}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/3581777
+      \endverb
+      \verb{urlraw}
+      \verb https://cacm.acm.org/research/the-silent-revolution-of-sat/
+      \endverb
+      \verb{url}
+      \verb https://cacm.acm.org/research/the-silent-revolution-of-sat/
+      \endverb
+    \endentry
+    \entry{ganesh_unreasonable}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e7a563f2d0aa7eca2d78388c064a0db4}{%
+           family={Ganesh},
+           familyi={G\bibinitperiod},
+           given={Vijay},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a4cf237a06b02ad7e7601b14b4d005be}{%
+           family={Vardi},
+           familyi={V\bibinitperiod},
+           given={Moshe\bibnamedelima Y.},
+           giveni={M\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{46082353e112619771c5b751bebf63cc}
+      \strng{fullhash}{46082353e112619771c5b751bebf63cc}
+      \strng{fullhashraw}{46082353e112619771c5b751bebf63cc}
+      \strng{bibnamehash}{46082353e112619771c5b751bebf63cc}
+      \strng{authorbibnamehash}{46082353e112619771c5b751bebf63cc}
+      \strng{authornamehash}{46082353e112619771c5b751bebf63cc}
+      \strng{authorfullhash}{46082353e112619771c5b751bebf63cc}
+      \strng{authorfullhashraw}{46082353e112619771c5b751bebf63cc}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{No se especifica año ni fuente en la información proporcionada}
+      \field{title}{On The Unreasonable Effectiveness of SAT Solvers}
+    \endentry
+    \entry{garcia_conferencia1}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3666c287bf62df3488f934379f64f6ff}{%
+           family={Garrido},
+           familyi={G\bibinitperiod},
+           given={Luciano\bibnamedelima García},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{fullhash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{fullhashraw}{3666c287bf62df3488f934379f64f6ff}
+      \strng{bibnamehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authorbibnamehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authornamehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authorfullhash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authorfullhashraw}{3666c287bf62df3488f934379f64f6ff}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Conferencia, Facultad de Matemática y Computación, Universidad de La Habana}
+      \field{note}{Profesor Titular Consultante}
+      \field{title}{LC-CSP\_Conferencia \#1}
+      \field{year}{2024}
+    \endentry
+    \entry{garcia-satcap}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3666c287bf62df3488f934379f64f6ff}{%
+           family={Garrido},
+           familyi={G\bibinitperiod},
+           given={Luciano\bibnamedelima García},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{fullhash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{fullhashraw}{3666c287bf62df3488f934379f64f6ff}
+      \strng{bibnamehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authorbibnamehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authornamehash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authorfullhash}{3666c287bf62df3488f934379f64f6ff}
+      \strng{authorfullhashraw}{3666c287bf62df3488f934379f64f6ff}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Capítulo de libro sin especificar}
+      \field{note}{Capítulo educativo}
+      \field{title}{El problema de la Satisfacibilidad (SAT)}
+      \field{year}{2025}
+    \endentry
+    \entry{guo2024progress}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1cab28533f9119032a014539a5520570}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Mengyu},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Warwick Evans Publishing}%
+      }
+      \strng{namehash}{1cab28533f9119032a014539a5520570}
+      \strng{fullhash}{1cab28533f9119032a014539a5520570}
+      \strng{fullhashraw}{1cab28533f9119032a014539a5520570}
+      \strng{bibnamehash}{1cab28533f9119032a014539a5520570}
+      \strng{authorbibnamehash}{1cab28533f9119032a014539a5520570}
+      \strng{authornamehash}{1cab28533f9119032a014539a5520570}
+      \strng{authorfullhash}{1cab28533f9119032a014539a5520570}
+      \strng{authorfullhashraw}{1cab28533f9119032a014539a5520570}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{3005-9682 (Print), 3005-7140 (Online)}
+      \field{journaltitle}{International Journal of Computer Science and Information Technology}
+      \field{note}{© Content licensed under CC BY-NC 4.0}
+      \field{number}{2}
+      \field{title}{Progress in the Study of the Boolean Satisfiability Problem}
+      \field{volume}{2}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.62051/ijcsit.v2n2.25
+      \endverb
+      \verb{urlraw}
+      \verb https://wepub.org/index.php/IJCSIT/index
+      \endverb
+      \verb{url}
+      \verb https://wepub.org/index.php/IJCSIT/index
+      \endverb
+    \endentry
+    \entry{hoos1998sat}{inbook}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7038b3724d98251482688b5fd2461f95}{%
+           family={Hoos},
+           familyi={H\bibinitperiod},
+           given={Holger\bibnamedelima H.},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=7038b3724d98251482688b5fd2461f95}{%
+           family={Hoos},
+           familyi={H\bibinitperiod},
+           given={Holger\bibnamedelima H.},
+           giveni={H\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=fe8c0dacc6efae8023b930228f5abc18}{%
+           family={Stützle},
+           familyi={S\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {San Francisco, CA}%
+      }
+      \list{publisher}{1}{%
+        {Morgan Kaufmann}%
+      }
+      \strng{namehash}{7038b3724d98251482688b5fd2461f95}
+      \strng{fullhash}{7038b3724d98251482688b5fd2461f95}
+      \strng{fullhashraw}{7038b3724d98251482688b5fd2461f95}
+      \strng{bibnamehash}{7038b3724d98251482688b5fd2461f95}
+      \strng{authorbibnamehash}{7038b3724d98251482688b5fd2461f95}
+      \strng{authornamehash}{7038b3724d98251482688b5fd2461f95}
+      \strng{authorfullhash}{7038b3724d98251482688b5fd2461f95}
+      \strng{authorfullhashraw}{7038b3724d98251482688b5fd2461f95}
+      \strng{editorbibnamehash}{02df1014b790a00c1c1e533ab8b3136b}
+      \strng{editornamehash}{02df1014b790a00c1c1e533ab8b3136b}
+      \strng{editorfullhash}{02df1014b790a00c1c1e533ab8b3136b}
+      \strng{editorfullhashraw}{02df1014b790a00c1c1e533ab8b3136b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Stochastic Local Search: Foundations and Applications}
+      \field{chapter}{6}
+      \field{note}{Available online: \url{https://www.cs.ubc.ca/~hoos/SLS-Internal/ch6.pdf}}
+      \field{title}{SAT and Constraint Satisfaction}
+      \field{year}{1998}
+      \field{pages}{203\bibrangedash 260}
+      \range{pages}{58}
+      \verb{doi}
+      \verb 10.1016/B978-1-55860-508-4.50012-4
+      \endverb
+    \endentry
+    \entry{iser2021unit}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=14da64a17f5ead070f39927eea8ad8b7}{%
+           family={Iser},
+           familyi={I\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=44d64e65bab8f67d2324170cdee5c176}{%
+           family={Balyo},
+           familyi={B\bibinitperiod},
+           given={Tomáš},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{fullhash}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{fullhashraw}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{bibnamehash}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{authorbibnamehash}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{authornamehash}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{authorfullhash}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \strng{authorfullhashraw}{cff2cefbc1eace17d6d6c9e4ab1a2a4d}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 2021 International Conference on Principles and Practice of Constraint Programming (CP 2021)}
+      \field{note}{Category: Short Paper; Supplementary Material: \url{https://github.com/sat-clique/cadical_stability}}
+      \field{title}{Unit Propagation with Stable Watches}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.4230/LIPIcs.CP.2021.6
+      \endverb
+    \endentry
+    \entry{li2024reset_rl}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=2ee3c28b643f9701eae99995e1443d35}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Chunxiao},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb8dfef3df96b6f56d0d6cb5e0dea5e9}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Charlie},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6ad6f0f7a9dd506db5776d182df60bf2}{%
+           family={Chung},
+           familyi={C\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=454c659d91e9c5411f38e4b898689cb4}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Zhengyang},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7ce480dcd85deb670b2b2cfa4393fce2}{%
+           family={Jha},
+           familyi={J\bibinitperiod},
+           given={Piyush},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e7a563f2d0aa7eca2d78388c064a0db4}{%
+           family={Ganesh},
+           familyi={G\bibinitperiod},
+           given={Vijay},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Dagstuhl Publishing}%
+      }
+      \strng{namehash}{ef26af9f7b7f8759702add1facca8dc7}
+      \strng{fullhash}{a9a307251363897d08a53b5610388cdc}
+      \strng{fullhashraw}{a9a307251363897d08a53b5610388cdc}
+      \strng{bibnamehash}{a9a307251363897d08a53b5610388cdc}
+      \strng{authorbibnamehash}{a9a307251363897d08a53b5610388cdc}
+      \strng{authornamehash}{ef26af9f7b7f8759702add1facca8dc7}
+      \strng{authorfullhash}{a9a307251363897d08a53b5610388cdc}
+      \strng{authorfullhashraw}{a9a307251363897d08a53b5610388cdc}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{42nd Conference on Very Important Topics (CVIT 2016)}
+      \field{series}{Leibniz International Proceedings in Informatics}
+      \field{title}{A Reinforcement Learning based Reset Policy for CDCL SAT Solvers}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.4230/LIPIcs.CVIT.2016.23
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.4230/LIPIcs.CVIT.2016.23
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.4230/LIPIcs.CVIT.2016.23
+      \endverb
+    \endentry
+    \entry{luo2017clause_minimization}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=1805be1443eb44a6d1f78801554e959e}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Mao},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=43a015bcaa306bb18fd1f50b5e11d975}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Chu-Min},
+           giveni={C\bibinithyphendelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e457af38f003185e103aea974a11016a}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Fan},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6bfdf965d709334343435db69401251e}{%
+           family={Manyà},
+           familyi={M\bibinitperiod},
+           given={Felip},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a72bbf2561e85ee1cd1c946e36978d26}{%
+           family={Lü},
+           familyi={L\bibinitperiod},
+           given={Zhipeng},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Melbourne, Australia}%
+      }
+      \list{publisher}{1}{%
+        {IJCAI}%
+      }
+      \strng{namehash}{bc316176c840fa547bcd5e98b39c6b19}
+      \strng{fullhash}{a5adbb1048901db6ecc798f321c482f1}
+      \strng{fullhashraw}{a5adbb1048901db6ecc798f321c482f1}
+      \strng{bibnamehash}{a5adbb1048901db6ecc798f321c482f1}
+      \strng{authorbibnamehash}{a5adbb1048901db6ecc798f321c482f1}
+      \strng{authornamehash}{bc316176c840fa547bcd5e98b39c6b19}
+      \strng{authorfullhash}{a5adbb1048901db6ecc798f321c482f1}
+      \strng{authorfullhashraw}{a5adbb1048901db6ecc798f321c482f1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Twenty-Sixth International Joint Conference on Artificial Intelligence (IJCAI-17)}
+      \field{title}{An Effective Learnt Clause Minimization Approach for CDCL SAT Solvers}
+      \field{year}{2017}
+      \field{pages}{703\bibrangedash 709}
+      \range{pages}{7}
+    \endentry
+    \entry{marques-silva2024cdcl}{inbook}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5357f73e1213b0d17a31ed70805f9653}{%
+           family={Marques-Silva},
+           familyi={M\bibinithyphendelim S\bibinitperiod},
+           given={Joao},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1de046a9bb62e5389ad04fc26969069d}{%
+           family={Lynce},
+           familyi={L\bibinitperiod},
+           given={Ines},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e146ec2b9c0b7fc6062cd4dec46383d4}{%
+           family={Malik},
+           familyi={M\bibinitperiod},
+           given={Sharad},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=b6a85aabf982fa0236b58eb6b9f2ce66}{%
+           family={Gurfinkel},
+           familyi={G\bibinitperiod},
+           given={Arie},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e7a563f2d0aa7eca2d78388c064a0db4}{%
+           family={Ganesh},
+           familyi={G\bibinitperiod},
+           given={Vijay},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{414fa63d853be931cd4cfb96e937d522}
+      \strng{fullhash}{439ac1fc1b8adc3c1fcc0591890c6ccd}
+      \strng{fullhashraw}{439ac1fc1b8adc3c1fcc0591890c6ccd}
+      \strng{bibnamehash}{439ac1fc1b8adc3c1fcc0591890c6ccd}
+      \strng{authorbibnamehash}{439ac1fc1b8adc3c1fcc0591890c6ccd}
+      \strng{authornamehash}{414fa63d853be931cd4cfb96e937d522}
+      \strng{authorfullhash}{439ac1fc1b8adc3c1fcc0591890c6ccd}
+      \strng{authorfullhashraw}{439ac1fc1b8adc3c1fcc0591890c6ccd}
+      \strng{editorbibnamehash}{ece130ee3745c7b498207e44312cfc9a}
+      \strng{editornamehash}{ece130ee3745c7b498207e44312cfc9a}
+      \strng{editorfullhash}{ece130ee3745c7b498207e44312cfc9a}
+      \strng{editorfullhashraw}{ece130ee3745c7b498207e44312cfc9a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Computer Aided Verification}
+      \field{chapter}{4}
+      \field{note}{CAV 2024, Montreal, QC, Canada}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{Conflict-Driven Clause Learning SAT Solvers}
+      \field{volume}{14681}
+      \field{year}{2024}
+      \field{pages}{-\bibrangedash -}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1007/978-3-031-65627-9
+      \endverb
+    \endentry
+    \entry{nandi2024margin}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9b0963151f3d006fd64110c4a1aa1220}{%
+           family={Nandi},
+           familyi={N\bibinitperiod},
+           given={Ankita},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d6918ea8aef1092ef1d965abae6a0311}{%
+           family={Chakrabartty},
+           familyi={C\bibinitperiod},
+           given={Shantanu},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a4fe3df83103f9cd695637f024122182}{%
+           family={Thakur},
+           familyi={T\bibinitperiod},
+           given={Chetan\bibnamedelima Singh},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{18e3c07d6869d35f01b474330691987f}
+      \strng{fullhash}{405bc71d0803baec45c9af633fdb98fc}
+      \strng{fullhashraw}{405bc71d0803baec45c9af633fdb98fc}
+      \strng{bibnamehash}{405bc71d0803baec45c9af633fdb98fc}
+      \strng{authorbibnamehash}{405bc71d0803baec45c9af633fdb98fc}
+      \strng{authornamehash}{18e3c07d6869d35f01b474330691987f}
+      \strng{authorfullhash}{405bc71d0803baec45c9af633fdb98fc}
+      \strng{authorfullhashraw}{405bc71d0803baec45c9af633fdb98fc}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2402.04959}
+      \field{month}{2}
+      \field{note}{arXiv:2402.04959v}
+      \field{title}{Margin Propagation based XOR-SAT Solvers for Decoding of LDPC Codes}
+      \field{year}{2024}
+    \endentry
+    \entry{oh2016improving}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2e7a06ac7e1a921a841aea39d041a33a}{%
+           family={Oh},
+           familyi={O\bibinitperiod},
+           given={Chanseok},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {New York University}%
+      }
+      \strng{namehash}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{fullhash}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{fullhashraw}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{bibnamehash}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{authorbibnamehash}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{authornamehash}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{authorfullhash}{2e7a06ac7e1a921a841aea39d041a33a}
+      \strng{authorfullhashraw}{2e7a06ac7e1a921a841aea39d041a33a}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{title}{Improving SAT Solvers by Exploiting Empirical Characteristics of CDCL}
+      \field{type}{Ph.D. dissertation}
+      \field{year}{2016}
+    \endentry
+    \entry{oliveras2009dpll_cdcl}{misc}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e2ba4d9cf7e8bdf98cb32d08498311d3}{%
+           family={Oliveras},
+           familyi={O\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e811bc42141bc9911e091bc2c4d479eb}{%
+           family={Rodríguez-Carbonell},
+           familyi={R\bibinithyphendelim C\bibinitperiod},
+           given={Enric},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Departament de Llenguatges i Sistemes Informàtics, Universitat Politècnica de Catalunya}%
+      }
+      \list{location}{1}{%
+        {Barcelona, Spain}%
+      }
+      \strng{namehash}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{fullhash}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{fullhashraw}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{bibnamehash}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{authorbibnamehash}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{authornamehash}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{authorfullhash}{d7d65ef516ec57d963652c739c64b7fe}
+      \strng{authorfullhashraw}{d7d65ef516ec57d963652c739c64b7fe}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Lecture notes, Logic and Algebra in Computer Science, Session 4}
+      \field{note}{Fall 2009}
+      \field{title}{From DPLL to CDCL SAT Solvers}
+      \field{year}{2009}
+    \endentry
+    \entry{su2025deeply_ic3}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=3af3cf3cac2ca7a65e510330166bbbd1}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Yuheng},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d8c08a915fa4b0910ad4535c4f4f30bb}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Qiusong},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1b9c1563f4fecf3c728d6530e6c4cd37}{%
+           family={Ci},
+           familyi={C\bibinitperiod},
+           given={Yiwei},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cb95f83244b2e3e6981527ad70e79373}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yingcheng},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bc5e9c93519e49534b5258b784f7c028}{%
+           family={Bu},
+           familyi={B\bibinitperiod},
+           given={Tianjun},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b228699fec71a07406b0d9f40956f298}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Ziyu},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{afc0ec99e5d60efc1e29735a3fd8c4d5}
+      \strng{fullhash}{81bf3d86ca2631f9a17e844cf82cfefc}
+      \strng{fullhashraw}{81bf3d86ca2631f9a17e844cf82cfefc}
+      \strng{bibnamehash}{81bf3d86ca2631f9a17e844cf82cfefc}
+      \strng{authorbibnamehash}{81bf3d86ca2631f9a17e844cf82cfefc}
+      \strng{authornamehash}{afc0ec99e5d60efc1e29735a3fd8c4d5}
+      \strng{authorfullhash}{81bf3d86ca2631f9a17e844cf82cfefc}
+      \strng{authorfullhashraw}{81bf3d86ca2631f9a17e844cf82cfefc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint}
+      \field{title}{Deeply Optimizing the SAT Solver for the IC3 Algorithm}
+      \field{volume}{arXiv:2501.18612}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2501.18612
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2501.18612
+      \endverb
+    \endentry
+    \entry{sun2024autosat}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=f6299e213ea00cdfc1ec1960ce60ec75}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Yiwen},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=41c8b90aff2c99739017b09cd9a6e427}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Furong},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aaaced66e77138357a77fd711befcd80}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xianyin},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0d021f423cec89b1d3f75f923aa47b53}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Shiyu},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8631ca938a521d1a5a117653c63867b1}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Bingzhen},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=52d45a717cc51f834c981c4e2890c040}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={Ke},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e3c58c5d2b10b57204187fd4269b4086}{%
+           family={Cai},
+           familyi={C\bibinitperiod},
+           given={Shaowei},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{63433225b0a1757fb93033bddddecef8}
+      \strng{fullhash}{b361e6d4228e2487726f8e65021a57fc}
+      \strng{fullhashraw}{b361e6d4228e2487726f8e65021a57fc}
+      \strng{bibnamehash}{b361e6d4228e2487726f8e65021a57fc}
+      \strng{authorbibnamehash}{b361e6d4228e2487726f8e65021a57fc}
+      \strng{authornamehash}{63433225b0a1757fb93033bddddecef8}
+      \strng{authorfullhash}{b361e6d4228e2487726f8e65021a57fc}
+      \strng{authorfullhashraw}{b361e6d4228e2487726f8e65021a57fc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Artificial Intelligence Research}
+      \field{note}{arXiv:2402.10705v3 [cs.AI]}
+      \field{title}{AutoSAT: Automatically Optimize SAT Solvers via Large Language Models}
+      \field{volume}{1}
+      \field{year}{2024}
+      \field{pages}{1\bibrangedash 37}
+      \range{pages}{37}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2402.10705
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2402.10705
+      \endverb
+    \endentry
+    \entry{trimoska2020parity}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=ac77e5b9997e84adea6ebf4510256d35}{%
+           family={Trimoska},
+           familyi={T\bibinitperiod},
+           given={Monika},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7ac6f2691d4fe47213a76227614f44c6}{%
+           family={Ionica},
+           familyi={I\bibinitperiod},
+           given={Sorina},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b08268f0699658ce772412576b065731}{%
+           family={Dequen},
+           familyi={D\bibinitperiod},
+           given={Gilles},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {MIS Laboratory, University of Picardie Jules Verne, France}%
+      }
+      \strng{namehash}{516c84059136b03708c22877edae1d34}
+      \strng{fullhash}{d8fe202cfd7cda9851ead3fb532374d1}
+      \strng{fullhashraw}{d8fe202cfd7cda9851ead3fb532374d1}
+      \strng{bibnamehash}{d8fe202cfd7cda9851ead3fb532374d1}
+      \strng{authorbibnamehash}{d8fe202cfd7cda9851ead3fb532374d1}
+      \strng{authornamehash}{516c84059136b03708c22877edae1d34}
+      \strng{authorfullhash}{d8fe202cfd7cda9851ead3fb532374d1}
+      \strng{authorfullhashraw}{d8fe202cfd7cda9851ead3fb532374d1}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2001.11229}
+      \field{month}{1}
+      \field{note}{arXiv:2001.11229v1 [cs.CR], submitted January 30, 2020}
+      \field{title}{Parity (XOR) Reasoning for the Index Calculus Attack}
+      \field{year}{2020}
+    \endentry
+    \entry{zhang2024revisiting}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=6f3b60153762563f9ad3f24a85652d84}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xindi},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d897ecd0cbcf45b34370d2454805922}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zhihan},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e3c58c5d2b10b57204187fd4269b4086}{%
+           family={Cai},
+           familyi={C\bibinitperiod},
+           given={Shaowei},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Dagstuhl, Germany}%
+      }
+      \list{publisher}{1}{%
+        {Leibniz International Proceedings in Informatics (LIPIcs), Schloss Dagstuhl – Leibniz-Zentrum für Informatik, Germany}%
+      }
+      \strng{namehash}{de27cc98c1754e68d232f7075ebae2cc}
+      \strng{fullhash}{a96a4f49438bb3bd18ad12931ee6e0a7}
+      \strng{fullhashraw}{a96a4f49438bb3bd18ad12931ee6e0a7}
+      \strng{bibnamehash}{a96a4f49438bb3bd18ad12931ee6e0a7}
+      \strng{authorbibnamehash}{a96a4f49438bb3bd18ad12931ee6e0a7}
+      \strng{authornamehash}{de27cc98c1754e68d232f7075ebae2cc}
+      \strng{authorfullhash}{a96a4f49438bb3bd18ad12931ee6e0a7}
+      \strng{authorfullhashraw}{a96a4f49438bb3bd18ad12931ee6e0a7}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{42nd Conference on Very Important Topics (CVIT 2016)}
+      \field{month}{5}
+      \field{note}{arXiv:2404.16387v2 [cs.LO], submitted May 28, 2024; Licensed under CC-BY 4.0}
+      \field{title}{Revisiting Restarts of CDCL: Should the Search Information be Preserved?}
+      \field{year}{2024}
+      \field{pages}{23:1\bibrangedash 23:17}
+      \range{pages}{-1}
+    \endentry
+    \entry{zulkoski2018understanding}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=345e7a009abebf71855f20ab95bf2d12}{%
+           family={Zulkoski},
+           familyi={Z\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {University of Waterloo}%
+      }
+      \list{location}{1}{%
+        {Waterloo, Ontario, Canada}%
+      }
+      \strng{namehash}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{fullhash}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{fullhashraw}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{bibnamehash}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{authorbibnamehash}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{authornamehash}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{authorfullhash}{345e7a009abebf71855f20ab95bf2d12}
+      \strng{authorfullhashraw}{345e7a009abebf71855f20ab95bf2d12}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Understanding and Enhancing CDCL-based SAT Solvers}
+      \field{type}{Ph.D. dissertation}
+      \field{year}{2018}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

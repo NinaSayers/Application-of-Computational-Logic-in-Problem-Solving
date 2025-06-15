@@ -1,4 +1,31 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Posible espacio de b\'usqueda de una FNC (citar libro de Luciano)}}{10}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Posible espacio de b\'usqueda de una FNC}}{9}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Grafo de conflito}}{12}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Corte que representa el esquema de aprendizaje 1-UIP}}{13}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Fen\'omeno de cola pesada en DPLL SAT \textit {solvers}}}{20}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Efecto de aplicar \textit {restarts}}}{21}{figure.caption.14}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Secuencia geom\'etrica de reinicio interna-externa}}{22}{figure.caption.15}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Secuencia de reinicio de basada en Luby con 512 inicial.}}{22}{figure.caption.16}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Distribuci\'on de n\'umero de variables en problemas con timeout por heur\'istica.}}{45}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Distribuci\'on de n\'umero de cl\'ausulas en problemas con timeout por heur\'istica.}}{46}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Distribuci\'on de densidad en problemas con timeout por heur\'istica.}}{46}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Distribuci\'on de tama\~no promedio de cl\'ausula en problemas con timeout por heur\'istica.}}{47}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Distribuci\'on de variables positivas en problemas con timeout por heur\'istica.}}{47}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Distribuci\'on de variables negativas en problemas con timeout por heur\'istica.}}{48}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Distribuci\'on de timeouts por heur\'istica.}}{48}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Distribuci\'on de timeouts por problema.}}{49}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Distribuci\'on de caracter\'isticas y tiempo por heur\'istica.}}{50}{figure.caption.33}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Matriz de correlaci\'on - Problemas resueltos vs TIMEOUTS.}}{51}{figure.caption.35}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Matriz de correlaci\'on tras eliminar multicolinealidad.}}{52}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Test de normalidad Shapiro-Wilk.}}{53}{figure.caption.38}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Prueba Mann-Whitney U.}}{53}{figure.caption.40}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Distribuciones de prueba Mann-Whitney U por resultados.}}{54}{figure.caption.41}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Regresi\'on log\'istica.}}{54}{figure.caption.43}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Correlaci\'on de Spearman.}}{55}{figure.caption.45}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Kruskal-Wallis.}}{56}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Test Dunn por cuartiles para VSIDS con restart.}}{57}{figure.caption.49}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Test Dunn por cuartiles para VSIDS sin restart.}}{58}{figure.caption.50}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Test Dunn por cuartiles para DLIS con restart.}}{59}{figure.caption.51}%
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Test Dunn por cuartiles para DLIS csin restart.}}{60}{figure.caption.52}%
