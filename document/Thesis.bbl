@@ -485,7 +485,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Conferencia, Facultad de Matemática y Computación, Universidad de La Habana}
-      \field{note}{Profesor Titular Consultante}
       \field{title}{LC-CSP\_Conferencia \#1}
       \field{year}{2024}
     \endentry
@@ -515,7 +514,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Capítulo de libro sin especificar}
-      \field{note}{Capítulo educativo}
+      \field{note}{Libro en redacción}
       \field{title}{El problema de la Satisfacibilidad (SAT)}
       \field{year}{2025}
     \endentry
@@ -1743,7 +1742,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Conferencia, Facultad de Matemática y Computación, Universidad de La Habana}
-      \field{note}{Profesor Titular Consultante}
       \field{title}{LC-CSP\_Conferencia \#1}
       \field{year}{2024}
     \endentry
@@ -1773,7 +1771,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Capítulo de libro sin especificar}
-      \field{note}{Capítulo educativo}
+      \field{note}{Libro en redacción}
       \field{title}{El problema de la Satisfacibilidad (SAT)}
       \field{year}{2025}
     \endentry
