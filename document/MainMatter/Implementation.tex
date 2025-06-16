@@ -5,7 +5,7 @@ El objetivo de esta tesis es comparar dos de las heuristicas integradas a CDCL, 
 En el trabajo se usaron los lenguajes de programaci\'on C++, Python y bash. CaDiCaL est\'a programado en C++, por lo que es el lenguaje en el que est\'an implementadas las heur\'isticas. Python fue usado para automatizar los procesos de pruebas, guardar los resultados obtenidos y realizar los an\'lisis estad\'sticos. Finalemnte, bash se usa como parte de la ``compilaci\'on'' del solver, cuyos archivos como \textit{configure} y \textit{makefile} que vienen integrados al \textit{solver}, son los encargados de hacerlo funcionar.
 
 \subsection{CaDiCaL}
-CaDiCaL fue el \textit{solver} escogido para esta comparaci\'on, ya que cuenta con la posibilidad de activar y desactivar VSIDS (ya viene integrada), al igual que la estrategia \textit{restart}, tambi\'en integrada en el solucionador.\footnote{Cabe destacar que CaDiCaL ofrece esta misma posibilidad para much\'isimas heur\'sticas, adem\'as de estrategias para adaptar la v\'ia de soluci\'on al tipo de problemas \cite{cadical2024}} Como ya se mencion\'o con anterioridad en este documento, pr\'acticamente todos los CDCL SAT \textit{solvers} modernos no incluyen DLIS como heur\'istica de selecci\'on de variables, y CaDiCaL es uno de ellos. Por esta raz\'on, se decidi\'o integrar una implementaci\'on de DLIS a este solucionador, aprovechando la pol\'itica \textit{open source} de su c\'odigo fuente \cite{cadical2024}.%insertar link al repo original de cadical.
+CaDiCaL fue el \textit{solver} escogido para esta comparaci\'on, ya que cuenta con la posibilidad de activar y desactivar VSIDS (ya viene integrada), al igual que la estrategia \textit{restart}, tambi\'en integrada en el solucionador.\footnote{Cabe destacar que CaDiCaL ofrece esta misma posibilidad para much\'isimas heur\'isticas, adem\'as de estrategias para adaptar la v\'ia de soluci\'on al tipo de problemas [\cite{cadical2024}]} Como ya se mencion\'o con anterioridad en este documento, pr\'acticamente todos los CDCL SAT \textit{solvers} modernos no incluyen DLIS como heur\'istica de selecci\'on de variables, y CaDiCaL es uno de ellos. Por esta raz\'on, se decidi\'o integrar una implementaci\'on de DLIS a este solucionador, aprovechando la pol\'itica \textit{open source} de su c\'odigo fuente [\cite{cadical2024}].%insertar link al repo original de cadical.
 
 \subsubsection{Integraci\'on de DLIS}
 Para integrar DLIS en CaDiCaL se modificaron los siguientes archivos:
@@ -21,7 +21,7 @@ En este archivo se declaran los m\'todos que se implementaron como parte de la c
 
 \begin{lstlisting}[
     language=C++,
-    caption={Integraci\'on de DLIS en CaDiCaL. Internal.hpp},
+    caption={Integracion de DLIS en CaDiCaL. Internal.hpp},
     label={lst:cadical-dlis-internal.hpp},
     captionpos=b,
     frame=tb
@@ -38,7 +38,7 @@ CaDiCaL almacena las variables de la FNC en una lista doblemente enlazada, en la
 
 \begin{lstlisting}[
     language=C++,
-    caption={Integraci\'on de DLIS en CaDiCaL. Internal.cpp},
+    caption={Integracion de DLIS en CaDiCaL. Internal.cpp},
     label={lst:cadical-dlis-logic-internal.cpp},
     captionpos=b,
     frame=tb
@@ -53,10 +53,10 @@ int Internal::next_decision_variable_with_dlis () {
   // Recorremos la lista de variables sin asignar (link(idx).prev nos lleva
   // al siguiente ``sin asignar''), igual que en next_decision_variable_on_queue().
   while (idx) {
-    // Si idx ya tiene val(idx) != 0, saltemos (aunque en teor\'ia queue.unassigned
+    // Si idx ya tiene val(idx) != 0, saltemos (aunque en teoria queue.unassigned
     // siempre apunta a un idx tal que val(idx)==0; no obstante, por seguridad lo comprobamos).
     if (val(idx) == 0) {
-      // Calcular la puntuaci\'on DLIS para +idx y para -idx
+      // Calcular la puntuacion DLIS para +idx y para -idx
       int pos_score = count_literal_in_unsatisfied_clauses_(idx);
       int neg_score = count_literal_in_unsatisfied_clauses_(-idx);
 
@@ -68,7 +68,7 @@ int Internal::next_decision_variable_with_dlis () {
         best_lit   = idx;    
       }      
     }
-    // Avanzamos al siguiente \'indice ``no asignado'':
+    // Avanzamos al siguiente indice ``no asignado'':
     idx = link(idx).prev;
   }
 
@@ -76,14 +76,15 @@ int Internal::next_decision_variable_with_dlis () {
   return abs(best_lit);
 
 \end{lstlisting}
+DIMACS
 
 Es importante aclarar que en \ref{lst:cadical-dlis-logic-internal.cpp} el c\'alculo del \textit{score} de cada literal no se hace tal cual dicta DLIS, pues en aras de mantener la consistencia del c\'odigo de CaDiCaL se usaron estrategias y estructuras que ya vienen implementadas, y a las cuales se acoplan las heur\'isticas de decisi\'on de variables que ya incorpora el solucionador. En este caso, obs\'ervese que se promedian los \textit{scores} de ambos literales. Esto, debido a que CaDiCaL implementa la estrategia \textit{phase} \ref{subsec:cadical-phasing} para elegir la polaridad de la variable. Por esta raz\'on el m\'etodo devuelve la variable y no el literal.
 
-Obs\'ervese que este m\'etodo hace un llamado a \texttt{int count\_literal\_in\_unsatisfied\_clauses\_(idx)} que es el encargado de calcular el \textit{score} para un literal \ref{lst:cadical-dlis-calc-internal.cpp}.
+Obs\'ervese que este m\'etodo hace un llamado a\\ \texttt{int count\_literal\_in\_unsatisfied\_clauses\_(idx)} que es el encargado de calcular el \textit{score} para un literal \ref{lst:cadical-dlis-calc-internal.cpp}.
 
 \begin{lstlisting}[
     language=C++,
-    caption={Integraci\'on de DLIS en CaDiCaL. Calcular \textit{score}. Internal.cpp},
+    caption={Integracion de DLIS en CaDiCaL. Calcular \textit{score}. Internal.cpp},
     label={lst:cadical-dlis-calc-internal.cpp},
     captionpos=b,
     frame=tb
@@ -97,8 +98,8 @@ int Internal::count_literal_in_unsatisfied_clauses_ (int lit) {
   for (const Watch &w : ws) {
     Clause *c = w.clause;                
     if (!c || c->garbage) continue;      // Saltar nulos y garbage
-    int other = w.blit;                  // El otro literal de la cl\'ausula
-    // Si 'lit' o 'other' ya son verdaderos, la cl\'ausula est\'a satisfecha
+    int other = w.blit;                  // El otro literal de la clausula
+    // Si 'lit' o 'other' ya son verdaderos, la clausula esta satisfecha
     if (val_lit != 0 || val (other) != 0) continue;
     ++count;
   }
@@ -165,7 +166,7 @@ Finalmente, para habilitar la \textit{flag} \textit{--dlis=<bool>} para activar 
 
 \begin{lstlisting}[
     language=C++,
-    caption={Integraci\'on de DLIS en CaDiCaL. options.hpp},
+    caption={Integracion de DLIS en CaDiCaL. options.hpp},
     label={lst:cadical-dlis-options.hpp},
     captionpos=b,
     frame=tb
@@ -180,7 +181,7 @@ OPTION( dlis,              0,  0,  1,0,0,1, "use DLIS decision heuristic") \
 
 \end{lstlisting}
 
-\subsection{Empleo de \textit{flags} en la l/'inea de comandos}
+\subsection{Empleo de \textit{flags} en la l\'inea de comandos}
 Los \textit{flags} usados en la l/'inea de comandos para combinar las heur/'isticas fueron:
 \begin{itemize}
     \item VSIDS + restart = \texttt{--score=false}
@@ -257,20 +258,19 @@ Cada combinaci\'on de heur\'istica fue probada en cada uno de los 135 problemas 
     \end{itemize}
 \end{itemize}
 
-
 El generador cubre exhaustivamente ocho familias de problemas: Random 3-SAT, \textit{Pigeonhole}, Random 4-SAT, \textit{Graph Coloring}, \textit{Parity}, BMC Flip-Flop, \textit{DLIS-friendly} y \textit{no DLIS-friendly}. Cada familia tiene parámetros clave que varían (número de variables, relación cláusulas/variables, sesgo, tamaño de cláusula, profundidad, etc.), asegurando diversidad estructural y de dificultad en los \textit{benchmarks} generados.
 
 \subsection{Generador de problemas}
-El generador de problemas (\textit{benchmarks}) se program\'o en python y se usaron las bibliotecas \textit{os}, \textit{random} y \textit{csv}. Los resultados se exportaron a una carpeta \textit{``generated\_benchmarks''} en el mismo directorio del \textit{script} cuyos archivos se encuentran en formato DIMACS (referencia al marco te\'orico) en .cnf.
+El generador de problemas (\textit{benchmarks}) se program\'o en python y se usaron las bibliotecas \textit{os}, \textit{random} y \textit{csv}. Los resultados se exportaron a una carpeta \textit{``generated\_benchmarks''} en el mismo directorio del \textit{script} cuyos archivos se encuentran en formato DIMACS CNF. \footnote{Est\'andar de texto plano usado para representar f\'ormulas en FNC y es ampliamente aceptado por los solucionadores SAT modernos. Incluye comentarios (L\'ineas que comienzan con ``c''), una l\'inea de encabezado (``p cnf <variables> <cláusulas>'') y las cl\'ausulas, cada una terminada con un 0 [\cite{varisat-dimacs}]. Este formato facilita la interoperabilidad y la evaluaci\'on comparativa entre distintos solucionadores SAT.} 
 
-\subsection{Estad/'isticas}
+\subsection{Estad\'isticas}
 El an\'alisis estad\'istico de los resultados de la comparaci\'on de cada heur\'istica por problema est\'a implementado en el archivo \textit{stats\_analysis.ipynb}. Se compar\'o los problemas cuyo resultado fue \textit{TIMEOUT} con los que s\'i resolvieron las heur\'isticas. Se hace un an\'alisis de la distribuci\'on de cada caracter\'istica en problemas \textit{TIMEOUT} por heur\'istica. Para el caso de los problemas resueltos (resultado = \textit{SATISFIABLE/UNSATISFIABLE}) se hace de igual modo un an\'alisis de la distribuci\'on y se incluye la caracter\'istica \textit{tiempo en segundos}. Posteriormente se hace un an\'alisis comparativo entre los problemasa que fueron resueltos y los que no. Para ello se realiza un an\'alisis entre variables y se eliminan aquellas que sean colineales. Esta comprobaci\'n se realiza mediante el c\'alculo del Factor de Inflaci\'on de Varianza (VIF).
 Para realizar la comparaci\'on en cuanto a caracter\'isticas entre los problemas resueltos y los que no, se realizan las pruebas de Mann-Whitney U, y para visualizar los resultados se emplean gr\'aficas de caja y bigotes. Adem\'as, tambi\'en se usa regresi\'on log\'istica ya que permite interpretar c\'omo cada variable afecta la probabilidad de que ocurra o no un \textit{TIMEOUT}.
 
 La otra parte de la evaluaci\'on consiste en un an\'alisis del rendimiento de cada combinaci\'on de heur\'isticas en cuanto al tiempo de ejecuci\'on en los problemas resueltos. Para ello se hizo un an\'alisis de la correlaci\'on de Spearman entre las caracter\'isticas de los problemas y el tiempo en segundos. Se realiz\'o, adem\'as, el test de Kruskal-Wallis para analizar si el tiempo difiere entre heur\'isticas para un mismo tipo de problema. Asimismo, se realiz\'o el test de Dunn por cada heur\'istica para realizar una comparaci\'on estad\'istica post-hoc (prueba de Dunn) para analizar si existen diferencias significativas en los tiempos de resoluci\'on (\textit{log}(\text{tiempo})) de una heur\'istica espec\'ifica en los problemas resueltos, seg\'un los valores de una caracter\'istica. 
 Los resultados son graficados en \textit{boxplot}. Finalmente, se realiza una regresi\'on lineal m\'ultiple para definir qu\'e caracter\'isticas predicen el tiempo de resoluci\'on.
 
-Para la implementaci\'on de estos an\'alisis se usaron las siguientes bibliotecas de python: \texttt{pandas}, \texttt{numpy}, \texttt{seaborn}, \texttt{matplotlib.pyplot}, \texttt{statsmodels.api}, \texttt{variance\_inflation\_factor} y variance\_inflation\_factor, ambas de \texttt{statsmodels.stats.outliers\_influence}, \texttt{ols} de \texttt{statsmodels.formula.api}, \texttt{scipy.stats}, \texttt{LogisticRegression} de \texttt{sklearn.linear\_model}, y \texttt{scikit\_posthocs.}
+Para la implementaci\'on de estos an\'alisis se usaron las siguientes bibliotecas de python: \texttt{pandas}, \texttt{numpy}, \texttt{seaborn}, \texttt{matplotlib.pyplot}, \texttt{statsmodels.api},\\ \texttt{variance\_inflation\_factor} y \texttt{variance\_inflation\_factor}, ambas de \\ \texttt{statsmodels.stats.outliers\_influence}, \texttt{ols} de \texttt{statsmodels.formula.api}, \texttt{scipy.stats},\\ \texttt{LogisticRegression} de \texttt{sklearn.linear\_model}, y \texttt{scikit\_posthocs.}
 
 \section{Resultados}
 \subsection{An\'alisis de los problemas con TIMEOUT}
@@ -298,7 +298,7 @@ Por ejemplo, en la figura \ref{fig:num-vars-timeout-x-heuristica} puede apreciar
     \label{fig:num-vars-timeout-x-heuristica}
 \end{figure}
 
-Por otro lado, en la figura \ref{fig:num-claus-timeout-x-heuristica} puede observarse que el n\'umero de cl\'ausulas de las instancias analizadas muestra valores elevados y gran variabilidad, con promedios entre 15.758 y 16.875 cl\'ausulas y m\'aximos por encima de 63.000. No se observan diferencias significativas entre las estrategias con DLIS o VSIDS, ni tampoco al incorporar o no el mecanismo de restart.
+Por otro lado, en la figura \ref{fig:num-claus-timeout-x-heuristica} puede observarse que el n\'umero de cl\'ausulas de las instancias analizadas muestra valores elevados y gran variabilidad, con promedios entre 15.758 y 16.875 cl\'ausulas y m\'aximos por encima de 63.000 (cifras obtenidas en los experimentos). No se observan diferencias significativas entre las estrategias con DLIS o VSIDS, ni tampoco al incorporar o no el mecanismo de restart.
 
 \begin{figure}[ht]
     \centering
@@ -406,7 +406,7 @@ En conjunto, estos resultados sugieren que la elección de heurística impacta s
     \label{fig:correlation-matrix-solved-vs-timeout}
 \end{figure}
 
-Como se puede apreciar en la matriz de correlaci\'on \ref{fig:correlation-matrix-solved-vs-timeout}, entre las variables num\_vars y vars\_positivas y vars\_negativas, existe correlaci\'on perfecta ($r=1$). Adem\'as, existe una correlaci\'on moderada entre las variables num\_clausulas con vars\_negativas, vars\_positivas, num\_vars y densidad). Luego, es necesario reducir el conjunto de caracter\'isticas, quedando  el siguiente: \texttt{caracteristicas\_reducidas = ['num\_vars', 'densidad', 'tamanio\_prom\_clausula']}.
+Como se puede apreciar en la matriz de correlaci\'on \ref{fig:correlation-matrix-solved-vs-timeout}, entre las variables num\_vars y vars\_positivas y vars\_negativas, existe correlaci\'on perfecta ($r=1$). Adem\'as, existe una correlaci\'on moderada entre las variables num\_clausulas con vars\_negativas, vars\_positivas, num\_vars y densidad). Luego, es necesario reducir el conjunto de caracter\'isticas, quedando  el siguiente: \texttt{caracteristicas\_reducidas = [`num\_vars', `densidad', `tamanio\_prom\_clausula'] \footnote{Estos son los mismos nombres con los que se guardaron los datos}}.
 
 \begin{figure}[ht]
     \centering
@@ -462,7 +462,7 @@ En consecuencia, para modelar o predecir la probabilidad de TIMEOUT conviene pri
 
 \subsubsection{Regresi\'on log\'istica: ¿Qué caracter\'isticas predicen TIMEOUT?}
 
-Trasa efectuar la regresi\'on se obtuvieron los siguientes resultados \ref{fig:regresion-logistica}:
+Tras efectuar la regresi\'on se obtuvieron los siguientes resultados \ref{fig:regresion-logistica}:
 
 \begin{figure}[ht]
     \centering

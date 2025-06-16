@@ -322,6 +322,52 @@
       \field{title}{Combining VSIDS and CHB Using Restarts in SAT}
       \field{year}{2024}
     \endentry
+    \entry{chowdhury2020conflict_depression}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=c422d1243cc3f9892e95b22abb302094}{%
+           family={Chowdhury},
+           familyi={C\bibinitperiod},
+           given={Md\bibnamedelima Solimul},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0dcea0cd627a8d4179152c91c35ef969}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=31398953c9c4f85f600b5edc56fe613b}{%
+           family={You},
+           familyi={Y\bibinitperiod},
+           given={Jia-Huai},
+           giveni={J\bibinithyphendelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York, USA}%
+      }
+      \list{publisher}{1}{%
+        {AAAI Press}%
+      }
+      \strng{namehash}{76d3183820c66e11ecea48a5388c5aaf}
+      \strng{fullhash}{2a9df800ededf1d09eb207c7d6d2dad6}
+      \strng{fullhashraw}{2a9df800ededf1d09eb207c7d6d2dad6}
+      \strng{bibnamehash}{2a9df800ededf1d09eb207c7d6d2dad6}
+      \strng{authorbibnamehash}{2a9df800ededf1d09eb207c7d6d2dad6}
+      \strng{authornamehash}{76d3183820c66e11ecea48a5388c5aaf}
+      \strng{authorfullhash}{2a9df800ededf1d09eb207c7d6d2dad6}
+      \strng{authorfullhashraw}{2a9df800ededf1d09eb207c7d6d2dad6}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Thirty-Fourth AAAI Conference on Artificial Intelligence (AAAI-20)}
+      \field{title}{Guiding CDCL SAT Search via Random Exploration amid Conflict Depression}
+      \field{year}{2020}
+    \endentry
     \entry{fichte2023silent}{article}{}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=b35881e116f0ff5e0da60dd6921c903d}{%
@@ -415,21 +461,21 @@
     \endentry
     \entry{garcia_conferencia1}{misc}{}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=3666c287bf62df3488f934379f64f6ff}{%
-           family={Garrido},
-           familyi={G\bibinitperiod},
-           given={Luciano\bibnamedelima García},
-           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+        {{un=0,uniquepart=base,hash=7b8ecb8a3aad66a36655852bc540c8ed}{%
+           family={García-Garrido},
+           familyi={G\bibinithyphendelim G\bibinitperiod},
+           given={Luciano},
+           giveni={L\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{fullhash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{fullhashraw}{3666c287bf62df3488f934379f64f6ff}
-      \strng{bibnamehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authorbibnamehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authornamehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authorfullhash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authorfullhashraw}{3666c287bf62df3488f934379f64f6ff}
+      \strng{namehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{fullhash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{fullhashraw}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{bibnamehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authorbibnamehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authornamehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authorfullhash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authorfullhashraw}{7b8ecb8a3aad66a36655852bc540c8ed}
       \field{extraname}{1}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
@@ -445,21 +491,21 @@
     \endentry
     \entry{garcia-satcap}{misc}{}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=3666c287bf62df3488f934379f64f6ff}{%
-           family={Garrido},
-           familyi={G\bibinitperiod},
-           given={Luciano\bibnamedelima García},
-           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+        {{un=0,uniquepart=base,hash=7b8ecb8a3aad66a36655852bc540c8ed}{%
+           family={García-Garrido},
+           familyi={G\bibinithyphendelim G\bibinitperiod},
+           given={Luciano},
+           giveni={L\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{fullhash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{fullhashraw}{3666c287bf62df3488f934379f64f6ff}
-      \strng{bibnamehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authorbibnamehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authornamehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authorfullhash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authorfullhashraw}{3666c287bf62df3488f934379f64f6ff}
+      \strng{namehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{fullhash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{fullhashraw}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{bibnamehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authorbibnamehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authornamehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authorfullhash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authorfullhashraw}{7b8ecb8a3aad66a36655852bc540c8ed}
       \field{extraname}{2}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
@@ -610,6 +656,41 @@
       \field{year}{2021}
       \verb{doi}
       \verb 10.4230/LIPIcs.CP.2021.6
+      \endverb
+    \endentry
+    \entry{varisat-dimacs}{manual}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2b19241a4db6a8f846b32590392dc1f5}{%
+           family={Jix},
+           familyi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{fullhash}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{fullhashraw}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{bibnamehash}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{authorbibnamehash}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{authornamehash}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{authorfullhash}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{authorfullhashraw}{2b19241a4db6a8f846b32590392dc1f5}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Varisat 0.2.0 Manual}
+      \field{title}{DIMACS CNF Format}
+      \field{urlday}{16}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://jix.github.io/varisat/manual/0.2.0/formats/dimacs.html
+      \endverb
+      \verb{url}
+      \verb https://jix.github.io/varisat/manual/0.2.0/formats/dimacs.html
       \endverb
     \endentry
     \entry{li2024reset_rl}{article}{}{}
@@ -1499,6 +1580,52 @@
       \field{title}{Combining VSIDS and CHB Using Restarts in SAT}
       \field{year}{2024}
     \endentry
+    \entry{chowdhury2020conflict_depression}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=c422d1243cc3f9892e95b22abb302094}{%
+           family={Chowdhury},
+           familyi={C\bibinitperiod},
+           given={Md\bibnamedelima Solimul},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0dcea0cd627a8d4179152c91c35ef969}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=31398953c9c4f85f600b5edc56fe613b}{%
+           family={You},
+           familyi={Y\bibinitperiod},
+           given={Jia-Huai},
+           giveni={J\bibinithyphendelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York, USA}%
+      }
+      \list{publisher}{1}{%
+        {AAAI Press}%
+      }
+      \strng{namehash}{76d3183820c66e11ecea48a5388c5aaf}
+      \strng{fullhash}{2a9df800ededf1d09eb207c7d6d2dad6}
+      \strng{fullhashraw}{2a9df800ededf1d09eb207c7d6d2dad6}
+      \strng{bibnamehash}{2a9df800ededf1d09eb207c7d6d2dad6}
+      \strng{authorbibnamehash}{2a9df800ededf1d09eb207c7d6d2dad6}
+      \strng{authornamehash}{76d3183820c66e11ecea48a5388c5aaf}
+      \strng{authorfullhash}{2a9df800ededf1d09eb207c7d6d2dad6}
+      \strng{authorfullhashraw}{2a9df800ededf1d09eb207c7d6d2dad6}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Thirty-Fourth AAAI Conference on Artificial Intelligence (AAAI-20)}
+      \field{title}{Guiding CDCL SAT Search via Random Exploration amid Conflict Depression}
+      \field{year}{2020}
+    \endentry
     \entry{fichte2023silent}{article}{}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=b35881e116f0ff5e0da60dd6921c903d}{%
@@ -1592,21 +1719,21 @@
     \endentry
     \entry{garcia_conferencia1}{misc}{}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=3666c287bf62df3488f934379f64f6ff}{%
-           family={Garrido},
-           familyi={G\bibinitperiod},
-           given={Luciano\bibnamedelima García},
-           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+        {{un=0,uniquepart=base,hash=7b8ecb8a3aad66a36655852bc540c8ed}{%
+           family={García-Garrido},
+           familyi={G\bibinithyphendelim G\bibinitperiod},
+           given={Luciano},
+           giveni={L\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{fullhash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{fullhashraw}{3666c287bf62df3488f934379f64f6ff}
-      \strng{bibnamehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authorbibnamehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authornamehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authorfullhash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authorfullhashraw}{3666c287bf62df3488f934379f64f6ff}
+      \strng{namehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{fullhash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{fullhashraw}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{bibnamehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authorbibnamehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authornamehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authorfullhash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authorfullhashraw}{7b8ecb8a3aad66a36655852bc540c8ed}
       \field{extraname}{1}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
@@ -1622,21 +1749,21 @@
     \endentry
     \entry{garcia-satcap}{misc}{}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=3666c287bf62df3488f934379f64f6ff}{%
-           family={Garrido},
-           familyi={G\bibinitperiod},
-           given={Luciano\bibnamedelima García},
-           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+        {{un=0,uniquepart=base,hash=7b8ecb8a3aad66a36655852bc540c8ed}{%
+           family={García-Garrido},
+           familyi={G\bibinithyphendelim G\bibinitperiod},
+           given={Luciano},
+           giveni={L\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{fullhash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{fullhashraw}{3666c287bf62df3488f934379f64f6ff}
-      \strng{bibnamehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authorbibnamehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authornamehash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authorfullhash}{3666c287bf62df3488f934379f64f6ff}
-      \strng{authorfullhashraw}{3666c287bf62df3488f934379f64f6ff}
+      \strng{namehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{fullhash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{fullhashraw}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{bibnamehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authorbibnamehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authornamehash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authorfullhash}{7b8ecb8a3aad66a36655852bc540c8ed}
+      \strng{authorfullhashraw}{7b8ecb8a3aad66a36655852bc540c8ed}
       \field{extraname}{2}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
@@ -1787,6 +1914,41 @@
       \field{year}{2021}
       \verb{doi}
       \verb 10.4230/LIPIcs.CP.2021.6
+      \endverb
+    \endentry
+    \entry{varisat-dimacs}{manual}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=2b19241a4db6a8f846b32590392dc1f5}{%
+           family={Jix},
+           familyi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{fullhash}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{fullhashraw}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{bibnamehash}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{authorbibnamehash}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{authornamehash}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{authorfullhash}{2b19241a4db6a8f846b32590392dc1f5}
+      \strng{authorfullhashraw}{2b19241a4db6a8f846b32590392dc1f5}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Varisat 0.2.0 Manual}
+      \field{title}{DIMACS CNF Format}
+      \field{urlday}{16}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://jix.github.io/varisat/manual/0.2.0/formats/dimacs.html
+      \endverb
+      \verb{url}
+      \verb https://jix.github.io/varisat/manual/0.2.0/formats/dimacs.html
       \endverb
     \endentry
     \entry{li2024reset_rl}{article}{}{}

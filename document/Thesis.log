@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  15 JUN 2025 20:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.9)  16 JUN 2025 01:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1482,14 +1482,20 @@ o.pdf>]
 [4]
 \openout2 = `FrontMatter/SupervisorOpinion.aux'.
 
- (FrontMatter/SupervisorOpinion.tex)
+ (FrontMatter/SupervisorOpinion.tex
+<Graphics/picture1.png, id=226, 102.25436pt x 46.89862pt>
+File: Graphics/picture1.png Graphic file (type png)
+<use Graphics/picture1.png>
+Package pdftex.def Info: Graphics/picture1.png  used on input line 10.
+(pdftex.def)             Requested size: 130.08731pt x 59.66646pt.
+)
 
 [5
 
 
 
 
-]
+ <./Graphics/picture1.png>]
 \openout2 = `FrontMatter/Abstract.aux'.
 
  (FrontMatter/Abstract.tex
@@ -1648,7 +1654,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 [7]
 
 [8]
-<Graphics/arboldp.png, id=489, 406.51875pt x 199.947pt>
+<Graphics/arboldp.png, id=494, 406.51875pt x 199.947pt>
 File: Graphics/arboldp.png Graphic file (type png)
 <use Graphics/arboldp.png>
 Package pdftex.def Info: Graphics/arboldp.png  used on input line 125.
@@ -1668,7 +1674,7 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
  (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<Graphics/conflict_graph.png, id=515, 699.8145pt x 329.43076pt>
+<Graphics/conflict_graph.png, id=522, 699.8145pt x 329.43076pt>
 File: Graphics/conflict_graph.png Graphic file (type png)
 <use Graphics/conflict_graph.png>
 Package pdftex.def Info: Graphics/conflict_graph.png  used on input line 201.
@@ -1676,12 +1682,14 @@ Package pdftex.def Info: Graphics/conflict_graph.png  used on input line 201.
 
 
 [11]
-<Graphics/first_uip.png, id=524, 708.84825pt x 347.49825pt>
+<Graphics/first_uip.png, id=532, 708.84825pt x 347.49825pt>
 File: Graphics/first_uip.png Graphic file (type png)
 <use Graphics/first_uip.png>
 Package pdftex.def Info: Graphics/first_uip.png  used on input line 211.
 (pdftex.def)             Requested size: 346.89731pt x 170.05821pt.
 
+
+[12 <./Graphics/conflict_graph.png>]
 (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
@@ -1692,15 +1700,13 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 
-[12 <./Graphics/conflict_graph.png>]
-
 [13 <./Graphics/first_uip.png>]
 
 [14]
 
 [15]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-60.
+64.
  (C:\Users\Massy\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1710,37 +1716,33 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 [17]
 
-LaTeX Warning: Reference `lst:decide-vsid' on page 18 undefined on input line 4
-63.
-
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 475.
-
-
 [18]
-<Graphics/cola_pesada.png, id=646, 560.69475pt x 380.01974pt>
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 479.
+<Graphics/cola_pesada.png, id=662, 560.69475pt x 380.01974pt>
 File: Graphics/cola_pesada.png Graphic file (type png)
 <use Graphics/cola_pesada.png>
-Package pdftex.def Info: Graphics/cola_pesada.png  used on input line 496.
+Package pdftex.def Info: Graphics/cola_pesada.png  used on input line 500.
 (pdftex.def)             Requested size: 346.89731pt x 235.11691pt.
-<Graphics/restart_effects.png, id=650, 695.59875pt x 433.62pt>
+<Graphics/restart_effects.png, id=666, 695.59875pt x 433.62pt>
 File: Graphics/restart_effects.png Graphic file (type png)
 <use Graphics/restart_effects.png>
-Package pdftex.def Info: Graphics/restart_effects.png  used on input line 506.
+Package pdftex.def Info: Graphics/restart_effects.png  used on input line 510.
 (pdftex.def)             Requested size: 346.89731pt x 216.24706pt.
-<Graphics/geom_restart.png, id=654, 667.293pt x 422.17725pt>
-File: Graphics/geom_restart.png Graphic file (type png)
-<use Graphics/geom_restart.png>
-Package pdftex.def Info: Graphics/geom_restart.png  used on input line 521.
-(pdftex.def)             Requested size: 346.89731pt x 219.46901pt.
-<Graphics/luby_restart.png, id=658, 675.12225pt x 406.51875pt>
-File: Graphics/luby_restart.png Graphic file (type png)
-<use Graphics/luby_restart.png>
-Package pdftex.def Info: Graphics/luby_restart.png  used on input line 531.
-(pdftex.def)             Requested size: 346.89731pt x 208.88496pt.
 
 
 [19]
+<Graphics/geom_restart.png, id=676, 667.293pt x 422.17725pt>
+File: Graphics/geom_restart.png Graphic file (type png)
+<use Graphics/geom_restart.png>
+Package pdftex.def Info: Graphics/geom_restart.png  used on input line 525.
+(pdftex.def)             Requested size: 346.89731pt x 219.46901pt.
+<Graphics/luby_restart.png, id=680, 675.12225pt x 406.51875pt>
+File: Graphics/luby_restart.png Graphic file (type png)
+<use Graphics/luby_restart.png>
+Package pdftex.def Info: Graphics/luby_restart.png  used on input line 535.
+(pdftex.def)             Requested size: 346.89731pt x 208.88496pt.
+
 
 [20 <./Graphics/cola_pesada.png>]
 
@@ -1749,6 +1751,12 @@ Package pdftex.def Info: Graphics/luby_restart.png  used on input line 531.
 [22 <./Graphics/geom_restart.png> <./Graphics/luby_restart.png>]
 
 [23]
+Overfull \hbox (6.02557pt too wide) in paragraph at lines 640--640
+[]\T1/lmr/bx/n/14.4 Dos Li-te-ra-les Vi-gi-la-dos (\T1/lmr/bx/it/14.4 Two Wat-c
+hed Li-te-rals\T1/lmr/bx/n/14.4 ) (TWL) 
+ []
+
+
 
 [24]
 
@@ -1761,7 +1769,7 @@ Package pdftex.def Info: Graphics/luby_restart.png  used on input line 531.
 [28]
 
 [29]
-Overfull \hbox (3.874pt too wide) in paragraph at lines 830--830
+Overfull \hbox (3.874pt too wide) in paragraph at lines 835--835
 []\T1/lmr/bx/n/17.28 Parámetros de Eva-lua-ción pa-ra \T1/lmr/bx/it/17.28 sol-v
 ers \T1/lmr/bx/n/17.28 CDCL:
  []
@@ -1769,47 +1777,42 @@ ers \T1/lmr/bx/n/17.28 CDCL:
 
 
 [30]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 856.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 856.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 856.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 856.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 856.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 856.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 856.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 856.
-
-
 
 [31]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 861.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 861.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 861.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 861.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 861.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 861.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 861.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 861.
+
+
 
 [32]
 
-LaTeX Warning: Reference `zhang2024revisiting' on page 33 undefined on input li
-ne 885.
-
-
-Overfull \hbox (7.71681pt too wide) in paragraph at lines 899--900
+[33]
+Overfull \hbox (7.71681pt too wide) in paragraph at lines 904--905
 []\T1/lmr/m/n/12 Instancias de pro-ble-mas re-la-cio-na-dos con BMC, co-mo ``ha
 rdware-bmc'' y ``hardware-
  []
 
 
 
-[33])
-
-[34]
+[34])
 
 [35]
 \openout2 = `MainMatter/Implementation.aux'.
@@ -1830,12 +1833,6 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 ]
 
 [37]
-Overfull \hbox (98.17459pt too wide) in paragraph at lines 82--83
-[]\T1/lmr/m/n/12 Obsérvese que es-te mé-to-do ha-ce un lla-ma-do a \T1/lmtt/m/n
-/12 int count_literal_in_unsatisfied_clauses_(idx)
- []
-
-
 
 [38]
 
@@ -1848,47 +1845,35 @@ Overfull \hbox (98.17459pt too wide) in paragraph at lines 82--83
 [42]
 
 [43]
-Overfull \hbox (100.66945pt too wide) in paragraph at lines 273--274
-\T1/lmr/m/n/12 python: \T1/lmtt/m/n/12 pandas\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 n
-umpy\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 seaborn\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 ma
-tplotlib.pyplot\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 statsmodels.api\T1/lmr/m/n/12 ,
- \T1/lmtt/m/n/12 variance_inflation_factor
- []
-
-
-Overfull \hbox (78.46619pt too wide) in paragraph at lines 273--274
-\T1/lmtt/m/n/12 ols \T1/lmr/m/n/12 de \T1/lmtt/m/n/12 statsmodels.formula.api\T
-1/lmr/m/n/12 , \T1/lmtt/m/n/12 scipy.stats\T1/lmr/m/n/12 , \T1/lmtt/m/n/12 Logi
-sticRegression \T1/lmr/m/n/12 de \T1/lmtt/m/n/12 sklearn.linear_model\T1/lmr/m/
-n/12 ,
+Overfull \hbox (49.14407pt too wide) in paragraph at lines 273--274
+\T1/lmtt/m/n/12 statsmodels.stats.outliers_influence\T1/lmr/m/n/12 , \T1/lmtt/m
+/n/12 ols \T1/lmr/m/n/12 de \T1/lmtt/m/n/12 statsmodels.formula.api\T1/lmr/m/n/
+12 , \T1/lmtt/m/n/12 scipy.stats\T1/lmr/m/n/12 , 
  []
 
 
 
 [44]
-<Graphics/num_vars_timeout_x_heuristica.png, id=1113, 844.8363pt x 396.0396pt>
+<Graphics/num_vars_timeout_x_heuristica.png, id=1142, 844.8363pt x 396.0396pt>
 File: Graphics/num_vars_timeout_x_heuristica.png Graphic file (type png)
 <use Graphics/num_vars_timeout_x_heuristica.png>
 Package pdftex.def Info: Graphics/num_vars_timeout_x_heuristica.png  used on in
 put line 296.
 (pdftex.def)             Requested size: 346.89731pt x 162.619pt.
-<Graphics/num_claus_timeout_x_heuristica.png, id=1115, 851.3406pt x 396.0396pt>
+<Graphics/num_claus_timeout_x_heuristica.png, id=1144, 851.3406pt x 396.0396pt>
 
 File: Graphics/num_claus_timeout_x_heuristica.png Graphic file (type png)
 <use Graphics/num_claus_timeout_x_heuristica.png>
 Package pdftex.def Info: Graphics/num_claus_timeout_x_heuristica.png  used on i
 nput line 305.
 (pdftex.def)             Requested size: 346.89731pt x 161.37413pt.
-
-
-[45 <./Graphics/num_vars_timeout_x_heuristica.png>]
-<Graphics/densidad_timeout_x_heuristica.png, id=1123, 831.8277pt x 396.0396pt>
+<Graphics/densidad_timeout_x_heuristica.png, id=1146, 831.8277pt x 396.0396pt>
 File: Graphics/densidad_timeout_x_heuristica.png Graphic file (type png)
 <use Graphics/densidad_timeout_x_heuristica.png>
 Package pdftex.def Info: Graphics/densidad_timeout_x_heuristica.png  used on in
 put line 314.
 (pdftex.def)             Requested size: 346.89731pt x 165.15709pt.
-<Graphics/tamanio_prom_claus_timeout_x_heuristica.png, id=1125, 841.9455pt x 39
+<Graphics/tamanio_prom_claus_timeout_x_heuristica.png, id=1148, 841.9455pt x 39
 6.0396pt>
 File: Graphics/tamanio_prom_claus_timeout_x_heuristica.png Graphic file (type p
 ng)
@@ -1896,17 +1881,16 @@ ng)
 Package pdftex.def Info: Graphics/tamanio_prom_claus_timeout_x_heuristica.png  
 used on input line 323.
 (pdftex.def)             Requested size: 346.89731pt x 163.17496pt.
-<Graphics/vars_pos_timeout_x_heuristica.png, id=1128, 844.8363pt x 396.0396pt>
+
+
+[45]
+<Graphics/vars_pos_timeout_x_heuristica.png, id=1156, 844.8363pt x 396.0396pt>
 File: Graphics/vars_pos_timeout_x_heuristica.png Graphic file (type png)
 <use Graphics/vars_pos_timeout_x_heuristica.png>
 Package pdftex.def Info: Graphics/vars_pos_timeout_x_heuristica.png  used on in
 put line 332.
 (pdftex.def)             Requested size: 346.89731pt x 162.619pt.
-
-
-[46 <./Graphics/num_claus_timeout_x_heuristica.png> <./Graphics/densidad_timeou
-t_x_heuristica.png>]
-<Graphics/vars_neg_timeout_x_heuristica.png, id=1135, 844.8363pt x 396.0396pt>
+<Graphics/vars_neg_timeout_x_heuristica.png, id=1157, 844.8363pt x 396.0396pt>
 File: Graphics/vars_neg_timeout_x_heuristica.png Graphic file (type png)
 <use Graphics/vars_neg_timeout_x_heuristica.png>
 Package pdftex.def Info: Graphics/vars_neg_timeout_x_heuristica.png  used on in
@@ -1914,15 +1898,15 @@ put line 339.
 (pdftex.def)             Requested size: 346.89731pt x 162.619pt.
 
 
-[47 <./Graphics/tamanio_prom_claus_timeout_x_heuristica.png> <./Graphics/vars_p
-os_timeout_x_heuristica.png>]
-<Graphics/timeouts_x_heuristica.png, id=1144, 714.7503pt x 426.393pt>
+[46 <./Graphics/num_vars_timeout_x_heuristica.png> <./Graphics/num_claus_timeou
+t_x_heuristica.png>]
+<Graphics/timeouts_x_heuristica.png, id=1166, 714.7503pt x 426.393pt>
 File: Graphics/timeouts_x_heuristica.png Graphic file (type png)
 <use Graphics/timeouts_x_heuristica.png>
 Package pdftex.def Info: Graphics/timeouts_x_heuristica.png  used on input line
  354.
 (pdftex.def)             Requested size: 346.89731pt x 206.95pt.
-<Graphics/timeouts_x_problema.png, id=1145, 859.2903pt x 570.933pt>
+<Graphics/timeouts_x_problema.png, id=1167, 859.2903pt x 570.933pt>
 File: Graphics/timeouts_x_problema.png Graphic file (type png)
 <use Graphics/timeouts_x_problema.png>
 Package pdftex.def Info: Graphics/timeouts_x_problema.png  used on input line 3
@@ -1930,11 +1914,15 @@ Package pdftex.def Info: Graphics/timeouts_x_problema.png  used on input line 3
 (pdftex.def)             Requested size: 346.89731pt x 230.4861pt.
 
 
-[48 <./Graphics/vars_neg_timeout_x_heuristica.png> <./Graphics/timeouts_x_heuri
-stica.png>]
+[47 <./Graphics/densidad_timeout_x_heuristica.png> <./Graphics/tamanio_prom_cla
+us_timeout_x_heuristica.png>]
 
-[49 <./Graphics/timeouts_x_problema.png>]
-<Graphics/caracteristica_tiempo_x_heuristica.png, id=1161, 1149.8157pt x 643.20
+[48 <./Graphics/vars_pos_timeout_x_heuristica.png> <./Graphics/vars_neg_timeout
+_x_heuristica.png>]
+
+[49 <./Graphics/timeouts_x_heuristica.png> <./Graphics/timeouts_x_problema.png>
+]
+<Graphics/caracteristica_tiempo_x_heuristica.png, id=1190, 1149.8157pt x 643.20
 3pt>
 File: Graphics/caracteristica_tiempo_x_heuristica.png Graphic file (type png)
 <use Graphics/caracteristica_tiempo_x_heuristica.png>
@@ -1944,7 +1932,7 @@ on input line 384.
 
 
 [50 <./Graphics/caracteristica_tiempo_x_heuristica.png>]
-<Graphics/correlation_matrix_solveds_vs_timeouts.png, id=1168, 569.4876pt x 490
+<Graphics/correlation_matrix_solveds_vs_timeouts.png, id=1197, 569.4876pt x 490
 .7133pt>
 File: Graphics/correlation_matrix_solveds_vs_timeouts.png Graphic file (type pn
 g)
@@ -1952,10 +1940,7 @@ g)
 Package pdftex.def Info: Graphics/correlation_matrix_solveds_vs_timeouts.png  u
 sed on input line 404.
 (pdftex.def)             Requested size: 346.89731pt x 298.91536pt.
-
-
-[51 <./Graphics/correlation_matrix_solveds_vs_timeouts.png>]
-<Graphics/correlation_matrix_after_delete_multicol.png, id=1176, 366.4089pt x 3
+<Graphics/correlation_matrix_after_delete_multicol.png, id=1200, 366.4089pt x 3
 25.9377pt>
 File: Graphics/correlation_matrix_after_delete_multicol.png Graphic file (type 
 png)
@@ -1963,7 +1948,7 @@ png)
 Package pdftex.def Info: Graphics/correlation_matrix_after_delete_multicol.png 
  used on input line 413.
 (pdftex.def)             Requested size: 346.89731pt x 308.57971pt.
-<Graphics/test_shapiro_wilk.png, id=1179, 518.53725pt x 275.22826pt>
+<Graphics/test_shapiro_wilk.png, id=1203, 518.53725pt x 275.22826pt>
 File: Graphics/test_shapiro_wilk.png Graphic file (type png)
 <use Graphics/test_shapiro_wilk.png>
 Package pdftex.def Info: Graphics/test_shapiro_wilk.png  used on input line 427
@@ -1971,22 +1956,22 @@ Package pdftex.def Info: Graphics/test_shapiro_wilk.png  used on input line 427
 (pdftex.def)             Requested size: 346.89731pt x 184.1248pt.
 
 
-[52 <./Graphics/correlation_matrix_after_delete_multicol.png>]
-<Graphics/prueba_mann_whitney_u.png, id=1187, 387.24675pt x 112.62074pt>
+[51]
+<Graphics/prueba_mann_whitney_u.png, id=1212, 387.24675pt x 112.62074pt>
 File: Graphics/prueba_mann_whitney_u.png Graphic file (type png)
 <use Graphics/prueba_mann_whitney_u.png>
 Package pdftex.def Info: Graphics/prueba_mann_whitney_u.png  used on input line
  440.
 (pdftex.def)             Requested size: 346.89731pt x 100.89201pt.
-<Graphics/man_whitney.png, id=1190, 1082.6046pt x 354.123pt>
+<Graphics/man_whitney.png, id=1215, 1082.6046pt x 354.123pt>
 File: Graphics/man_whitney.png Graphic file (type png)
 <use Graphics/man_whitney.png>
 Package pdftex.def Info: Graphics/man_whitney.png  used on input line 450.
 (pdftex.def)             Requested size: 346.89731pt x 113.46756pt.
 
 
-[53 <./Graphics/test_shapiro_wilk.png> <./Graphics/prueba_mann_whitney_u.png>]
-<Graphics/regresion_logistica.png, id=1199, 383.63326pt x 108.405pt>
+[52 <./Graphics/correlation_matrix_solveds_vs_timeouts.png>]
+<Graphics/regresion_logistica.png, id=1223, 383.63326pt x 108.405pt>
 File: Graphics/regresion_logistica.png Graphic file (type png)
 <use Graphics/regresion_logistica.png>
 Package pdftex.def Info: Graphics/regresion_logistica.png  used on input line 4
@@ -1994,8 +1979,10 @@ Package pdftex.def Info: Graphics/regresion_logistica.png  used on input line 4
 (pdftex.def)             Requested size: 346.89731pt x 98.02509pt.
 
 
-[54 <./Graphics/man_whitney.png> <./Graphics/regresion_logistica.png>]
-<Graphics/correlacion_spearman.png, id=1209, 549.85425pt x 130.68825pt>
+[53 <./Graphics/correlation_matrix_after_delete_multicol.png>]
+
+[54 <./Graphics/test_shapiro_wilk.png> <./Graphics/prueba_mann_whitney_u.png>]
+<Graphics/correlacion_spearman.png, id=1238, 549.85425pt x 130.68825pt>
 File: Graphics/correlacion_spearman.png Graphic file (type png)
 <use Graphics/correlacion_spearman.png>
 Package pdftex.def Info: Graphics/correlacion_spearman.png  used on input line 
@@ -2003,8 +1990,9 @@ Package pdftex.def Info: Graphics/correlacion_spearman.png  used on input line
 (pdftex.def)             Requested size: 346.89731pt x 82.44968pt.
 
 
-[55 <./Graphics/correlacion_spearman.png>]
-<Graphics/kruskal_wallis.png, id=1218, 561.89925pt x 368.577pt>
+[55 <./Graphics/man_whitney.png> <./Graphics/regresion_logistica.png> <./Graphi
+cs/correlacion_spearman.png>]
+<Graphics/kruskal_wallis.png, id=1249, 561.89925pt x 368.577pt>
 File: Graphics/kruskal_wallis.png Graphic file (type png)
 <use Graphics/kruskal_wallis.png>
 Package pdftex.def Info: Graphics/kruskal_wallis.png  used on input line 510.
@@ -2012,25 +2000,25 @@ Package pdftex.def Info: Graphics/kruskal_wallis.png  used on input line 510.
 
 
 [56 <./Graphics/kruskal_wallis.png>]
-<Graphics/test_dunn_vsids_restart.png, id=1230, 576.35326pt x 441.44925pt>
+<Graphics/test_dunn_vsids_restart.png, id=1261, 576.35326pt x 441.44925pt>
 File: Graphics/test_dunn_vsids_restart.png Graphic file (type png)
 <use Graphics/test_dunn_vsids_restart.png>
 Package pdftex.def Info: Graphics/test_dunn_vsids_restart.png  used on input li
 ne 528.
 (pdftex.def)             Requested size: 346.89731pt x 265.7001pt.
-<Graphics/test_dunn_vsids_no_restart.png, id=1231, 573.342pt x 437.83575pt>
+<Graphics/test_dunn_vsids_no_restart.png, id=1262, 573.342pt x 437.83575pt>
 File: Graphics/test_dunn_vsids_no_restart.png Graphic file (type png)
 <use Graphics/test_dunn_vsids_no_restart.png>
 Package pdftex.def Info: Graphics/test_dunn_vsids_no_restart.png  used on input
  line 535.
 (pdftex.def)             Requested size: 346.89731pt x 264.92151pt.
-<Graphics/test_dunn_dlis_restart.png, id=1232, 558.888pt x 440.24475pt>
+<Graphics/test_dunn_dlis_restart.png, id=1263, 558.888pt x 440.24475pt>
 File: Graphics/test_dunn_dlis_restart.png Graphic file (type png)
 <use Graphics/test_dunn_dlis_restart.png>
 Package pdftex.def Info: Graphics/test_dunn_dlis_restart.png  used on input lin
 e 542.
 (pdftex.def)             Requested size: 346.89731pt x 273.25793pt.
-<Graphics/test_dunn_dlis_no_restart.png, id=1233, 579.96675pt x 443.85825pt>
+<Graphics/test_dunn_dlis_no_restart.png, id=1264, 579.96675pt x 443.85825pt>
 File: Graphics/test_dunn_dlis_no_restart.png Graphic file (type png)
 <use Graphics/test_dunn_dlis_no_restart.png>
 Package pdftex.def Info: Graphics/test_dunn_dlis_no_restart.png  used on input 
@@ -2038,18 +2026,20 @@ line 549.
 (pdftex.def)             Requested size: 346.89731pt x 265.4975pt.
 
 
-[57 <./Graphics/test_dunn_vsids_restart.png>])
+[57])
 
-[58 <./Graphics/test_dunn_vsids_no_restart.png>]
+[58 <./Graphics/test_dunn_vsids_restart.png>]
 
-[59 <./Graphics/test_dunn_dlis_restart.png>]
+[59 <./Graphics/test_dunn_vsids_no_restart.png>]
 
-[60 <./Graphics/test_dunn_dlis_no_restart.png>]
+[60 <./Graphics/test_dunn_dlis_restart.png>]
+
+[61 <./Graphics/test_dunn_dlis_no_restart.png>]
 \openout2 = `BackMatter/Conclusions.aux'.
 
  (BackMatter/Conclusions.tex)
 
-[61
+[62
 
 
 
@@ -2060,7 +2050,7 @@ line 549.
 
  (BackMatter/Recomendations.tex)
 
-[62
+[63
 
 
 
@@ -2071,16 +2061,16 @@ line 549.
 
  (BackMatter/Bibliography.tex
 
-[63
+[64
 
 
 
 
 ]
 
-[64])
+[65])
 
-[65] (Thesis.aux
+[66] (Thesis.aux
 LaTeX Info: Redefining \sptext on input line 13.
 LaTeX Info: Redefining \. on input line 13.
 LaTeX Info: Redefining \% on input line 13.
@@ -2094,21 +2084,17 @@ LaTeX Info: Redefining \% on input line 13.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 2C11ED2CED72D6A86182BB79D41ADE1D;9934.
+(rerunfilecheck)             Checksum: 483F1B5732C4C8CE6986C1E1766A140F;10088.
 Package logreq Info: Writing requests to 'Thesis.run.xml'.
 \openout1 = `Thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38897 strings out of 469941
- 741571 string characters out of 5469431
- 1842182 words of memory out of 5000000
- 64572 multiletter control sequences out of 15000+600000
+ 38957 strings out of 469941
+ 742858 string characters out of 5469431
+ 1865443 words of memory out of 5000000
+ 64624 multiletter control sequences out of 15000+600000
  769807 words of font info for 138 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,12n,121p,1513b,2903s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2131,9 +2117,9 @@ rs/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Use
 rs/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm
 10.pfb><C:/Users/Massy/AppData/Local/Programs/MiKTeX/fonts/type1/urw/ncntrsbk/u
 ncb8a.pfb>
-Output written on Thesis.pdf (77 pages, 1643912 bytes).
+Output written on Thesis.pdf (78 pages, 1665358 bytes).
 PDF statistics:
- 1529 PDF objects out of 1728 (max. 8388607)
- 454 named destinations out of 1000 (max. 500000)
- 534 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1570 PDF objects out of 1728 (max. 8388607)
+ 462 named destinations out of 1000 (max. 500000)
+ 539 words of extra memory for PDF output out of 10000 (max. 10000000)
 

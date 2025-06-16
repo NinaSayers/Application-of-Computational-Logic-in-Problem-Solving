@@ -3,12 +3,12 @@
 \section{Fundamentos de los Problemas de Satisfacci\'on de Restricciones y SAT}
 \label{sec:fundamentos-sat-csp}
 
-Los Problemas de Satisfacci\'on de Restricciones (\textit{Constraint Satisfaction Problems} CSP) constituyen un paradigma esencial para la modelaci\'on de problemas combinatorios en inteligencia artificial, investigaci\'on de operaciones y ciencia de la computaci\'on. Formalmente, un CSP se define como una tripleta $(V,D,C)$, donde $V$ representa un conjunto de variables, $D$ sus dominios discretos finitos, y $C$ un conjunto de restricciones que determinan las combinaciones v\'alidas de valores \cite{garcia_conferencia1}. Por ejemplo, en un problema de asignaci\'on de horarios, $V$ corresponde a los cursos, $D$ a los horarios disponibles, y $C$ a las reglas que impiden superposiciones. La soluci\'on del problema consiste en una asignaci\'on de valores a las variables que satisface todas las restricciones, y en algunos casos, adicionalmente, optimiza ciertos criterios como la utilizaci\'on de recursos \cite{almabetterCSP}.
+Los Problemas de Satisfacci\'on de Restricciones (\textit{Constraint Satisfaction Problems} CSP) constituyen un paradigma esencial para la modelaci\'on de problemas combinatorios en inteligencia artificial, investigaci\'on de operaciones y ciencia de la computaci\'on. Formalmente, un CSP se define como una tripleta $(V,D,C)$, donde $V$ representa un conjunto de variables, $D$ sus dominios discretos finitos, y $C$ un conjunto de restricciones que determinan las combinaciones v\'alidas de valores [\cite{garcia_conferencia1}]. Por ejemplo, en un problema de asignaci\'on de horarios, $V$ corresponde a los cursos, $D$ a los horarios disponibles, y $C$ a las reglas que impiden superposiciones. La soluci\'on del problema consiste en una asignaci\'on de valores a las variables que satisface todas las restricciones, y en algunos casos, adicionalmente, optimiza ciertos criterios como la utilizaci\'on de recursos [\cite{almabetterCSP}].
 
 \subsection{SAT como Caso Especial de CSP y su NP-Completitud}
-El Problema de Satisfacibilidad Booleana (SAT, por sus siglas en ingl\'es) se considera un caso particular de CSP, en el cual los dominios de las variables son binarios (${0,1}$) y las restricciones se expresan mediante f\'ormulas en Forma Normal Conjuntiva (FNC). Una f\'ormula en FNC se compone de una conjunci\'on de cl\'ausulas, donde cada cl\'ausula es una disyunci\'on de literales, es decir, variables o sus negaciones \cite{zulkoski2018understanding}. Resolver un problema SAT implica determinar si existe una asignaci\'on de valores que satisfaga simult\'aneamente todas las cl\'ausulas, lo cual equivale a resolver un CSP binario con restricciones espec\'ificas.
+El Problema de Satisfacibilidad Booleana (SAT, por sus siglas en ingl\'es) se considera un caso particular de CSP, en el cual los dominios de las variables son binarios (${0,1}$) y las restricciones se expresan mediante f\'ormulas en Forma Normal Conjuntiva (FNC). Una f\'ormula en FNC se compone de una conjunci\'on de cl\'ausulas, donde cada cl\'ausula es una disyunci\'on de literales, es decir, variables o sus negaciones [\cite{zulkoski2018understanding}]. Resolver un problema SAT implica determinar si existe una asignaci\'on de valores que satisfaga simult\'aneamente todas las cl\'ausulas, lo cual equivale a resolver un CSP binario con restricciones espec\'ificas.
 
-La importancia te\'orica de SAT se fundamenta en su clasificaci\'on como problema NP-completo, establecida por Cook y Levin en 1971 \cite{marques-silva2024cdcl}. Esta clasificaci\'on conlleva dos implicaciones fundamentales: en primer lugar, cualquier problema perteneciente a la clase NP puede reducirse a una instancia de SAT en tiempo polinomial; en segundo lugar, la existencia de un algoritmo de tiempo polinomial que resuelva SAT implicar\'ia que $P=NP$, lo cual provocar\'ia un colapso en la jerarqu\'ia de complejidad computacional  \cite{guo2024progress}. Si bien en la pr\'actica los solucionadores actuales logran resolver instancias que contienen millones de variables, en el peor de los casos SAT presenta una complejidad exponencial intr\'inseca \cite{marques-silva2024cdcl}.
+La importancia te\'orica de SAT se fundamenta en su clasificaci\'on como problema NP-completo, establecida por Cook y Levin en 1971 [\cite{marques-silva2024cdcl}]. Esta clasificaci\'on conlleva dos implicaciones fundamentales: en primer lugar, cualquier problema perteneciente a la clase NP puede reducirse a una instancia de SAT en tiempo polinomial; en segundo lugar, la existencia de un algoritmo de tiempo polinomial que resuelva SAT implicar\'ia que $P=NP$, lo cual provocar\'ia un colapso en la jerarqu\'ia de complejidad computacional [\cite{guo2024progress}]; sin embargo, la condici\'on generalmente aceptada es que $P \neq NP$. Si bien en la pr\'actica los solucionadores actuales logran resolver instancias que contienen millones de variables, en el peor de los casos SAT presenta una complejidad exponencial intr\'inseca [\cite{marques-silva2024cdcl}].
 
 %\subsection{Relación Práctica entre CSPs y SAT}
 %\label{subsec:csp-sat-relacion}
@@ -27,13 +27,13 @@ La importancia te\'orica de SAT se fundamenta en su clasificaci\'on como problem
 
 \section{Evoluci\'on de los SAT \textit{solvers}}
 \label{sec:evolucion-sat-solvers}
-La evoluci\'on de los solucionadores SAT constituye un hito en la ciencia de la computaci\'on, pues convierte un problema te\'oricamente intratable en una herramienta pr\'actica de amplio uso industrial \cite{fichte2023silent}. Este desarrollo se apoya en tres pilares algor\'itmicos: el Principio de Resoluci\'on, los m\'etodos Davis-Putnam y Davis-Putnam-Logemann-Loveland, y la revoluci\'on moderna impulsada por los solucionadores de aprendizaje de cl\'ausulas dirigido por conflictos (\textit{Conflict Driven-Clause Learning} CDCL). A continuaci\'on, se presenta un an\'alisis detallado de cada uno.
+La evoluci\'on de los solucionadores SAT constituye un hito en la ciencia de la computaci\'on, pues convierte un problema te\'oricamente intratable en una herramienta pr\'actica de amplio uso industrial [\cite{fichte2023silent}]. Este desarrollo se apoya en tres pilares algor\'itmicos: el Principio de Resoluci\'on, los m\'etodos Davis-Putnam y Davis-Putnam-Logemann-Loveland, y la revoluci\'on moderna impulsada por los solucionadores de aprendizaje de cl\'ausulas dirigido por conflictos (\textit{Conflict Driven-Clause Learning} CDCL). A continuaci\'on, se presenta un an\'alisis detallado de cada uno.
 
 \subsection{Principio de Resoluci\'on}
 \label{subsec:prncp-de-res}
 El Principio de Resoluci\'on (PR), propuesto originalmente en el contexto de la l\'ogica proposicional, constituye la base te\'orica de numerosos algoritmos SAT. Este, permite derivar nuevas c\'aáusulas a partir de pares de cl\'ausulas que contienen literales complementarios, reduciendo progresivamente la fórmula hasta detectar una contradicci\'on o verificar su satisfacibilidad. 
 
-Dada una f\'ormula en Forma Normal Conjuntiva, cada una de sus cl\'ausulas se representa como un conjunto de literales, y a su vez la f\'ormula se prepresenta como un conjunto de conjuntos \cite{garcia-satcap}. Por esta raz\'on no hay elementos repetidos dentro de una cláusula ni en la fórmula completa. Tomando como entrada esta representación, PR identifica pares de cláusulas que contienen literales complementarios ($q$ y $\neg q$) y genera una nueva cláusula al realizar la operaci\'n de uni\'on entre ellas y eliminando de cada una el literal y su opuesto \cite{garcia-satcap}.
+Dada una f\'ormula en Forma Normal Conjuntiva, cada una de sus cl\'ausulas se representa como un conjunto de literales, y a su vez la f\'ormula se prepresenta como un conjunto de conjuntos [\cite{garcia-satcap}]. Por esta raz\'on no hay elementos repetidos dentro de una cláusula ni en la fórmula completa. Tomando como entrada esta representación, PR identifica pares de cláusulas que contienen literales complementarios y genera una nueva cláusula al realizar la operaci\'n de uni\'on entre ellas y eliminando de cada una el literal y su opuesto [\cite{garcia-satcap}].
 
 Concretamente, si \(\mathbf{B}\) y \(\mathbf{C}\) son cláusulas de la FNC \(\mathbf{A}\) tales que \(l\in\mathbf{B}\) y \(\neg l\in\mathbf{C}\), entonces la cláusula resultante se define como:
 \[
@@ -53,13 +53,13 @@ Asimismo, la combinación de
 \[
 \{\neg q\}\quad y\quad\{q\}
 \]
-conduce a la cláusula vacía, lo que evidencia la insatisfacibilidad de la fórmula \cite{garcia-satcap}.
+conduce a la cláusula vacía, lo que evidencia la insatisfacibilidad de la fórmula [\cite{garcia-satcap}].
 
 \subsubsection{Resoluci\'on Unitaria (RU)}
 \label{subsubsec:res-unit}
-Una instancia particular de PR es la Resoluci\'on Unitaria (RU), en la cual una de las premisas es una cl\'ausula unitaria\footnote{Una cl\'ausula que contiene un \'unico literal, y por tanto, fuerza su valor a ser verdadero bajo una interpretaci\'on determinada.}. Este caso especial adquiere relevancia por su simplicidad y eficiencia, ya que permite deducciones inmediatas a partir de asignaciones forzadas \cite{garcia-satcap}.
+Una instancia particular de PR es la Resoluci\'on Unitaria (RU), en la cual una de las premisas es una cl\'ausula unitaria\footnote{Una cl\'ausula que contiene un \'unico literal, y por tanto, fuerza su valor a ser verdadero bajo una interpretaci\'on determinada.}. Este caso especial adquiere relevancia por su simplicidad y eficiencia, ya que permite deducciones inmediatas a partir de asignaciones forzadas [\cite{garcia-satcap}].
 
-El proceso consiste en identificar una cl\'ausula unitaria y aplicar PR sobre otra cl\'ausula que contenga el literal complementario, elimin\'andolo y generando una nueva cl\'ausula m\'as restringida. Por ejemplo \cite{garcia-satcap}:
+El proceso consiste en identificar una cl\'ausula unitaria y aplicar PR sobre otra cl\'ausula que contenga el literal complementario, elimin\'andolo y generando una nueva cl\'ausula m\'as restringida. Por ejemplo [\cite{garcia-satcap}]:
 
 \begin{equation*}
 \dfrac{\{\neg q, p, \neg r\},\{r\}}{\{\neg q, p\}}
@@ -67,18 +67,18 @@ El proceso consiste en identificar una cl\'ausula unitaria y aplicar PR sobre ot
 
 En este caso, la cl\'{a}usula unitaria \( \{r\} \) permite simplificar la cl\'{a}usula \( \{\neg q, p, \neg r\} \), eliminando el literal \( \neg r \) y generando una nueva cl\'{a}usula \( \{\neg q, p\} \). Esta operaci\'{o}n puede aplicarse iterativamente, facilitando la propagaci\'{o}n de valores l\'{o}gicos en la f\'{o}rmula original, y constituye un componente fundamental en algoritmos como DPLL\ref{subsec:dpll} y CDCL\ref{subsection:cdcl}, donde se utiliza para propagar restricciones a lo largo del proceso de asignaci\'{o}n.
 
-El Principio de Resoluci\'on, aunque es completo para fórmulas en FNC, su aplicación directa resulta impráctica debido al crecimiento exponencial en el número de cláusulas generadas \cite{garcia-satcap}. Sin embargo, su relevancia conceptual fundamenta y guía el diseño de métodos más eficientes.
+El Principio de Resoluci\'on, aunque es completo para fórmulas en FNC, su aplicación directa resulta impráctica debido al crecimiento exponencial en el número de cláusulas generadas [\cite{garcia-satcap}]. Sin embargo, su relevancia conceptual fundamenta y guía el diseño de métodos más eficientes.
 
 
 \subsection{Algoritmo Davis–Putnam (DP)}
 \label{subsec:davis-putnam}
-Uno de los primeros algoritmos propuestos para la resolución del problema SAT fue el de Davis-Putnam (DP), cuyo funcionamiento se basa en gran medida en el Principio de Resolución. Este algoritmo implementa tres procedimientos fundamentales: la Propagación Unitaria (PU), la Eliminación de Literales Puros (ELP) y la Resolución Basada en División (RD) \cite{garcia-satcap}.
+Uno de los primeros algoritmos propuestos para la resolución del problema SAT fue el de Davis-Putnam (DP), cuyo funcionamiento se basa en gran medida en el Principio de Resolución. Este algoritmo implementa tres procedimientos fundamentales: la Propagación Unitaria (PU), la Eliminación de Literales Puros (ELP) y la Resolución Basada en División (RD) [\cite{garcia-satcap}].
 
 La Propagaci\'on Unitaria identifica cláusulas unitarias dentro de la FNC y procede a asignar forzosamente el valor correspondiente al literal involucrado. Seguidamente, elimina de la fórmula todas las cláusulas satisfechas por dicha asignación, y suprime el literal complementario en aquellas donde aparezca. Por su parte, la Eliminaci\'on de Literales Puros detecta literales cuya polaridad es única en toda la fórmula\footnote{se dice que $q$ es un literal puro en la FNC $A$ si $q$ ocurre en $A$ y $\neg q$ no} y elimina las cláusulas en las que aparezcan. Este procedimiento persigue la idea de que las cl\'ausulas con literales puros pueden satisfacerse directamente sin afectar la satisfacibilidad de la fórmula. Tanto PU como ELP se consideran técnicas de preprocesamiento destinadas a simplificar la FNC antes de aplicar los pasos recursivos del algoritmo.
 
-Una vez realizadas estas simplificaciones, DP procede con la Resolución Basada en División, que consiste en seleccionar una variable, asignarle un valor (0 o 1) y continuar la resolución de forma recursiva a partir de la nueva fórmula. Esta estrategia permite explorar sistemáticamente el espacio de soluciones posibles hasta determinar si la fórmula es satisfacible o no \cite{garcia-satcap}.
+Una vez realizadas estas simplificaciones, DP procede con la Resolución Basada en División, que consiste en seleccionar una variable, asignarle un valor (0 o 1) y continuar la resolución de forma recursiva a partir de la nueva fórmula. Esta estrategia permite explorar sistemáticamente el espacio de soluciones posibles hasta determinar si la fórmula es satisfacible o no [\cite{garcia-satcap}].
 
-V\'ease el siguiente ejemplo \cite{garcia-satcap} para una mejor comprensi\'on.
+V\'ease el siguiente ejemplo [\cite{garcia-satcap}] para una mejor comprensi\'on.
 
 Sean las siguientes fórmulas de la Lógica Proposicional:
 
@@ -116,7 +116,7 @@ Y finalmente, aplicando \textbf{PU} sobre $\{s\}$:
     \{\}
 \end{equation*}
 
-Dado que la fórmula ha sido completamente reducida sin generar contradicciones, se concluye que la instancia es satisfacible. (citar libro de Luciano de L'ogica Proposicional)
+Dado que la fórmula ha sido completamente reducida sin generar contradicciones, se concluye que la instancia es satisfacible \cite{garcia-satcap}.
 
 Cabe señalar que el algoritmo Davis-Putnam requiere memoria exponencial en el peor de los casos, ya que explora todas las asignaciones posibles para las variables. Esto se traduce en un árbol de decisión cuyo tamaño crece exponencialmente con el número de variables involucradas.
 
@@ -124,20 +124,20 @@ Cabe señalar que el algoritmo Davis-Putnam requiere memoria exponencial en el p
     \centering
     \includegraphics[width=0.8\textwidth]{Graphics/arboldp.png}
     \caption{Posible espacio de b\'usqueda de una FNC}
-    \cite{garcia-satcap}
+    [\cite{garcia-satcap}]
     \label{fig:arbol DP}
 \end{figure}
 
 
 \subsection{Algoritmo Davis–Putnam–Logemann–Loveland (DPLL)}
 \label{subsec:dpll}
-El algoritmo Davis-Putnam-Logemann-Loveland (DPLL) constituye una mejora significativa del método DP, al preservar sus fundamentos teóricos y superar una de sus principales limitaciones: el consumo exponencial de memoria. Para ello, DPLL incorpora un mecanismo de retroceso (extit{backtracking}) cronológico que le permite deshacer asignaciones al regresar al nivel anterior de decisión una vez detectada una``cláusula de conflicto'' \footnote{Se denomina cláusula de conflicto a aquella en la que todos sus literales fueron evaluados como falsos bajo una asignación parcial.}. Este enfoque permite explorar el árbol de búsqueda de forma más eficiente, reduciendo la necesidad de almacenar todas las ramas posibles \cite{garcia-satcap}.
+El algoritmo Davis-Putnam-Logemann-Loveland (DPLL) constituye una mejora significativa del método DP, al preservar sus fundamentos teóricos y superar una de sus principales limitaciones: el consumo exponencial de memoria. Para ello, DPLL incorpora un mecanismo de retroceso (\textit{backtracking}) cronológico que le permite deshacer asignaciones al regresar al nivel anterior de decisión una vez detectada una``cláusula de conflicto'' \footnote{Se denomina cláusula de conflicto a aquella en la que todos sus literales fueron evaluados como falsos bajo una asignación parcial.}. Este enfoque permite explorar el árbol de búsqueda de forma más eficiente, reduciendo la necesidad de almacenar todas las ramas posibles [\cite{garcia-satcap}].
 
-DPLL adopta una estrategia de generación ``lazy'' del árbol de asignaciones: antes de realizar una nueva ramificación, verifica mediante propagación unitaria si existen conflictos que invaliden dicha extensión. Esta verificación garantiza que las asignaciones parciales se mantengan consistentes, y que las soluciones (cuando existen) se ubiquen en las hojas del árbol de decisión. En caso de que el conflicto se produzca en el nivel de decisión cero, y ambas asignaciones posibles para la variable de este nivel hayan sido consideradas, se concluye que la fórmula es insatisfacible. En conjunto, el procedimiento de DPLL puede resumirse como una combinación de ramificación, propagación unitaria y retroceso sistemático.
+DPLL adopta una estrategia de generación ``lazy'' del árbol de asignaciones: antes de realizar una nueva ramificación, verifica mediante propagación unitaria si existen conflictos que invaliden dicha extensión. Esta verificación garantiza que las asignaciones parciales se mantengan consistentes, y que las soluciones (cuando existen) se ubiquen en las hojas del árbol de decisión. En caso de que el conflicto se produzca en el nivel de decisión cero, y ambas asignaciones posibles para la variable de este nivel hayan sido consideradas, se concluye que la fórmula es insatisfacible. En conjunto, el procedimiento de DPLL puede resumirse como una combinación de ramificación, propagación unitaria y retroceso cronol\'ogico.
 
-Adicionalmente, DPLL incluye una etapa de preprocesamiento sobre la FNC, en la cual se aplican simplificaciones basadas en leyes de la L\'ogica Proposicional. Entre estas se encuentra la eliminaci\'on de cl\'ausulas redundantes mediante el principio de subsunci\'on\footnote{Sean $C$ y $C'$ dos cl\'ausulas de una FNC; si $C' \subseteq C$, entonces $C$ se considera subsumida por $C'$ y puede eliminarse sin alterar la satisfacibilidad de la f\'ormula. En otras palabras, $C$ es una cl\'ausula redundante.}. Estas t\'ecnicas contribuyen a reducir el tama\~no de la instancia antes de la b\'usqueda propiamente dicha, mejorando la eficiencia del algoritmo sin comprometer su completitud \cite{garcia-satcap}.
+Adicionalmente, DPLL incluye una etapa de preprocesamiento sobre la FNC, en la cual se aplican simplificaciones basadas en leyes de la L\'ogica Proposicional. Entre estas se encuentra la eliminaci\'on de cl\'ausulas redundantes mediante el principio de subsunci\'on\footnote{Sean $C$ y $C'$ dos cl\'ausulas de una FNC; si $C' \subseteq C$, entonces $C$ se considera subsumida por $C'$ y puede eliminarse sin alterar la satisfacibilidad de la f\'ormula. En otras palabras, $C$ es una cl\'ausula redundante.}. Estas t\'ecnicas contribuyen a reducir el tama\~no de la instancia antes de la b\'usqueda propiamente dicha, mejorando la eficiencia del algoritmo sin comprometer su completitud [\cite{garcia-satcap}].
 
-Obsérvese el siguiente ejemplo \cite{garcia-satcap}:
+Obsérvese el siguiente ejemplo [\cite{garcia-satcap}]:
 
 Sea la FNC:
 
@@ -175,11 +175,11 @@ Aplicando \textbf{PU} en $\{\neg r\}$:
 \emptyset
 \end{equation*}
 
-Luego, la FNC es satisfacible \cite{garcia-satcap}.
+Luego, la FNC es satisfacible [\cite{garcia-satcap}].
 
 No obstante la reducción del espacio de memoria de DPLL respecto a DP, a\'un persisten problemas fundamentales: la selección de variables, el \textit{backtrack} cronológico y la elección de cláusulas unitarias.
 
-En primer lugar, la selección de la variable a la que se asignará un valor influye directamente en la ``forma'' del espacio de búsqueda. Una decisión inapropiada puede derivar en caminos significativamente más largos hacia una solución. Por tanto, resulta crucial emplear heurísticas que optimicen esta elección. (poner ejemplo)
+En primer lugar, la selección de la variable a la que se asignará un valor influye directamente en la ``forma'' del espacio de búsqueda. Una decisión inapropiada puede derivar en caminos significativamente más largos hacia una solución. Por tanto, resulta crucial emplear heurísticas que optimicen esta elección.
 
 En segundo lugar, el \textit{backtrack} cronológico ante un conflicto obliga a explorar, posiblemente de forma innecesaria, las asignaciones alternativas en niveles anteriores. Esta ineficiencia se acentúa cuando la causa real del conflicto se encuentra a $k$ niveles de distancia del punto donde se detectó. Además, DPLL no capitaliza las cláusulas que originaron los conflictos; es decir, no ``aprende'' de ellos. En consecuencia, es susceptible de incurrir reiteradamente en los mismos patrones erróneos de asignación.
 
@@ -190,7 +190,7 @@ Finalmente, el problema de la selección de cláusulas unitarias también reperc
 \subsection{\textit{Conflict-Driven-Clause-Learning} (CDCL)}
 \label{subsection:cdcl}
 
-CDCL es una mejora que se le a\~nadi\'o al algoritmo DPLL con el objetivo de erradicar el problema del retroceso (\textit{backtrack}) cronol\'ogico, una vez encontrada una cl\'ausula de conflicto.
+CDCL es una mejora que se le a\~nadi\'o al algoritmo DPLL con el objetivo de erradicar el problema del retroceso (\textit{backtrack}) cronol\'ogico, una vez encontrada una cl\'ausula de conflicto [\cite{marques-silva2024cdcl}].
 
 El retroceso cronol\'ogico consiste en recorrer el \'arbol de decisi\'on (estructura propia del algoritmo DPLL que se forma al asignarle valores a las variables) retrocediendo de a 1 por cada nivel, probando todos los valores a\'un sin explorar de cada variable hasta encontrar la asignaci\'on causante del conflicto. Esta b\'usqueda es ineficiente pues adem\'as de analizar casos innecesarios, se vuelve susceptible a cometer el mismo error en el futuro dado que, potencialmente, realizar\'a la misma combinaci\'on de asignaciones, lo cual genera b\'usquedas redundantes.
 
@@ -200,17 +200,17 @@ Para solucionar este problema, CDCL crea un grafo dirigido y ac\'iclico que perm
     \centering
     \includegraphics[width=0.8\textwidth]{Graphics/conflict_graph.png}
     \caption{Grafo de conflito}
-    \cite{oliveras2009dpll_cdcl}
+    [\cite{oliveras2009dpll_cdcl}]
     \label{fig:conflict_graph}
 \end{figure}
 
-Cuando una cl\'ausula resulta ser de conflicto, CDCL crea un nuevo nodo en el grafo que representa dicho conflicto para comenzar con su an\'alisis. Este, busca en el grafo la asignaci\'on causante del conflicto, para retroceder justo hacia ese punto y realizar un \textit{backjump} en lugar de un retroceso cronol\'ogico, como en DPLL. En caso de que el nivel del \textit{backjump} sea el nivel 0, CDCL considera la FNC como insatisfacible. Asimismo, con este an\'alisis CDCL busca conformar una ``cl\'ausula aprendida'' que represente la combinaci\'on de asignaci\'on de valores que condujo a dicho conflicto, y la a\~nade al conjunto de cl\'ausulas. De esta forma, evita cometer el mismo error en iteraciones futuras. El punto escogido para realizar el \textit{backjump} es conocido como primer punto de implicaci\'on \'unico (\textit{First-UIP} por sus siglas en ingl\'es). Este punto ser\'a aquel literal que, en la cl\'ausula aprendida, posea el m\'as alto nivel de decisi\'on diferente del actual. La figura \ref{fig:graph_1-uip} muestra el ejemplo del corte que representa el esquema de aprendizaje 1-UIP, en el grafo de aprendizaje:
+Cuando una cl\'ausula resulta ser de conflicto, CDCL crea un nuevo nodo en el grafo que representa dicho conflicto para comenzar con su an\'alisis. Este, busca en el grafo la asignaci\'on causante del conflicto, para retroceder justo hacia ese punto y realizar un \textit{backjump} en lugar de un retroceso cronol\'ogico, como en DPLL. En caso de que el nivel del \textit{backjump} sea el nivel 0, CDCL considera la FNC como insatisfacible. Asimismo, con este an\'alisis CDCL busca conformar una ``cl\'ausula aprendida'' que represente la combinaci\'on de asignaci\'on de valores que condujo a dicho conflicto, y la a\~nade al conjunto de cl\'ausulas. De esta forma, evita cometer el mismo error en iteraciones futuras. El punto escogido para realizar el \textit{backjump} \footnote{Retroceso en el \'arbol de decisiones a un nivel (nodo) que es relevante para el conflicto detectado, ignorando así decisiones intermedias que no contribuyeron al problema. Este nodo no es necesariamente el anterior inmediato.} es conocido como primer punto de implicaci\'on \'unico (\textit{First-UIP} por sus siglas en ingl\'es). Este punto ser\'a aquel literal que, en la cl\'ausula aprendida, posea el m\'as alto nivel de decisi\'on diferente del actual. La figura \ref{fig:graph_1-uip} muestra el ejemplo del corte que representa el esquema de aprendizaje 1-UIP, en el grafo de aprendizaje:
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{Graphics/first_uip.png}
     \caption{Corte que representa el esquema de aprendizaje 1-UIP}
-    \cite{oliveras2009dpll_cdcl}
+    [\cite{oliveras2009dpll_cdcl}]
     \label{fig:graph_1-uip}
 \end{figure}
 
@@ -223,7 +223,7 @@ En este caso, la cl\'ausula aprendida es:
 
 Es necesario enfatizar en el hecho de que la cl\'ausula aprendida debe contener \textbf{\'unicamente} un literal cuyo valor haya sido asignado en el nivel de decisi\'on actual. En caso de haber m\'as de uno, CDCL recorre el grafo en busca de la cl\'ausula que caus\'o la asignaci\'on de una de estas variables y aplica el PR entre esta y la cl\'ausula aprendida hasta el momento. La cl\'ausula resultante pasar\'a a ser la nueva cl\'ausula aprendida. El proceso se repetir\'a hasta que la cl\'ausula aprendida contenga solo un literal cuyo valor fue asignado en el nivel de decisi\'on actual.
 
-En el c\'odigo \ref{lst:cdcl} \cite{oliveras2009dpll_cdcl} muestra un ejemplo de implementaci\'on CDCL en \texttt{C++}:
+En el c\'odigo \ref{lst:cdcl} [\cite{oliveras2009dpll_cdcl}] muestra un ejemplo de implementaci\'on CDCL en \texttt{C++}:
 
 \begin{lstlisting}[
     language=C++,
@@ -252,7 +252,7 @@ El algoritmo \ref{lst:cdcl} sigue el siguiente flujo:
         \item Si el nivel de decisión es cero, devuelve UNSAT.
         \item En caso contrario, analiza el conflicto para aprender una nueva cláusula y retroceder en el árbol de búsqueda (backtrack).
     \end{itemize}
-    \item Después de resolver los conflictos, elimina lemmas (cláusulas aprendidas) si es necesario para gestionar la memoria.
+    \item Después de resolver los conflictos, elimina \textit{lemmas} (cláusulas aprendidas) si es necesario para gestionar la memoria.
     \item Intenta tomar una nueva decisión (asignar una variable).
     \item Si no quedan variables por decidir, devuelve SAT.
 \end{enumerate}
@@ -275,15 +275,19 @@ El algoritmo \ref{lst:cdcl} sigue el siguiente flujo:
 
 %Luego, se determina el \textit{backjump level}, es decir, el nivel de decisión más alto presente en los literales de la cláusula aprendida (distinto del actual). Si este nivel es 0, CDCL considera la FNC como insatisfacible. Finalmente, se invoca el método \textit{backjump(self, level)} que deshace las asignaciones por encima del nivel objetivo y actualiza las estructuras correspondientes.
 
-CDCL resuelve los problemas de b\'usquedas redundantes y \textit{bactrack} cronol\'ogico de DPLL, sin embargo, a\'un deja pendientes por resolver problemas como la selecci\'on de variables.
+CDCL resuelve los problemas de b\'usquedas redundantes y \textit{bactrack} cronol\'ogico de DPLL, sin embargo, a\'un deja pendientes por resolver problemas como la selecci\'on de variables, que se pasa a desarrollar a continuaci\'on.
 
 
 \section{Heur\'isticas}
 \label{sec:heuristicas}
 
+El problema de decisi\'on de variables, o selección de variables de ramificación (\textit{branching variable selection}), es un componente crucial en los solucionadores SAT de \textit{Conflict-Driven Clause Learning} (CDCL) [\cite{sun2024autosat}]. Determinar qué variable asignar a continuación es una de las tareas más importantes que realiza un solucionador SAT, ya que tiene un impacto dramático en la eficiencia de la búsqueda [\cite{chowdhury2020conflict_depression}].
+
+
+
 \subsection{\textit{Dynamic Largest Individual Sum} (DLIS)}
 \label{sec}
-La heur\'istica \textit{Dynamic Largest Individual Sum} es un m\'etodo aproximado de selecci\'on de variables que busca hacer eficiente la selecci\'on de variables en un CDCL SAT \textit{solver}. Para ello, DLIS considera que la pr\'oxima variable a asignar ser\'a aquella cuyo literal (el de mayor valor) tenga la mayor frecuencia de aparici\'on en cl\'ausulas insatisfechas. Es decir, para una variable $x$, se calcula la cantidad de cl\'ausulas no satisfechas en las que aparece el literal $x$ (forma positiva) y su complemento $\neg x$ (forma negativa). Denotemos:
+La heur\'istica \textit{Dynamic Largest Individual Sum} es un m\'etodo aproximado de selecci\'on de variables que busca hacer eficiente la selecci\'on de variables en un CDCL SAT \textit{solver}. Para ello, DLIS considera que la pr\'oxima variable a asignar ser\'a aquella cuyo literal (el de mayor valor entre el positivo y el negativo) tenga la mayor frecuencia de aparici\'on en cl\'ausulas insatisfechas. Es decir, para una variable $x$, se calcula la cantidad de cl\'ausulas no satisfechas en las que aparece el literal $x$ (forma positiva) y su complemento $\neg x$ (forma negativa). Denotemos:
 
 \begin{itemize}
   \item $\textit{count\_pos}(x)$: cantidad de veces que $x$ aparece positivamente en cl\'ausulas insatisfechas.
@@ -307,21 +311,21 @@ Una posible implementaci\'on de DLIS ser\'ia como se muestra en \ref{lst:dlis}
 
 \begin{lstlisting}[
     language=C++,
-    caption={Heur\'istica DLIS},
+    caption={Heuristica DLIS},
     label={lst:dlis},
     captionpos=b,
     frame=tb
 ]
 // Asumiendo que:
-// - var_to_pos_clauses: map<var, int> con el n\'umero de cl\'ausulas no resueltas donde aparece la variable positiva
-// - var_to_neg_clauses: map<var, int> con el n\'umero de cl\'ausulas no resueltas donde aparece la variable negativa
+// - var_to_pos_clauses: map<var, int> con el numero de clausulas no resueltas donde aparece la variable positiva
+// - var_to_neg_clauses: map<var, int> con el numero de clausulas no resueltas donde aparece la variable negativa
 
 pair<var, bool> DLIS() {
     var best_var = 0;
     bool value = false;
     int max_pos = 0, max_neg = 0;
 
-    // Encuentra la variable con mayor aparici\'on positiva y negativa
+    // Encuentra la variable con mayor aparicion positiva y negativa
     for (const auto& [v, cnt] : var_to_pos_clauses) {
         if (cnt > max_pos) { max_pos = cnt; best_var = v; value = true; }
     }
@@ -338,7 +342,7 @@ La cual puede integrarse a la funci\'on \texttt{decide()} en \ref{lst:cdcl} como
 
 \begin{lstlisting}[
     language=C++,
-    caption={Funci\'on decide() con DLIS},
+    caption={Funcion decide() con DLIS},
     label={lst:decide-dlis},
     captionpos=b,
     frame=tb
@@ -395,7 +399,7 @@ DLIS tiene como objetivo maximizar el número de cláusulas satisfechas con cada
 \subsection{\textit{Variable State Independent Decaying Sum} (VSIDS)}
 \label{subsec:vsids}
 
-La heurística de selecci\'on de variables que plantea \textit{Variable State Independent Decaying Sum} (VSIDS), prioriza asignar valores a aquellas variables que hayan estado involucrados en conflictos recientes. Para ello, VSIDS mantiene un \textit{score} por variable que se incrementa cada vez que esta aparece en cláusulas aprendidas a partir de conflictos. Además, para evitar que variables involucradas en conflictos antiguos tengan mayor prioridad que los relacionados con conflictos recientes, cada cierta cantidad \( T \) de conflictos se actualizan los \textit{scores} de todas las variables multiplicándolas por un factor de ``decaimiento'' \(\alpha\), con \(0 < \alpha < 1\) (usualmente \(\alpha = 0.95\)). 
+La heurística de selecci\'on de variables que plantea \textit{Variable State Independent Decaying Sum} (VSIDS), prioriza asignar valores a aquellas variables que hayan estado involucradas en conflictos recientes. Para ello, VSIDS mantiene un \textit{score} por variable que se incrementa cada vez que esta aparece en cláusulas aprendidas a partir de conflictos. Además, para evitar que variables involucradas en conflictos antiguos tengan mayor prioridad que los relacionados con conflictos recientes, cada cierta cantidad \( T \) de conflictos se actualizan los \textit{scores} de todas las variables multiplicándolas por un factor de ``decaimiento'' \(\alpha\), con \(0 < \alpha < 1\) (usualmente \(\alpha = 0.95\)). 
 
 Una posible implementaci\'on de VSIDS ser\'ia como se muestra en \ref{lst:vsids}:
 
@@ -414,7 +418,7 @@ void bump_vsids_score(var v) {
 
 void decay_vsids_scores() {
     for (auto &score : vsids_scores) {
-        score *= 0.95; // Factor de decaimiento com\'un
+        score *= 0.95; // Factor de decaimiento comun
     }
 }
 
@@ -427,7 +431,7 @@ pair<var, bool> VSIDS() {
             best_var = v;
         }
     }
-    // VSIDS solo elige la variable, el valor puede elegirse aleatoriamente o con otra heur\'istica
+    // VSIDS solo elige la variable, el valor puede elegirse aleatoriamente o con otra heuristica
     return {best_var, rand() % 2 == 0}; // Ejemplo: valor aleatorio
 }
 
@@ -437,7 +441,7 @@ Por su parte, para poder integrar esta heur\'istica en \ref{lst:cdcl}, la funci\
 
 \begin{lstlisting}[
     language=C++,
-    caption={Funci\'on decide() con VSIDS},
+    caption={Funcion decide() con VSIDS},
     label={lst:decide-vsids},
     captionpos=b,
     frame=tb
@@ -460,7 +464,7 @@ En \ref{lst:vsids}, la heurística VSIDS mantiene un contador para cada variable
     \item \textbf{Selección de variable:} Cuando se necesita decidir, se elige la variable no asignada con mayor puntuación VSIDS.
 \end{itemize}
 
-Por su parte, en \ref{lst:decide-vsid} la función \texttt{decide()} ahora utiliza la heurística VSIDS para elegir la próxima variable a decidir:
+Por su parte, en \ref{lst:decide-vsids} la función \texttt{decide()} ahora utiliza la heurística VSIDS para elegir la próxima variable a decidir:
 
 \begin{itemize}
     \item Llama a \texttt{VSIDS()} para obtener la variable y el valor sugeridos.
@@ -489,13 +493,13 @@ Esta heur\'istica est\'a entre las m\'as usadas en los CDCL SAT \textit{solvers}
 
 Las estrategias de \textit{restart} tienen como objetivo evitar que el algoritmo de CDCL se estanque en regiones locales del espacio de búsqueda. Para ello, se permite reiniciar el árbol de decisiones, es decir, eliminar todas las asignaciones realizadas hasta el momento y comenzar nuevamente desde el nivel de decisión cero. Sin embargo, se conservan las cláusulas aprendidas durante el proceso, así como la información acumulada por las heurísticas de selección de variables (por ejemplo, las actividades de las variables en VSIDS o los conteos en DLIS). Estas estrategias buscan que, al conservar el conocimiento adquirido (cláusulas aprendidas), el solucionador pueda explorar regiones más prometedoras del espacio de soluciones sin tener que recorrer nuevamente caminos improductivos.
 
-Los solucionadores de SAT basados en DPLL presentan un fen\'omeno de cola pesada \cite{oliveras2009dpll_cdcl} \ref{fig:cola_pesada}:
+Los solucionadores de SAT basados en DPLL presentan un fen\'omeno de cola pesada [\cite{oliveras2009dpll_cdcl}] \ref{fig:cola_pesada}:
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{Graphics/cola_pesada.png}
     \caption{Fen\'omeno de cola pesada en DPLL SAT \textit{solvers}}
-    \cite{oliveras2009dpll_cdcl}
+    [\cite{oliveras2009dpll_cdcl}]
     \label{fig:cola_pesada}
 \end{figure}
 
@@ -505,7 +509,7 @@ Estudios han demostrado que el uso de estrategias de reinicio ayudan significati
     \centering
     \includegraphics[width=0.8\textwidth]{Graphics/restart_effects.png}
     \caption{Efecto de aplicar \textit{restarts}}
-    \cite{oliveras2009dpll_cdcl}
+    [\cite{oliveras2009dpll_cdcl}]
     \label{fig:restart_efects}
 \end{figure}
 
@@ -520,7 +524,7 @@ Existen diversos criterios para decidir cuándo realizar un reinicio:
         \centering
         \includegraphics[width=0.8\textwidth]{Graphics/geom_restart.png}
         \caption{Secuencia geom\'etrica de reinicio interna-externa}
-        \cite{oliveras2009dpll_cdcl}
+        [\cite{oliveras2009dpll_cdcl}]
         \label{fig:geom-restart}
     \end{figure}
 
@@ -530,7 +534,7 @@ Existen diversos criterios para decidir cuándo realizar un reinicio:
         \centering
         \includegraphics[width=0.8\textwidth]{Graphics/luby_restart.png}
         \caption{Secuencia de reinicio de basada en Luby con 512 inicial.}
-        \cite{oliveras2009dpll_cdcl}
+        [\cite{oliveras2009dpll_cdcl}]
         \label{fig:luby-restart}
     \end{figure}
 
@@ -553,7 +557,7 @@ Una posible implementaci\'on de la estrategia de reinicio geom\'etrico ser\'ia \
 
 \begin{lstlisting}[
     language=C++,
-    caption={Algoritmo reinicio geom\'etrico},
+    caption={Algoritmo reinicio geometrico},
     label={lst:geom_restart},
     captionpos=b,
     frame=tb
@@ -571,7 +575,7 @@ int inner = 100, outer = 100;
 
 \end{lstlisting}
 
-En \ref{lst:geom_restart} \cite{oliveras2009dpll_cdcl}:
+En \ref{lst:geom_restart} [\cite{oliveras2009dpll_cdcl}]:
 \begin{itemize}
     \item \textbf{Inicialización:} Se declaran e inicializan dos variables, \texttt{inner} y \texttt{outer}, ambas con valor 100.
     \item \textbf{Bucle infinito:} El bucle \texttt{for (;;)} se ejecuta indefinidamente.
@@ -586,7 +590,7 @@ En \ref{lst:geom_restart} \cite{oliveras2009dpll_cdcl}:
 
 El código ajusta dinámicamente el tamaño del bloque de conflictos para el solucionador SAT. Cada vez que \texttt{inner} alcanza el valor de \texttt{outer}, este último se incrementa y \texttt{inner} se reinicia, permitiendo así que el solucionador explore bloques de conflictos cada vez más grandes, pero manteniendo un crecimiento controlado mediante el factor 1.1.
 
-Para incorporar alguna estrategia de \textit{restart} a \ref{lst:cdcl}  se puede proceder como muestra \ref{lst:cdcl-restart} \cite{oliveras2009dpll_cdcl}
+Para incorporar alguna estrategia de \textit{restart} a \ref{lst:cdcl}  se puede proceder como muestra \ref{lst:cdcl-restart} [\cite{oliveras2009dpll_cdcl}]
 
 \begin{lstlisting}[
     language=C++,
@@ -631,14 +635,14 @@ while(true){
 
 %Cabe destacar que durante el reinicio no se eliminan las cláusulas aprendidas, lo cual permite conservar información valiosa obtenida en decisiones anteriores. Esta estrategia favorece la salida de áreas del espacio de búsqueda poco prometedoras, maximizando la posibilidad de encontrar una solución en regiones más relevantes del espacio de soluciones.
 
-A pesar de los avances, la separación teórica entre \textit{solvers} CDCL con y sin reinicios continúa siendo una pregunta abierta relevante, dado que muchos resultados dependen intrínsecamente de los reinicios \cite{zulkoski2018understanding}.
+A pesar de los avances, la separación teórica entre \textit{solvers} CDCL con y sin reinicios continúa siendo una pregunta abierta relevante, dado que muchos resultados dependen intrínsecamente de los reinicios [\cite{zulkoski2018understanding}].
 
-\subsection{\textit{Two Watched Literals (TWL)}}
+\subsection{Dos Literales Vigilados (\textit{Two Watched Literals}) (TWL)}
 \label{subsec:twl}
 
 Una de las estrategias m\'as empleadas en solucionadores modernos de SAT para optimizar la propagaci\'on unitaria es \textit{Two Watched Literals (TWL)}. Esta t\'ecnica tiene como objetivo evitar el recorrido exhaustivo de todas las cl\'ausulas en cada paso de propagaci\'on, mediante la vigilancia de dos literales por cl\'ausula, denominados $l_1$ y $l_2$.
 
-Durante la ejecuci\'on del algoritmo, si ambos literales vigilados en una cl\'ausula no han sido evaluados, o al menos uno de ellos tiene valor verdadero, entonces no es necesario revisar dicha cl\'ausula, ya que no es unitaria ni entra en conflicto. En caso contrario, si uno de los literales es asignado a falso, se intenta buscar dentro de la cl\'ausula otro literal que no haya sido evaluado o que tenga valor verdadero, con el fin de reemplazar al literal que fue asignado a falso. Si no se encuentra un reemplazo v\'alido y el otro literal vigilado a\'un no tiene valor, entonces la cl\'ausula se vuelve unitaria, forzando la asignaci\'on del segundo literal. Si ambos literales vigilados son evaluados a falso, la cl\'ausula se considera en conflicto.
+Durante la ejecuci\'on del algoritmo, si ambos literales vigilados en una cl\'ausula no han sido evaluados, o al menos uno de ellos tiene valor verdadero, entonces no es necesario revisar dicha cl\'ausula, ya que no es unitaria ni entra en conflicto. En caso contrario, si uno de los literales es asignado a falso, se intenta buscar dentro de la cl\'ausula otro literal que no haya sido evaluado o que tenga valor verdadero, con el fin de reemplazar al literal que fue asignado a falso. Si no se encuentra un reemplazo v\'alido y el otro literal \textit{watched} a\'un no tiene valor, entonces la cl\'ausula se vuelve unitaria, forzando la asignaci\'on del segundo literal. Si ambos literales vigilados son evaluados a falso, la cl\'ausula se considera en conflicto.
 
 Esta estrategia resulta altamente eficiente, ya que disminuye considerablemente el n\'umero de cl\'ausulas que deben revisarse en cada nivel de decisi\'on, optimizando as\'i el rendimiento del algoritmo CDCL.
 
@@ -659,12 +663,12 @@ struct Clause {
 };
 
 vector<Clause> clauses;
-vector<vector<Clause*>> watch_list; // watch_list[var] = lista de cl\'ausulas donde var es watched
+vector<vector<Clause*>> watch_list; // watch_list[var] = lista de clausulas donde var es watched
 
 bool propagate_gives_conflict() {
-    while (hay variables en la cola de propagaci\'on) {
+    while (hay variables en la cola de propagacion) {
         Lit lit = sacar de la cola;
-        // Para cada cl\'ausula que vigila ~lit
+        // Para cada clausula que vigila ~lit
         for (Clause* cl : watch_list[var(~lit)]) {
             // Intentar encontrar otro literal no asignado a falso para vigilar
             Lit other = (cl->watch1 == ~lit) ? cl->watch2 : cl->watch1;
@@ -683,7 +687,7 @@ bool propagate_gives_conflict() {
             }
             if (!found) {
                 // Todos los literales excepto uno son falsos: propagar el restante
-                // Si ya est\'a asignado a falso, hay conflicto
+                // Si ya esta asignado a falso, hay conflicto
                 // Si no, asignar el literal restante y meter en la cola
                 // ...
                 if (/* conflicto */) return true;
@@ -736,106 +740,107 @@ Como se puede apreciar en \ref{lst:cdcl-twl}, el algoritmo CDCL original se mant
 
 %Adem\'as de modificar la propagaci\'on unitaria, la estrategia TWL afecta tambi\'en la gesti\'on de cl\'ausulas aprendidas. Cada vez que se genera una nueva cl\'ausula como resultado del an\'alisis de conflictos, se seleccionan dos de sus literales para ser vigilados y se actualizan las estructuras de observaci\'on en consecuencia. Esto asegura que las optimizaciones ofrecidas por TWL se mantengan vigentes incluso cuando la f\'ormula evoluciona durante la ejecuci\'on del algoritmo.
 
-La estrategia de los dos literales vigilados reduce notablemente la frecuencia con que se visita cada cláusula, ya que solo se considera una cláusula cuando uno de sus literales vigilados es asignado a falso. Durante el retroceso, no es necesario realizar ninguna acción adicional sobre las cláusulas, lo que simplifica el proceso. Además, los literales inactivos suelen permanecer como vigilados, lo que disminuye aún más el número de cláusulas que requieren revisión. Esta técnica resulta especialmente efectiva para cláusulas largas, como los lemas aprendidos. Para las cláusulas binarias, en cambio, se utilizan estructuras de datos especializadas que permiten un manejo aún más eficiente \cite{oliveras2009dpll_cdcl}.
+La estrategia de los dos literales vigilados reduce notablemente la frecuencia con que se visita cada cláusula, ya que solo se considera una cláusula cuando uno de sus literales vigilados es asignado a falso. Durante el retroceso, no es necesario realizar ninguna acción adicional sobre las cláusulas, lo que simplifica el proceso. Además, los literales inactivos suelen permanecer como vigilados, lo que disminuye aún más el número de cláusulas que requieren revisión. Esta técnica resulta especialmente efectiva para cláusulas largas, como los lemas aprendidos. Para las cláusulas binarias, en cambio, se utilizan estructuras de datos especializadas que permiten un manejo aún más eficiente [\cite{oliveras2009dpll_cdcl}].
 
 
 \section{CaDiCaL}
 \label{sec:cadical}
+El \textit{solver} base que se emple\'o para los experimentos realizados en esta tesis es CaDiCaL. A continuaci\'on se presentan detalles sobre su implementaci\'on, alguna de las heur\'isticas que implementa y el porqu\'e de su elecci\'on.
 
-CaDiCaL es un \textit{solver} SAT moderno implementado en C++ que combina claridad de diseño y eficiencia práctica. La arquitectura se organiza en un módulo interno, responsable de la búsqueda CDCL y de técnicas de simplificación de fórmulas; y en un módulo externo que actúa como fachada, gestiona la API y, en modo incremental, revierte pasos de \textit{inprocessing} para mantener limpia la pila de reconstrucción.
+CaDiCaL es un \textit{solver} SAT moderno implementado en C++ que combina claridad de diseño y eficiencia práctica. La arquitectura se organiza en un módulo interno, responsable de la búsqueda CDCL y de técnicas de simplificación de fórmulas; y en un módulo externo que actúa como fachada, gestiona la API y, en modo incremental, revierte pasos de \textit{inprocessing} para mantener limpia la pila de reconstrucción \footnote{La pila de reconstrucción en CaDiCaL es un elemento fundamental que permite al solucionador extender las soluciones internas a una soluci\'on completa del problema de entrada original. Esto es necesario porque el solucionador puede compactar variables activas o simplificar la fórmula mediante técnicas de preprocesamiento e inprocesamiento, como la eliminación de variables o la remoción de cláusulas [\cite{cadical2024}]. La pila almacena la información, como pares de cláusulas y "testigos" (asignaciones parciales), necesaria para reconstruir el modelo de la fórmula original si alguna cláusula se muestra insatisfecha [\cite{cai2022better_heuristics}]}.
 
 \subsection{Ramificaci\'on (selecci\'on de variables)}
-Las decisiones de ramificación se guían por heurísticas de actividad basadas en VSIDS, alternando entre fases estables y enfocadas para mejorar el rendimiento en instancias satisfacibles \cite{iser2021unit}, \cite{cherif2021combining}.
+Las decisiones de ramificación se guían por heurísticas de actividad basadas en VSIDS, alternando entre fases estables y enfocadas para mejorar el rendimiento en instancias satisfacibles [\cite{iser2021unit}], [\cite{cherif2021combining}].
 
 
 \subsection{Políticas de reinicio}
 \label{subsec:cadical-restart}
 
-CaDiCaL implementa políticas de reinicio dinámicas que se ajustan al comportamiento interno del \textit{solver} \cite{biere2019restart_schemes}, \cite{zhang2024revisiting}.
+CaDiCaL implementa políticas de reinicio dinámicas que se ajustan al comportamiento interno del \textit{solver} [\cite{biere2019restart_schemes}], [\cite{zhang2024revisiting}].
 
-Estos reinicios, permiten al solucionador escapar de subespacios improductivos sin perder las cláusulas aprendidas. Para ello, CaDiCaL emplea políticas adaptativas que utilizan contadores de eventos (por ejemplo, accesos a memoria) en lugar de mediciones temporales directas, lo que garantiza determinismo entre ejecuciones. Estas políticas bloquean reinicios cuando la búsqueda se encuentra próxima a una solución potencial, siguiendo estrategias propuestas en la literatura. \cite{cherif2021combining}, \cite{biere2019restart_schemes}, \cite{zhang2024revisiting}.
+Estos reinicios, permiten al solucionador escapar de subespacios improductivos sin perder las cláusulas aprendidas. Para ello, CaDiCaL emplea políticas adaptativas que utilizan contadores de eventos (por ejemplo, accesos a memoria) en lugar de mediciones temporales directas, lo que garantiza determinismo entre ejecuciones. Estas políticas bloquean reinicios cuando la búsqueda se encuentra próxima a una solución potencial, siguiendo estrategias propuestas en la literatura. \cite{cherif2021combining}, \cite{biere2019restart_schemes}, [\cite{zhang2024revisiting}].
 
 
-Todas las \textit{restart policies} pueden ajustarse mediante múltiples parámetros para adaptarse a las características de cada instancia \cite{cai2022better_heuristics}.
+Todas las \textit{restart policies} pueden ajustarse mediante múltiples parámetros para adaptarse a las características de cada instancia [\cite{cai2022better_heuristics}].
 
 CaDiCaL alterna entre dos modos operativos principales: modo estable y modo enfocado. En el modo estable, se utilizan reinicios tipo Luby\ref{subsec:restart} con un intervalo base elevado (1024 conflictos). Este modo promueve estabilidad, realiza retrocesos cronológicos y aplica la heurística VSIDS con bajo factor de incremento. Por otro lado, en el \textbf{modo enfocado}, se aplican reinicios como \textit{Glucose-style}\ref{subsec:restart} con intervalos cortos entre reinicios (2 conflictos).
 
-\subsection{\textit{Assumptions}}
+\subsection{Asunciones \textit{Assumptions}}
 \label{subsec:cadical-assumptions}
 % ¿Qué son las 'assumptions'?
 
-Las \textit{assumptions} permiten invocar un SAT \textit{solver} con un conjunto de valores previamente asignados a ciertas variables. Esta funcionalidad resulta particularmente útil en contextos donde el \textit{solver} se utiliza de manera iterativa.
+Las asunciones \textit{assumptions} permiten invocar un SAT \textit{solver} con un conjunto de valores previamente asignados a ciertas variables. Esta funcionalidad resulta particularmente útil en contextos donde el \textit{solver} se utiliza de manera iterativa.
 
 Por ejemplo, si se requiere agregar o eliminar una cláusula $c_i$ entre distintas invocaciones al \textit{solver}, esta puede incorporarse a la fórmula como $(c_i \lor s_i)$, donde $s_i$ es una variable de activación, selección o indicador. Al asignar $s_i = 1$, la cláusula $c_i$ se incluye efectivamente en la fórmula; en cambio, al establecer $s_i = 0$, dicha cláusula se omite.
 
-Esta técnica fue introducida originalmente en el \textit{solver} MiniSat \cite{marques-silva2024cdcl}.
+Esta técnica fue introducida originalmente en el \textit{solver} MiniSat [\cite{marques-silva2024cdcl}].
 
 Además de su uso en la resolución incremental, las variables de activación también se aplican para representar cláusulas temporales. Por ejemplo, para incorporar una cláusula temporal $c$, se introduce una variable de activación $a$ y se añade $(c \lor a)$ a la fórmula, bajo la suposición de $\neg a$. Para eliminar $c$, basta con agregar la cláusula unitaria $(a)$.
 
-En versiones recientes, CaDiCaL ha incorporado el uso de \textit{constraints}, que pueden simularse a través de \textit{activation literals} en versiones anteriores \cite{cadical2024}.
+En versiones recientes, CaDiCaL ha incorporado el uso de \textit{constraints}, que pueden simularse a través de \textit{activation literals} en versiones anteriores [\cite{cadical2024}].
 
-El incremento en el número de variables de activación puede afectar negativamente el rendimiento del \textit{solver}. Tradicionalmente, este inconveniente se ha abordado mediante reinicios periódicos \cite{su2025deeply_ic3}.
+El incremento en el número de variables de activación puede afectar negativamente el rendimiento del \textit{solver}. Tradicionalmente, este inconveniente se ha abordado mediante reinicios periódicos [\cite{su2025deeply_ic3}].
 
 % ¿Por qué se comprueban antes de la heurística de decisión de variables?
 
-Las \textit{assumptions} se asignan y se propagan antes de que se inicie la búsqueda efectiva mediante la heurística de decisión de variables. Esta ordenación obedece a la arquitectura de los \textit{solvers} CDCL (\textit{Conflict-Driven Clause Learning}) \cite{marques-silva2024cdcl}.
+Las \textit{assumptions} se asignan y se propagan antes de que se inicie la búsqueda efectiva mediante la heurística de decisión de variables. Esta ordenación obedece a la arquitectura de los \textit{solvers} CDCL (\textit{Conflict-Driven Clause Learning}) [\cite{marques-silva2024cdcl}].
 
-El algoritmo CDCL comienza con una fase de propagación unitaria. Si la PU detecta un conflicto en el nivel de decisión 0 (es decir, antes de que el \textit{solver} haya realizado alguna decisión propia), se concluye que la fórmula, junto con las \textit{assumptions} actuales, es insatisfacible \cite{sun2024autosat}.
+El algoritmo CDCL comienza con una fase de propagación unitaria. Si la PU detecta un conflicto en el nivel de decisión 0 (es decir, antes de que el \textit{solver} haya realizado alguna decisión propia), se concluye que la fórmula, junto con las \textit{assumptions} actuales, es insatisfacible [\cite{sun2024autosat}].
 
-Esta verificación temprana resulta fundamental para la eficiencia del proceso, ya que permite detectar la insatisfacibilidad sin necesidad de explorar el espacio de búsqueda a través de decisiones de ramificación que, eventualmente, conducirían a un conflicto inevitable debido a los supuestos \cite{marques-silva2024cdcl}.
+Esta verificación temprana resulta fundamental para la eficiencia del proceso, ya que permite detectar la insatisfacibilidad sin necesidad de explorar el espacio de búsqueda a través de decisiones de ramificación que, eventualmente, conducirían a un conflicto inevitable debido a los supuestos [\cite{marques-silva2024cdcl}].
 
-Solo si la PU no detecta conflictos y no todas las variables están asignadas, el \textit{solver} procede a seleccionar una variable para ramificar, utilizando la heurística de decisión correspondiente \cite{sun2024autosat}.
+Solo si la PU no detecta conflictos y no todas las variables están asignadas, el \textit{solver} procede a seleccionar una variable para ramificar, utilizando la heurística de decisión correspondiente [\cite{sun2024autosat}].
 
 Las \textit{assumptions} constituyen un punto de partida para el \textit{solver}. Estas se procesan inicialmente mediante la propagación unitaria, lo que permite verificar que la configuración inicial, incluyendo los supuestos, no conduzca a un conflicto inmediato. Esta estrategia optimiza el procedimiento, al evitar búsquedas infructuosas en regiones del espacio que se sabe de antemano que son inconsistentes con los supuestos proporcionados.
 
-\subsection{\textit{Phasing}}
+\subsection{Fases}
 \label{subsec:cadical-phasing}
-La estrategia de \textit{phasing} constituye un componente fundamental en los SAT \textit{solvers} basados en CDCL, ya que desempeña un papel crucial en la guía del proceso de búsqueda de soluciones.
+La estrategia de fases o \textit{phasing} constituye un componente fundamental en los SAT \textit{solvers} basados en CDCL, ya que desempeña un papel crucial en la guía del proceso de búsqueda de soluciones.
 
 En el contexto de los \textit{solvers} CDCL, una vez seleccionada una variable para ramificación, se debe decidir qué valor de verdad (también denominado \textit{fase} o \textit{polaridad}) asignarle. Esta decisión influye significativamente en la eficiencia del \textit{solver}, particularmente en fórmulas satisfacibles.
 
-La técnica de \textit{phase saving} (ahorro de fases) consiste en registrar el último valor asignado a una variable (ya sea mediante decisión o propagación unitaria) y reutilizar este valor cuando la variable sea seleccionada nuevamente como variable de decisión. Esta técnica, sencilla y de bajo costo computacional, ha demostrado mejorar el rendimiento de forma notable y se ha convertido en un estándar en la mayoría de los \textit{solvers} CDCL modernos. Se clasifica como una estrategia de intensificación, al mantener la búsqueda dentro de regiones previamente exploradas y potencialmente prometedoras \cite{cai2022better_heuristics}.
+La técnica de \textit{phase saving} (ahorro de fases) consiste en registrar el último valor asignado a una variable (ya sea mediante decisión o propagación unitaria) y reutilizar este valor cuando la variable sea seleccionada nuevamente como variable de decisión. Esta técnica, sencilla y de bajo costo computacional, ha demostrado mejorar el rendimiento de forma notable y se ha convertido en un estándar en la mayoría de los \textit{solvers} CDCL modernos. Se clasifica como una estrategia de intensificación, al mantener la búsqueda dentro de regiones previamente exploradas y potencialmente prometedoras [\cite{cai2022better_heuristics}].
 
-\textit{Rephasing} (refaseo) es una técnica de diversificación que complementa el ahorro de fases. Su propósito es reiniciar o ajustar la asignación parcial de las fases, permitiendo al \textit{solver} explorar nuevas regiones del espacio de búsqueda. Dado que la selección de fase no compromete la corrección ni la terminación del algoritmo CDCL, las fases guardadas pueden modificarse arbitrariamente \cite{cai2022better_heuristics}.
+\textit{Rephasing} (refaseo) es una técnica de diversificación que complementa el ahorro de fases. Su propósito es reiniciar o ajustar la asignación parcial de las fases, permitiendo al \textit{solver} explorar nuevas regiones del espacio de búsqueda. Dado que la selección de fase no compromete la corrección ni la terminación del algoritmo CDCL, las fases guardadas pueden modificarse arbitrariamente [\cite{cai2022better_heuristics}].
 
-CaDiCaL incorpora mecanismos avanzados tanto de ahorro de fases como de \textit{rephasing} \cite{cadical2024}.
+CaDiCaL incorpora mecanismos avanzados tanto de ahorro de fases como de \textit{rephasing} [\cite{cadical2024}].
 Ha sido pionero en la implementación de refaseo periódico, en el que los valores de fase se reinician en intervalos predefinidos durante la ejecución. 
 
 
 
 % tOOOda esta vaina de la Modularidad y Extensibilidad del codigo tiene referencia a Cadical 2.0
 \subsection{Modularidad y Extensibilidad del Código de CaDiCaL}
-La modularidad y la extensibilidad constituyen objetivos esenciales en el diseño de CaDiCaL \cite{cadical2024}.
+La modularidad y la extensibilidad constituyen objetivos esenciales en el diseño de CaDiCaL [\cite{cadical2024}].
 Este \textit{solver} se ha convertido en plantilla para el ``\textit{hack track}'' de la competencia SAT desde 2021, evidenciando su facilidad de adaptación. Los mecanismos principales para modificar su comportamiento incluyen:
 \begin{itemize}
   \item \textbf{API rica}: proporciona una interfaz en C++ (y limitada en C) que permite extender funcionalidades y personalizar la interacción con el solver.
   \item \textbf{Propagadores de usuario (ExternalPropagator)}: habilita la implementación de propagadores externos capaces de importar y exportar cláusulas aprendidas o sugerir decisiones al solver, otorgando control directo sobre la búsqueda.
   \item \textbf{Estructura del código fuente}: el código, organizado de forma clara y modular, facilita su uso como modelo para portar e integrar técnicas de última generación en otros \textit{solvers}.
 \end{itemize}
-Diversas investigaciones han extendido CaDiCaL para incorporar nuevas características, algunas de las cuales se han integrado en la versión oficial \cite{cadical2024}.
+Diversas investigaciones han extendido CaDiCaL para incorporar nuevas características, algunas de las cuales se han integrado en la versión oficial [\cite{cadical2024}].
 
 \subsection{Ventajas de CaDiCaL para Experimentación}
 CaDiCaL resulta adecuado para estudios académicos sobre heurísticas y políticas de reinicio en SAT solving por las siguientes razones:
 \begin{itemize}
   \item \textbf{Diseño limpio y modular}: la arquitectura está orientada a la comprensibilidad y facilidad de modificación, lo que simplifica la implementación de nuevas estrategias sin la complejidad de otros solvers avanzados.
-  \item \textbf{Flexibilidad en heurísticas y reinicios}: aunque dispone de configuraciones predeterminadas, permite alternar entre modos estable y enfocado, y ajustar esquemas de rephasing para probar variaciones en políticas de reinicio \cite{cai2022better_heuristics}. %BetterDecisionHeuristics.
+  \item \textbf{Flexibilidad en heurísticas y reinicios}: aunque dispone de configuraciones predeterminadas, permite alternar entre modos estable y enfocado, y ajustar esquemas de rephasing para probar variaciones en políticas de reinicio [\cite{cai2022better_heuristics}]. %BetterDecisionHeuristics.
   \item \textbf{Rendimiento competitivo}: mantiene un desempeño de última generación, garantizando que los resultados experimentales sean representativos del estado del arte.
   \item \textbf{Adopción en la comunidad}: su uso extendido en investigación genera un entorno colaborativo y recursos para investigadores.
   \item \textbf{Documentación exhaustiva}: el código fuente cuenta con comentarios detallados, facilitando la comprensión y manipulación del solver por parte de nuevos usuarios.
-\end{itemize} \cite{cadical2024}
+\end{itemize} [\cite{cadical2024}]
 % Exceptuando el que esta indicado en esta seccion, todas las referencias son a Cadical 2.0
 
 
 
-\section{Parámetros de Evaluación para \textit{solvers} CDCL: Taxonomía de extit{Benchmarks}}
+\section{Parámetros de Evaluación para \textit{solvers} CDCL: Taxonomía de \textit{Benchmarks}}
 \label{sec:tipos-problemas}
 \subsection{Categor\'ias}
 \label{subsec:problem-categor}
 La evaluación sistemática de solvers CDCL exige una taxonomía clara de instancias SAT que permita comparar heurísticas de actividad, estrategias de reinicio y métodos de propagación unitaria. Para este propósito, las instancias se clasifican según su origen y propiedades estructurales, de modo que cada categoría revele puntos fuertes y limitaciones algorítmicas.
 
-En primer lugar, las instancias de aplicaci\'on proceden de problemas industriales, como la verificación de circuitos o la planificación logística. Estas fórmulas presentan estructuras modulares y \textit{backdoors} pequeños (subconjuntos de variables cuya asignación simplifica significativamente la búsqueda), lo que permite a heurísticas dinámicas como VSIDS explotar patrones locales mediante el registro de conflictos recientes \cite{zulkoski2018understanding}.
+En primer lugar, las instancias de aplicaci\'on proceden de problemas industriales, como la verificación de circuitos o la planificación logística. Estas fórmulas presentan estructuras modulares y \textit{backdoors} pequeños (subconjuntos de variables cuya asignación simplifica significativamente la búsqueda), lo que permite a heurísticas dinámicas como VSIDS explotar patrones locales mediante el registro de conflictos recientes [\cite{zulkoski2018understanding}].
 
-Por otro lado, las instancias combinatorias dificultosas, diseñadas para desafiar la generalidad de los solvers (por ejemplo, codificaciones del principio del palomar), carecen de la estructura implícita de los casos reales y exhiben simetrías y dependencias globales que ponen a prueba la adaptabilidad de las heurísticas \cite{zulkoski2018understanding}.
+Por otro lado, las instancias combinatorias dificultosas, diseñadas para desafiar la generalidad de los solvers (por ejemplo, codificaciones del principio del palomar), carecen de la estructura implícita de los casos reales y exhiben simetrías y dependencias globales que ponen a prueba la adaptabilidad de las heurísticas [\cite{zulkoski2018understanding}].
 
 Además, las instancias aleatorias, generadas según modelos Random $k$-SAT, muestran una distribución uniforme de cláusulas sin sesgos estructurales. En estas condiciones, técnicas como el aprendizaje de cláusulas ofrecen beneficios limitados, lo que resulta clave para evaluar el rendimiento en entornos carentes de regularidades.
 
@@ -855,61 +860,61 @@ La selección de \textit{benchmarks} resulta crucial al contrastar técnicas com
 
 \subsection{Random $k$-SAT}
 \label{subsec:random-k-sat}
-Los problemas Random $k$-SAT son un tipo de instancias generadas aleatoriamente que se utilizan ampliamente para evaluar y caracterizar el rendimiento de los algoritmos SAT. También se conocen como modelos de longitud fija de cláusula y constituyen un objeto de estudio prominente en la literatura \cite{hoos1998sat}. %SAT and Constraint Satisfaction.pdf
+Los problemas Random $k$-SAT son un tipo de instancias generadas aleatoriamente que se utilizan ampliamente para evaluar y caracterizar el rendimiento de los algoritmos SAT. También se conocen como modelos de longitud fija de cláusula y constituyen un objeto de estudio prominente en la literatura [\cite{hoos1998sat}]. %SAT and Constraint Satisfaction.pdf
 
-En un problema Random $k$-SAT, se define un número de variables $n$, un número de cláusulas $m$ y una longitud fija de cláusula $k$. Para generar cada cláusula, se seleccionan $k$ literales de forma independiente y uniforme al azar del conjunto de posibles literales, que incluye las variables proposicionales y sus negaciones. No se incluyen cláusulas que contengan múltiples copias del mismo literal. El proceso de generación continúa hasta que la fórmula contiene el número total especificado de cláusulas $m$ \cite{hoos1998sat}. %SAT and Constraint Satisfaction.pdf
+En un problema Random $k$-SAT, se define un número de variables $n$, un número de cláusulas $m$ y una longitud fija de cláusula $k$. Para generar cada cláusula, se seleccionan $k$ literales de forma independiente y uniforme al azar del conjunto de posibles literales, que incluye las variables proposicionales y sus negaciones. No se incluyen cláusulas que contengan múltiples copias del mismo literal. El proceso de generación continúa hasta que la fórmula contiene el número total especificado de cláusulas $m$ [\cite{hoos1998sat}]. %SAT and Constraint Satisfaction.pdf
 
-Una propiedad destacada del Random $k$-SAT es la presencia de un fenómeno de transición de fase. Este fenómeno se manifiesta como un cambio abrupto en la solubilidad al variar sistemáticamente el número de cláusulas $m$ para un número fijo de variables $n$. Cuando $m$ es pequeño, casi todas las fórmulas son poco restringidas y, por ende, satisfacibles. Al alcanzar un valor crítico $m_c$, la probabilidad de que una instancia sea satisfacible disminuye abruptamente hasta casi cero. Más allá de este punto, la mayoría de las instancias se encuentran sobre\-restringidas y son insatisfacibles. Para el caso de Random 3-SAT, esta transición ocurre aproximadamente cuando la razón cláusulas/variables ($m/n$) es cercana a 4.26 para valores grandes de $n$. La dificultad de los problemas SAT alcanza su punto máximo en esta región de transición \cite{hoos1998sat}, \cite{ganesh_unreasonable}. %On The Unreasonable Effectiveness of SAT Solvers.pdf, SAT and Constraint Satisfaction.pdf
+Una propiedad destacada del Random $k$-SAT es la presencia de un fenómeno de transición de fase. Este fenómeno se manifiesta como un cambio abrupto en la solubilidad al variar sistemáticamente el número de cláusulas $m$ para un número fijo de variables $n$. Cuando $m$ es pequeño, casi todas las fórmulas son poco restringidas y, por ende, satisfacibles. Al alcanzar un valor crítico $m_c$, la probabilidad de que una instancia sea satisfacible disminuye abruptamente hasta casi cero. Más allá de este punto, la mayoría de las instancias se encuentran sobre\-restringidas y son insatisfacibles. Para el caso de Random 3-SAT, esta transición ocurre aproximadamente cuando la razón cláusulas/variables ($m/n$) es cercana a 4.26 para valores grandes de $n$. La dificultad de los problemas SAT alcanza su punto máximo en esta región de transición [\cite{hoos1998sat}], [\cite{ganesh_unreasonable}]. %On The Unreasonable Effectiveness of SAT Solvers.pdf, SAT and Constraint Satisfaction.pdf
 
 \subsection{Problema del palomar}
 \label{subsec:pingeonhole}
-El ``problema del palomar'' (\textit{pigeonhole problem}) es una instancia de problema de Satisfacibilidad Booleana (SAT) que se ha convertido en un punto de referencia en la investigación de solvers SAT. A pesar de ser un problema combinatorio de tamaño relativamente pequeño, presenta dificultades particulares para los solvers CDCL (Conflict-Driven Clause Learning).
+El ``problema del palomar'' (\textit{pigeonhole problem}) es una instancia de problema de Satisfacibilidad Booleana (SAT) que se ha convertido en un punto de referencia en la investigación de solvers SAT. A pesar de ser un problema combinatorio de tamaño relativamente pequeño, presenta dificultades particulares para los \textit{solvers} CDCL (\textit{Conflict-Driven Clause Learning}).
 
-Este problema es un ejemplo de fórmulas “artesanales” o generadas aleatoriamente que resultan difíciles para los solvers CDCL \cite{zulkoski2018understanding}. %Understanding and Enhancing CDCL-based SAT Solvers.pdf
-Se considera una de las clases de problemas para los cuales los solvers CDCL son ``sin esperanza'' en la demostración de insatisfacibilidad, dado que cualquier prueba de refutación por resolución requerirá un tamaño exponencial \cite{oh2016improving}. %Improving SAT Solvers by Exploiting Empirical Characteristics of CDCL.pdf
+Este problema es un ejemplo de fórmulas “artesanales” o generadas aleatoriamente que resultan difíciles para los solvers CDCL [\cite{zulkoski2018understanding}]. %Understanding and Enhancing CDCL-based SAT Solvers.pdf
+Se considera una de las clases de problemas para los cuales los solvers CDCL son ``sin esperanza'' en la demostración de insatisfacibilidad, dado que cualquier prueba de refutación por resolución requerirá un tamaño exponencial [\cite{oh2016improving}]. %Improving SAT Solvers by Exploiting Empirical Characteristics of CDCL.pdf
 
-Este comportamiento contrasta con la eficiencia que muestran los solvers CDCL para problemas industriales o del mundo real \cite{zulkoski2018understanding}. %Understanding and Enhancing CDCL-based SAT Solvers.pdf
-La dificultad radica en que los solvers CDCL no pueden generar pruebas de refutación sofisticadas de manera eficiente para este tipo de instancias, a diferencia de los problemas industriales donde sí pueden hacerlo \cite{oh2016improving}. %Improving SAT Solvers by Exploiting Empirical Characteristics of CDCL.pdf
+Este comportamiento contrasta con la eficiencia que muestran los solvers CDCL para problemas industriales o del mundo real [\cite{zulkoski2018understanding}]. %Understanding and Enhancing CDCL-based SAT Solvers.pdf
+La dificultad radica en que los \textit{solvers} CDCL no pueden generar pruebas de refutación sofisticadas de manera eficiente para este tipo de instancias, a diferencia de los problemas industriales donde sí pueden hacerlo [\cite{oh2016improving}]. %Improving SAT Solvers by Exploiting Empirical Characteristics of CDCL.pdf
 
-El problema del palomar se usa como ejemplo para entender por qué los solvers CDCL son eficientes en muchas clases de instancias del mundo real, pero tienen un rendimiento pobre en instancias generadas aleatoriamente o criptográficas \cite{ganesh_unreasonable}. %On The Unreasonable Effectiveness of SAT Solvers.pdf
-La investigación se centra en comprender cómo las propiedades estructurales de las fórmulas se relacionan con la resolución SAT basada en CDCL \cite{zulkoski2018understanding}. %Understanding and Enhancing CDCL-based SAT Solvers.pdf
+El problema del palomar se usa como ejemplo para entender por qué los \textit{solvers} CDCL son eficientes en muchas clases de instancias del mundo real, pero tienen un rendimiento pobre en instancias generadas aleatoriamente o criptográficas [\cite{ganesh_unreasonable}]. %On The Unreasonable Effectiveness of SAT Solvers.pdf
+La investigación se centra en comprender cómo las propiedades estructurales de las fórmulas se relacionan con la resolución SAT basada en CDCL [\cite{zulkoski2018understanding}]. %Understanding and Enhancing CDCL-based SAT Solvers.pdf
 
 \subsection{Problema de coloreo de grafos}
 \label{subsec:graph-coloring}
-El problema de coloreado de grafos (GCP) es un concepto fundamental en informática y matemáticas, estrechamente relacionado con los Problemas de Satisfacción de Restricciones (CSP) y los Problemas de Satisfacibilidad Booleana (SAT) \cite{almabetterCSP}. %Constraint Satisfaction Problem in AI.pdf
+El problema de coloreado de grafos (GCP) es un concepto fundamental en informática y matemáticas, estrechamente relacionado con los Problemas de Satisfacción de Restricciones (CSP) y los Problemas de Satisfacibilidad Booleana (SAT) [\cite{almabetterCSP}]. %Constraint Satisfaction Problem in AI.pdf
 
-GCP es una subclase importante dentro de los Problemas de Satisfacción de Restricciones (CSP). Su objetivo es asignar colores a los vértices de un grafo dado de modo que dos vértices conectados por una arista nunca compartan el mismo color. Un ejemplo sencillo de CSP es el coloreado de grafos, donde se busca que cada nodo adyacente tenga un color diferente. El problema de colorear la bandera canadiense es un ejemplo simple de coloreado de mapas, que a su vez es un caso particular del GCP \cite{hoos1998sat}. %SAT and Constraint Satisfaction.pdf
+GCP es una subclase importante dentro de los Problemas de Satisfacción de Restricciones (CSP). Su objetivo es asignar colores a los vértices de un grafo dado de modo que dos vértices conectados por una arista nunca compartan el mismo color. Un ejemplo sencillo de CSP es el coloreado de grafos, donde se busca que cada nodo adyacente tenga un color diferente. El problema de colorear la bandera canadiense es un ejemplo simple de coloreado de mapas, que a su vez es un caso particular del GCP [\cite{hoos1998sat}]. %SAT and Constraint Satisfaction.pdf
 
-Las instancias de coloreado de grafos con tres colores se cuentan entre los benchmarks más comúnmente usados para CSP \cite{hoos1998sat}. %SAT and Constraint Satisfaction.pdf
+Las instancias de coloreado de grafos con tres colores se cuentan entre los benchmarks más comúnmente usados para CSP [\cite{hoos1998sat}]. %SAT and Constraint Satisfaction.pdf
 
-La estrategia de “cold restart” FO (Forgetting Order), que consiste en reiniciar el solver olvidando el orden inicial de ramificación, ha demostrado ser especialmente adecuada para resolver instancias de la familia de problemas de coloreado \ref{zhang2024revisiting}. %Revisiting Restarts of CDCL Should the Search Information be Preserved.pdf
+La estrategia de “cold restart” FO (Forgetting Order), que consiste en reiniciar el solver olvidando el orden inicial de ramificación, ha demostrado ser especialmente adecuada para resolver instancias de la familia de problemas de coloreado [\cite{zhang2024revisiting}]. %Revisiting Restarts of CDCL Should the Search Information be Preserved.pdf
 
 \subsection{XOR}
 \label{subsec:xor}
-El problema de paridad XOR es un área importante dentro de la Satisfacibilidad Booleana (SAT) y campos relacionados, especialmente en criptografía y teoría de códigos. Se refiere a un caso especial de los problemas XOR-SAT \cite{nandi2024margin}. %Margin Propagation based XOR-SAT Solvers for Decoding of LDPC Codes.pdf
+El problema de paridad XOR es un área importante dentro de la Satisfacibilidad Booleana (SAT) y campos relacionados, especialmente en criptografía y teoría de códigos. Se refiere a un caso especial de los problemas XOR-SAT [\cite{nandi2024margin}]. %Margin Propagation based XOR-SAT Solvers for Decoding of LDPC Codes.pdf
 Surge cuando las fórmulas booleanas se expresan como una conjunción de cláusulas donde la suma en $\mathbb{F}_2$ (base 2) se convierte en la operación lógica XOR ($\oplus$) \cite{trimoska2020parity}. %Parity (XOR) Reasoning for the Index Calculus Attack.pdf  
-Estas son comúnmente llamadas cláusulas XOR o cláusulas de chequeo de paridad \cite{nandi2024margin}. %Margin Propagation based XOR-SAT Solvers for Decoding of LDPC Codes.pdf
+Estas son comúnmente llamadas cláusulas XOR o cláusulas de chequeo de paridad [\cite{nandi2024margin}]. %Margin Propagation based XOR-SAT Solvers for Decoding of LDPC Codes.pdf
 
 \subsection{\textit{Bounded Model Checking} (BCM)}
 \label{subsec:bcm}
 \textit{Bounded Model Checking} (BCM) es un método de verificación de modelos simbólicos utilizado en la verificación formal de \textit{hardware} y \textit{software}. Es una técnica cada vez más aceptada en la industria para detectar una gama más amplia de errores, incluyendo condiciones de error sutiles, en comparación con las técnicas de validación tradicionales basadas en simulación.
 
-En un enfoque BMC, se utilizan codificaciones en Forma Normal Conjuntiva (FNC) y algoritmos SAT estándar para encontrar errores de manera más rápida y de tamaño mínimo \cite{hoos1998sat}.  %SAT and Constraint Satisfaction.pdf
+En un enfoque BMC, se utilizan codificaciones en Forma Normal Conjuntiva (FNC) y algoritmos SAT estándar para encontrar errores de manera más rápida y de tamaño mínimo [\cite{hoos1998sat}].  %SAT and Constraint Satisfaction.pdf
 
-Instancias de problemas relacionados con BMC, como ``hardware-bmc'' y ``hardware-bmc-ibm'', se han utilizado en competiciones SAT para evaluar el rendimiento de los solucionadores \cite{biere2019restart_schemes}. %Evaluating CDCL Restart Schemes.pdf
+Instancias de problemas relacionados con BMC, como ``hardware-bmc'' y ``hardware-bmc-ibm'', se han utilizado en competiciones SAT para evaluar el rendimiento de los solucionadores [\cite{biere2019restart_schemes}]. %Evaluating CDCL Restart Schemes.pdf
 
 \section{Insuficiencias Fundamentales de SAT}
 \label{sec:ineficiencia-sat}
 
-Aunque los algoritmos SAT basados en Conflict-Driven Clause Learning (CDCL) han tenido un impacto dramático y son sorprendentemente eficientes para resolver instancias con millones de variables y cláusulas en aplicaciones del mundo real \cite{li2024reset_rl},  presentan varias limitaciones e insuficiencias importantes, tanto teóricas como prácticas \cite{marques-silva2024cdcl}.
+Aunque los algoritmos SAT basados en Conflict-Driven Clause Learning (CDCL) han tenido un impacto dramático y son sorprendentemente eficientes para resolver instancias con millones de variables y cláusulas en aplicaciones del mundo real [\cite{li2024reset_rl}],  presentan varias limitaciones e insuficiencias importantes, tanto teóricas como prácticas [\cite{marques-silva2024cdcl}].
 
-El problema de Satisfacibilidad Booleana (SAT) es un problema NP-completo, lo que implica que, bajo la suposición de que $P \neq NP$, cualquier algoritmo completo para SAT operará en el peor de los casos en tiempo exponencial \cite{marques-silva2024cdcl}. Por otro lado, hay clases de problemas para las cuales las refutaciones por resolución son de tamaño exponencial, lo que hace que los solucionadores CDCL sean inherentemente ineficientes para demostrar su insatisfacibilidad. Ejemplos notables incluyen: el Principio del Agujero del Palomar (\textit{Pigeonhole Principle}) o f\'ormulas generadas aleatoriamente  \cite{ganesh_unreasonable}.
+El problema de Satisfacibilidad Booleana (SAT) es un problema NP-completo, lo que implica que, bajo la suposición de que $P \neq NP$, cualquier algoritmo completo para SAT operará en el peor de los casos en tiempo exponencial [\cite{marques-silva2024cdcl}]. Por otro lado, hay clases de problemas para las cuales las refutaciones por resolución son de tamaño exponencial, lo que hace que los solucionadores CDCL sean inherentemente ineficientes para demostrar su insatisfacibilidad. Ejemplos notables incluyen: el Principio del Agujero del Palomar (\textit{Pigeonhole Principle}) o f\'ormulas generadas aleatoriamente  [\cite{ganesh_unreasonable}].
 
-Por otro lado, SAT presenta desaf\'ios pr\'acticos. Un desafío fundamental es que un conjunto de técnicas que funcionan bien para una clase de instancias puede fallar estrepitosamente para otra \cite{li2024reset_rl}. Es muy difícil encontrar una heurística que tenga un alto rendimiento en cualquier instancia considerada \cite{cherif2021combining}. Asimismo, a menudo, las técnicas que mejoran el rendimiento en instancias satisfacibles (como la exploración de ramas prometedoras mediante búsqueda local o el reinicio frío que olvida fases) pueden degradar ligeramente el rendimiento en instancias insatisfacibles, o viceversa. Es muy difícil mejorar el rendimiento de forma simultánea en ambos tipos de instancias \cite{cherif2024vsidschb}. 
+Por otro lado, SAT presenta desaf\'ios pr\'acticos. Un desafío fundamental es que un conjunto de técnicas que funcionan bien para una clase de instancias puede fallar estrepitosamente para otra [\cite{li2024reset_rl}]. Es muy difícil encontrar una heurística que tenga un alto rendimiento en cualquier instancia considerada [\cite{cherif2021combining}]. Asimismo, a menudo, las técnicas que mejoran el rendimiento en instancias satisfacibles (como la exploración de ramas prometedoras mediante búsqueda local o el reinicio frío que olvida fases) pueden degradar ligeramente el rendimiento en instancias insatisfacibles, o viceversa. Es muy difícil mejorar el rendimiento de forma simultánea en ambos tipos de instancias [\cite{cherif2024vsidschb}]. 
 
-En cuanto a la gesti\'on de cl\'ausulas aprendidas, su acumulación excesiva puede ser perjudicial para el rendimiento del solucionador y puede ``paralizar completamente un solucionador''. Gran parte de las cláusulas aprendidas no son útiles para derivar una prueba de insatisfacibilidad en el sentido de rendimiento práctico del solucionador. Esto sugiere una ineficiencia en el proceso de aprendizaje, ya que solo una pequeña fracción de ``lemas simples'' de alta calidad son suficientes para resolver problemas del mundo real rápidamente  \cite{oh2016improving}. La minimización de cláusulas aprendidas, aunque necesaria para el rendimiento, es una tarea compleja e, históricamente, se creía que era difícil de hacer efectiva con la propagación de unidades \cite{luo2017clause_minimization}.
+En cuanto a la gesti\'on de cl\'ausulas aprendidas, su acumulación excesiva puede ser perjudicial para el rendimiento del solucionador y puede ``paralizar completamente un solucionador''. Gran parte de las cláusulas aprendidas no son útiles para derivar una prueba de insatisfacibilidad en el sentido de rendimiento práctico del solucionador. Esto sugiere una ineficiencia en el proceso de aprendizaje, ya que solo una pequeña fracción de ``lemas simples'' de alta calidad son suficientes para resolver problemas del mundo real rápidamente  [\cite{oh2016improving}]. La minimización de cláusulas aprendidas, aunque necesaria para el rendimiento, es una tarea compleja e, históricamente, se creía que era difícil de hacer efectiva con la propagación de unidades [\cite{luo2017clause_minimization}].
 
-Por lo tanto, si bien los solucionadores CDCL SAT son herramientas increíblemente potentes para una amplia gama de aplicaciones, sus insuficiencias se derivan de limitaciones teóricas inherentes a su modelo de prueba (resolución), desafíos prácticos en la gestión de heurísticas y cláusulas aprendidas para diversas instancias, y una dificultad persistente para explotar eficazmente la estructura subyacente de ciertos problemas \cite{ganesh_unreasonable}.
+Por lo tanto, si bien los solucionadores CDCL SAT son herramientas increíblemente potentes para una amplia gama de aplicaciones, sus insuficiencias se derivan de limitaciones teóricas inherentes a su modelo de prueba (resolución), desafíos prácticos en la gestión de heurísticas y cláusulas aprendidas para diversas instancias, y una dificultad persistente para explotar eficazmente la estructura subyacente de ciertos problemas [\cite{ganesh_unreasonable}].
 
 
 
